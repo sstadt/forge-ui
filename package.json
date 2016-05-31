@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/sstadt/l2-base#readme",
   "dependencies": {
-    "foundation-sites": "^6.2.1",
+    "foundation-sites": "^6.2.3",
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.1"
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
