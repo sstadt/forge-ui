@@ -1,9 +1,8 @@
 
 var Alert = require('./alert.class.js');
-var alertTemplate = require('./alertTemplate.html');
 
 module.exports = {
-  template: alertTemplate,
+  template: require('./alertTemplate.html'),
   props: {
     alert: {
       type: Object,
@@ -19,7 +18,7 @@ module.exports = {
     this.alert = new Alert();
   },
   methods: {
-    close: function () {
+    close() {
       this.alert.close();
     }
   }
