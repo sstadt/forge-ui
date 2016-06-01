@@ -1,10 +1,10 @@
 
 @import "foundation";
+
+// TODO: trim this down to only what's used, comment out pieces that individual apps should enable on their own
 @include foundation-everything;
 
 @import "_settings";
 
 
-body {
-  background-color: $light-gray;
-}
+// TODO: pull in components after they've been trimmed down to essentials
