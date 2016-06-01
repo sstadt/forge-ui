@@ -4,6 +4,7 @@ var sass       = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
 var browserify = require('gulp-browserify');
+var babel      = require('gulp-babel');
 
 
 gulp.task('sass', function () {
@@ -21,9 +22,14 @@ gulp.task('sass', function () {
 
 gulp.task('js', function () {
   gulp.src('src/js/components.js')
+    .pipe(sourcemaps.init())
     .pipe(browserify({
-      transform: ['stringify']
+      transform: ['stringify'],
     }))
+    .pipe(babel({
+			presets: [ 'es2015', 'stage-0']
+    }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/js'))
     .pipe(livereload());
 });

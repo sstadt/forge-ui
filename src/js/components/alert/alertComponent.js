@@ -15,7 +15,7 @@ module.exports = {
       defaultsTo: false
     }
   },
-  ready: function () {
+  ready() {
     this.alert = new Alert();
   },
   methods: {
