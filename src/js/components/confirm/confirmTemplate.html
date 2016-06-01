@@ -1,0 +1,23 @@
+
+<div class="prompt" transition="zoom-in" v-show="show">
+  <div class="prompt-overlay" v-on:click="cancel()"></div>
+  <div class="prompt-wrap">
+    <div class="prompt-head">
+      <div class="left-corner"></div>
+      <div class="corner-fill full"></div>
+      <div class="right-corner"></div>
+    </div>
+    <div class="prompt-content">
+      <p class="text-center">{{ questionLabel }}</p>
+      <div class="controls">
+        <button class="tiny" type="button" v-on:click="no()">{{ noLabel }}</button>
+        <button class="tiny" type="submit" v-on:click="yes()">{{ yesLabel }}</button>
+      </div>
+    </div>
+    <div class="prompt-foot">
+      <div class="left-corner"></div>
+      <div class="corner-fill"></div>
+      <div class="right-corner"></div>
+    </div>
+  </div>
+</div>

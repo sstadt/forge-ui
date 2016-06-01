@@ -1,0 +1,23 @@
+
+<label class="v-input">
+  {{ label | isSimple }} <span v-if="!required && !simple" class="right">optional</span>
+  <div class="input-wrap">
+    <i class="fa fa-{{ icon }}" v-if="icon"></i>
+    <textarea v-if="type === 'textarea'"
+      v-el:input
+      :class="{ 'error': error.length > 0 }"
+      name="{{ name }}"
+      placeholder="{{ placeholder }}"
+      v-model="value"
+      v-on:blur="validate()"></textarea>
+    <input v-else
+      v-el:input
+      :class="{ 'error': error.length > 0 }"
+      name="{{ name }}"
+      type="{{ type }}"
+      placeholder="{{ placeholder }}"
+      v-model="value"
+      v-on:blur="validate()" />
+    <small v-if="error.length > 0" transition="slide-up-x-small" class="error">{{ error }}</small>
+  </div>
+</label>

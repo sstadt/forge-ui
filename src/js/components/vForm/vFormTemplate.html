@@ -1,0 +1,7 @@
+
+<form v-if="ajax" v-el:form v-on:submit.prevent="submitForm" :method="method" :action="action" novalidate>
+  <slot></slot>
+</form>
+<form v-else v-el:form v-on:submit="submitForm" :method="method" :action="action" novalidate>
+  <slot></slot>
+</form>

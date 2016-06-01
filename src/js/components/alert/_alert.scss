@@ -1,0 +1,71 @@
+
+/* Colors
+-------------------------------- */
+
+/* Settings
+-------------------------------- */
+
+@mixin alert-box($color) {
+  color: $color;
+  background-color: transparent;
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid $color;
+  border-bottom: 1px solid $color;
+
+  .close {
+    .icon-image {
+      fill: $color;
+    }
+  }
+}
+
+/* Styling
+-------------------------------- */
+
+.alert-box {
+  padding-left: rem-calc(8);
+  padding-right: rem-calc(30);
+  @include alert-box($primaryColor);
+
+  &.success {
+    @include alert-box($successColor);
+  }
+
+  &.warning {
+    @include alert-box($warningColor);
+  }
+
+  &.info {
+    @include alert-box($infoColor);
+  }
+
+  &.alert {
+    @include alert-box($alertColor);
+  }
+
+  &.secondary {
+    @include alert-box($secondaryColor);
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+
+  .close {
+    padding: 0;
+    top: rem-calc(30);
+    right: rem-calc(8);
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .icon-image {
+      height: 14px;
+      width: 14px;
+    }
+  }
+}

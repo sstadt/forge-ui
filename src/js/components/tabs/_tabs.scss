@@ -1,0 +1,39 @@
+
+/* Settings
+-------------------------------- */
+
+$tabsBorderColor: $primaryColor;
+$tabsBorder: $interfaceBorderSize $interfaceBorderStyle $tabsBorderColor;
+
+/* Styling
+-------------------------------- */
+
+.tabs {
+  display: flex;
+  flex-flow: column;
+
+  ul.tab-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-bottom: $tabsBorder;
+    flex-shrink: 0;
+
+    li {
+      margin: 0;
+      padding: rem-calc(4) rem-calc(10);
+      display: inline-block;
+      cursor: pointer;
+      @include button-bottom-glow($tabsBorderColor);
+
+      a {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .tab-content {
+    flex: 1;
+  }
+}

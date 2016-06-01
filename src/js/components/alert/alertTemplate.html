@@ -1,0 +1,13 @@
+
+<div class="alert-box" v-bind:class="{
+    success: alert.type === 'success',
+    warning: alert.type === 'warning',
+    info: alert.type === 'info',
+    alert: alert.type === 'alert',
+    secondary: alert.type === 'secondary'
+  }" transition="fade" v-show="alert.messages && alert.messages.length > 0">
+  <ul>
+    <li v-for="message in alert.messages" track-by="$index">{{ message }}</li>
+  </ul>
+  <a href="#" class="close" v-if="canClose" v-on:click="close()"><icon name="multiply"></icon></a>
+</div>

@@ -1,0 +1,51 @@
+
+
+/* Settings
+-------------------------------- */
+
+$promptBgColor: $panelBgColor;
+$promptBgOpacity: $panelBgOpacity;
+$promptBevelSizeNum: 20;
+$promptBorderColor: $panelBorderColor;
+$promptBorderNum: $interfaceBorderNum;
+
+/* Styling
+-------------------------------- */
+
+.prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  .prompt-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .prompt-wrap {
+    position: absolute;
+    width: rem-calc(400);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    .prompt-head {
+      @include flex-panel-header($promptBorderNum, $promptBorderColor, $promptBgColor, $promptBgOpacity, $promptBevelSizeNum);
+    }
+
+    .prompt-content {
+      @include flex-panel-content($promptBorderNum, $promptBorderColor, $promptBgColor, $promptBgOpacity, $promptBevelSizeNum);
+    }
+
+    .prompt-foot {
+      @include flex-panel-footer($promptBorderNum, $promptBorderColor, $promptBgColor, $promptBgOpacity, $promptBevelSizeNum);
+    }
+  }
+}
+
+

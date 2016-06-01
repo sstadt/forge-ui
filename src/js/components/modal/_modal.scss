@@ -1,0 +1,96 @@
+
+/* Colors
+-------------------------------- */
+
+/* Settings
+-------------------------------- */
+
+/* Transitions
+-------------------------------- */
+
+/* Styling
+-------------------------------- */
+
+
+$modalScrollBarGutter: rem-calc(22);
+
+
+.modal {
+  position: fixed;
+  height: 98%;
+  width: 98%;
+  top: 1%;
+  left: 1%;
+  display: flex;
+  flex-flow: column;
+
+  &.menu {
+    max-width: rem-calc(300);
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    div[slot="content"] {
+      margin-bottom: rem-calc(10);
+    }
+
+    section {
+      button, .button {
+        margin-bottom: 0.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .sw-panel-head {
+    position: relative;
+
+    span {
+      position: absolute;
+      right: rem-calc(8);
+      cursor: pointer;
+      color: $bodyFontColor;
+      opacity: $inputOpacity;
+      transition: $inputTransition;
+      font-size: rem-calc(24);
+      line-height: rem-calc(24);
+
+      &:hover {
+        opacity: $inputFocusOpacity;
+      }
+    }
+  }
+
+  .sw-panel-head, .sw-panel-foot {
+    height: $panelBevelSize;
+  }
+
+  .corner-fill {
+    border-left: none;
+  }
+
+  .sw-panel-content {
+    flex: 2;
+    display: flex;
+    flex-flow: column;
+    padding-right: $panelBevelSize - $modalScrollBarGutter;
+  }
+
+  div[slot="content"] {
+    overflow-y: auto;
+    padding-right: $modalScrollBarGutter;
+    margin-top: rem-calc(10);
+  }
+}

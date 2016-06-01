@@ -1,0 +1,5 @@
+
+<div :class="{ 'checkbox': true, 'error': isError }">
+  <icon v-on:click="toggle()" :name="icon"></icon>
+  <span v-on:click="toggle()">{{ label }}</span>
+</div>
