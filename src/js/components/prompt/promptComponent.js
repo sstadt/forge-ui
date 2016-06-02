@@ -7,7 +7,7 @@ var defaultLabels = {
 
 module.exports = {
   template: require('./promptTemplate.html'),
-  data: function () {
+  data() {
     return {
       promptValue: '',
       questionLabel: defaultLabels.questionLabel,
@@ -15,7 +15,7 @@ module.exports = {
       noLabel: defaultLabels.noLabel,
       show: false,
       confirmed: false,
-      ask: function (data) {
+      ask(data) {
         var unwatch, self = this;
 
         self.questionLabel = data.question;
@@ -37,7 +37,7 @@ module.exports = {
     };
   },
   watch: {
-    show: function (val) {
+    show(val) {
       if (val === true && this.$children.length > 0) {
         this.promptValue = '';
         this.$children[0].$children[0].$els.input.focus();
@@ -45,10 +45,10 @@ module.exports = {
     }
   },
   methods: {
-    yes: function () {
+    yes() {
       this.confirmed = true;
     },
-    no: function () {
+    no() {
       this.confirmed = false;
     }
   }

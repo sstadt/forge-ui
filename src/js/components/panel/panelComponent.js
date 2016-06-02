@@ -1,6 +1,4 @@
 
-var panelTemplate = require('./panelTemplate.html');
-
 module.exports = {
-  template: panelTemplate
+  template: require('./panelTemplate.html')
 };

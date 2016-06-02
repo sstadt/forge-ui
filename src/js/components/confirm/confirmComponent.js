@@ -7,14 +7,14 @@ var defaultLabels = {
 
 module.exports = {
   template: require('./confirmTemplate.html'),
-  data: function () {
+  data() {
     return {
       questionLabel: defaultLabels.questionLabel,
       yesLabel: defaultLabels.yesLabel,
       noLabel: defaultLabels.noLabel,
-      show :false,
+      show: false,
       confirmed: false,
-      ask: function (data) {
+      ask(data) {
         var unwatch, self = this;
 
         self.questionLabel = data.question;
@@ -36,10 +36,10 @@ module.exports = {
     };
   },
   methods: {
-    yes: function () {
+    yes() {
       this.confirmed = true;
     },
-    no: function () {
+    no() {
       this.confirmed = false;
     }
   }

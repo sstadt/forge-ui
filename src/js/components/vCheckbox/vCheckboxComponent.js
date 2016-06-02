@@ -1,7 +1,7 @@
 
 module.exports = {
   template: require('./vCheckboxTemplate.html'),
-  data: function () {
+  data() {
     return {
       icon: 'unchecked',
       isError: false
@@ -23,18 +23,18 @@ module.exports = {
     }
   },
   watch: {
-    checked: function (val) {
+    checked(val) {
       this.icon = (val === true) ? 'checked' : 'unchecked';
     }
   },
-  ready: function () {
+  ready() {
     this.icon = (this.checked === true) ? 'checked' : 'unchecked';
   },
   methods: {
-    toggle: function () {
+    toggle() {
       this.checked = !this.checked;
     },
-    isValid: function () {
+    isValid() {
       this.isError = (this.required) ? !this.checked : false;
       return !this.isError;
     }

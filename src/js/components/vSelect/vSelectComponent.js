@@ -20,23 +20,21 @@ module.exports = {
       defaultsTo: false
     }
   },
-  data: function () {
+  data() {
     return {
       isError: false
     };
   },
-  ready: function () {
+  ready() {
     var self = this,
-      selectedIndex = _.findIndex(self.options, function (option) {
-        return option.value === self.selected;
-      });
+      selectedIndex = _.findIndex(self.options, (option) => option.value === self.selected);
 
     if (self.required && selectedIndex === -1) {
       self.selected = self.options[0].value;
     }
   },
   methods: {
-    isValid: function () {
+    isValid() {
       this.isError = !this.required || this.selected.length > 0;
       return this.isError;
     }

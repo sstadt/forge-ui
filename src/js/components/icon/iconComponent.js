@@ -1,7 +1,5 @@
 
-var iconTemplate = require('./iconTemplate.html');
-
 module.exports = {
-  template: iconTemplate,
+  template: require('./iconTemplate.html'),
   props: ['name']
 };

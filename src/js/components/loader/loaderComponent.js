@@ -1,13 +1,13 @@
 
 module.exports = {
   template: require('./loaderTemplate.html'),
-  data: function () {
+  data() {
     return {
       greeting: 'loader component',
     };
   },
   methods: {
-    sayHi: function () {
+    sayHi() {
       console.log('hi!');
     }
   }

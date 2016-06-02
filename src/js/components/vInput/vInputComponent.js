@@ -38,25 +38,25 @@ module.exports = {
       defaultsTo: false
     }
   },
-  data: function () {
+  data() {
     return {
       error: ''
     };
   },
   filters: {
-    isSimple: function (val) {
+    isSimple(val) {
       return (this.simple) ? '' : val;
     }
   },
   methods: {
-    isValid: function () {
+    isValid() {
       this.validate();
       return (this.error.length === 0);
     },
     debounceValidate: _.debounce(function () {
       this.validate();
     }, 500),
-    validate: function () {
+    validate() {
       var label = this.label || this.name;
 
       // required validation

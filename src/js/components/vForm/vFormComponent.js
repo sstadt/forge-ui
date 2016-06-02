@@ -19,7 +19,7 @@ module.exports = {
     }
   },
   methods: {
-    submitForm: function (event) {
+    submitForm(event) {
       if (this.ajax || !this.isValid()) {
         event.preventDefault();
       }
@@ -28,7 +28,7 @@ module.exports = {
         this.submitCallback();
       }
     },
-    isValid: function () {
+    isValid() {
       var self = this,
         formIsValid = true;
 

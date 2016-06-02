@@ -13,7 +13,7 @@ module.exports = {
     }
   },
   computed: {
-    isMenu: function () {
+    isMenu() {
       return this.modalSize === 'menu';
     }
   }

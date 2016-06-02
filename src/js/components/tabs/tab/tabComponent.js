@@ -1,16 +1,6 @@
 
-var tabTemplate = require('./tabTemplate.html');
-
-var events = {};
-
-events['TAB_COMPONENT_TAB_CLICKED'] = function TabClicked() {
-  if (typeof this.clickCallback === 'function') {
-    this.clickCallback();
-  }
-};
-
 module.exports = {
-  template: tabTemplate,
+  template: require('./tabTemplate.html'),
   props: {
     heading: {
       type: String,
@@ -24,30 +14,30 @@ module.exports = {
       type: Function
     }
   },
-  data: function () {
+  data() {
     return {
       index: 0,
       show: false
     };
   },
   computed: {
-    show: function () {
+    show() {
       return (this.$parent.active == this.index);
     }
   },
   watch: {
-    heading: function () {
+    heading() {
       this.$parent.tabs[this.index].heading = this.heading;
     }
   },
-  created: function () {
+  created() {
     this.$parent.tabs.push({
       heading: this.heading,
       disabled: this.disabled,
       active: false
     });
   },
-  ready: function () {
+  ready() {
     for (var index in this.$parent.$children) {
       if (this.$parent.$children[index].$el == this.$el) {
         this.index = index;
@@ -55,5 +45,11 @@ module.exports = {
       }
     }
   },
-  events: events
+  events: {
+    TAB_COMPONENT_TAB_CLICKED: function TabClicked() {
+      if (typeof this.clickCallback === 'function') {
+        this.clickCallback();
+      }
+    }
+  }
 };
