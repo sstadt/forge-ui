@@ -22,11 +22,11 @@
 
   &.error {
     svg {
-      fill: $alertColor;
+      fill: map-get($foundation-palette, alert);
     }
 
     span {
-      color: $alertColor;
+      color: map-get($foundation-palette, alert);
     }
   }
 }

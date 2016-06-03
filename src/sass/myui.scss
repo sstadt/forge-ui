@@ -6,5 +6,16 @@
 
 @import "_settings";
 
-
-// TODO: pull in components after they've been trimmed down to essentials
+// Componets
+// ----------------
+@import "../js/components/alert/_alert";
+@import "../js/components/confirm/_confirm";
+@import "../js/components/icon/_icon";
+@import "../js/components/loader/_loader";
+@import "../js/components/modal/_modal";
+@import "../js/components/prompt/_prompt";
+@import "../js/components/tabs/_tabs";
+@import "../js/components/vCheckbox/_vCheckbox";
+@import "../js/components/vForm/_vForm";
+@import "../js/components/vInput/_vInput";
+@import "../js/components/vSelect/_vSelect";

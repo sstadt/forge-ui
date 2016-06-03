@@ -46,31 +46,8 @@ input[type="time"],
 input[type="url"],
 input[type="color"],
 textarea {
-  opacity: $inputOpacity;
-  transition: $inputTransition;
 
   &.error {
-    border-color: $alertColor;
-  }
-
-  &:focus, &:hover {
-    opacity: $inputFocusOpacity;
-  }
-
-  &:focus {
-    box-shadow: $inputBoxShadow;
-  }
-
-  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $placeholderColor;
-  }
-  &::-moz-placeholder { /* Firefox 19+ */
-    color: $placeholderColor;
-  }
-  &:-ms-input-placeholder { /* IE 10+ */
-    color: $placeholderColor;
-  }
-  &:-moz-placeholder { /* Firefox 18- */
-    color: $placeholderColor;
+    border-color: map-get($foundation-palette, alert);
   }
 }
