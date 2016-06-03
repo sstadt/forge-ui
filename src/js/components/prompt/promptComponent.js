@@ -5,6 +5,27 @@ var defaultLabels = {
   no: 'Cancel'
 };
 
+function prompt(vm, options, showInput) {
+  var unwatch;
+
+  vm.questionLabel = options.question;
+  vm.yesLabel = options.yesLabel || defaultLabels.yes;
+  vm.noLabel = options.noLabel || defaultLabels.no;
+  vm.confirmed = undefined;
+  vm.showInput = showInput;
+  vm.show = true;
+
+  unwatch = vm.$watch('$data.confirmed', function (newVal, oldVal) {
+    if (newVal && _.isFunction(options.yes)) {
+      options.yes((showInput) ? vm.promptValue : null);
+    } else if (!newVal && _.isFunction (options.no)) {
+      options.no();
+    }
+    unwatch();
+    vm.show = false;
+  });
+}
+
 module.exports = {
   template: require('./promptTemplate.html'),
   data() {
@@ -15,24 +36,12 @@ module.exports = {
       noLabel: defaultLabels.noLabel,
       show: false,
       confirmed: false,
-      ask(data) {
-        var unwatch, self = this;
-
-        self.questionLabel = data.question;
-        self.yesLabel = data.yesLabel || defaultLabels.yes;
-        self.noLabel = data.noLabel || defaultLabels.no;
-        self.confirmed = undefined;
-        self.show = true;
-
-        unwatch = self.$watch('$data.confirmed', function (newVal, oldVal) {
-          if (newVal && _.isFunction(data.yes)) {
-            data.yes(self.promptValue);
-          } else if (!newVal && _.isFunction (data.no)) {
-            data.no();
-          }
-          unwatch();
-          self.show = false;
-        });
+      showInput: false,
+      ask(options) {
+        prompt(this, options, true);
+      },
+      confirm(options) {
+        prompt(this, options, false);
       }
     };
   },
