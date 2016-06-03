@@ -1,2 +1,0 @@
-
-new Vue({ el: 'body' });

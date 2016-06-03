@@ -1,0 +1,8 @@
+
+code {
+  border: none;
+}
+
+pre[class*="language-"]::first-line {
+  font-size: 0;
+}
