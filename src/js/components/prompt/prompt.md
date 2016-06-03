@@ -35,7 +35,7 @@ vm.$refs.myPrompt.confirm({
 
 ### Options
 
-#### questionLabel
+#### question
 
 String; The prompt label
 

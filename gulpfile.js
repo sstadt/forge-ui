@@ -21,7 +21,7 @@ gulp.task('sass', function () {
 
 
 gulp.task('js', function () {
-  gulp.src('src/js/components.js')
+  gulp.src('src/js/myui.js')
     .pipe(sourcemaps.init())
     .pipe(browserify({
       transform: ['stringify'],
