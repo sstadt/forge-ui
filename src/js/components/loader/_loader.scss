@@ -3,8 +3,8 @@
 .loader:before,
 .loader:after {
   background: $loaderColor;
-  -webkit-animation: load1 1s infinite ease-in-out;
-  animation: load1 1s infinite ease-in-out;
+  -webkit-animation: loader1 1s infinite ease-in-out;
+  animation: loader1 1s infinite ease-in-out;
   width: 1em;
   height: 4em;
 }
@@ -39,7 +39,7 @@
   left: 1.5em;
 }
 
-@-webkit-keyframes load1 {
+@-webkit-keyframes loader1 {
   0%,
   80%,
   100% {
@@ -52,7 +52,7 @@
   }
 }
 
-@keyframes load1 {
+@keyframes loader1 {
   0%,
   80%,
   100% {

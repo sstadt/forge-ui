@@ -1,35 +1,10 @@
 
-<div :class="{
-    'modal': true,
-    'sw-panel': true,
-    'menu': modalSize === 'menu',
-    'full': modalSize === 'full'
-  }" transition="zoom-in" v-show="show">
-  <div class="sw-panel-head">
-    <div v-if="isMenu" class="left-corner"></div>
-    <div v-if="isMenu" :class="{ 'corner-fill': true, 'full': isMenu }"></div>
-    <div v-if="isMenu" class="right-corner"></div>
-    <div v-if="!isMenu" class="outer-corner-fill"></div>
-    <div v-if="!isMenu" class="left-inner-corner"></div>
-    <div v-if="!isMenu" class="inner-corner-fill"></div>
-    <div v-if="!isMenu" class="right-inner-corner"></div>
-    <div v-if="!isMenu" class="outer-corner-fill"></div>
-    <span v-if="!isMenu" v-on:click="show = false" aria-label="Close">&#215;</span>
-  </div>
-  <div class="sw-panel-header">
-    <slot name="header"></slot>
-  </div>
-  <div class="sw-panel-content">
+<div class="modal" transition="zoom-in" v-show="show" v-on:click.prevent="show = false">
+  <div class="{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }">
+    <div class="modal-header">
+      <slot name="header"></slot>
+    </div>
     <slot name="content"></slot>
-  </div>
-  <div class="sw-panel-foot">
-    <div v-if="!isMenu" class="outer-corner-fill"></div>
-    <div v-if="!isMenu" class="left-inner-corner"></div>
-    <div v-if="!isMenu" class="inner-corner-fill"></div>
-    <div v-if="!isMenu" class="right-inner-corner"></div>
-    <div v-if="!isMenu" class="outer-corner-fill"></div>
-    <div v-if="isMenu" class="left-corner"></div>
-    <div v-if="isMenu" class="corner-fill"></div>
-    <div v-if="isMenu" class="right-corner"></div>
+    <span v-on:click="show = false" aria-label="Close">&#215;</span>
   </div>
 </div>

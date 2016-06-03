@@ -2,26 +2,14 @@
 
 <div class="prompt prompt-modal" transition="zoom-in" v-show="show">
   <div class="prompt-overlay" v-on:click="no()"></div>
-  <div class="prompt-wrap">
-    <div class="prompt-head">
-      <div class="left-corner"></div>
-      <div class="corner-fill full"></div>
-      <div class="right-corner"></div>
-    </div>
-    <div class="prompt-content">
-      <v-form :submit-callback="yes" :ajax="true">
-        <p class="text-center">{{ questionLabel }}</p>
-        <v-input type="text" label="Response" name="promptResponse" :value.sync="promptValue" :required="true"></v-input>
-        <div class="controls">
-          <button type="button" class="tiny" type="button" v-on:click="no()">{{ noLabel }}</button>
-          <button type="submit" class="tiny" type="submit">{{ yesLabel }}</button>
-        </div>
-      </v-form>
-    </div>
-    <div class="prompt-foot">
-      <div class="left-corner"></div>
-      <div class="corner-fill"></div>
-      <div class="right-corner"></div>
-    </div>
+  <div class="prompt-content">
+    <v-form :submit-callback="yes" :ajax="true">
+      <p class="text-center">{{ questionLabel }}</p>
+      <v-input type="text" label="Response" name="promptResponse" :value.sync="promptValue" :required="true"></v-input>
+      <div class="controls">
+        <button type="button" class="tiny" type="button" v-on:click="no()">{{ noLabel }}</button>
+        <button type="submit" class="tiny" type="submit">{{ yesLabel }}</button>
+      </div>
+    </v-form>
   </div>
 </div>

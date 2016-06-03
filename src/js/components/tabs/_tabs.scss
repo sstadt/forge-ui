@@ -2,38 +2,46 @@
 /* Settings
 -------------------------------- */
 
-$tabsBorderColor: $primaryColor;
-$tabsBorder: $interfaceBorderSize $interfaceBorderStyle $tabsBorderColor;
+// TODO move to a global
+$tabNavFontColor: black;
+$tabNavFontColorHover: black;
+$tabNavFontColorActive: white;
+$tabNavBackgroundColor: white;
+$tabNavBackgroundColorHover: #bbb;
+$tabNavBackgroundColorActive: #999;
+$tabNavBorderColor: #999;
+$tabNavPadding: rem-calc(4) rem-calc(10);
 
 /* Styling
 -------------------------------- */
 
 .tabs {
-  display: flex;
-  flex-flow: column;
+  border-bottom: 1px solid $tabNavBorderColor;
 
   ul.tab-nav {
+    width: 100%;
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: flex;
-    border-bottom: $tabsBorder;
-    flex-shrink: 0;
+    margin: 0 0 20px;
 
     li {
       margin: 0;
-      padding: rem-calc(4) rem-calc(10);
       display: inline-block;
       cursor: pointer;
-      @include button-bottom-glow($tabsBorderColor);
 
       a {
-        border-bottom: 0;
+        padding: $tabNavPadding;
+
+        &:hover {
+          color: $tabNavFontColorActive;
+        }
+      }
+
+      &.active {
+        a {
+          color: $tabNavFontColorActive;
+        }
       }
     }
-  }
-
-  .tab-content {
-    flex: 1;
   }
 }
