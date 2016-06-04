@@ -13,25 +13,110 @@
     <div class="row">
       <div class="large-12 columns">
         <h1>MyUI Kitchen Sink</h1>
+        <hr/>
       </div>
     </div>
+
+    <!-- sample -->
+    <!-- <div class="row">
+      <div class="small-12 columns">
+        <div id="sample_demo">
+          <tabs>
+            <tab heading="Result">
+            </tab>
+            <tab heading="HTML">
+            </tab>
+            <tab heading="JavaScript">
+            </tab>
+          </tabs>
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- alert -->
+    <div class="row">
+      <div class="small-12 columns">
+        <h2>Alert</h2>
+        <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
+        <p>The following methods are available on the ref as shortcuts and each take a single string argument as the message to add to the alert:</p>
+        <ul class="inline-list">
+          <li>message</li>
+          <li>primary</li>
+          <li>secondary</li>
+          <li>success</li>
+          <li>warning</li>
+          <li>alert</li>
+        </ul>
+        <p>The following params can be passed to the component:</p>
+        <dl>
+          <dt>canClose</dt>
+          <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
+        </dl>
+        <div id="alert_demo">
+          <tabs>
+            <tab heading="Result">
+              <alert v-ref:my-alert :can-close="true"></alert>
+              <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
+              <button type="button" class="button" v-on:click="newMessage('message')">Default</button>
+              <button type="button" class="button" v-on:click="newMessage('primary')">Primary</button>
+              <button type="button" class="button secondary" v-on:click="newMessage('secondary')">Secondary</button>
+              <button type="button" class="button success" v-on:click="newMessage('success')">Success</button>
+              <button type="button" class="button warning" v-on:click="newMessage('warning')">Warning</button>
+              <button type="button" class="button alert" v-on:click="newMessage('alert')">Alert</button>
+            </tab>
+            <tab heading="HTML">
+<pre><code class="language-html">
+&lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
+&lt;v-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/v-input&gt;
+&lt;button type="button" class="button" v-on:click="newMessage('message')"&gt;Default&lt;/button&gt;
+&lt;button type="button" class="button" v-on:click="newMessage('primary')"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="button secondary" v-on:click="newMessage('secondary')"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="button success" v-on:click="newMessage('success')"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="button warning" v-on:click="newMessage('warning')"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="button alert" v-on:click="newMessage('alert')"&gt;Alert&lt;/button&gt;
+</pre></code>
+            </tab>
+            <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#alert_demo',
+  data: {
+    alertMessage: ''
+  },
+  methods: {
+    newMessage(type) {
+      this.$refs.myAlert[type](this.alertMessage);
+    }
+  }
+});
+</pre></code>
+            </tab>
+          </tabs>
+        </div>
+        <hr/>
+      </div>
+    </div>
+
 
     <!-- modal -->
     <div class="row">
       <div class="small-12 columns">
+        <h2>Modal</h2>
+        <!-- <p>TODO</p> -->
         <div id="modal_demo">
           <tabs>
             <tab heading="Result">
-                <button type="button" class="button" v-on:click="showModal = true">Open Modal</button>
-                <modal :show.sync="showModal">
-                  <div slot="header">
-                    <h3>Look, a Modal!</h3>
-                  </div>
-                  <div slot="content">
-                    <p>some super awesome modal content</p>
-                    <button type="button" class="button" v-on:click="showModal = false">Close</button>
-                  </div>
-                </modal>
+              <button type="button" class="button" v-on:click="showModal = true">Open Modal</button>
+              <modal :show.sync="showModal">
+                <div slot="header">
+                  <h3>Look, a Modal!</h3>
+                </div>
+                <div slot="content">
+                  <p>some super awesome modal content</p>
+                  <button type="button" class="button" v-on:click="showModal = false">Close</button>
+                </div>
+              </modal>
             </tab>
             <tab heading="HTML">
 <pre><code class="language-html">
@@ -60,137 +145,11 @@ new Vue({
             </tab>
           </tabs>
         </div>
+        <hr/>
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-8 medium-8 columns">
-        <h5>Here&rsquo;s your basic grid:</h5>
-        <!-- Grid Example -->
-
-        <div class="row">
-          <div class="small-12 columns">
-            <div class="primary callout">
-              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-6 medium-6 small-6 columns">
-            <div class="primary callout">
-              <p class="text-center">6</p>
-            </div>
-          </div>
-          <div class="large-3 medium-3 small-3 columns">
-            <div class="primary callout">
-              <p class="text-center">3</p>
-            </div>
-          </div>
-          <div class="large-3 medium-3 small-3 columns">
-            <div class="primary callout">
-              <p class="text-center">3</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p class="text-center">4</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p class="text-center">4</p>
-            </div>
-          </div>
-          <div class="large-2 medium-2 small-2 columns">
-            <div class="primary callout">
-              <p class="text-center">2</p>
-            </div>
-          </div>
-          <div class="large-2 medium-2 small-2 columns">
-            <div class="primary callout">
-              <p class="text-center">2</p>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-
-        <h5>We bet you&rsquo;ll need a form somewhere:</h5>
-        <form>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-12.columns" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <div class="row collapse">
-                <label>Input Label</label>
-                <div class="input-group">
-                  <input type="text" placeholder="small-9.columns" class="input-group-field" />
-                  <span class="input-group-label">.com</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Select Box</label>
-              <select>
-                <option value="husker">Husker</option>
-                <option value="starbuck">Starbuck</option>
-                <option value="hotdog">Hot Dog</option>
-                <option value="apollo">Apollo</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-6 medium-6 columns">
-              <label>Choose Your Favorite</label>
-              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-            </div>
-            <div class="large-6 medium-6 columns">
-              <label>Check these out</label>
-              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Textarea Label</label>
-              <textarea placeholder="small-12.columns"></textarea>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <div class="large-4 medium-4 columns">
-        <h5>Try one of these buttons:</h5>
-        <p><a href="#" class="button">Simple Button</a><br/>
-        <a href="#" class="success button">Success Btn</a><br/>
-        <a href="#" class="alert button">Alert Btn</a><br/>
-        <a href="#" class="secondary button">Secondary Btn</a></p>
-        <div class="callout">
-          <h5>So many components, girl!</h5>
-          <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
-          <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>
-        </div>
-      </div>
-    </div>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
     <script type="text/javascript" src="js/prism.js"></script>
     <script type="text/javascript" src="../../dist/js/myui.js"></script>

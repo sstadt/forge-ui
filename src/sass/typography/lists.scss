@@ -1,0 +1,15 @@
+
+.inline-list {
+  margin: 0;
+  padding: 0 0 1rem;
+
+  li {
+    display: inline-block;
+    padding: 0;
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}

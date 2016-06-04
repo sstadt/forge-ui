@@ -1,25 +1,48 @@
 
-var Alert = require('./alert.class.js');
-
 module.exports = {
   template: require('./alertTemplate.html'),
   props: {
-    alert: {
-      type: Object,
-      required: true,
-      twoWay: true
-    },
     canClose: {
       type: Boolean,
       defaultsTo: false
     }
   },
-  ready() {
-    this.alert = new Alert();
+  data() {
+    return {
+      messages: [],
+      type: ''
+    };
   },
   methods: {
     close() {
-      this.alert.close();
+      this.messages = [];
+    },
+    addMessage(type, message) {
+      if (this.type !== type) {
+        this.type = type;
+        this.messages = [message];
+      } else {
+        this.messages.push(message);
+      }
+      console.log(this.messages);
+    },
+    message(message) {
+      this.addMessage('', message);
+    },
+    primary(message) {
+      this.addMessage('primary', message);
+    },
+    secondary(message) {
+      this.addMessage('secondary', message);
+    },
+    success(message) {
+      this.addMessage('success', message);
+    },
+    warning(message) {
+      this.addMessage('warning', message);
+    },
+    alert(message) {
+      this.addMessage('alert', message);
     }
   }
 };

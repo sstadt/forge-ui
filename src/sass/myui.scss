@@ -13,7 +13,7 @@
 // @include foundation-breadcrumbs;
 // @include foundation-button-group;
 @include foundation-callout;
-// @include foundation-close-button;
+@include foundation-close-button;
 // @include foundation-menu;
 // @include foundation-menu-icon;
 // @include foundation-drilldown-menu;
@@ -40,6 +40,10 @@
 @include foundation-float-classes;
 
 @import "_settings";
+
+// Typography
+// ----------------
+@import "typography/lists";
 
 // Componets
 // ----------------
