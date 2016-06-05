@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>MyUI</title>
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="../../dist/css/myui.css">
     <link rel="stylesheet" href="css/style.css">
@@ -39,16 +39,7 @@
       <div class="small-12 columns">
         <h2>Alert</h2>
         <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
-        <p>The following methods are available on the ref as shortcuts and each take a single string argument as the message to add to the alert:</p>
-        <ul class="inline-list">
-          <li>message</li>
-          <li>primary</li>
-          <li>secondary</li>
-          <li>success</li>
-          <li>warning</li>
-          <li>alert</li>
-        </ul>
-        <p>The following params can be passed to the component:</p>
+        <h4>Params</h4>
         <dl>
           <dt>canClose</dt>
           <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
@@ -57,24 +48,32 @@
           <tabs>
             <tab heading="Result">
               <alert v-ref:my-alert :can-close="true"></alert>
-              <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
-              <button type="button" class="button" v-on:click="newMessage('message')">Default</button>
-              <button type="button" class="button" v-on:click="newMessage('primary')">Primary</button>
-              <button type="button" class="button secondary" v-on:click="newMessage('secondary')">Secondary</button>
-              <button type="button" class="button success" v-on:click="newMessage('success')">Success</button>
-              <button type="button" class="button warning" v-on:click="newMessage('warning')">Warning</button>
-              <button type="button" class="button alert" v-on:click="newMessage('alert')">Alert</button>
+              <div class="row">
+                <div class="small-12 medium-5 columns">
+                  <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
+                </div>
+                <div class="small-12 medium-5 columns">
+                  <v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"></v-select>
+                </div>
+                <div class="small-12 medium-2 columns">
+                  <button type="button" class="button expanded inline-form" v-on:click="newMessage()">Send</button>
+                </div>
+              </div>
             </tab>
             <tab heading="HTML">
 <pre><code class="language-html">
 &lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
-&lt;v-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/v-input&gt;
-&lt;button type="button" class="button" v-on:click="newMessage('message')"&gt;Default&lt;/button&gt;
-&lt;button type="button" class="button" v-on:click="newMessage('primary')"&gt;Primary&lt;/button&gt;
-&lt;button type="button" class="button secondary" v-on:click="newMessage('secondary')"&gt;Secondary&lt;/button&gt;
-&lt;button type="button" class="button success" v-on:click="newMessage('success')"&gt;Success&lt;/button&gt;
-&lt;button type="button" class="button warning" v-on:click="newMessage('warning')"&gt;Warning&lt;/button&gt;
-&lt;button type="button" class="button alert" v-on:click="newMessage('alert')"&gt;Alert&lt;/button&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-12 medium-5 columns"&gt;
+    &lt;v-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/v-input&gt;
+  &lt;/div&gt;
+  &lt;div class="small-12 medium-5 columns"&gt;
+    &lt;v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"&gt;&lt;/v-select&gt;
+  &lt;/div&gt;
+  &lt;div class="small-12 medium-2 columns"&gt;
+    &lt;button type="button" class="button expanded inline-form" v-on:click="newMessage()"&gt;Send&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </pre></code>
             </tab>
             <tab heading="JavaScript">
@@ -82,11 +81,20 @@
 new Vue({
   el: '#alert_demo',
   data: {
-    alertMessage: ''
+    alertMessage: '',
+    selectedMessageType: 'message',
+    messageTypes: [
+      { value: 'message', label: 'vm.$refs.myAlert.message()' },
+      { value: 'primary', label: 'vm.$refs.myAlert.primary()' },
+      { value: 'secondary', label: 'vm.$refs.myAlert.secondary()' },
+      { value: 'success', label: 'vm.$refs.myAlert.success()' },
+      { value: 'warning', label: 'vm.$refs.myAlert.warning()' },
+      { value: 'alert', label: 'vm.$refs.myAlert.alert()' },
+    ]
   },
   methods: {
     newMessage(type) {
-      this.$refs.myAlert[type](this.alertMessage);
+      this.$refs.myAlert[this.selectedMessageType](this.alertMessage);
     }
   }
 });

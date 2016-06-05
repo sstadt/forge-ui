@@ -1,6 +1,6 @@
 
 <label class="v-input">
-  {{ label | isSimple }} <span v-if="!required && !simple" class="right">optional</span>
+  {{ label | isSimple }}
   <div class="input-wrap">
     <i class="fa fa-{{ icon }}" v-if="icon"></i>
     <textarea v-if="type === 'textarea'"
