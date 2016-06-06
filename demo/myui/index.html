@@ -14,55 +14,77 @@
       <div class="large-12 columns">
         <h1>MyUI Kitchen Sink</h1>
         <hr/>
+        <!-- TODO add description of toolkit here -->
       </div>
     </div>
 
-    <!-- sample -->
-    <!--
+
     <div class="row">
-      <div class="small-12 columns">
-        <div id="sample_demo">
-          <tabs>
-            <tab heading="Result">
-            </tab>
-            <tab heading="HTML">
-            </tab>
-            <tab heading="JavaScript">
-            </tab>
-          </tabs>
+      <div class="hide-for-small medium-3 columns">
+        <ul class="vertical menu docs-nav">
+          <li class="docs-nav-title">Components</li>
+          <li><a href="#alert_demo">Alert</a></li>
+          <li><a href="#icon_demo">Icon</a></li>
+          <li><a href="#loader_demo">Loader</a></li>
+          <li><a href="#modal_demo">Modal</a></li>
+          <li><a href="#prompt_demo">Prompt</a></li>
+          <li><a href="#tabs_demo">Tabs</a></li>
+          <li><a href="#form_demo">vForm</a></li>
+          <li><a href="#input_demo">vInput</a></li>
+          <li><a href="#select_demo">vSelect</a></li>
+          <li><a href="#checkbox_demo">vCheckbox</a></li>
+        </ul>
+      </div>
+
+      <div class="small-12 medium-9 columns">
+        <!-- Start demo content -->
+
+        <!-- sample -->
+        <!--
+        <div class="row">
+          <div class="small-12 columns">
+            <div id="sample_demo">
+              <tabs>
+                <tab heading="Result">
+                </tab>
+                <tab heading="HTML">
+                </tab>
+                <tab heading="JavaScript">
+                </tab>
+              </tabs>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    -->
+        -->
 
 
-    <!-- alert -->
-    <div class="row">
-      <div class="small-12 columns">
-        <h2>Alert</h2>
-        <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
-        <h4>Params</h4>
-        <dl>
-          <dt>canClose</dt>
-          <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
-        </dl>
-        <div id="alert_demo">
-          <tabs>
-            <tab heading="Result">
-              <alert v-ref:my-alert :can-close="true"></alert>
-              <div class="row">
-                <div class="small-12 medium-5 columns">
-                  <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
-                </div>
-                <div class="small-12 medium-5 columns">
-                  <v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"></v-select>
-                </div>
-                <div class="small-12 medium-2 columns">
-                  <button type="button" class="button expanded inline-form" v-on:click="newMessage()">Send</button>
-                </div>
-              </div>
-            </tab>
-            <tab heading="HTML">
+        <!-- alert -->
+        <div class="row">
+          <div class="small-12 columns">
+            <h2>Alert</h2>
+            <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>canClose</dt>
+              <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
+            </dl>
+            <div id="alert_demo">
+              <tabs>
+                <tab heading="Result">
+                  <alert v-ref:my-alert :can-close="true"></alert>
+                  <div class="row">
+                    <div class="small-12 medium-5 columns">
+                      <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
+                    </div>
+                    <div class="small-12 medium-5 columns">
+                      <v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"></v-select>
+                    </div>
+                    <div class="small-12 medium-2 columns">
+                      <button type="button" class="button expanded inline-form" v-on:click="newMessage()">Send</button>
+                    </div>
+                  </div>
+                </tab>
+                <tab heading="HTML">
 <pre><code class="language-html">
 &lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
 &lt;div class="row"&gt;
@@ -77,8 +99,8 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </pre></code>
-            </tab>
-            <tab heading="JavaScript">
+                </tab>
+                <tab heading="JavaScript">
 <pre><code class="language-js">
 new Vue({
   el: '#alert_demo',
@@ -101,34 +123,34 @@ new Vue({
   }
 });
 </pre></code>
-            </tab>
-          </tabs>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
         </div>
-        <hr/>
-      </div>
-    </div>
 
 
-    <!-- modal -->
-    <div class="row">
-      <div class="small-12 columns">
-        <h2>Modal</h2>
-        <!-- <p>TODO</p> -->
-        <div id="modal_demo">
-          <tabs>
-            <tab heading="Result">
-              <button type="button" class="button" v-on:click="showModal = true">Open Modal</button>
-              <modal :show.sync="showModal">
-                <div slot="header">
-                  <h3>Look, a Modal!</h3>
-                </div>
-                <div slot="content">
-                  <p>some super awesome modal content</p>
-                  <button type="button" class="button" v-on:click="showModal = false">Close</button>
-                </div>
-              </modal>
-            </tab>
-            <tab heading="HTML">
+        <!-- modal -->
+        <div class="row">
+          <div class="small-12 columns">
+            <h2>Modal</h2>
+            <!-- <p>TODO</p> -->
+            <div id="modal_demo">
+              <tabs>
+                <tab heading="Result">
+                  <button type="button" class="button" v-on:click="showModal = true">Open Modal</button>
+                  <modal :show.sync="showModal">
+                    <div slot="header">
+                      <h3>Look, a Modal!</h3>
+                    </div>
+                    <div slot="content">
+                      <p>some super awesome modal content</p>
+                      <button type="button" class="button" v-on:click="showModal = false">Close</button>
+                    </div>
+                  </modal>
+                </tab>
+                <tab heading="HTML">
 <pre><code class="language-html">
 &lt;button type="button" class="button" v-on:click="showModal = true"&gt;Open Modal&lt;/button&gt;
 
@@ -142,8 +164,8 @@ new Vue({
   &lt;/div&gt;
 &lt;/modal&gt;
 </code></pre>
-            </tab>
-            <tab heading="JavaScript">
+                </tab>
+                <tab heading="JavaScript">
 <pre><code class="language-js">
 new Vue({
   el: '#modal_demo',
@@ -152,10 +174,14 @@ new Vue({
   }
 });
 </code></pre>
-            </tab>
-          </tabs>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
         </div>
-        <hr/>
+
+        <!-- End demo content -->
       </div>
     </div>
 

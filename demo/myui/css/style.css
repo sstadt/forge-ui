@@ -6,3 +6,56 @@ code {
 pre[class*="language-"]::first-line {
   font-size: 0;
 }
+
+.docs-nav.menu {
+  background: #fafafa;
+  padding-bottom: 1rem;
+}
+
+.docs-nav.menu li small {
+  color: #999;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 60%;
+  display: block;
+  margin-top: 5px;
+}
+
+.docs-nav.menu a {
+  font-size: 0.85rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+}
+
+.docs-nav.menu a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.docs-nav.menu .current a {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.docs-nav.menu .label {
+  background-color: #ddd;
+  color: #777;
+  margin-left: 5px;
+  padding: 0.22222rem 0.44444rem 0.22222rem;
+  font-size: 0.61111rem;
+}
+
+.docs-nav-title {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: bold;
+  line-height: 1;
+  padding-left: 0.9rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+}
+
+.docs-nav-title:not(:first-child) {
+  border-top: 1px solid #e9e9e9;
+}
