@@ -23,16 +23,16 @@
       <div class="hide-for-small medium-3 columns">
         <ul class="vertical menu docs-nav">
           <li class="docs-nav-title">Components</li>
-          <li><a href="#alert_demo">Alert</a></li>
-          <li><a href="#icon_demo">Icon</a></li>
-          <li><a href="#loader_demo">Loader</a></li>
-          <li><a href="#modal_demo">Modal</a></li>
-          <li><a href="#prompt_demo">Prompt</a></li>
-          <li><a href="#tabs_demo">Tabs</a></li>
-          <li><a href="#form_demo">vForm</a></li>
-          <li><a href="#input_demo">vInput</a></li>
-          <li><a href="#select_demo">vSelect</a></li>
-          <li><a href="#checkbox_demo">vCheckbox</a></li>
+          <li><a href="#alert">Alert</a></li>
+          <li><a href="#icon">Icon</a></li>
+          <li><a href="#loader">Loader</a></li>
+          <li><a href="#modal">Modal</a></li>
+          <li><a href="#prompt">Prompt</a></li>
+          <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#form">vForm</a></li>
+          <li><a href="#input">vInput</a></li>
+          <li><a href="#select">vSelect</a></li>
+          <li><a href="#checkbox">vCheckbox</a></li>
         </ul>
       </div>
 
@@ -59,7 +59,7 @@
 
 
         <!-- alert -->
-        <div class="row">
+        <div class="row" id="alert">
           <div class="small-12 columns">
             <h2>Alert</h2>
             <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
@@ -132,10 +132,17 @@ new Vue({
 
 
         <!-- modal -->
-        <div class="row">
+        <div class="row" id="modal">
           <div class="small-12 columns">
             <h2>Modal</h2>
-            <!-- <p>TODO</p> -->
+            <p>A simple modal dialog that is controlled by a single visibility variable</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>show</dt>
+              <dd><em>Boolean; two-way; required</em><br/>Controls modal visibility; true shows the modal, false hides it.</dd>
+              <dt>modalSize</dt>
+              <dd><em>String</em><br/>Sets the size of the modal. Can be set to 'small' or 'full' to increase or decrease the size of the modal.</dd>
+            </dl>
             <div id="modal_demo">
               <tabs>
                 <tab heading="Result">
