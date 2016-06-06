@@ -38,7 +38,7 @@ gulp.task('js', function () {
 gulp.task('watch', ['default'], function () {
 	livereload.listen({ start: true });
   gulp.watch(['src/**/*.scss'], ['sass']);
-  gulp.watch(['src/js/**/*'], ['js']);
+  gulp.watch(['src/js/**/*.js', 'src/js/**/*.html'], ['js']);
 });
 
 

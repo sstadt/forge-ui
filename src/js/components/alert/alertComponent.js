@@ -24,7 +24,6 @@ module.exports = {
       } else {
         this.messages.push(message);
       }
-      console.log(this.messages);
     },
     message(message) {
       this.addMessage('', message);
