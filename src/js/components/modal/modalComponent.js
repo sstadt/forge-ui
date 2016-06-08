@@ -9,12 +9,11 @@ module.exports = {
     },
     modalSize: {
       type: String,
-      defaultsTo: 'full'
-    }
-  },
-  computed: {
-    isMenu() {
-      return this.modalSize === 'menu';
+      default: 'full'
+    },
+    transition: {
+      type: String,
+      default: 'zoom-out'
     }
   }
 };
