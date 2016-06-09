@@ -28,6 +28,12 @@ function prompt(vm, options, showInput) {
 
 module.exports = {
   template: require('./promptTemplate.html'),
+  props: {
+    transition: {
+      type: String,
+      default: 'zoom-out'
+    }
+  },
   data() {
     return {
       promptValue: '',

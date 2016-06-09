@@ -45,16 +45,28 @@
         <!--
         <div class="row" id="sample">
           <div class="small-12 columns">
+            <h2>Component Name</h2>
+            <p>Component description</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>param1</dt>
+              <dd><em>String; defaults to something</em><br/>Description or param</dd>
+            </dl>
             <div id="sample_demo">
               <tabs>
                 <tab heading="Result">
                 </tab>
                 <tab heading="HTML">
+<pre><code class="language-html">
+</code></pre>
                 </tab>
                 <tab heading="JavaScript">
+<pre><code class="language-js">
+</pre></code>
                 </tab>
               </tabs>
             </div>
+            <hr/>
           </div>
         </div>
         -->
@@ -84,6 +96,21 @@
             <dl>
               <dt>canClose</dt>
               <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
+            </dl>
+            <h4>Methods</h4>
+            <dl>
+              <dt>message</dt>
+              <dd>Display a callout message with no additional color class.</dd>
+              <dt>primary</dt>
+              <dd>Display a callout message with the primary color class.</dd>
+              <dt>secondary</dt>
+              <dd>Display a callout message with the secondary color class.</dd>
+              <dt>success</dt>
+              <dd>Display a callout message with the success color class.</dd>
+              <dt>warning</dt>
+              <dd>Display a callout message with the warning color class.</dd>
+              <dt>alert</dt>
+              <dd>Display a callout message with the alert color class.</dd>
             </dl>
             <div id="alert_demo">
               <tabs>
@@ -134,7 +161,7 @@ new Vue({
     ]
   },
   methods: {
-    newMessage(type) {
+    newMessage() {
       this.$refs.myAlert[this.selectedMessageType](this.alertMessage);
     }
   }
@@ -205,12 +232,76 @@ new Vue({
           </div>
         </div>
 
+        <!-- prompt -->
+        <div class="row" id="prompt">
+          <div class="small-12 columns">
+            <h2>Prompt</h2>
+            <p>A simple prompt component meant to replace the native prompt and confirm methods. This will allow you to style the dialog to match your site and prevent users from asking the browser to suppress further dialogs.</p>
+            <p>This component is meant to get input back from the user. If you simply need to notify the user of something, use an alert component to display the information and it's <em>canClose</em> property if the information should be dismissable.</p>
+            <p>With great power comes great responsibility. These dialogs cannot be suppressed by the browser, so take care not to inundate the user with an endless stream of repeditive dialogs.</p>
+            <h4>Methods</h4>
+            <dl>
+              <dt>ask</dt>
+              <dd>This provides a text input to the user to enter a custom answer similar to the native prompt() method. When clicking the confirm button the dialog input will be validated before calling the provided yes() function.</dd>
+              <dt>confirm</dt>
+              <dd>This provides a yes or no dialog similar to the native confirm() method.</dd>
+            </dl>
+            <p>Both prompt methods take an options object supporting the following parameters:</p>
+            <ul>
+              <li><strong>question</strong> the dialog label to present to the user</li>
+              <li><strong>yesLabel</strong> the confirm button label</li>
+              <li><strong>noLabel</strong> the cancel button label</li>
+              <li><strong>yes</strong> a function to execute when the user clicks the confirm button</li>
+              <li><strong>no</strong> a function to execute when the user clicks the cancel button</li>
+            </ul>
+            <div id="prompt_demo">
+              <tabs>
+                <tab heading="Result">
+                  <prompt v-ref:my-prompt></prompt>
+                  <button type="button" class="button" v-on:click="prompt('ask')">vm.$refs.myPrompt.ask()</button>
+                  <button type="button" class="button" v-on:click="prompt('confirm')">vm.$refs.myPrompt.confirm()</button>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;prompt v-ref:my-prompt&gt;&lt;/prompt&gt;
+&lt;button type="button" class="button" v-on:click="prompt('ask')"&gt;vm.$refs.myPrompt.ask()&lt;/button&gt;
+&lt;button type="button" class="button" v-on:click="prompt('confirm')"&gt;vm.$refs.myPrompt.confirm()&lt;/button&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#prompt_demo',
+  methods: {
+    prompt(method) {
+      this.$refs.myPrompt[method]({
+        question: 'Judge me by my size, do you?',
+        yes: function (answer) {
+          // if method is 'ask',
+          // the dialog input value will be passed as the first argument
+        },
+        no: function () {
+          // the prompt will close itself,
+          // but you can use this option to trigger side effects
+        }
+      });
+    }
+  }
+});
+</code></pre>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
         <!-- End demo content -->
       </div>
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/lodash.js"></script>
     <script type="text/javascript" src="js/prism.js"></script>
     <script type="text/javascript" src="../../dist/js/myui.js"></script>
     <script type="text/javascript" src="js/script.js"></script>

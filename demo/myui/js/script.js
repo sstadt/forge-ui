@@ -16,7 +16,7 @@ new Vue({
     ]
   },
   methods: {
-    newMessage(type) {
+    newMessage() {
       this.$refs.myAlert[this.selectedMessageType](this.alertMessage);
     }
   }
@@ -26,5 +26,24 @@ new Vue({
   el: '#modal_demo',
   data: {
     showModal: false
+  }
+});
+
+new Vue({
+  el: '#prompt_demo',
+  methods: {
+    prompt(method) {
+      this.$refs.myPrompt[method]({
+        question: 'Judge me by my size, do you?',
+        yes: function (answer) {
+          // if method is 'ask',
+          // the dialog input value will be passed as the first argument
+        },
+        no: function () {
+          // the prompt will close itself,
+          // but you can use this option to trigger side effects
+        }
+      });
+    }
   }
 });
