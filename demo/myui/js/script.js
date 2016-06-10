@@ -71,3 +71,10 @@ new Vue({
     ]
   }
 });
+
+new Vue({
+  el: '#checkbox_demo',
+  data: {
+    checked: false
+  }
+});

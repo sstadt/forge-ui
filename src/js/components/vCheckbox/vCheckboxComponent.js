@@ -22,18 +22,7 @@ module.exports = {
       defaultsTo: false
     }
   },
-  watch: {
-    checked(val) {
-      this.icon = (val === true) ? 'checked' : 'unchecked';
-    }
-  },
-  ready() {
-    this.icon = (this.checked === true) ? 'checked' : 'unchecked';
-  },
   methods: {
-    toggle() {
-      this.checked = !this.checked;
-    },
     isValid() {
       this.isError = (this.required) ? !this.checked : false;
       return !this.isError;

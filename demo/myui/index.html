@@ -459,6 +459,48 @@ new Vue({
         </div>
 
 
+        <!-- checkbox -->
+        <div class="row" id="checkbox">
+          <div class="small-12 columns">
+            <h2>vCheckbox</h2>
+            <p>Renders a checkbox input</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>checked</dt>
+              <dd><em>Boolean; required; two-way</em><br/>True if checked; false if not</dd>
+              <dt>label</dt>
+              <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
+              <dt>required</dt>
+              <dd><em>Boolean; defaults to false</em><br/>If true, shows an error when not checked; see <a href="#form">forms</a></dd>
+            </dl>
+            <div id="checkbox_demo">
+              <tabs>
+                <tab heading="Result">
+                  <v-checkbox :checked.sync="checked" label="My checkbox"></v-checkbox>
+                  <p>checked: {{ checked }}</p>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;v-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/v-checkbox&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#checkbox_demo',
+  data: {
+    checked: false
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+
         <!-- End demo content -->
       </div>
     </div>
