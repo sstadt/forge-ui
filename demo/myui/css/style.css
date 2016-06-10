@@ -63,3 +63,7 @@ pre[class*="language-"]::first-line {
 hr {
   margin-bottom: 80px;
 }
+
+h1 + hr {
+  margin-bottom: 20px;
+}

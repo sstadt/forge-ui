@@ -53,6 +53,18 @@ new Vue({
 });
 
 new Vue({
+  el: '#form_demo',
+  data: {
+    message: ''
+  },
+  methods: {
+    showMessage() {
+      this.$refs.myAlert.success(this.message);
+    }
+  }
+});
+
+new Vue({
   el: '#input_demo',
   data: {
     email: ''

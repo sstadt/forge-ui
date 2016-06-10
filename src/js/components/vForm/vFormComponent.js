@@ -10,7 +10,7 @@ module.exports = {
       type: String,
       defaultsTo: ''
     },
-    ajax: {
+    async: {
       type: Boolean,
       defaultsTo: false
     },
@@ -20,11 +20,11 @@ module.exports = {
   },
   methods: {
     submitForm(event) {
-      if (this.ajax || !this.isValid()) {
+      if (this.async || !this.isValid()) {
         event.preventDefault();
       }
 
-      if (this.ajax && this.isValid() && typeof this.submitCallback === 'function') {
+      if (this.async && this.isValid() && typeof this.submitCallback === 'function') {
         this.submitCallback();
       }
     },
