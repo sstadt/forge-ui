@@ -6,10 +6,6 @@ module.exports = {
       type: String,
       required: true
     },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     clickCallback: {
       type: Function
     }
@@ -33,7 +29,6 @@ module.exports = {
   created() {
     this.$parent.tabs.push({
       heading: this.heading,
-      disabled: this.disabled,
       active: false
     });
   },

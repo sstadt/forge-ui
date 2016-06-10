@@ -47,3 +47,14 @@ new Vue({
     }
   }
 });
+
+new Vue({
+  el: '#tabs_demo'
+});
+
+new Vue({
+  el: '#input_demo',
+  data: {
+    email: ''
+  }
+});

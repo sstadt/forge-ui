@@ -32,21 +32,12 @@ module.exports = {
     equalTo: {
       type: Object,
       defaultsTo: null
-    },
-    simple: {
-      type: Boolean,
-      defaultsTo: false
     }
   },
   data() {
     return {
       error: ''
     };
-  },
-  filters: {
-    isSimple(val) {
-      return (this.simple) ? '' : val;
-    }
   },
   methods: {
     isValid() {
