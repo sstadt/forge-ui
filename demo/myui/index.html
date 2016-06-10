@@ -409,6 +409,55 @@ new Vue({
           </div>
         </div>
 
+        <!-- select -->
+        <div class="row" id="select">
+          <div class="small-12 columns">
+            <h2>vSelect</h2>
+            <p>Renders a select input given a set of options</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>label</dt>
+              <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
+              <dt>selected</dt>
+              <dd><em>String; required; two-way</em><br/>The selected value</dd>
+              <dt>options</dt>
+              <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a label and value parameter</dd>
+              <dt>required</dt>
+              <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
+            </dl>
+            <div id="select_demo">
+              <tabs>
+                <tab heading="Result">
+                  <v-select :selected.sync="selectedOption" :options="selectOptions"></v-select>
+                  <p>selected: {{ selectedOption }}</p>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;v-select :selected.sync="selectedOption" :options="selectOptions"&gt;&lt;/v-select&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#select_demo',
+  data: {
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ]
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
 
         <!-- End demo content -->
       </div>

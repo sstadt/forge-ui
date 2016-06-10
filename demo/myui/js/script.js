@@ -58,3 +58,16 @@ new Vue({
     email: ''
   }
 });
+
+new Vue({
+  el: '#select_demo',
+  data: {
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ]
+  }
+});
