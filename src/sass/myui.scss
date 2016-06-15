@@ -11,7 +11,7 @@
 // @include foundation-accordion-menu;
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
-// @include foundation-button-group;
+@include foundation-button-group;
 @include foundation-callout;
 @include foundation-close-button;
 @include foundation-menu;
@@ -41,14 +41,11 @@
 
 @import "_settings";
 
-// Typography
-// ----------------
-@import "typography/lists";
-
 // UI
 // ----------------
 @import "ui/transitions";
 @import "ui/buttons";
+@import "ui/lists";
 
 // Componets
 // ----------------
