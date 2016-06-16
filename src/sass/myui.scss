@@ -1,7 +1,6 @@
 
 @import "foundation";
 
-// TODO: trim this down to only what's used, comment out pieces that individual apps should enable on their own
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;

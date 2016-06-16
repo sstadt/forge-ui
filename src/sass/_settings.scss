@@ -21,25 +21,183 @@ $white: #fefefe !default;
 /// @group global
 ////
 
-$global-font-size: 100% !default;        /// Font size attribute applied to `<html>` and `<body>`
-$global-width: rem-calc(1200) !default;  /// Global width of your site
-$global-lineheight: 1.5 !default;        /// Default line height for all type
+$global-font-size: 100% !default;                          /// Font size attribute applied to `<html>` and `<body>`
+$global-width: rem-calc(1200) !default;                    /// Global width of your site
+$global-lineheight: 1.5 !default;                          /// Default line height for all type
 
-$body-background: $white !default;       /// Background color of the body
-$body-font-color: $black !default;       /// Text color of the body
+$body-background: $white !default;                         /// Background color of the body
+$body-font-color: $black !default;                         /// Text color of the body
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif !default; /// Font stack of the body
-$body-antialiased: true !default;        /// Set to `true` to enable antialiased type, using the `-webkit-font-smoothing` and `-moz-osx-font-smoothing` CSS properties
+$body-antialiased: true !default;                          /// Set to `true` to enable antialiased type, using the `-webkit-font-smoothing` and `-moz-osx-font-smoothing` CSS properties
 
-$global-margin: 1rem !default;           /// Global value used for margin on components
-$global-padding: 1rem !default;          /// Global value used for padding on components
-$global-weight-normal: normal !default;  /// Global font weight used for normal type
-$global-weight-bold: bold !default;      /// Global font weight used for bold type
-$global-radius: 0 !default;              /// Global value used for all elements that have a border radius
-$global-text-direction: ltr !default;    /// Sets the text direction of the CSS. Can be either `ltr` or `rtl`
-$global-flexbox: false !default;         /// Enables flexbox for components that support it
+$global-margin: 1rem !default;                             /// Global value used for margin on components
+$global-padding: 1rem !default;                            /// Global value used for padding on components
+$global-weight-normal: normal !default;                    /// Global font weight used for normal type
+$global-weight-bold: bold !default;                        /// Global font weight used for bold type
+$global-radius: 0 !default;                                /// Global value used for all elements that have a border radius
+$global-text-direction: ltr !default;                      /// Sets the text direction of the CSS. Can be either `ltr` or `rtl`
+$global-flexbox: false !default;                           /// Enables flexbox for components that support it
+
+////
+/// @group grid
+////
+
+$grid-row-width: $global-width !default;                   /// The maximum width of a row.
+$grid-column-count: 12 !default;                           /// The default column count of a grid.
+$grid-column-gutter: (small: 20px, medium: 30px) !default; /// The amount of space between columns at different screen sizes.
+$grid-column-align-edge: true !default;                    /// If `true`, the last column in a row will align to the opposite edge of the row.
+$block-grid-max: 8 !default;                               /// The highest number of `.x-up` classes available when using the block grid CSS.
+
+////
+/// @group typography-helpers
+////
+
+$lead-font-size: $global-font-size * 1.25 !default;        /// Default font size for lead paragraphs.
+$lead-lineheight: 1.6 !default;                            /// Default line height for lead paragraphs.
+$subheader-lineheight: 1.4 !default;                       /// Default line height for subheaders.
+$subheader-color: $dark-gray !default;                     /// Default font color for subheaders.
+$subheader-font-weight: $global-weight-normal !default;    /// Default font weight for subheaders.
+$subheader-margin-top: 0.2rem !default;                    /// Default top margin for subhheaders.
+$subheader-margin-bottom: 0.5rem !default;                 /// Default bottom margin for subheaders.
+$stat-font-size: 2.5rem !default;                          /// Default font size for statistic numbers.
+
+////
+/// @group forms
+////
+
+$input-color: $black !default;                             /// Font color of text inputs.
+$input-placeholder-color: $medium-gray !default;           /// Font color of placeholder text within text inputs.
+$input-font-family: inherit !default;                      /// Font family of text inputs.
+$input-font-size: rem-calc(16) !default;                   /// Font size of text inputs.
+$input-background: $white !default;                        /// Background color of text inputs.
+$input-background-focus: $white !default;                  /// Background color of focused of text inputs.
+$input-background-disabled: $light-gray !default;          /// Background color of disabled text inputs.
+$input-border: 1px solid $medium-gray !default;            /// Border around text inputs.
+$input-border-focus: 1px solid $dark-gray !default;        /// Border around focused text inputs.
+$input-shadow: inset 0 1px 2px rgba($black, 0.1) !default; /// Box shadow inside text inputs when not focused.
+$input-shadow-focus: 0 0 5px $medium-gray !default;        /// Box shadow outside text inputs when focused.
+$input-cursor-disabled: not-allowed !default;              /// Cursor to use when hovering over a disabled text input.
+$input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out !default; /// Properties to transition on text inputs.
+$input-number-spinners: true !default;                     /// Enables the up/down buttons that Chrome and Firefox add to `<input type='number'>` elements.
+$input-radius: $global-radius !default;                    /// Radius for text inputs.
+$input-background-invalid: map-get($foundation-palette, alert) !default; /// Background color to use for invalid text inputs.
+$input-error-color: map-get($foundation-palette, alert) !default; /// Default font color for form error text.
+$input-error-font-size: rem-calc(12) !default;             /// Default font size for form error text.
+$input-error-font-weight: $global-weight-bold !default;    /// Default font weight for form error text.
+$input-prefix-color: $black !default;                      /// Color of labels prefixed to an input.
+$input-prefix-background: $light-gray !default;            /// Background color of labels prefixed to an input.
+$input-prefix-border: 1px solid $medium-gray !default;     /// Border around labels prefixed to an input.
+$input-prefix-padding: 1rem !default;                      /// Left/right padding of an pre/postfixed input label
+
+$select-background: $white !default;                       /// Background color for select menus.
+$select-triangle-color: $dark-gray !default;               /// Color of the dropdown triangle inside select menus. Set to `transparent` to remove it entirely.
+$select-radius: $global-radius !default;                   /// Default radius for select menus.
+
+$form-label-color: $black !default;                        /// Color for form labels.
+$form-label-font-size: rem-calc(14) !default;              /// Font size for form labels.
+$form-label-font-weight: $global-weight-normal !default;   /// Font weight for form labels.
+$form-label-line-height: 1.8 !default;                     /// Line height for form labels. The higher the number, the more space between the label and its input field.
+$form-label-color-invalid: map-get($foundation-palette, alert) !default; /// Color to use for labels of invalid inputs.
+
+$helptext-color: $black !default;                          /// Default color for help text.
+$helptext-font-size: rem-calc(13) !default;                /// Default font size for help text.
+$helptext-font-style: italic !default;                     /// Default font style for help text.
+
+$fieldset-border: 1px solid $medium-gray !default;         /// Default border around custom fieldsets.
+$fieldset-padding: rem-calc(20) !default;                  /// Default padding inside custom fieldsets.
+$fieldset-margin: rem-calc(18 0) !default;                 /// Default margin around custom fieldsets.
+
+$legend-padding: rem-calc(0 3) !default;                   /// Default padding between the legend text and fieldset border.
+
+$abide-inputs: true !default;                              /// Sets if error styles should be added to inputs.
+$abide-labels: true !default;                              /// Sets if error styles should be added to labels.
+
+////
+/// @group button
+////
+
+$button-sizes: (
+  tiny: 0.6rem,
+  small: 0.75rem,
+  default: 0.9rem,
+  large: 1.25rem,
+) !default;                                                /// Sizes for buttons.
+$button-padding: 0.85em 1em !default;                      /// Padding inside buttons.
+$button-margin: 0 0 $global-margin 0 !default;             /// Margin around buttons.
+$button-fill: solid !default;                              /// Default fill for buttons. Can either be `solid` or `hollow`.
+$button-background: $primary-color !default;               /// Default background color for buttons.
+$button-background-hover: scale-color($button-background, $lightness: -15%) !default; /// Background color on hover for buttons.
+$button-color: $white !default;                            /// Font color for buttons.
+$button-color-alt: $black !default;                        /// Font color for buttons, if the background is light.
+$button-radius: $global-radius !default;                   /// Border radius for buttons, defaulted to global-radius.
+$button-opacity-disabled: 0.25 !default;                   /// opacity for a disabled button.
+
+////
+/// @group button-group
+////
+
+$buttongroup-margin: 1rem !default;                        /// Margin for button groups.
+$buttongroup-spacing: 1px !default;                        /// Margin between buttons in a button group.
+$buttongroup-child-selector: '.button' !default;           /// Selector for the buttons inside a button group.
+$buttongroup-expand-max: 6 !default;                       /// Maximum number of buttons that can be in an even-width button group.
+
+////
+/// @group callout
+////
+
+$callout-background: $white !default;                      /// Default background color.
+$callout-background-fade: 85% !default;                    /// Default fade value for callout backgrounds.
+$callout-border: 1px solid rgba($black, 0.25) !default;    /// Default border style for callouts.
+$callout-margin: 0 0 1rem 0 !default;                      /// Default bottom margin for callouts.
+$callout-padding: 1rem !default;                           /// Default inner padding for callouts.
+$callout-font-color: $body-font-color !default;            /// Default font color for callouts.
+$callout-font-color-alt: $body-background !default;        /// Default font color for callouts, if the callout has a dark background.
+$callout-radius: $global-radius !default;                  /// Default border radius for callouts.
+$callout-link-tint: 30% !default;                          /// Amount to tint links used within colored panels. Set to `false` to disable this feature.
+
+////
+/// @group close-button
+////
+
+$closebutton-position: right top !default;                 /// Default position of the close button. The first value should be `right` or `left`, and the second value should be `top` or `bottom`.
+$closebutton-offset-horizontal: 1rem !default;             /// Right (or left) offset for a close button.
+$closebutton-offset-vertical: 0.5rem !default;             /// Top (or bottom) offset for a close button.
+$closebutton-size: 2em !default;                           /// Default font size of the close button.
+$closebutton-lineheight: 1 !default;                       /// The line-height of the close button. It affects the spacing of the element.
+$closebutton-color: $dark-gray !default;                   /// Default color of the close button.
+$closebutton-color-hover: $black !default;                 /// Default color of the close button when being hovered on.
+
+////
+/// @group menu
+////
+
+$menu-margin: 0 !default;                                  /// Margin of a menu.
+$menu-margin-nested: 1rem !default;                        /// Left-hand margin of a nested menu.
+$menu-item-padding: 0.7rem 1rem !default;                  /// Padding for items in a menu.
+$menu-item-color-active: $white !default;                  /// Text color of an active menu item.
+$menu-item-background-active: map-get($foundation-palette, primary) !default; /// Background color of an active menu item.
+$menu-icon-spacing: 0.25rem !default;                      /// Spacing between an icon and text in a menu item.
+
+////
+/// @group table
+////
+
+$table-background: $white  !default;                       /// Default color for table background.
+$table-color-scale: 5% !default;                           /// Default scale for darkening the striped table rows and the table border.
+$table-border: 1px solid smart-scale($table-background, $table-color-scale) !default; /// Default style for table border.
+$table-padding: rem-calc(8 10 10) !default;                /// Default padding for table.
+$table-hover-scale: 2% !default;                           /// Default scale for darkening the table rows on hover.
+$table-row-hover: darken($table-background, $table-hover-scale) !default; /// Default color of standard rows on hover.
+$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale) !default; /// Default color of striped rows on hover.
+$table-striped-background: smart-scale($table-background, $table-color-scale) !default; /// Default background color for striped rows.
+$table-stripe: even !default;                              /// Default value for showing the stripe on rows of the tables, excluding the header and footer. If even, the even rows will have a background color. If odd, the odd rows will have a background color. If empty, or any other value, the table rows will have no striping.
+$table-head-background: smart-scale($table-background, $table-color-scale / 2) !default; /// Default color for header background.
+$table-foot-background: smart-scale($table-background, $table-color-scale) !default; /// Default color for footer background.
+$table-head-font-color: $body-font-color !default;         /// Default font color for header.
+$show-header-for-stacked: false !default;                  /// Default value for showing the header when using stacked tables.
 
 ////
 /// @group myui
 ////
 
-$loaderColor: black !default;
+$loaderColor: $black !default;
