@@ -1,21 +1,11 @@
 
-
-/* Settings
--------------------------------- */
-
-$promptBackgroundColor: white; // TODO change to content background variable
-$promptOverlayColor: rgba(0, 0, 0, 0.6);
-
-/* Styling
--------------------------------- */
-
 .prompt {
   position: fixed;
 }
 
 .prompt-overlay {
   position: absolute;
-  background-color: $promptOverlayColor;
+  background-color: $prompt-overlay-color;
 }
 
 .prompt, .prompt-overlay {
@@ -27,10 +17,10 @@ $promptOverlayColor: rgba(0, 0, 0, 0.6);
 
 .prompt-content {
   position: absolute;
-  width: rem-calc(400);
+  width: $prompt-width;
   top: 50%;
   left: 50%;
-  padding: 30px; // TODO change to global content padding variable
+  padding: $prompt-padding;
   transform: translateX(-50%) translateY(-50%);
-  background-color: $promptBackgroundColor;
+  background-color: $prompt-background-color;
 }

@@ -14,7 +14,7 @@
       padding: 0;
 
       &:not(:last-child) {
-        padding-bottom: 4px;
+        padding-bottom: $alert-message-padding;
       }
     }
   }

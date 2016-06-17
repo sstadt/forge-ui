@@ -1,9 +1,4 @@
 
-// TODO move to globals
-$modalBackgroundColor: white;
-$modalOverlayColor: rgba(0, 0, 0, 0.6);
-$zIndexModal: 1000;
-
 .modal {
   position: fixed;
   width: 100%;
@@ -11,8 +6,8 @@ $zIndexModal: 1000;
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: $modalOverlayColor;
-  z-index: $zIndexModal;
+  background-color: $modal-overlay-color;
+  z-index: $modal-z-index;
 }
 
 .modal-content {
@@ -21,12 +16,12 @@ $zIndexModal: 1000;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   margin: 0 auto;
-  padding: 30px;
-  max-width: rem-calc(580);
-  background-color: $modalBackgroundColor;
+  padding: $modal-padding;
+  max-width: $modal-size-default;
+  background-color: $modal-background-color;
 
   &.small {
-    max-width: rem-calc(300);
+    max-width: $modal-size-small;
   }
 
   &.full {
@@ -43,6 +38,4 @@ $zIndexModal: 1000;
     text-align: center;
     cursor: pointer;
   }
-
-  // TODO add padding on top and bottom for desktop... and tablet??
 }

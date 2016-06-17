@@ -1,32 +1,4 @@
 
-.checkbox {
-  height: rem-calc(20);
-  position: relative;
-
-  svg {
-    position: absolute;
-    top: 2px;
-    left: 0;
-  }
-
-  svg, span {
-    cursor: pointer;
-  }
-
-  span {
-    display: inline-block;
-    padding-left: rem-calc(24);
-    line-height: rem-calc(20);
-    font-size: rem-calc(14);
-  }
-
-  &.error {
-    svg {
-      fill: map-get($foundation-palette, alert);
-    }
-
-    span {
-      color: map-get($foundation-palette, alert);
-    }
-  }
+.checkbox.error {
+  color: map-get($foundation-palette, alert);
 }

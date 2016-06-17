@@ -1,7 +1,7 @@
 
 .inline-list {
   margin: 0;
-  padding: 0 0 1rem;
+  padding: 0 0 $inline-list-padding;
 
   li {
     display: inline-block;
@@ -9,7 +9,7 @@
     list-style: none;
 
     &:not(:last-child) {
-      margin-right: 8px;
+      margin-right: $inline-list-spacing;
     }
   }
 }

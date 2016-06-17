@@ -1,45 +1,29 @@
 
-/* Settings
--------------------------------- */
-
-// TODO move to a global
-$tabNavFontColor: #999;
-$tabNavFontColorHover: black;
-$tabNavFontColorActive: black;
-// $tabNavBackgroundColor: white;
-// $tabNavBackgroundColorHover: #bbb;
-// $tabNavBackgroundColorActive: #999;
-$tabNavBorderColor: black;
-$tabNavPadding: rem-calc(4) rem-calc(10);
-
-/* Styling
--------------------------------- */
-
-.tabs {
-  margin-bottom: 20px;
+.tab {
+  padding-top: $tab-content-padding;
 }
 
 ul.tab-nav {
   width: 100%;
   list-style: none;
   padding: 0;
-  border-bottom: 1px solid $tabNavBorderColor;
-  margin: 0 0 20px;
+  border-bottom: 1px solid $tab-nav-border-color;
+  margin: 0;
 
   li {
     margin: 0;
     display: inline-block;
     cursor: pointer;
-    color: $tabNavFontColor;
-    padding: $tabNavPadding;
+    color: $tab-nav-font-color;
+    padding: $tab-nav-padding;
 
     &.active {
-      color: $tabNavFontColorActive;
-      border-bottom: 3px solid $tabNavBorderColor;
+      color: $tab-nav-font-color-active;
+      border-bottom: 3px solid $tab-nav-border-color;
     }
 
     &:hover {
-      color: $tabNavFontColorHover;
+      color: $tab-nav-font-color-hover;
     }
   }
 }
