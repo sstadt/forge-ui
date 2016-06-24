@@ -45,6 +45,42 @@ describe('The alert component', function () {
         expect(componentInstance.messages).toEqual([]);
       });
     });
+
+    describe('#addMessage', function () {
+      beforeEach(function () {
+        componentInstance.addMessage('foo', 'bar');
+      });
+
+      it('should set the message type', function () {
+        expect(componentInstance.type).toEqual('foo');
+      });
+
+      it('should add an error message', function () {
+        expect(componentInstance.messages).toEqual(['bar']);
+      });
+    });
+
+    describe('shortcut methods', function () {
+      beforeEach(function () {
+        spyOn(componentInstance, 'addMessage');
+      });
+
+      describe('#message', function () {
+        // it('should call the #addMessage method with no type', function () {
+        //   componentInstance.message('bar');
+        //   expect(componentInstance.addMessage).toHaveBeenCalledWith('', 'bar');
+        // });
+      });
+    });
+
+
+    // addMessage(type, message)
+    // message(message)
+    // primary(message)
+    // secondary(message)
+    // success(message)
+    // warning(message)
+    // alert(message)
   });
 
 });
