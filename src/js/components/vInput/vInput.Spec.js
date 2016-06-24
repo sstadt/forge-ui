@@ -73,7 +73,7 @@ describe('The vInput component', function () {
       });
 
       it('should default to false', function () {
-        expect(component.props.required.defaultsTo).toEqual(false);
+        expect(component.props.required.default).toEqual(false);
       });
     });
 
@@ -83,7 +83,7 @@ describe('The vInput component', function () {
       });
 
       it('should default to null', function () {
-        expect(component.props.equalTo.defaultsTo).toEqual(null);
+        expect(component.props.equalTo.default).toEqual(null);
       });
     });
   });

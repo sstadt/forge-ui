@@ -19,7 +19,7 @@ module.exports = {
     },
     required: {
       type: Boolean,
-      defaultsTo: false
+      default: false
     }
   },
   methods: {

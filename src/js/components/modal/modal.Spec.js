@@ -37,7 +37,7 @@ describe('The modal component', function () {
       });
 
       it('should default to full', function () {
-        expect(component.props.modalSize.defaultsTo).toEqual('full');
+        expect(component.props.modalSize.default).toEqual('full');
       });
     });
   });

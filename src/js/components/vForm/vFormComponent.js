@@ -4,15 +4,15 @@ module.exports = {
   props: {
     method: {
       type: String,
-      defaultsTo: 'POST'
+      default: 'POST'
     },
     action: {
       type: String,
-      defaultsTo: ''
+      default: ''
     },
     async: {
       type: Boolean,
-      defaultsTo: false
+      default: false
     },
     submitCallback: {
       type: Function

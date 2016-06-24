@@ -4,7 +4,7 @@ module.exports = {
   props: {
     canClose: {
       type: Boolean,
-      defaultsTo: false
+      default: false
     }
   },
   data() {

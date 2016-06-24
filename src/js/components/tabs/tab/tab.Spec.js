@@ -28,20 +28,6 @@ describe('The tab component', function () {
         expect(component.props.heading.type).toEqual(String);
       });
     });
-
-    describe('disabled', function () {
-      it('should exist', function () {
-          expect(component.props.disabled).toEqual(jasmine.any(Object));
-      });
-
-      it('should be a boolean', function () {
-        expect(component.props.disabled.type).toEqual(Boolean);
-      });
-
-      it('should default to false', function () {
-        expect(component.props.disabled.default).toEqual(false);
-      });
-    });
   });
 
   describe('methods', function () {

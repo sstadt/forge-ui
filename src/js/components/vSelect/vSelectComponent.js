@@ -4,7 +4,7 @@ module.exports = {
   props: {
     label: {
       type: String,
-      defaultsTo: ''
+      default: ''
     },
     selected: {
       type: String,
@@ -17,7 +17,7 @@ module.exports = {
     },
     required: {
       type: Boolean,
-      defaultsTo: false
+      default: false
     }
   },
   data() {

@@ -5,6 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
 var browserify = require('gulp-browserify');
 var babel      = require('gulp-babel');
+var Server     = require('karma').Server;
 
 
 gulp.task('sass', function () {
@@ -32,6 +33,14 @@ gulp.task('js', function () {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/js'))
     .pipe(livereload());
+});
+
+
+gulp.task('test', function (done) {
+  return new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 

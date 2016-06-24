@@ -25,7 +25,7 @@ describe('The vForm component', function () {
       });
 
       it('should default to POST', function () {
-        expect(component.props.method.defaultsTo).toEqual('POST');
+        expect(component.props.method.default).toEqual('POST');
       });
     });
 
@@ -35,17 +35,17 @@ describe('The vForm component', function () {
       });
 
       it('should default to an empty string', function () {
-        expect(component.props.action.defaultsTo).toEqual('');
+        expect(component.props.action.default).toEqual('');
       });
     });
 
-    describe('ajax', function () {
+    describe('async', function () {
       it('should be a boolean', function () {
-        expect(component.props.ajax.type).toEqual(Boolean);
+        expect(component.props.async.type).toEqual(Boolean);
       });
 
       it('should default to false', function () {
-        expect(component.props.ajax.defaultsTo).toEqual(false);
+        expect(component.props.async.default).toEqual(false);
       });
     });
 
@@ -70,30 +70,30 @@ describe('The vForm component', function () {
         };
       });
 
-      it('should prevent default if this is an ajax form', function () {
-        componentInstance.ajax = true;
+      it('should prevent default if this is an async form', function () {
+        componentInstance.async = true;
         componentInstance.submitForm(mockEvent);
         expect(mockEvent.preventDefault).toHaveBeenCalled();
       });
 
       it('should prevent default if the form is not valid', function () {
         spyOn(componentInstance, 'isValid').and.returnValue(false);
-        componentInstance.ajax = false;
+        componentInstance.async = false;
         componentInstance.submitForm(mockEvent);
         expect(mockEvent.preventDefault).toHaveBeenCalled();
       });
 
-      it('should not prevent default if the form is not valid and this is not an ajax form', function () {
+      it('should not prevent default if the form is not valid and this is not an async form', function () {
         spyOn(componentInstance, 'isValid').and.returnValue(true);
-        componentInstance.ajax = false;
+        componentInstance.async = false;
         componentInstance.submitForm(mockEvent);
         expect(mockEvent.preventDefault).not.toHaveBeenCalled();
       });
 
-      it('should call the submitCallback if this is an ajax form, the form is valid, and the callback is a function', function () {
+      it('should call the submitCallback if this is an async form, the form is valid, and the callback is a function', function () {
         spyOn(componentInstance, 'isValid').and.returnValue(true);
         componentInstance.submitCallback = jasmine.createSpy();
-        componentInstance.ajax = true;
+        componentInstance.async = true;
         componentInstance.submitForm(mockEvent);
         expect(componentInstance.submitCallback).toHaveBeenCalled();
       });

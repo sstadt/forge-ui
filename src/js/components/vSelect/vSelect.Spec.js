@@ -25,7 +25,7 @@ describe('The vSelect component', function () {
       });
 
       it('should default to an empty string', function () {
-        expect(component.props.label.defaultsTo).toEqual('');
+        expect(component.props.label.default).toEqual('');
       });
     });
 
@@ -59,7 +59,7 @@ describe('The vSelect component', function () {
       });
 
       it('should default to false', function () {
-        expect(component.props.required.defaultsTo).toEqual(false);
+        expect(component.props.required.default).toEqual(false);
       });
     });
   });

@@ -1,5 +1,4 @@
 
-var constants = require('../../../config/constants.js');
 var promptComponent = require('./promptComponent.js');
 
 Vue.config.silent = true;

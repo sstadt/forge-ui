@@ -49,7 +49,7 @@ describe('The vCheckbox component', function () {
       });
 
       it('should default to false', function () {
-        expect(component.props.required.defaultsTo).toEqual(false);
+        expect(component.props.required.default).toEqual(false);
       });
     });
   });
@@ -59,16 +59,6 @@ describe('The vCheckbox component', function () {
 
     beforeEach(function () {
       componentInstance = new Vue(component);
-    });
-
-    describe('#toggle', function () {
-      it('should toggle the value of the checked prop', function () {
-        componentInstance.checked = true;
-        componentInstance.toggle();
-        expect(componentInstance.checked).toEqual(false);
-        componentInstance.toggle();
-        expect(componentInstance.checked).toEqual(true);
-      });
     });
 
     describe('#isValid', function () {

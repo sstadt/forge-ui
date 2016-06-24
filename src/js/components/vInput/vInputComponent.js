@@ -27,11 +27,11 @@ module.exports = {
     },
     required: {
       type: Boolean,
-      defaultsTo: false
+      default: false
     },
     equalTo: {
       type: Object,
-      defaultsTo: null
+      default: null
     }
   },
   data() {
