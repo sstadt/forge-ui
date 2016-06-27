@@ -18,6 +18,23 @@ describe('The prompt component', function () {
     expect(component.template).toEqual(jasmine.any(String));
   });
 
+  describe('props', function () {
+    it('should be an object', function () {
+      expect(component.props).toEqual(jasmine.any(Object));
+    });
+
+    describe('transition', function () {
+      it('should be a string', function () {
+        console.log(component.props);
+        expect(component.props.transition.type).toEqual(String);
+      });
+
+      it('should default to zoom-out', function () {
+        expect(component.props.transition.default).toEqual('zoom-out');
+      });
+    });
+  });
+
   describe('data', function () {
     var data;
 
@@ -29,12 +46,28 @@ describe('The prompt component', function () {
       expect(data.promptValue).toEqual('');
     });
 
+    it('should set questionLabel to an empty string', function () {
+      expect(data.questionLabel).toEqual('');
+    });
+
+    it('should set yesLabel to a string', function () {
+      expect(data.yesLabel).toEqual(jasmine.any(String));
+    });
+
+    it('should set noLabel to a string', function () {
+      expect(data.noLabel).toEqual(jasmine.any(String));
+    });
+
     it('should set show to false', function () {
       expect(data.show).toEqual(false);
     });
 
     it('should set confirmed to false', function () {
       expect(data.confirmed).toEqual(false);
+    });
+
+    it('should set showInput to false', function () {
+      expect(data.showInput).toEqual(false);
     });
 
     it('should have an ask function to handle requests', function () {

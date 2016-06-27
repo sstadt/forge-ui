@@ -37,9 +37,9 @@ module.exports = {
   data() {
     return {
       promptValue: '',
-      questionLabel: defaultLabels.questionLabel,
-      yesLabel: defaultLabels.yesLabel,
-      noLabel: defaultLabels.noLabel,
+      questionLabel: defaultLabels.question,
+      yesLabel: defaultLabels.yes,
+      noLabel: defaultLabels.no,
       show: false,
       confirmed: false,
       showInput: false,

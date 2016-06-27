@@ -19,6 +19,10 @@ describe('The alert component', function () {
   });
 
   describe('props', function () {
+    it('should be an object', function () {
+      expect(component.props).toEqual(jasmine.any(Object));
+    });
+
     describe('canClose', function () {
       it('should be a boolean', function () {
         expect(component.props.canClose.type).toEqual(Boolean);
