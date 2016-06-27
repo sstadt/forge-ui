@@ -30,11 +30,28 @@ describe('The alert component', function () {
     });
   });
 
+  describe('data', function () {
+    var data;
+
+    beforeEach(function () {
+      data = component.data();
+    });
+
+    it('should set messages to an empty array', function () {
+      expect(data.messages).toEqual([]);
+    });
+
+    it('should set type to to an empty string', function () {
+      expect(data.type).toEqual('');
+    });
+  });
+
   describe('methods', function () {
     var componentInstance;
 
     beforeEach(function () {
       componentInstance = new Vue(component);
+      spyOn(componentInstance, 'addMessage').and.callThrough();
     });
 
     describe('#close', function () {
@@ -60,27 +77,47 @@ describe('The alert component', function () {
       });
     });
 
-    describe('shortcut methods', function () {
-      beforeEach(function () {
-        spyOn(componentInstance, 'addMessage');
-      });
-
-      describe('#message', function () {
-        // it('should call the #addMessage method with no type', function () {
-        //   componentInstance.message('bar');
-        //   expect(componentInstance.addMessage).toHaveBeenCalledWith('', 'bar');
-        // });
+    describe('#message', function () {
+      it('should call the #addMessage method with no type', function () {
+        componentInstance.message('bar');
+        expect(componentInstance.addMessage).toHaveBeenCalledWith('', 'bar');
       });
     });
 
+    describe('#primary', function () {
+      it('should call the #addMessage method with no type', function () {
+        componentInstance.primary('bar');
+        expect(componentInstance.addMessage).toHaveBeenCalledWith('primary', 'bar');
+      });
+    });
 
-    // addMessage(type, message)
-    // message(message)
-    // primary(message)
-    // secondary(message)
-    // success(message)
-    // warning(message)
-    // alert(message)
+    describe('#secondary', function () {
+      it('should call the #addMessage method with no type', function () {
+        componentInstance.secondary('bar');
+        expect(componentInstance.addMessage).toHaveBeenCalledWith('secondary', 'bar');
+      });
+    });
+
+    describe('#success', function () {
+      it('should call the #addMessage method with no type', function () {
+        componentInstance.success('bar');
+        expect(componentInstance.addMessage).toHaveBeenCalledWith('success', 'bar');
+      });
+    });
+
+    describe('#warning', function () {
+      it('should call the #addMessage method with no type', function () {
+        componentInstance.warning('bar');
+        expect(componentInstance.addMessage).toHaveBeenCalledWith('warning', 'bar');
+      });
+    });
+
+    describe('#alert', function () {
+      it('should call the #addMessage method with no type', function () {
+        componentInstance.alert('bar');
+        expect(componentInstance.addMessage).toHaveBeenCalledWith('alert', 'bar');
+      });
+    });
   });
 
 });
