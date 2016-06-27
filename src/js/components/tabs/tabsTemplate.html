@@ -1,15 +1,24 @@
 
-
 <div class="tabs">
-  <!-- Tabs Nav -->
+  <ul class="tab-nav">
+    <li v-for="tab in tabs" v-bind:class="{ 'active': (isactive === tab.message) }" v-on:click.prevent="notify(tab)">
+      {{ tab.message }}
+    </li>
+  </ul>
+
+  <div class="tab-content">
+      <slot></slot>
+  </div>
+</div>
+
+<!-- <div class="tabs">
   <ul class="tab-nav">
     <li v-for="tab in tabs" v-bind:class="{ 'active': tab.active }" v-on:click.prevent="handleTabListClick($index, tab)" :disabled="tab.disabled">
       {{ tab.heading }}
     </li>
   </ul>
 
-  <!-- Tab Panes -->
   <div class="tab-content" v-el:tabContent>
       <slot></slot>
   </div>
-</div>
+</div> -->

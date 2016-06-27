@@ -25,7 +25,6 @@ describe('The prompt component', function () {
 
     describe('transition', function () {
       it('should be a string', function () {
-        console.log(component.props);
         expect(component.props.transition.type).toEqual(String);
       });
 

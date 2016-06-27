@@ -18,16 +18,32 @@ describe('The tab component', function () {
     expect(component.template).toEqual(jasmine.any(String));
   });
 
-  describe('props', function () {
-    describe('heading', function () {
-      it('should exist', function () {
-          expect(component.props.heading).toEqual(jasmine.any(Object));
-      });
+  describe('data', function () {
+    var data;
 
-      it('should be a string', function () {
-        expect(component.props.heading.type).toEqual(String);
-      });
+    beforeEach(function () {
+      data = component.data();
     });
+
+    // it('should have an initial index value of 0', function () {
+    //   expect(data.index).toEqual(0);
+    // });
+    //
+    // it('should have an initial show value of false', function () {
+    //   expect(data.show).toEqual(false);
+    // });
+  });
+
+  describe('props', function () {
+    // describe('heading', function () {
+    //   it('should exist', function () {
+    //     expect(component.props.heading).toEqual(jasmine.any(Object));
+    //   });
+    //
+    //   it('should be a string', function () {
+    //     expect(component.props.heading.type).toEqual(String);
+    //   });
+    // });
   });
 
   describe('methods', function () {

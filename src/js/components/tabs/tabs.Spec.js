@@ -1,13 +1,14 @@
 
 var tabsComponent = require('./tabsComponent.js');
+var tabComponent = require('./tab/tabComponent.js');
 
 Vue.config.silent = true;
 
 describe('The tabs component', function () {
-  var component, componentInstance;
+  var component, componentInstance, tab1, tab2;
 
   beforeEach(function () {
-    component = _.clone(tabsComponent);
+    component = _.extend(tabsComponent);
   });
 
   it('to be an object', function () {
@@ -18,22 +19,6 @@ describe('The tabs component', function () {
     expect(component.template).toEqual(jasmine.any(String));
   });
 
-  describe('props', function () {
-    describe('active', function () {
-      it('should exist', function () {
-          expect(component.props.active).toEqual(jasmine.any(Object));
-      });
-
-      it('should be a number', function () {
-        expect(component.props.active.type).toEqual(Number);
-      });
-
-      it('should default to 0', function () {
-        expect(component.props.active.default).toEqual(0);
-      });
-    });
-  });
-
   describe('data', function () {
     var data;
 
@@ -41,11 +26,27 @@ describe('The tabs component', function () {
       data = component.data();
     });
 
-    describe('tabs', function () {
-      it('should be an array', function () {
-        expect(data.tabs).toEqual([]);
-      });
-    });
+    // describe('tabs', function () {
+    //   it('should be an array', function () {
+    //     expect(data.tabs).toEqual([]);
+    //   });
+    // });
+  });
+
+  describe('props', function () {
+    // describe('active', function () {
+    //   it('should exist', function () {
+    //       expect(component.props.active).toEqual(jasmine.any(Object));
+    //   });
+    //
+    //   it('should be a number', function () {
+    //     expect(component.props.active.type).toEqual(Number);
+    //   });
+    //
+    //   it('should default to 0', function () {
+    //     expect(component.props.active.default).toEqual(0);
+    //   });
+    // });
   });
 
   describe('methods', function () {
