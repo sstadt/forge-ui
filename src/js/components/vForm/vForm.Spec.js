@@ -19,6 +19,10 @@ describe('The vForm component', function () {
   });
 
   describe('props', function () {
+    it('should be an object', function () {
+      expect(component.props).toEqual(jasmine.any(Object));
+    });
+
     describe('method', function () {
       it('should be a string', function () {
         expect(component.props.method.type).toEqual(String);

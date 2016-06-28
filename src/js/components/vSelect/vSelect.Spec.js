@@ -19,6 +19,10 @@ describe('The vSelect component', function () {
   });
 
   describe('props', function () {
+    it('should be an object', function () {
+      expect(component.props).toEqual(jasmine.any(Object));
+    });
+
     describe('label', function () {
       it('should be a string', function () {
         expect(component.props.label.type).toEqual(String);

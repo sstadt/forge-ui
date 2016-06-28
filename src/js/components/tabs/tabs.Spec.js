@@ -5,7 +5,7 @@ var tabComponent = require('./tab/tabComponent.js');
 Vue.config.silent = true;
 
 describe('The tabs component', function () {
-  var component, componentInstance, tab1, tab2;
+  var component, componentInstance;
 
   beforeEach(function () {
     component = _.extend(tabsComponent);
@@ -26,35 +26,38 @@ describe('The tabs component', function () {
       data = component.data();
     });
 
-    // describe('tabs', function () {
-    //   it('should be an array', function () {
-    //     expect(data.tabs).toEqual([]);
-    //   });
-    // });
+    describe('tabs', function () {
+      it('tabs should be an array', function () {
+        expect(data.tabs).toEqual([]);
+      });
+
+      it('activeTab should be an empty string', function () {
+        expect(data.activeTab).toEqual('');
+      });
+    });
   });
 
-  describe('props', function () {
-    // describe('active', function () {
-    //   it('should exist', function () {
-    //       expect(component.props.active).toEqual(jasmine.any(Object));
-    //   });
-    //
-    //   it('should be a number', function () {
-    //     expect(component.props.active.type).toEqual(Number);
-    //   });
-    //
-    //   it('should default to 0', function () {
-    //     expect(component.props.active.default).toEqual(0);
-    //   });
-    // });
-  });
+  // TODO test events
 
   describe('methods', function () {
     beforeEach(function () {
       componentInstance = new Vue(component);
+      spyOn(componentInstance, '$broadcast');
     });
 
-    // need to find a way to bootstrap this to test ready() and click handler
+    describe('#activate', function () {
+      beforeEach(function () {
+        componentInstance.activate('foo');
+      });
+
+      it('should set the active tab to the passed parameter', function () {
+        expect(componentInstance.activeTab).toEqual('foo');
+      });
+
+      it('should broadcast an event with the name of the active tab', function () {
+        expect(componentInstance.$broadcast).toHaveBeenCalledWith('TAB_COMPONENT_TAB_CLICKED', 'foo');
+      });
+    });
   });
 
 });

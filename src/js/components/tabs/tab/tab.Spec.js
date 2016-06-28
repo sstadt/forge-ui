@@ -35,6 +35,10 @@ describe('The tab component', function () {
   });
 
   describe('props', function () {
+    it('should be an object', function () {
+      expect(component.props).toEqual(jasmine.any(Object));
+    });
+
     // describe('heading', function () {
     //   it('should exist', function () {
     //     expect(component.props.heading).toEqual(jasmine.any(Object));

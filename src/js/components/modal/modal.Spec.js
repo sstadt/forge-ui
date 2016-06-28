@@ -17,6 +17,10 @@ describe('The modal component', function () {
   });
 
   describe('props', function () {
+    it('should be an object', function () {
+      expect(component.props).toEqual(jasmine.any(Object));
+    });
+
     describe('show', function () {
       it('should be a boolean', function () {
         expect(component.props.show.type).toEqual(Boolean);

@@ -19,6 +19,10 @@ describe('The vCheckbox component', function () {
   });
 
   describe('props', function () {
+    it('should be an object', function () {
+      expect(component.props).toEqual(jasmine.any(Object));
+    });
+
     describe('checked', function () {
       it('should be a boolean', function () {
         expect(component.props.checked.type).toEqual(Boolean);
