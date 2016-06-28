@@ -220,7 +220,7 @@ $inline-list-spacing: rem-calc(8) !default;
 /// @group myui-buttons
 ////
 
-$button-inline-form-margin: $form-label-line-height !default;
+$button-inline-form-margin: $form-label-font-size * $form-label-line-height !default;
 
 ////
 /// @group myui-loader

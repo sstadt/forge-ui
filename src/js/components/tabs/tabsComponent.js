@@ -1,58 +1,25 @@
 
 module.exports = {
   template: require('./tabsTemplate.html'),
-  data: function() {
+  data() {
     return {
       tabs: [],
-      isactive: ''
+      activeTab: ''
     };
   },
   events: {
     TAB_COMPONENT_TAB_CREATED(heading) {
-      var self = this;
+      var self = this,
+        active = this.tabs.length === 0;
 
-      this.tabs.push({
-        message: heading,
-        active: self.tabs.length === 1
-      });
+      this.tabs.push({ heading, active });
+      if (active) this.activate(heading);
     }
   },
   methods: {
-    notify: function(msg) {
-      this.isactive = msg.message;
-      this.$broadcast('test', msg.message);
+    activate(heading) {
+      this.activeTab = heading;
+      this.$broadcast('TAB_COMPONENT_TAB_CLICKED', heading);
     }
   }
 };
-
-// module.exports = {
-//   template: require('./tabsTemplate.html'),
-//   props: {
-//     active: {
-//       type: Number,
-//       default: 0
-//     }
-//   },
-//   data() {
-//     return {
-//       tabs: []
-//     };
-//   },
-//   ready() {
-//     if (this.tabs[0]) {
-//       this.tabs[0].active = true;
-//     }
-//   },
-//   methods: {
-//     handleTabListClick(index, el) {
-//       if (!el.disabled) this.active = index;
-//
-//       for (var i = 0, j = this.tabs.length; i < j; i++) {
-//         this.tabs[i].active = (i == index);
-//         if (this.tabs[i].active) {
-//           this.$children[i].$emit('TAB_COMPONENT_TAB_CLICKED');
-//         }
-//       }
-//     }
-//   }
-// };
