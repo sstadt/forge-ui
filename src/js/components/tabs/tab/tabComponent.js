@@ -1,7 +1,12 @@
 
 module.exports = {
   template: require('./tabTemplate.html'),
-  props: ['heading'],
+  props: {
+    heading: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       active: false
