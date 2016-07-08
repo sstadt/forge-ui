@@ -1,0 +1,570 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeUI</title>
+    <link rel="stylesheet" href="demo/css/prism.css">
+    <link rel="stylesheet" href="dist/css/forge-ui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>MyUI Kitchen Sink</h1>
+        <hr/>
+        <!-- TODO add description of toolkit here -->
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="hide-for-small medium-3 columns">
+        <ul class="vertical menu docs-nav">
+          <li class="docs-nav-title">Misc</li>
+          <li><a href="#transitions">Transitions</a></li>
+          <li class="docs-nav-title">Components</li>
+          <li><a href="#alert">Alert</a></li>
+          <li><a href="#icon">Icon</a></li>
+          <li><a href="#loader">Loader</a></li>
+          <li><a href="#modal">Modal</a></li>
+          <li><a href="#prompt">Prompt</a></li>
+          <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#form">vForm</a></li>
+          <li><a href="#input">vInput</a></li>
+          <li><a href="#select">vSelect</a></li>
+          <li><a href="#checkbox">vCheckbox</a></li>
+        </ul>
+      </div>
+
+      <div class="small-12 medium-9 columns">
+        <!-- Start demo content -->
+
+        <!-- sample -->
+        <!--
+        <div class="row" id="sample">
+          <div class="small-12 columns">
+            <h2>Component Name</h2>
+            <p>Component description</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>param1</dt>
+              <dd><em>String; defaults to something</em><br/>Description or param</dd>
+            </dl>
+            <div id="sample_demo">
+              <tabs>
+                <tab heading="Result">
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+        -->
+
+        <!-- transitions -->
+        <div class="row" id="transitions">
+          <div class="small-12 columns">
+            <h2>Transitions</h2>
+            <p>To use any of the transitions, simple add the keyword to the transition name to the element you will be showing/hiding as described in the <a href="https://vuejs.org/guide/transitions.html" target="_blank">Vue documentation</a>.</p>
+            <p>The following transitions are available as part of MyUI:</p>
+            <ul>
+              <li>fade</li>
+              <li>slide-up</li>
+              <li>slide-down</li>
+              <li>zoom-in</li>
+              <li>zoom-out</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- alert -->
+        <div class="row" id="alert">
+          <div class="small-12 columns">
+            <h2>Alert</h2>
+            <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>canClose</dt>
+              <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
+            </dl>
+            <h4>Methods</h4>
+            <dl>
+              <dt>message</dt>
+              <dd>Display a callout message with no additional color class.</dd>
+              <dt>primary</dt>
+              <dd>Display a callout message with the primary color class.</dd>
+              <dt>secondary</dt>
+              <dd>Display a callout message with the secondary color class.</dd>
+              <dt>success</dt>
+              <dd>Display a callout message with the success color class.</dd>
+              <dt>warning</dt>
+              <dd>Display a callout message with the warning color class.</dd>
+              <dt>alert</dt>
+              <dd>Display a callout message with the alert color class.</dd>
+            </dl>
+            <div id="alert_demo">
+              <tabs>
+                <tab heading="Result">
+                  <alert v-ref:my-alert :can-close="true"></alert>
+                  <div class="row">
+                    <div class="small-12 medium-5 columns">
+                      <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
+                    </div>
+                    <div class="small-12 medium-5 columns">
+                      <v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"></v-select>
+                    </div>
+                    <div class="small-12 medium-2 columns">
+                      <button type="button" class="button expanded inline-form" v-on:click="newMessage()">Send</button>
+                    </div>
+                  </div>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-12 medium-5 columns"&gt;
+    &lt;v-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/v-input&gt;
+  &lt;/div&gt;
+  &lt;div class="small-12 medium-5 columns"&gt;
+    &lt;v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"&gt;&lt;/v-select&gt;
+  &lt;/div&gt;
+  &lt;div class="small-12 medium-2 columns"&gt;
+    &lt;button type="button" class="button expanded inline-form" v-on:click="newMessage()"&gt;Send&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></code>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#alert_demo',
+  data: {
+    alertMessage: '',
+    selectedMessageType: 'message',
+    messageTypes: [
+      { value: 'message', label: 'vm.$refs.myAlert.message()' },
+      { value: 'primary', label: 'vm.$refs.myAlert.primary()' },
+      { value: 'secondary', label: 'vm.$refs.myAlert.secondary()' },
+      { value: 'success', label: 'vm.$refs.myAlert.success()' },
+      { value: 'warning', label: 'vm.$refs.myAlert.warning()' },
+      { value: 'alert', label: 'vm.$refs.myAlert.alert()' },
+    ]
+  },
+  methods: {
+    newMessage() {
+      this.$refs.myAlert[this.selectedMessageType](this.alertMessage);
+    }
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+
+        <!-- modal -->
+        <div class="row" id="modal">
+          <div class="small-12 columns">
+            <h2>Modal</h2>
+            <p>A simple modal dialog that is controlled by a single visibility variable</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>show</dt>
+              <dd><em>Boolean; two-way; required</em><br/>Controls modal visibility; true shows the modal, false hides it.</dd>
+              <dt>modalSize</dt>
+              <dd><em>String</em><br/>Sets the size of the modal. Can be set to 'small' or 'full' to increase or decrease the size of the modal.</dd>
+            </dl>
+            <div id="modal_demo">
+              <tabs>
+                <tab heading="Result">
+                  <button type="button" class="button" v-on:click="showModal = true">Open Modal</button>
+                  <modal :show.sync="showModal">
+                    <div slot="header">
+                      <h3>Look, a Modal!</h3>
+                    </div>
+                    <div slot="content">
+                      <p>some super awesome modal content</p>
+                      <button type="button" class="button" v-on:click="showModal = false">Close</button>
+                    </div>
+                  </modal>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;button type="button" class="button" v-on:click="showModal = true"&gt;Open Modal&lt;/button&gt;
+
+&lt;modal :show.sync="showModal"&gt;
+  &lt;div slot="header"&gt;
+    &lt;h3&gt;Look, a Modal!&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div slot="content"&gt;
+    &lt;p&gt;some super awesome modal content&lt;/p&gt;
+    &lt;button type="button" class="button" v-on:click="showModal = false"&gt;Close&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/modal&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#modal_demo',
+  data: {
+    showModal: false
+  }
+});
+</code></pre>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+        <!-- prompt -->
+        <div class="row" id="prompt">
+          <div class="small-12 columns">
+            <h2>Prompt</h2>
+            <p>A simple prompt component meant to replace the native prompt and confirm methods. This will allow you to style the dialog to match your site and prevent users from asking the browser to suppress further dialogs.</p>
+            <p>This component is meant to get input back from the user. If you simply need to notify the user of something, use an alert component to display the information and it's <em>canClose</em> property if the information should be dismissable.</p>
+            <p>With great power comes great responsibility. These dialogs cannot be suppressed by the browser, so take care not to inundate the user with an endless stream of repeditive dialogs.</p>
+            <h4>Methods</h4>
+            <dl>
+              <dt>ask</dt>
+              <dd>This provides a text input to the user to enter a custom answer similar to the native prompt() method. When clicking the confirm button the dialog input will be validated before calling the provided yes() function.</dd>
+              <dt>confirm</dt>
+              <dd>This provides a yes or no dialog similar to the native confirm() method.</dd>
+            </dl>
+            <p>Both prompt methods take an options object supporting the following parameters:</p>
+            <ul>
+              <li><strong>question</strong> the dialog label to present to the user</li>
+              <li><strong>yesLabel</strong> the confirm button label</li>
+              <li><strong>noLabel</strong> the cancel button label</li>
+              <li><strong>yes</strong> a function to execute when the user clicks the confirm button</li>
+              <li><strong>no</strong> a function to execute when the user clicks the cancel button</li>
+            </ul>
+            <div id="prompt_demo">
+              <tabs>
+                <tab heading="Result">
+                  <prompt v-ref:my-prompt></prompt>
+                  <button type="button" class="button" v-on:click="prompt('ask')">vm.$refs.myPrompt.ask()</button>
+                  <button type="button" class="button" v-on:click="prompt('confirm')">vm.$refs.myPrompt.confirm()</button>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;prompt v-ref:my-prompt&gt;&lt;/prompt&gt;
+&lt;button type="button" class="button" v-on:click="prompt('ask')"&gt;vm.$refs.myPrompt.ask()&lt;/button&gt;
+&lt;button type="button" class="button" v-on:click="prompt('confirm')"&gt;vm.$refs.myPrompt.confirm()&lt;/button&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#prompt_demo',
+  methods: {
+    prompt(method) {
+      this.$refs.myPrompt[method]({
+        question: 'Judge me by my size, do you?',
+        yes: function (answer) {
+          // if method is 'ask',
+          // the dialog input value will be passed as the first argument
+        },
+        no: function () {
+          // the prompt will close itself,
+          // but you can use this option to trigger side effects
+        }
+      });
+    }
+  }
+});
+</code></pre>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+        <!-- tabs -->
+        <div class="row" id="tabs">
+          <div class="small-12 columns">
+            <h2>Tabs</h2>
+            <p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
+            <h4>Tabs Params</h4>
+            <dl>
+              <dt>active</dt>
+              <dd><em>Number; defaults to 0</em><br/>the index of the tab that should be open initially</dd>
+            </dl>
+            <h4>Tab Params</h4>
+            <dl>
+              <dt>heading</dt>
+              <dd><em>String; required</em><br/>the text to display in the clickable tab navigation</dd>
+            </dl>
+            <dl>
+              <dt>clickCallback</dt>
+              <dd><em>Function</em><br/>a callback function to execute when activating a tab</dd>
+            </dl>
+            <div id="tabs_demo">
+              <tabs>
+                <tab heading="Result">
+                  <tabs>
+                    <tab heading="Foo">
+                      <p>Some tab content</p>
+                    </tab>
+                    <tab heading="Bar">
+                      <p>Some content for another tab</p>
+                    </tab>
+                    <tab heading="Baz">
+                      <p>Even more tab content!</p>
+                    </tab>
+                  </tabs>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;tabs&gt;
+  &lt;tab heading="Foo"&gt;
+    &lt;p&gt;Some tab content&lt;/p&gt;
+  &lt;/tab&gt;
+  &lt;tab heading="Bar"&gt;
+    &lt;p&gt;Some content for another tab&lt;/p&gt;
+  &lt;/tab&gt;
+  &lt;tab heading="Baz"&gt;
+    &lt;p&gt;Even more tab content!&lt;/p&gt;
+  &lt;/tab&gt;
+&lt;/tabs&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#tabs_demo'
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+        <!-- form -->
+        <div class="row" id="form">
+          <div class="small-12 columns">
+            <h2>vForm</h2>
+            <p>The vForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
+            <p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>method</dt>
+              <dd><em>String; defaults to POST</em><br/>Form submission method; supports GET and POST just like a standard form</dd>
+              <dt>action</dt>
+              <dd><em>String; defaults to an empty string</em><br/>The URL to submit the form to, if not configured as async</dd>
+              <dt>async</dt>
+              <dd><em>Boolean; defaults to false</em><br/>Set to true to override default form submission behavior; useful if you only want to trigger the submitCallback</dd>
+              <dt>submitCallback</dt>
+              <dd><em>Function</em><br/>Callback function to execute on form submission</dd>
+            </dl>
+            <div id="form_demo">
+              <tabs>
+                <tab heading="Result">
+                  <alert v-ref:my-alert :can-close="true"></alert>
+                  <v-form :async="true" :submit-callback="showMessage">
+                    <v-input type="text" :value.sync="message" :required="true"></v-input>
+                    <button type="submit" class="button">Submit</button>
+                  </v-form>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
+&lt;v-form :async="true" :submit-callback="showMessage"&gt;
+  &lt;v-input type="text" :value.sync="message" :required="true"&gt;&lt;/v-input&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/v-form&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#form_demo',
+  data: {
+    message: ''
+  },
+  methods: {
+    showMessage() {
+      this.$refs.myAlert.success(this.message);
+    }
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+
+        <!-- input -->
+        <div class="row" id="input">
+          <div class="small-12 columns">
+            <h2>vInput</h2>
+            <p>The vInput component provides a quick and easy way to add a standardized form input with automatic validation. The vInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>type</dt>
+              <dd><em>String; required</em><br/>The input type; set to textarea to render a textarea instead of an input</dd>
+              <dt>value</dt>
+              <dd><em>String; required; two-way</em><br/>The input value</dd>
+              <dt>label</dt>
+              <dd><em>String</em><br/>The input label text</dd>
+              <dt>name</dt>
+              <dd><em>String</em><br/>The name attribute for the input</dd>
+              <dt>placeholder</dt>
+              <dd><em>String</em><br/>The input placeholder text</dd>
+              <!-- <dt>icon</dt> TODO: implement some standard icons and the icon component docs
+              <dd><em>String</em><br/>Renders an icon on the right side of the input if provided a value</dd> -->
+              <dt>required</dt>
+              <dd><em>Boolean; defaults to false</em><br/>True if the input should be required; see <a href="#form">forms</a></dd>
+              <dt>equalTo</dt>
+              <dd><em>String; defaults to null</em><br/>Set to another observable to test equivalency</dd>
+            </dl>
+            <div id="input_demo">
+              <tabs>
+                <tab heading="Result">
+                  <v-input type="email" label="Email" :value.sync="email" />
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;v-input type="email" label="Email" :value.sync="email" /&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#input_demo',
+  data: {
+    email: ''
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+        <!-- select -->
+        <div class="row" id="select">
+          <div class="small-12 columns">
+            <h2>vSelect</h2>
+            <p>Renders a select input given a set of options</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>label</dt>
+              <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
+              <dt>selected</dt>
+              <dd><em>String; required; two-way</em><br/>The selected value</dd>
+              <dt>options</dt>
+              <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a label and value parameter</dd>
+              <dt>required</dt>
+              <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
+            </dl>
+            <div id="select_demo">
+              <tabs>
+                <tab heading="Result">
+                  <v-select :selected.sync="selectedOption" :options="selectOptions"></v-select>
+                  <p>selected: {{ selectedOption }}</p>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;v-select :selected.sync="selectedOption" :options="selectOptions"&gt;&lt;/v-select&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#select_demo',
+  data: {
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ]
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+
+        <!-- checkbox -->
+        <div class="row" id="checkbox">
+          <div class="small-12 columns">
+            <h2>vCheckbox</h2>
+            <p>Renders a checkbox input</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>checked</dt>
+              <dd><em>Boolean; required; two-way</em><br/>True if checked; false if not</dd>
+              <dt>label</dt>
+              <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
+              <dt>required</dt>
+              <dd><em>Boolean; defaults to false</em><br/>If true, shows an error when not checked; see <a href="#form">forms</a></dd>
+            </dl>
+            <div id="checkbox_demo">
+              <tabs>
+                <tab heading="Result">
+                  <v-checkbox :checked.sync="checked" label="My checkbox"></v-checkbox>
+                  <p>checked: {{ checked }}</p>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;v-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/v-checkbox&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#checkbox_demo',
+  data: {
+    checked: false
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
+          </div>
+        </div>
+
+
+        <!-- End demo content -->
+      </div>
+    </div>
+
+    <script type="text/javascript" src="demo/js/vue.js"></script>
+    <script type="text/javascript" src="demo/js/lodash.js"></script>
+    <script type="text/javascript" src="demo/js/prism.js"></script>
+    <script type="text/javascript" src="dist/js/forge-ui.js"></script>
+    <script type="text/javascript" src="demo/js/script.js"></script>
+  </body>
+</html>
