@@ -11,7 +11,7 @@
     "url": "git+https://github.com/sstadt/forge-ui.git"
   },
   "author": "Scott Stadt <scott.stadt@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sstadt/forge-ui/issues"
   },
@@ -30,6 +30,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "karma": "^0.13.22",
     "lodash": "^4.13.1",
+    "vue": "^1.0.25",
     "stringify": "^5.1.0"
   },
   "devDependencies": {
@@ -39,7 +40,6 @@
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-spec-reporter": "0.0.26",
-    "vue": "^1.0.25",
     "watchify": "^3.7.0"
   }
 }
