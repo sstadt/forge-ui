@@ -22,7 +22,7 @@ gulp.task('sass', function () {
 
 
 gulp.task('js', function () {
-  gulp.src('src/js/forge.js')
+  gulp.src('src/js/forge-ui.js')
     .pipe(sourcemaps.init())
     .pipe(browserify({
       transform: ['stringify'],
