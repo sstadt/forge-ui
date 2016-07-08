@@ -1,6 +1,6 @@
 {
-  "name": "myui",
-  "version": "1.0.0",
+  "name": "ForgeUI",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sstadt/myui.git"
+    "url": "git+https://github.com/sstadt/forge-ui.git"
   },
   "author": "Scott Stadt <scott.stadt@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sstadt/myui/issues"
+    "url": "https://github.com/sstadt/forge-ui/issues"
   },
-  "homepage": "https://github.com/sstadt/myui#readme",
+  "homepage": "https://github.com/sstadt/forge-ui#readme",
   "dependencies": {
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.3.13",

@@ -9,7 +9,7 @@ var Server     = require('karma').Server;
 
 
 gulp.task('sass', function () {
-  return gulp.src('src/sass/myui.scss')
+  return gulp.src('src/sass/forge-ui.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: ['./node_modules/foundation-sites/scss'],
@@ -22,7 +22,7 @@ gulp.task('sass', function () {
 
 
 gulp.task('js', function () {
-  gulp.src('src/js/myui.js')
+  gulp.src('src/js/forge.js')
     .pipe(sourcemaps.init())
     .pipe(browserify({
       transform: ['stringify'],

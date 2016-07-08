@@ -210,32 +210,32 @@ $table-head-font-color: $body-font-color !default;         /// Default font colo
 $show-header-for-stacked: false !default;                  /// Default value for showing the header when using stacked tables.
 
 ////
-/// @group myui-lists
+/// @group ForgeUI-lists
 ////
 
 $inline-list-padding: $global-padding !default;
 $inline-list-spacing: rem-calc(8) !default;
 
 ////
-/// @group myui-buttons
+/// @group ForgeUI-buttons
 ////
 
 $button-inline-form-margin: $form-label-font-size * $form-label-line-height !default;
 
 ////
-/// @group myui-loader
+/// @group ForgeUI-loader
 ////
 
 $loader-color: $black !default;
 
 ////
-/// @group myui-alert
+/// @group ForgeUI-alert
 ////
 
 $alert-message-padding: rem-calc(4) !default;
 
 ////
-/// @group myui-modal
+/// @group ForgeUI-modal
 ////
 
 $modal-size-default: rem-calc(580) !default;
@@ -246,7 +246,7 @@ $modal-overlay-color: rgba($black, $overlay-opacity) !default;
 $modal-z-index: $z-index-modal !default;
 
 ////
-/// @group myui-prompt
+/// @group ForgeUI-prompt
 ////
 
 $prompt-width: rem-calc(400) !default;
@@ -255,7 +255,7 @@ $prompt-background-color: $body-background !default;
 $prompt-overlay-color: rgba($black, $overlay-opacity) !default;
 
 ////
-/// @group myui-tabs
+/// @group ForgeUI-tabs
 ////
 
 $tab-content-padding: $global-padding !default;
