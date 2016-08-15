@@ -1,5 +1,5 @@
 
-var vFormComponent = require('./vFormComponent.js');
+import vFormComponent from './vFormComponent.js';
 
 Vue.config.silent = true;
 

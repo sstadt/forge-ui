@@ -3,9 +3,6 @@ var gulp       = require('gulp');
 var sass       = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
-// var browserify = require('gulp-browserify');
-// var transpile  = require('gulp-es6-module-transpiler');
-// var babel      = require('gulp-babel');
 var webpack    = require('gulp-webpack');
 var Server     = require('karma').Server;
 
@@ -26,17 +23,6 @@ gulp.task('sass', function () {
 gulp.task('js', function () {
   gulp.src('src/js/forge-ui.js')
     .pipe(sourcemaps.init())
-    // .pipe(browserify({
-    //   transform: ['stringify'],
-    //   // standalone: 'Forge'
-    // }))
-    // .pipe(transpile({
-    //   formatter: 'bundle'
-    // }))
-    // .pipe(babel({
-		// 	presets: [ 'es2015', 'stage-0'],
-    //   plugins: ['files']
-    // }))
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/js'))

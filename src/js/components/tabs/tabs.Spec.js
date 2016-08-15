@@ -1,6 +1,6 @@
 
-var tabsComponent = require('./tabsComponent.js');
-var tabComponent = require('./tab/tabComponent.js');
+import tabsComponent from './tabsComponent.js';
+import tabComponent from './tab/tabComponent.js';
 
 Vue.config.silent = true;
 

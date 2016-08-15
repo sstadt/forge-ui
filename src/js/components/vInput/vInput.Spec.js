@@ -1,5 +1,5 @@
 
-var vInputComponent = require('./vInputComponent.js');
+import vInputComponent from './vInputComponent.js';
 
 Vue.config.silent = true;
 

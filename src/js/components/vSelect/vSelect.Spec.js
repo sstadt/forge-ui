@@ -1,5 +1,5 @@
 
-var vSelectComponent = require('./vSelectComponent.js');
+import vSelectComponent from './vSelectComponent.js';
 
 Vue.config.silent = true;
 

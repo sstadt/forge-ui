@@ -1,5 +1,5 @@
 
-var component = require('./iconComponent.js');
+import component from './iconComponent.js';
 
 describe('The icon component', function () {
   it('to be an object', function () {

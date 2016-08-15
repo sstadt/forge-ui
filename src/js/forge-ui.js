@@ -31,13 +31,13 @@ var Forge = {
       componentList[component].template = template;
     }
   },
-  init(component) {
+  cast(component) {
     if (componentList.hasOwnProperty(component)) {
       Vue.component(component, componentList[component]);
     }
   },
-  initAll() {
-    _.forEach(componentList, (component, name) => Forge.init(name));
+  castAll() {
+    _.forEach(componentList, (component, name) => Forge.cast(name));
   }
 };
 

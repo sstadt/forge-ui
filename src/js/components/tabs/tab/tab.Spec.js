@@ -1,5 +1,5 @@
 
-var tabComponent = require('./tabComponent.js');
+import tabComponent from './tabComponent.js';
 
 Vue.config.silent = true;
 

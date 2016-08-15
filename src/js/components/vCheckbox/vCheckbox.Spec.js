@@ -1,5 +1,5 @@
 
-var vCheckboxComponent = require('./vCheckboxComponent.js');
+import vCheckboxComponent from './vCheckboxComponent.js';
 
 Vue.config.silent = true;
 

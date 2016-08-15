@@ -1,5 +1,5 @@
 
-var promptComponent = require('./promptComponent.js');
+import promptComponent from './promptComponent.js';
 
 Vue.config.silent = true;
 

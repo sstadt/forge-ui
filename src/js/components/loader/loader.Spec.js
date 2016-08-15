@@ -1,5 +1,5 @@
 
-var loaderComponent = require('./loaderComponent.js');
+import loaderComponent from './loaderComponent.js';
 
 describe('The loader component', function () {
   var component;

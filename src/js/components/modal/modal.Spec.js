@@ -1,5 +1,5 @@
 
-var modalComponent = require('./modalComponent.js');
+import modalComponent from './modalComponent.js';
 
 describe('The modal component', function () {
   var component;
