@@ -1,6 +1,8 @@
 
-module.exports = {
-  template: require('./modalTemplate.html'),
+import template from './modalTemplate.html';
+
+var component = {
+  template,
   props: {
     show: {
       type: Boolean,
@@ -17,3 +19,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

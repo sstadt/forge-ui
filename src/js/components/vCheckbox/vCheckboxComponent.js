@@ -1,6 +1,8 @@
 
-module.exports = {
-  template: require('./vCheckboxTemplate.html'),
+import template from './vCheckboxTemplate.html';
+
+var component = {
+  template,
   data() {
     return {
       icon: 'unchecked',
@@ -29,3 +31,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

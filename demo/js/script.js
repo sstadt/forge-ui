@@ -1,3 +1,6 @@
+console.log(Forge);
+
+Forge.initAll();
 
 Vue.config.debug = true;
 

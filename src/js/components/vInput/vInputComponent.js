@@ -1,8 +1,10 @@
 
+import template from './vInputTemplate.html';
+
 var validationRules = require('./validationRules.js');
 
-module.exports = {
-  template: require('./vInputTemplate.html'),
+var component = {
+  template,
   props: {
     label: {
       type: String
@@ -69,3 +71,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

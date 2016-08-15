@@ -1,6 +1,8 @@
 
-module.exports = {
-  template: require('./tabsTemplate.html'),
+import template from './tabsTemplate.html';
+
+var component = {
+  template,
   data() {
     return {
       tabs: [],
@@ -23,3 +25,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

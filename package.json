@@ -17,29 +17,26 @@
   },
   "homepage": "https://github.com/sstadt/forge-ui#readme",
   "dependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.3.13",
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
     "foundation-sites": "^6.2.3",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.1",
-    "gulp-browserify": "^0.5.1",
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^1.6.0",
-    "karma": "^0.13.22",
+    "gulp-webpack": "^1.5.0",
+    "html-loader": "^0.4.3",
     "lodash": "^4.13.1",
     "vue": "^1.0.25",
-    "stringify": "^5.1.0"
+    "webpack": "^1.13.1"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
-    "karma-browserify": "^5.0.5",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.1",
-    "karma-spec-reporter": "0.0.26",
-    "watchify": "^3.7.0"
+    "karma-spec-reporter": "0.0.26"
   }
 }

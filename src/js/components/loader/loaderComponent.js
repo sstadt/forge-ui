@@ -1,6 +1,8 @@
 
-module.exports = {
-  template: require('./loaderTemplate.html'),
+import template from './loaderTemplate.html';
+
+var component = {
+  template,
   data() {
     return {
       greeting: 'loader component',
@@ -12,3 +14,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

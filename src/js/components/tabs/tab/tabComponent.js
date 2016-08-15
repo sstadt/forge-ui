@@ -1,6 +1,8 @@
 
+import template from './tabTemplate.html';
+
 module.exports = {
-  template: require('./tabTemplate.html'),
+  template,
   props: {
     heading: {
       type: String,

@@ -1,6 +1,8 @@
 
-module.exports = {
-  template: require('./vFormTemplate.html'),
+import template from './vFormTemplate.html';
+
+var component = {
+  template,
   props: {
     method: {
       type: String,
@@ -42,3 +44,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

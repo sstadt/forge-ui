@@ -1,6 +1,8 @@
 
-module.exports = {
-  template: require('./alertTemplate.html'),
+import template from './alertTemplate.html';
+
+var component = {
+  template,
   props: {
     canClose: {
       type: Boolean,
@@ -45,3 +47,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

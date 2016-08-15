@@ -1,6 +1,8 @@
 
-module.exports = {
-  template: require('./vSelectTemplate.html'),
+import template from './vSelectTemplate.html';
+
+var component = {
+  template,
   props: {
     label: {
       type: String,
@@ -40,3 +42,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

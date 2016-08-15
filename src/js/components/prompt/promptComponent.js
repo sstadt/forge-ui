@@ -1,4 +1,6 @@
 
+import template from './promptTemplate.html';
+
 var defaultLabels = {
   question: '',
   yes: 'Submit',
@@ -26,8 +28,8 @@ function prompt(vm, options, showInput) {
   });
 }
 
-module.exports = {
-  template: require('./promptTemplate.html'),
+var component = {
+  template,
   props: {
     transition: {
       type: String,
@@ -68,3 +70,5 @@ module.exports = {
     }
   }
 };
+
+export default component;

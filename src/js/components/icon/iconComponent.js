@@ -1,5 +1,9 @@
 
-module.exports = {
-  template: require('./iconTemplate.html'),
+import template from './iconTemplate.html';
+
+var component = {
+  template,
   props: ['name']
 };
+
+export default component;
