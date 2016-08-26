@@ -1,6 +1,6 @@
 {
   "name": "forge-ui",
-  "version": "0.1.2b",
+  "version": "0.1.2c",
   "description": "",
   "main": "dist/js/forge-ui.js",
   "scripts": {

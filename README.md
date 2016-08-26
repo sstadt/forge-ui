@@ -17,6 +17,7 @@ Forge has Vue and Lodash as dependencies.
 ```html
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+<script type="text/javascript" src="path/to/forge-ui.js"></script>
 ```
 
 ## Usage
