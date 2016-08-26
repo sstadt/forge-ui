@@ -44,15 +44,15 @@ Forge.castAll();
 
 ### Current Component List
 
-  alert
-  modal
-  prompt
-  tabs
-  tab
-  vCheckbox
-  vForm
-  vInput
-  vSelect
+  - alert
+  - modal
+  - prompt
+  - tabs
+  - tab
+  - vCheckbox
+  - vForm
+  - vInput
+  - vSelect
 
 ### Coverage
 
