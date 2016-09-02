@@ -1,6 +1,9 @@
 
 var gulp       = require('gulp');
 var sass       = require('gulp-sass');
+var rename     = require('gulp-rename');
+var uglifyJS   = require('gulp-uglify');
+var uglifyCSS  = require('gulp-uglifycss');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
 var webpack    = require('gulp-webpack');
@@ -9,12 +12,12 @@ var Server     = require('karma').Server;
 
 gulp.task('sass', function () {
   return gulp.src('src/sass/forge-ui.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      includePaths: ['./node_modules/foundation-sites/scss'],
-      outputStyle: 'compressed'
-    }).on('error', sass.logError))
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.init())
+    .pipe(sass({includePaths: ['./node_modules/foundation-sites/scss']}).on('error', sass.logError))
+    // .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(uglifyCSS())
+    .pipe(rename('forge-ui.min.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(livereload());
 });
@@ -25,6 +28,9 @@ gulp.task('js', function () {
     .pipe(sourcemaps.init())
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/js'))
+    .pipe(uglifyJS())
+    .pipe(rename('forge-ui.min.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(livereload());
 });

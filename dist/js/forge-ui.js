@@ -50,80 +50,51 @@
 	  value: true
 	});
 
-	var _alertComponent = __webpack_require__(1);
+	var _componentList = __webpack_require__(1);
 
-	var _alertComponent2 = _interopRequireDefault(_alertComponent);
-
-	var _iconComponent = __webpack_require__(3);
-
-	var _iconComponent2 = _interopRequireDefault(_iconComponent);
-
-	var _modalComponent = __webpack_require__(5);
-
-	var _modalComponent2 = _interopRequireDefault(_modalComponent);
-
-	var _promptComponent = __webpack_require__(7);
-
-	var _promptComponent2 = _interopRequireDefault(_promptComponent);
-
-	var _loaderComponent = __webpack_require__(9);
-
-	var _loaderComponent2 = _interopRequireDefault(_loaderComponent);
-
-	var _tabsComponent = __webpack_require__(11);
-
-	var _tabsComponent2 = _interopRequireDefault(_tabsComponent);
-
-	var _tabComponent = __webpack_require__(13);
-
-	var _tabComponent2 = _interopRequireDefault(_tabComponent);
-
-	var _vFormComponent = __webpack_require__(15);
-
-	var _vFormComponent2 = _interopRequireDefault(_vFormComponent);
-
-	var _vInputComponent = __webpack_require__(17);
-
-	var _vInputComponent2 = _interopRequireDefault(_vInputComponent);
-
-	var _vSelectComponent = __webpack_require__(20);
-
-	var _vSelectComponent2 = _interopRequireDefault(_vSelectComponent);
-
-	var _vCheckboxComponent = __webpack_require__(22);
-
-	var _vCheckboxComponent2 = _interopRequireDefault(_vCheckboxComponent);
+	var _componentList2 = _interopRequireDefault(_componentList);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var componentList = {
-	  alert: _alertComponent2.default,
-	  icon: _iconComponent2.default,
-	  modal: _modalComponent2.default,
-	  prompt: _promptComponent2.default,
-	  loader: _loaderComponent2.default,
-	  tabs: _tabsComponent2.default,
-	  tab: _tabComponent2.default,
-	  vForm: _vFormComponent2.default,
-	  vInput: _vInputComponent2.default,
-	  vSelect: _vSelectComponent2.default,
-	  vCheckbox: _vCheckboxComponent2.default
-	};
-
 	var Forge = {
+
+	  /**
+	   * template
+	   *
+	   * Register a template to a component
+	   *
+	   * @param component string The name of the component
+	   * @param template  string The template to register to the component
+	   */
 	  template: function template(component, _template) {
-	    if (componentList.hasOwnProperty(component)) {
-	      componentList[component].template = _template;
+	    if (_componentList2.default.hasOwnProperty(component)) {
+	      _componentList2.default[component].template = _template;
 	    }
 	  },
-	  init: function init(component) {
-	    if (componentList.hasOwnProperty(component)) {
-	      Vue.component(component, componentList[component]);
+
+
+	  /**
+	   * cast
+	   *
+	   * Register a component to Vue
+	   *
+	   * @param component string The name of the component
+	   */
+	  cast: function cast(component) {
+	    if (_componentList2.default.hasOwnProperty(component)) {
+	      Vue.component(component, _componentList2.default[component]);
 	    }
 	  },
-	  initAll: function initAll() {
-	    _.forEach(componentList, function (component, name) {
-	      return Forge.init(name);
+
+
+	  /**
+	   * castAll
+	   *
+	   * Register all components to Vue
+	   */
+	  castAll: function castAll() {
+	    _.forEach(_componentList2.default, function (component, name) {
+	      return Forge.cast(name);
 	    });
 	  }
 	};
@@ -144,7 +115,79 @@
 	  value: true
 	});
 
-	var _alertTemplate = __webpack_require__(2);
+	var _alertComponent = __webpack_require__(2);
+
+	var _alertComponent2 = _interopRequireDefault(_alertComponent);
+
+	var _iconComponent = __webpack_require__(4);
+
+	var _iconComponent2 = _interopRequireDefault(_iconComponent);
+
+	var _modalComponent = __webpack_require__(6);
+
+	var _modalComponent2 = _interopRequireDefault(_modalComponent);
+
+	var _promptComponent = __webpack_require__(8);
+
+	var _promptComponent2 = _interopRequireDefault(_promptComponent);
+
+	var _loaderComponent = __webpack_require__(10);
+
+	var _loaderComponent2 = _interopRequireDefault(_loaderComponent);
+
+	var _tabsComponent = __webpack_require__(12);
+
+	var _tabsComponent2 = _interopRequireDefault(_tabsComponent);
+
+	var _tabComponent = __webpack_require__(14);
+
+	var _tabComponent2 = _interopRequireDefault(_tabComponent);
+
+	var _vFormComponent = __webpack_require__(16);
+
+	var _vFormComponent2 = _interopRequireDefault(_vFormComponent);
+
+	var _vInputComponent = __webpack_require__(18);
+
+	var _vInputComponent2 = _interopRequireDefault(_vInputComponent);
+
+	var _vSelectComponent = __webpack_require__(21);
+
+	var _vSelectComponent2 = _interopRequireDefault(_vSelectComponent);
+
+	var _vCheckboxComponent = __webpack_require__(23);
+
+	var _vCheckboxComponent2 = _interopRequireDefault(_vCheckboxComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var componentList = {
+	  alert: _alertComponent2.default,
+	  icon: _iconComponent2.default,
+	  modal: _modalComponent2.default,
+	  prompt: _promptComponent2.default,
+	  loader: _loaderComponent2.default,
+	  tabs: _tabsComponent2.default,
+	  tab: _tabComponent2.default,
+	  vForm: _vFormComponent2.default,
+	  vInput: _vInputComponent2.default,
+	  vSelect: _vSelectComponent2.default,
+	  vCheckbox: _vCheckboxComponent2.default
+	};
+
+	exports.default = componentList;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _alertTemplate = __webpack_require__(3);
 
 	var _alertTemplate2 = _interopRequireDefault(_alertTemplate);
 
@@ -201,13 +244,13 @@
 	exports.default = component;
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"alert-box\" v-bind:class=\"{\n    callout: true,\n    primary: type === 'primary',\n    secondary: type === 'secondary',\n    success: type === 'success',\n    warning: type === 'warning',\n    alert: type === 'alert'\n  }\" transition=\"fade\" v-show=\"messages.length > 0\">\n  <ul>\n    <li v-for=\"message in messages\" track-by=\"$index\">{{ message }}</li>\n  </ul>\n  <button class=\"close-button\" aria-label=\"Dismiss alert\" type=\"button\" v-if=\"canClose\" v-on:click=\"close()\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n";
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -216,7 +259,7 @@
 	  value: true
 	});
 
-	var _iconTemplate = __webpack_require__(4);
+	var _iconTemplate = __webpack_require__(5);
 
 	var _iconTemplate2 = _interopRequireDefault(_iconTemplate);
 
@@ -230,13 +273,13 @@
 	exports.default = component;
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<svg class=\"icon-image {{ name }}\">\n  <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-{{ name }}\"></use>\n</svg>\n";
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -245,7 +288,7 @@
 	  value: true
 	});
 
-	var _modalTemplate = __webpack_require__(6);
+	var _modalTemplate = __webpack_require__(7);
 
 	var _modalTemplate2 = _interopRequireDefault(_modalTemplate);
 
@@ -273,13 +316,13 @@
 	exports.default = component;
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"modal\" :transition=\"transition\" v-show=\"show\">\n  <div v-on:click.prevent :class=\"{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }\">\n    <div class=\"modal-header\">\n      <slot name=\"header\"></slot>\n    </div>\n    <slot name=\"content\"></slot>\n    <span v-on:click=\"show = false\" aria-label=\"Close\">&#215;</span>\n  </div>\n</div>\n";
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -288,7 +331,7 @@
 	  value: true
 	});
 
-	var _promptTemplate = __webpack_require__(8);
+	var _promptTemplate = __webpack_require__(9);
 
 	var _promptTemplate2 = _interopRequireDefault(_promptTemplate);
 
@@ -368,13 +411,13 @@
 	exports.default = component;
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<div class=\"prompt prompt-modal\" :transition=\"transition\" v-show=\"show\">\n  <div class=\"prompt-overlay\" v-on:click=\"no()\"></div>\n  <div class=\"prompt-content\">\n    <v-form v-if=\"showInput\" :submit-callback=\"yes\" :ajax=\"true\">\n      <p>{{ questionLabel }}</p>\n      <v-input type=\"text\" label=\"Response\" name=\"promptResponse\" :value.sync=\"promptValue\" :required=\"true\"></v-input>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\">{{ yesLabel }}</button>\n      </div>\n    </v-form>\n    <div v-else>\n      <p>{{ questionLabel }}</p>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\" v-on:click=\"yes()\">{{ yesLabel }}</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -383,7 +426,7 @@
 	  value: true
 	});
 
-	var _loaderTemplate = __webpack_require__(10);
+	var _loaderTemplate = __webpack_require__(11);
 
 	var _loaderTemplate2 = _interopRequireDefault(_loaderTemplate);
 
@@ -407,13 +450,13 @@
 	exports.default = component;
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"loader\">Loading...</div>\n";
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -422,7 +465,7 @@
 	  value: true
 	});
 
-	var _tabsTemplate = __webpack_require__(12);
+	var _tabsTemplate = __webpack_require__(13);
 
 	var _tabsTemplate2 = _interopRequireDefault(_tabsTemplate);
 
@@ -457,18 +500,18 @@
 	exports.default = component;
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"tabs\">\n  <ul class=\"tab-nav\">\n    <li v-for=\"tab in tabs\" v-bind:class=\"{ 'active': (activeTab === tab.heading) }\" v-on:click.prevent=\"activate(tab.heading)\">\n      {{ tab.heading }}\n    </li>\n  </ul>\n\n  <div class=\"tab-content\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _tabTemplate = __webpack_require__(14);
+	var _tabTemplate = __webpack_require__(15);
 
 	var _tabTemplate2 = _interopRequireDefault(_tabTemplate);
 
@@ -499,13 +542,13 @@
 	};
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"tab\" v-show=\"active\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -514,7 +557,7 @@
 	  value: true
 	});
 
-	var _vFormTemplate = __webpack_require__(16);
+	var _vFormTemplate = __webpack_require__(17);
 
 	var _vFormTemplate2 = _interopRequireDefault(_vFormTemplate);
 
@@ -568,13 +611,13 @@
 	exports.default = component;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<form v-if=\"async\" v-el:form v-on:submit.prevent=\"submitForm\" :method=\"method\" :action=\"action\" novalidate>\n  <slot></slot>\n</form>\n<form v-else v-el:form v-on:submit=\"submitForm\" :method=\"method\" :action=\"action\" novalidate>\n  <slot></slot>\n</form>\n";
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -583,13 +626,13 @@
 	  value: true
 	});
 
-	var _vInputTemplate = __webpack_require__(18);
+	var _vInputTemplate = __webpack_require__(19);
 
 	var _vInputTemplate2 = _interopRequireDefault(_vInputTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var validationRules = __webpack_require__(19);
+	var validationRules = __webpack_require__(20);
 
 	var component = {
 	  template: _vInputTemplate2.default,
@@ -665,13 +708,13 @@
 	exports.default = component;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<label class=\"v-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i class=\"fa fa-{{ icon }}\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      v-el:input\n      :class=\"{ 'error': error.length > 0 }\"\n      name=\"{{ name }}\"\n      placeholder=\"{{ placeholder }}\"\n      v-model=\"value\"\n      v-on:blur=\"validate()\"></textarea>\n    <input v-else\n      v-el:input\n      :class=\"{ 'error': error.length > 0 }\"\n      name=\"{{ name }}\"\n      type=\"{{ type }}\"\n      placeholder=\"{{ placeholder }}\"\n      v-model=\"value\"\n      v-on:blur=\"validate()\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -692,7 +735,7 @@
 	};
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -701,7 +744,7 @@
 	  value: true
 	});
 
-	var _vSelectTemplate = __webpack_require__(21);
+	var _vSelectTemplate = __webpack_require__(22);
 
 	var _vSelectTemplate2 = _interopRequireDefault(_vSelectTemplate);
 
@@ -755,13 +798,13 @@
 	exports.default = component;
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<label class=\"v-select\">\n  {{ label }}\n  <select v-model=\"selected\" :class=\"{ 'error': isError }\">\n    <option v-if=\"!required\" value=\"\"></option>\n    <option v-for=\"option in options\" :value=\"option.value\">{{ option.label }}</option>\n  </select>\n</label>\n";
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -770,7 +813,7 @@
 	  value: true
 	});
 
-	var _vCheckboxTemplate = __webpack_require__(23);
+	var _vCheckboxTemplate = __webpack_require__(24);
 
 	var _vCheckboxTemplate2 = _interopRequireDefault(_vCheckboxTemplate);
 
@@ -811,7 +854,7 @@
 	exports.default = component;
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<label><input type=\"checkbox\" v-model=\"checked\" /> {{ label }}</label>\n";
