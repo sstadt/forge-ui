@@ -10,6 +10,7 @@ import vFormComponent from './components/vForm/vFormComponent.js';
 import vInputComponent from './components/vInput/vInputComponent.js';
 import vSelectComponent from './components/vSelect/vSelectComponent.js';
 import vCheckboxComponent from './components/vCheckbox/vCheckboxComponent.js';
+import vRadioComponent from './components/vRadio/vRadioComponent.js';
 
 var componentList = {
   alert: alertComponent,
@@ -23,6 +24,7 @@ var componentList = {
   vInput: vInputComponent,
   vSelect: vSelectComponent,
   vCheckbox: vCheckboxComponent,
+  vRadio: vRadioComponent,
 };
 
 export default componentList;

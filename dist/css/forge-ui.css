@@ -2402,6 +2402,9 @@ ul.tab-nav {
 .checkbox.error {
   color: #ec5840; }
 
+.radio.error {
+  color: #ec5840; }
+
 .v-input {
   position: relative; }
   .v-input .input-wrap {

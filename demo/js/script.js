@@ -1,5 +1,5 @@
 
-Forge.initAll();
+Forge.castAll();
 
 Vue.config.debug = true;
 
@@ -90,5 +90,16 @@ new Vue({
   el: '#checkbox_demo',
   data: {
     checked: false
+  }
+});
+
+new Vue({
+  el: '#radio_demo',
+  data: {
+    selectedOption: '',
+    radioOptions: [
+      { name: 'radioOptionOne', label: 'One Option', value: '1' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' },
+    ]
   }
 });

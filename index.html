@@ -22,6 +22,8 @@
     <div class="row">
       <div class="hide-for-small medium-3 columns">
         <ul class="vertical menu docs-nav">
+          <li class="docs-nav-title">General</li>
+          <li><a href="#transitions">Transitions</a></li>
           <li class="docs-nav-title">Components</li>
           <li><a href="#alert">Alert</a></li>
           <li><a href="#icon">Icon</a></li>
@@ -33,8 +35,7 @@
           <li><a href="#input">vInput</a></li>
           <li><a href="#select">vSelect</a></li>
           <li><a href="#checkbox">vCheckbox</a></li>
-          <li class="docs-nav-title">Utilities</li>
-          <li><a href="#transitions">Transitions</a></li>
+          <li><a href="#radio">vRadio</a></li>
         </ul>
       </div>
 
@@ -70,6 +71,22 @@
           </div>
         </div>
         -->
+
+        <!-- transitions -->
+        <div class="row" id="transitions">
+          <div class="small-12 columns">
+            <h2>Transitions</h2>
+            <p>To use any of the transitions, simple add the keyword to the transition name to the element you will be showing/hiding as described in the <a href="https://vuejs.org/guide/transitions.html" target="_blank">Vue documentation</a>.</p>
+            <p>The following transitions are available as part of ForgeUI:</p>
+            <ul>
+              <li>fade</li>
+              <li>slide-up</li>
+              <li>slide-down</li>
+              <li>zoom-in</li>
+              <li>zoom-out</li>
+            </ul>
+          </div>
+        </div>
 
         <!-- alert -->
         <div class="row" id="alert">
@@ -461,7 +478,7 @@ new Vue({
               <dt>selected</dt>
               <dd><em>String; required; two-way</em><br/>The selected value</dd>
               <dt>options</dt>
-              <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a label and value parameter</dd>
+              <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a <em>label</em> and <em>value</em> parameter</dd>
               <dt>required</dt>
               <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
             </dl>
@@ -540,19 +557,51 @@ new Vue({
           </div>
         </div>
 
-        <!-- transitions -->
-        <div class="row" id="transitions">
+        <div class="row" id="radio">
           <div class="small-12 columns">
-            <h2>Transitions</h2>
-            <p>To use any of the transitions, simple add the keyword to the transition name to the element you will be showing/hiding as described in the <a href="https://vuejs.org/guide/transitions.html" target="_blank">Vue documentation</a>.</p>
-            <p>The following transitions are available as part of ForgeUI:</p>
-            <ul>
-              <li>fade</li>
-              <li>slide-up</li>
-              <li>slide-down</li>
-              <li>zoom-in</li>
-              <li>zoom-out</li>
-            </ul>
+            <h2>vRadio</h2>
+            <p>Renders a radio button input</p>
+            <h4>Params</h4>
+            <dl>
+              <dt>label</dt>
+              <dd><em>String; defaults to an empty string</em><br/>Renders a label above the radio options is passed a string value.</dd>
+              <dt>name</dt>
+              <dd><em>String; required</em><br/>The name for the radio button group.</dd>
+              <dt>options</dt>
+              <dd><em>Array; required</em><br/>An array of options to render for this radio button group. Each array element should be an object with a <em>name</em>, <em>label</em>, and <em>value</em>.</dd>
+              <dt>selected</dt>
+              <dd><em>String; required</em><br/>The selected value.</dd>
+              <dt>required</dt>
+              <dd><em>Boolean; defaults to false</em><br/>True if required.</dd>
+            </dl>
+            <div id="radio_demo">
+              <tabs>
+                <tab heading="Result">
+                  <v-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"><v-radio>
+                  <p>Selected: {{ selectedOption }}</p>
+                </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;v-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"&gt;&lt;v-radio&gt;
+</code></pre>
+                </tab>
+                <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#radio_demo',
+  data: {
+    selectedOption: '',
+    radioOptions: [
+      { name: 'radioOptionOne', label: 'One Option', value: '1' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' },
+    ]
+  }
+});
+</pre></code>
+                </tab>
+              </tabs>
+            </div>
+            <hr/>
           </div>
         </div>
 

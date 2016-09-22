@@ -159,6 +159,10 @@
 
 	var _vCheckboxComponent2 = _interopRequireDefault(_vCheckboxComponent);
 
+	var _vRadioComponent = __webpack_require__(25);
+
+	var _vRadioComponent2 = _interopRequireDefault(_vRadioComponent);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var componentList = {
@@ -172,7 +176,8 @@
 	  vForm: _vFormComponent2.default,
 	  vInput: _vInputComponent2.default,
 	  vSelect: _vSelectComponent2.default,
-	  vCheckbox: _vCheckboxComponent2.default
+	  vCheckbox: _vCheckboxComponent2.default,
+	  vRadio: _vRadioComponent2.default
 	};
 
 	exports.default = componentList;
@@ -823,7 +828,6 @@
 	  template: _vCheckboxTemplate2.default,
 	  data: function data() {
 	    return {
-	      icon: 'unchecked',
 	      isError: false
 	    };
 	  },
@@ -858,6 +862,69 @@
 /***/ function(module, exports) {
 
 	module.exports = "\n<label><input type=\"checkbox\" v-model=\"checked\" /> {{ label }}</label>\n";
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _vRadioTemplate = __webpack_require__(26);
+
+	var _vRadioTemplate2 = _interopRequireDefault(_vRadioTemplate);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var component = {
+	  template: _vRadioTemplate2.default,
+	  data: function data() {
+	    return {
+	      selected: '',
+	      isError: false
+	    };
+	  },
+
+	  props: {
+	    label: {
+	      type: String,
+	      default: ''
+	    },
+	    name: {
+	      type: String,
+	      required: true
+	    },
+	    options: {
+	      type: Array,
+	      required: true
+	    },
+	    selected: {
+	      type: String,
+	      required: true
+	    },
+	    required: {
+	      type: Boolean,
+	      default: false
+	    }
+	  },
+	  methods: {
+	    isValid: function isValid() {
+	      this.isError = this.required ? this.selected.length > 0 : false;
+	      return !this.isError;
+	    }
+	  }
+	};
+
+	exports.default = component;
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<label v-if=\"label.length > 0\">{{ label }}</label>\n<span v-for=\"option in options\">\n  <input type=\"radio\" :name=\"name\" :value=\"option.value\" :id=\"option.name\" v-model=\"selected\">\n  <label :for=\"option.name\">{{ option.label }}</label>\n</span>\n";
 
 /***/ }
 /******/ ]);

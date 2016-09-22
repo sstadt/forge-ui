@@ -12,9 +12,8 @@ var Server     = require('karma').Server;
 
 gulp.task('sass', function () {
   return gulp.src('src/sass/forge-ui.scss')
-    // .pipe(sourcemaps.init())
     .pipe(sass({includePaths: ['./node_modules/foundation-sites/scss']}).on('error', sass.logError))
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
     .pipe(uglifyCSS())
     .pipe(rename('forge-ui.min.css'))

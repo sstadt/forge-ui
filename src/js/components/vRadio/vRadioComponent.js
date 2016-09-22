@@ -1,20 +1,28 @@
 
-import template from './vCheckboxTemplate.html';
+import template from './vRadioTemplate.html';
 
 var component = {
   template,
   data() {
     return {
+      selected: '',
       isError: false
     };
   },
   props: {
-    checked: {
-      type: Boolean,
-      required: true,
-      twoWay: true
-    },
     label: {
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    options: {
+      type: Array,
+      required: true
+    },
+    selected: {
       type: String,
       required: true
     },
@@ -25,7 +33,7 @@ var component = {
   },
   methods: {
     isValid() {
-      this.isError = (this.required) ? !this.checked : false;
+      this.isError = (this.required) ? this.selected.length === 0 : false;
       return !this.isError;
     }
   }
