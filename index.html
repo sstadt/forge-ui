@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-12 column">
         <h1>ForgeUI Kitchen Sink</h1>
         <!-- TODO add description of toolkit here -->
         <hr/>
@@ -20,7 +20,7 @@
 
 
     <div class="row">
-      <div class="hide-for-small medium-3 columns">
+      <div class="hide-small medium-3 column">
         <ul class="vertical menu docs-nav">
           <li class="docs-nav-title">General</li>
           <li><a href="#transitions">Transitions</a></li>
@@ -39,13 +39,13 @@
         </ul>
       </div>
 
-      <div class="small-12 medium-9 columns">
+      <div class="small-12 medium-9 column">
         <!-- Start demo content -->
 
         <!-- sample -->
         <!--
         <div class="row" id="sample">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>Component Name</h2>
             <p>Component description</p>
             <h4>Params</h4>
@@ -74,7 +74,7 @@
 
         <!-- transitions -->
         <div class="row" id="transitions">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>Transitions</h2>
             <p>To use any of the transitions, simple add the keyword to the transition name to the element you will be showing/hiding as described in the <a href="https://vuejs.org/guide/transitions.html" target="_blank">Vue documentation</a>.</p>
             <p>The following transitions are available as part of ForgeUI:</p>
@@ -90,7 +90,7 @@
 
         <!-- alert -->
         <div class="row" id="alert">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>Alert</h2>
             <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
             <h4>Params</h4>
@@ -118,13 +118,13 @@
                 <tab heading="Result">
                   <alert v-ref:my-alert :can-close="true"></alert>
                   <div class="row">
-                    <div class="small-12 medium-5 columns">
+                    <div class="small-12 medium-5 column">
                       <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
                     </div>
-                    <div class="small-12 medium-5 columns">
+                    <div class="small-12 medium-5 column">
                       <v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"></v-select>
                     </div>
-                    <div class="small-12 medium-2 columns">
+                    <div class="small-12 medium-2 column">
                       <button type="button" class="button expanded inline-form" v-on:click="newMessage()">Send</button>
                     </div>
                   </div>
@@ -133,13 +133,13 @@
 <pre><code class="language-html">
 &lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
 &lt;div class="row"&gt;
-  &lt;div class="small-12 medium-5 columns"&gt;
+  &lt;div class="small-12 medium-5 column"&gt;
     &lt;v-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/v-input&gt;
   &lt;/div&gt;
-  &lt;div class="small-12 medium-5 columns"&gt;
+  &lt;div class="small-12 medium-5 column"&gt;
     &lt;v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"&gt;&lt;/v-select&gt;
   &lt;/div&gt;
-  &lt;div class="small-12 medium-2 columns"&gt;
+  &lt;div class="small-12 medium-2 column"&gt;
     &lt;button type="button" class="button expanded inline-form" v-on:click="newMessage()"&gt;Send&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -178,7 +178,7 @@ new Vue({
 
         <!-- modal -->
         <div class="row" id="modal">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>Modal</h2>
             <p>A simple modal dialog that is controlled by a single visibility variable</p>
             <h4>Params</h4>
@@ -235,7 +235,7 @@ new Vue({
 
         <!-- prompt -->
         <div class="row" id="prompt">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>Prompt</h2>
             <p>A simple prompt component meant to replace the native prompt and confirm methods. This will allow you to style the dialog to match your site and prevent users from asking the browser to suppress further dialogs.</p>
             <p>This component is meant to get input back from the user. If you simply need to notify the user of something, use an alert component to display the information and it's <em>canClose</em> property if the information should be dismissable.</p>
@@ -299,7 +299,7 @@ new Vue({
 
         <!-- tabs -->
         <div class="row" id="tabs">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>Tabs</h2>
             <p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
             <h4>Tabs Params</h4>
@@ -361,7 +361,7 @@ new Vue({
 
         <!-- form -->
         <div class="row" id="form">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>vForm</h2>
             <p>The vForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
             <p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
@@ -418,7 +418,7 @@ new Vue({
 
         <!-- input -->
         <div class="row" id="input">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>vInput</h2>
             <p>The vInput component provides a quick and easy way to add a standardized form input with automatic validation. The vInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
             <h4>Params</h4>
@@ -468,7 +468,7 @@ new Vue({
 
         <!-- select -->
         <div class="row" id="select">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>vSelect</h2>
             <p>Renders a select input given a set of options</p>
             <h4>Params</h4>
@@ -518,7 +518,7 @@ new Vue({
 
         <!-- checkbox -->
         <div class="row" id="checkbox">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>vCheckbox</h2>
             <p>Renders a checkbox input</p>
             <h4>Params</h4>
@@ -558,7 +558,7 @@ new Vue({
         </div>
 
         <div class="row" id="radio">
-          <div class="small-12 columns">
+          <div class="small-12 column">
             <h2>vRadio</h2>
             <p>Renders a radio button input</p>
             <h4>Params</h4>

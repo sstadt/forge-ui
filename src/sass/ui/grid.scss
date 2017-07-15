@@ -1,0 +1,30 @@
+
+@mixin grid-row($size) {
+  @for $i from 1 through $grid-column-count {
+    &.#{$size}-#{$i} {
+      width: percentage($i / $grid-column-count);
+    }
+  }
+}
+
+.row {
+  padding: 0;
+  max-width: $grid-row-width;
+  @include clearfix;
+
+  .row {
+    margin-left: -($grid-column-gutter / 2);
+    margin-right: -($grid-column-gutter / 2);
+  }
+
+  .column {
+    float: left;
+
+    padding-left: $grid-column-gutter / 2;
+    padding-right: $grid-column-gutter / 2;
+
+    @include grid-row('small');
+    @include medium-up { @include grid-row('medium'); }
+    @include large-up { @include grid-row('large'); }
+  }
+}
