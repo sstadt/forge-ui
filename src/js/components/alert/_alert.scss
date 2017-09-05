@@ -1,7 +1,24 @@
 
 .alert-box {
+  position: relative;
+  padding: $global-padding $global-padding * 2 $global-padding $global-padding;
+  background-color: $alert-background-color-default;
+  border: 1px solid $alert-border-color;
+
+  &.primary { background-color: $alert-background-color-primary; }
+  &.secondary { background-color: $alert-background-color-secondary; }
+  &.success { background-color: $alert-background-color-success; }
+  &.warning { background-color: $alert-background-color-warning; }
+  &.alert { background-color: $alert-background-color-alert; }
+
   & > :last-child {
     margin-bottom: 0;
+  }
+
+  .close-button {
+    position: absolute;
+    top: $global-padding;
+    right: $global-padding;
   }
 
   ul {

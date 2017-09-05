@@ -385,6 +385,14 @@ hr {
   margin: 20px 0;
   border-top: 1px solid #ddd; }
 
+.close-button {
+  background-color: transparent;
+  border: none;
+  padding: 2px 4px;
+  line-height: 1;
+  font-size: 1.25rem;
+  background-color: transparent; }
+
 ul .inline, ol .inline {
   margin: 0;
   padding: 0 0 1rem; }
@@ -402,18 +410,36 @@ dl dt {
 dl dd {
   margin: 0; }
 
-.alert-box > :last-child {
-  margin-bottom: 0; }
-
-.alert-box ul {
-  margin: 0;
-  padding: 0; }
-  .alert-box ul li {
-    list-style: none;
+.alert-box {
+  position: relative;
+  padding: 1rem 2rem 1rem 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.25); }
+  .alert-box.primary {
+    background-color: #d7ecfa; }
+  .alert-box.secondary {
+    background-color: #eaeaea; }
+  .alert-box.success {
+    background-color: #e1faea; }
+  .alert-box.warning {
+    background-color: #fff3d9; }
+  .alert-box.alert {
+    background-color: #f7e4e1; }
+  .alert-box > :last-child {
+    margin-bottom: 0; }
+  .alert-box .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem; }
+  .alert-box ul {
     margin: 0;
     padding: 0; }
-    .alert-box ul li:not(:last-child) {
-      padding-bottom: 4px; }
+    .alert-box ul li {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .alert-box ul li:not(:last-child) {
+        padding-bottom: 4px; }
 
 h1 svg.icon-image, h1 svg.icon-image, h3 svg.icon-image, h4 svg.icon-image, h5 svg.icon-image, h6 svg.icon-image, p svg.icon-image {
   vertical-align: sub; }

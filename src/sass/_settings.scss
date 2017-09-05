@@ -115,6 +115,13 @@ $loader-color: $black !default;
 /// @group ForgeUI-alert
 ////
 
+$alert-background-color-default: transparent !default;
+$alert-background-color-primary: #d7ecfa !default;
+$alert-background-color-secondary: #eaeaea !default;
+$alert-background-color-success: #e1faea !default;
+$alert-background-color-warning: #fff3d9 !default;
+$alert-background-color-alert: #f7e4e1 !default;
+$alert-border-color: rgba(10, 10, 10, 0.25);
 $alert-message-padding: 4px !default;
 
 ////
