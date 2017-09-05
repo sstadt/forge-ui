@@ -55,29 +55,12 @@ Forge.castAll();
   - vInput
   - vSelect
 
-### Foundation
-
-Forge UI bundles Foundation 6 for sites in the dist version of the CSSS. If you would like to customize the styling through SASS, import `src/sass/forge-ui.sass` to your project's SASS build. There is a comprehensive settings file in the same directory that you can copy to your own project file and use to tweak individual settings to your liking.
-
-Forge UI does not include all component styling for Foundation, however you can always call the appropriate mixin to populate the styles in your compiled stylesheet. Here is the list of Foundation components that are initialized in the dist build for Forge's CSS:
-
- - foundation-global-styles
- - foundation-grid
- - foundation-typography
- - foundation-forms
- - foundation-button
- - foundation-button-group
- - foundation-callout
- - foundation-close-button
- - foundation-menu
- - foundation-table
- - foundation-visibility-classes
- - foundation-float-classes
-
-Foundation For Sites: http://foundation.zurb.com/sites/docs/
-
 ### Coverage
 
 ```
 gulp test
 ```
+
+### TODO
+
+ - document CSS components
