@@ -1,15 +1,28 @@
 
-.inline-list {
-  margin: 0;
-  padding: 0 0 $inline-list-padding;
+ul, ol {
+  .inline {
+    margin: 0;
+    padding: 0 0 $list-inline-padding;
 
-  li {
-    display: inline-block;
-    padding: 0;
-    list-style: none;
+    li {
+      display: inline-block;
+      padding: 0;
+      list-style: none;
 
-    &:not(:last-child) {
-      margin-right: $inline-list-spacing;
+      &:not(:last-child) {
+        margin-right: $list-inline-spacing;
+      }
     }
+  }
+}
+
+dl {
+  dt {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+
+  dd {
+    margin: 0;
   }
 }

@@ -46,10 +46,10 @@ $base-font-size: 16 !default;
 
 $paragraph-font-family: inherit;
 $paragraph-font-weight: normal;
-$paragraph-font-size: 1rem;
+$paragraph-font-size: $base-font-size;
 $paragraph-line-height: 1.6;
-$paragraph-margin-bottom: rem-calc(20);
-$paragraph-aside-font-size: rem-calc(14);
+$paragraph-margin-bottom: 20;
+$paragraph-aside-font-size: 14;
 $paragraph-aside-line-height: 1.35;
 $paragraph-aside-font-style: italic;
 $paragraph-text-rendering: optimizeLegibility;
@@ -80,7 +80,7 @@ $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 $hr-border-width: 1px;
 $hr-border-style: solid;
 $hr-border-color: #ddd;
-$hr-margin: rem-calc(20);
+$hr-margin: 20px;
 
 ////
 /// @group grid
@@ -96,8 +96,8 @@ $block-grid-column-count: 8 !default;
 /// @group lists
 ////
 
-$inline-list-padding: $global-padding !default;
-$inline-list-spacing: rem-calc(8) !default;
+$list-inline-padding: $global-padding !default;
+$list-inline-spacing: rem-calc(8) !default;
 
 ////
 /// @group buttons
@@ -115,14 +115,14 @@ $loader-color: $black !default;
 /// @group ForgeUI-alert
 ////
 
-$alert-message-padding: rem-calc(4) !default;
+$alert-message-padding: 4px !default;
 
 ////
 /// @group ForgeUI-modal
 ////
 
-$modal-size-default: rem-calc(580) !default;
-$modal-size-small: rem-calc(300) !default;
+$modal-size-default: 580px !default;
+$modal-size-small: 300px !default;
 $modal-padding: $global-padding !default;
 $modal-background-color: $body-background !default;
 $modal-overlay-color: rgba($black, $overlay-opacity) !default;
@@ -131,7 +131,7 @@ $modal-overlay-color: rgba($black, $overlay-opacity) !default;
 /// @group ForgeUI-prompt
 ////
 
-$prompt-width: rem-calc(400) !default;
+$prompt-width: 400px !default;
 $prompt-padding: $global-padding !default;
 $prompt-background-color: $body-background !default;
 $prompt-overlay-color: rgba($black, $overlay-opacity) !default;
@@ -146,4 +146,4 @@ $tab-nav-font-color: $dark-gray !default;
 $tab-nav-font-color-hover: $body-font-color !default;
 $tab-nav-font-color-active: $body-font-color !default;
 $tab-nav-border-color: $body-font-color !default;
-$tab-nav-padding: rem-calc(4) rem-calc(10) !default;
+$tab-nav-padding: 4px 10px !default;

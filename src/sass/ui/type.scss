@@ -1,0 +1,51 @@
+
+body {
+  font-weight: normal;
+  line-height: 1.5;
+  color: #000;
+}
+
+p {
+  font-family: $paragraph-font-family;
+  font-weight: $paragraph-font-weight;
+  font-size: rem-calc($paragraph-font-size);
+  line-height: $paragraph-line-height;
+  margin-bottom: $paragraph-margin-bottom;
+  text-rendering: $paragraph-text-rendering;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-family;
+  font-weight: $header-font-weight;
+  text-decoration-style: $header-font-style;
+  color: $header-font-color;
+  line-height: $header-line-height;
+  margin: $header-top-margin 0 $header-bottom-margin;
+  text-rendering: $header-text-rendering;
+}
+
+h1 { font-size: rem-calc($h1-font-size); }
+h2 { font-size: rem-calc($h2-font-size); }
+h3 { font-size: rem-calc($h3-font-size); }
+h4 { font-size: rem-calc($h4-font-size); }
+h5 { font-size: rem-calc($h5-font-size); }
+h6 { font-size: rem-calc($h6-font-size); }
+
+small {
+  font-size: $small-font-size;
+  color: $small-font-color;
+}
+
+a {
+  color: $anchor-font-color;
+
+  &:hover {
+    text-decoration: $anchor-text-decoration;
+    color: $anchor-font-color-hover;
+  }
+}
+
+hr {
+  margin: $hr-margin 0;
+  border-top: $hr-border-width $hr-border-style $hr-border-color;
+}
