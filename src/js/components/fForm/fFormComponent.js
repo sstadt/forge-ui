@@ -1,5 +1,5 @@
 
-import template from './vFormTemplate.html';
+import template from './fFormTemplate.html';
 
 var component = {
   template,

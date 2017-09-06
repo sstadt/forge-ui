@@ -143,25 +143,25 @@
 
 	var _tabComponent2 = _interopRequireDefault(_tabComponent);
 
-	var _vFormComponent = __webpack_require__(16);
+	var _fFormComponent = __webpack_require__(16);
 
-	var _vFormComponent2 = _interopRequireDefault(_vFormComponent);
+	var _fFormComponent2 = _interopRequireDefault(_fFormComponent);
 
-	var _vInputComponent = __webpack_require__(18);
+	var _fInputComponent = __webpack_require__(18);
 
-	var _vInputComponent2 = _interopRequireDefault(_vInputComponent);
+	var _fInputComponent2 = _interopRequireDefault(_fInputComponent);
 
-	var _vSelectComponent = __webpack_require__(21);
+	var _fSelectComponent = __webpack_require__(21);
 
-	var _vSelectComponent2 = _interopRequireDefault(_vSelectComponent);
+	var _fSelectComponent2 = _interopRequireDefault(_fSelectComponent);
 
-	var _vCheckboxComponent = __webpack_require__(23);
+	var _fCheckboxComponent = __webpack_require__(23);
 
-	var _vCheckboxComponent2 = _interopRequireDefault(_vCheckboxComponent);
+	var _fCheckboxComponent2 = _interopRequireDefault(_fCheckboxComponent);
 
-	var _vRadioComponent = __webpack_require__(25);
+	var _fRadioComponent = __webpack_require__(25);
 
-	var _vRadioComponent2 = _interopRequireDefault(_vRadioComponent);
+	var _fRadioComponent2 = _interopRequireDefault(_fRadioComponent);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -173,11 +173,11 @@
 	  loader: _loaderComponent2.default,
 	  tabs: _tabsComponent2.default,
 	  tab: _tabComponent2.default,
-	  vForm: _vFormComponent2.default,
-	  vInput: _vInputComponent2.default,
-	  vSelect: _vSelectComponent2.default,
-	  vCheckbox: _vCheckboxComponent2.default,
-	  vRadio: _vRadioComponent2.default
+	  fForm: _fFormComponent2.default,
+	  fInput: _fInputComponent2.default,
+	  fSelect: _fSelectComponent2.default,
+	  fCheckbox: _fCheckboxComponent2.default,
+	  fRadio: _fRadioComponent2.default
 	};
 
 	exports.default = componentList;
@@ -562,14 +562,14 @@
 	  value: true
 	});
 
-	var _vFormTemplate = __webpack_require__(17);
+	var _fFormTemplate = __webpack_require__(17);
 
-	var _vFormTemplate2 = _interopRequireDefault(_vFormTemplate);
+	var _fFormTemplate2 = _interopRequireDefault(_fFormTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var component = {
-	  template: _vFormTemplate2.default,
+	  template: _fFormTemplate2.default,
 	  props: {
 	    method: {
 	      type: String,
@@ -631,16 +631,16 @@
 	  value: true
 	});
 
-	var _vInputTemplate = __webpack_require__(19);
+	var _fInputTemplate = __webpack_require__(19);
 
-	var _vInputTemplate2 = _interopRequireDefault(_vInputTemplate);
+	var _fInputTemplate2 = _interopRequireDefault(_fInputTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var validationRules = __webpack_require__(20);
 
 	var component = {
-	  template: _vInputTemplate2.default,
+	  template: _fInputTemplate2.default,
 	  props: {
 	    label: {
 	      type: String
@@ -749,14 +749,14 @@
 	  value: true
 	});
 
-	var _vSelectTemplate = __webpack_require__(22);
+	var _fSelectTemplate = __webpack_require__(22);
 
-	var _vSelectTemplate2 = _interopRequireDefault(_vSelectTemplate);
+	var _fSelectTemplate2 = _interopRequireDefault(_fSelectTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var component = {
-	  template: _vSelectTemplate2.default,
+	  template: _fSelectTemplate2.default,
 	  props: {
 	    label: {
 	      type: String,
@@ -818,14 +818,14 @@
 	  value: true
 	});
 
-	var _vCheckboxTemplate = __webpack_require__(24);
+	var _fCheckboxTemplate = __webpack_require__(24);
 
-	var _vCheckboxTemplate2 = _interopRequireDefault(_vCheckboxTemplate);
+	var _fCheckboxTemplate2 = _interopRequireDefault(_fCheckboxTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var component = {
-	  template: _vCheckboxTemplate2.default,
+	  template: _fCheckboxTemplate2.default,
 	  data: function data() {
 	    return {
 	      isError: false
@@ -873,14 +873,14 @@
 	  value: true
 	});
 
-	var _vRadioTemplate = __webpack_require__(26);
+	var _fRadioTemplate = __webpack_require__(26);
 
-	var _vRadioTemplate2 = _interopRequireDefault(_vRadioTemplate);
+	var _fRadioTemplate2 = _interopRequireDefault(_fRadioTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var component = {
-	  template: _vRadioTemplate2.default,
+	  template: _fRadioTemplate2.default,
 	  data: function data() {
 	    return {
 	      selected: '',

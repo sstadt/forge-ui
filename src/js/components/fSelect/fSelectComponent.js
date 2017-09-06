@@ -1,5 +1,5 @@
 
-import template from './vSelectTemplate.html';
+import template from './fSelectTemplate.html';
 
 var component = {
   template,

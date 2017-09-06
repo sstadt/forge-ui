@@ -1,5 +1,5 @@
 
-import template from './vInputTemplate.html';
+import template from './fInputTemplate.html';
 
 var validationRules = require('./validationRules.js');
 

@@ -6,11 +6,11 @@ import promptComponent from './components/prompt/promptComponent.js';
 import loaderComponent from './components/loader/loaderComponent.js';
 import tabsComponent from './components/tabs/tabsComponent.js';
 import tabComponent from './components/tabs/tab/tabComponent.js';
-import vFormComponent from './components/vForm/vFormComponent.js';
-import vInputComponent from './components/vInput/vInputComponent.js';
-import vSelectComponent from './components/vSelect/vSelectComponent.js';
-import vCheckboxComponent from './components/vCheckbox/vCheckboxComponent.js';
-import vRadioComponent from './components/vRadio/vRadioComponent.js';
+import fFormComponent from './components/fForm/fFormComponent.js';
+import fInputComponent from './components/fInput/fInputComponent.js';
+import fSelectComponent from './components/fSelect/fSelectComponent.js';
+import fCheckboxComponent from './components/fCheckbox/fCheckboxComponent.js';
+import fRadioComponent from './components/fRadio/fRadioComponent.js';
 
 var componentList = {
   alert: alertComponent,
@@ -20,11 +20,11 @@ var componentList = {
   loader: loaderComponent,
   tabs: tabsComponent,
   tab: tabComponent,
-  vForm: vFormComponent,
-  vInput: vInputComponent,
-  vSelect: vSelectComponent,
-  vCheckbox: vCheckboxComponent,
-  vRadio: vRadioComponent,
+  fForm: fFormComponent,
+  fInput: fInputComponent,
+  fSelect: fSelectComponent,
+  fCheckbox: fCheckboxComponent,
+  fRadio: fRadioComponent,
 };
 
 export default componentList;

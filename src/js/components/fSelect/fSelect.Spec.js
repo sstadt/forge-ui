@@ -1,13 +1,13 @@
 
-import vCheckboxComponent from './vRadioComponent.js';
+import fSelectComponent from './fSelectComponent.js';
 
 Vue.config.silent = true;
 
-describe('The vRadio component', function () {
+describe('The fSelect component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(vCheckboxComponent);
+    component = _.clone(fSelectComponent);
   });
 
   it('to be an object', function () {
@@ -33,18 +33,22 @@ describe('The vRadio component', function () {
       });
     });
 
-    describe('name', function () {
+    describe('selected', function () {
       it('should be a string', function () {
-        expect(component.props.name.type).toEqual(String);
+        expect(component.props.selected.type).toEqual(String);
       });
 
-      it('should default to an empty string', function () {
-        expect(component.props.name.required).toEqual(true);
+      it('should be required', function () {
+        expect(component.props.selected.required).toEqual(true);
+      });
+
+      it('should be a twoWay binding', function () {
+        expect(component.props.selected.twoWay).toEqual(true);
       });
     });
 
     describe('options', function () {
-      it('should be aa array', function () {
+      it('should be an array', function () {
         expect(component.props.options.type).toEqual(Array);
       });
 
@@ -53,18 +57,8 @@ describe('The vRadio component', function () {
       });
     });
 
-    describe('selected', function () {
-      it('should be a string', function () {
-        expect(component.props.selected.type).toEqual(String);
-      });
-
-      it('should default to an empty string', function () {
-        expect(component.props.selected.required).toEqual(true);
-      });
-    });
-
     describe('required', function () {
-      it('should be aa boolean', function () {
+      it('should be a boolean', function () {
         expect(component.props.required.type).toEqual(Boolean);
       });
 
@@ -82,31 +76,31 @@ describe('The vRadio component', function () {
     });
 
     describe('#isValid', function () {
-      it('should return true and set isError to false if required is false and there is no selected value', function () {
+      it('should return true if required is false and selected is empty', function () {
         componentInstance.required = false;
         componentInstance.selected = '';
         expect(componentInstance.isValid()).toEqual(true);
-        expect(componentInstance.isError).toEqual(false);
+        expect(componentInstance.isError).toEqual(true);
       });
 
-      it('should return true and set isError to false if required is false and there is a selected value', function () {
+      it('should return true if required is false and selected is not empty', function () {
         componentInstance.required = false;
         componentInstance.selected = 'foo';
         expect(componentInstance.isValid()).toEqual(true);
-        expect(componentInstance.isError).toEqual(false);
+        expect(componentInstance.isError).toEqual(true);
       });
 
-      it('should return true and set isError to false if required is true and there is a selected value', function () {
-        componentInstance.required = true;
-        componentInstance.selected = 'foo';
-        expect(componentInstance.isValid()).toEqual(true);
-        expect(componentInstance.isError).toEqual(false);
-      });
-
-      it('should return false and set isError to true if required is true and there is no selected value', function () {
+      it('should return false if required is true and selected is empty', function () {
         componentInstance.required = true;
         componentInstance.selected = '';
         expect(componentInstance.isValid()).toEqual(false);
+        expect(componentInstance.isError).toEqual(false);
+      });
+
+      it('should return true if required is true and selected is not empty', function () {
+        componentInstance.required = true;
+        componentInstance.selected = 'foo';
+        expect(componentInstance.isValid()).toEqual(true);
         expect(componentInstance.isError).toEqual(true);
       });
     });

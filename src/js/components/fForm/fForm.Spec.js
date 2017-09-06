@@ -1,13 +1,13 @@
 
-import vFormComponent from './vFormComponent.js';
+import fFormComponent from './fFormComponent.js';
 
 Vue.config.silent = true;
 
-describe('The vForm component', function () {
+describe('The fForm component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(vFormComponent);
+    component = _.clone(fFormComponent);
   });
 
   it('to be an object', function () {

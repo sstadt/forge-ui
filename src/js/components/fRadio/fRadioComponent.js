@@ -1,5 +1,5 @@
 
-import template from './vRadioTemplate.html';
+import template from './fRadioTemplate.html';
 
 var component = {
   template,

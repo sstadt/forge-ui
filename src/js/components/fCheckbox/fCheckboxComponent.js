@@ -1,5 +1,5 @@
 
-import template from './vCheckboxTemplate.html';
+import template from './fCheckboxTemplate.html';
 
 var component = {
   template,

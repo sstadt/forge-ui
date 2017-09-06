@@ -1,13 +1,13 @@
 
-import vCheckboxComponent from './vCheckboxComponent.js';
+import fCheckboxComponent from './fCheckboxComponent.js';
 
 Vue.config.silent = true;
 
-describe('The vCheckbox component', function () {
+describe('The fCheckbox component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(vCheckboxComponent);
+    component = _.clone(fCheckboxComponent);
   });
 
   it('to be an object', function () {

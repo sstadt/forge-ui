@@ -36,11 +36,11 @@
           <li><a href="#modal">Modal</a></li>
           <li><a href="#prompt">Prompt</a></li>
           <li><a href="#tabs">Tabs</a></li>
-          <li><a href="#form">vForm</a></li>
-          <li><a href="#input">vInput</a></li>
-          <li><a href="#select">vSelect</a></li>
-          <li><a href="#checkbox">vCheckbox</a></li>
-          <li><a href="#radio">vRadio</a></li>
+          <li><a href="#form">fForm</a></li>
+          <li><a href="#input">fInput</a></li>
+          <li><a href="#select">fSelect</a></li>
+          <li><a href="#checkbox">fCheckbox</a></li>
+          <li><a href="#radio">fRadio</a></li>
         </ul>
       </div>
 
@@ -177,10 +177,10 @@
                   <alert v-ref:my-alert :can-close="true"></alert>
                   <div class="row">
                     <div class="small-12 medium-5 column">
-                      <v-input type="text" label="Alert Message" :value.sync="alertMessage"></v-input>
+                      <f-input type="text" label="Alert Message" :value.sync="alertMessage"></f-input>
                     </div>
                     <div class="small-12 medium-5 column">
-                      <v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"></v-select>
+                      <f-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"></f-select>
                     </div>
                     <div class="small-12 medium-2 column">
                       <button type="button" class="button expanded inline-form" v-on:click="newMessage()">Send</button>
@@ -192,10 +192,10 @@
 &lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
 &lt;div class="row"&gt;
   &lt;div class="small-12 medium-5 column"&gt;
-    &lt;v-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/v-input&gt;
+    &lt;f-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/f-input&gt;
   &lt;/div&gt;
   &lt;div class="small-12 medium-5 column"&gt;
-    &lt;v-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"&gt;&lt;/v-select&gt;
+    &lt;f-select label="Method" :selected.sync="selectedMessageType" :options="messageTypes" :required="true"&gt;&lt;/f-select&gt;
   &lt;/div&gt;
   &lt;div class="small-12 medium-2 column"&gt;
     &lt;button type="button" class="button expanded inline-form" v-on:click="newMessage()"&gt;Send&lt;/button&gt;
@@ -420,8 +420,8 @@ new Vue({
         <!-- form -->
         <div class="row" id="form">
           <div class="small-12 column">
-            <h2>vForm</h2>
-            <p>The vForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
+            <h2>fForm</h2>
+            <p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
             <p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
             <h4>Params</h4>
             <dl>
@@ -438,18 +438,18 @@ new Vue({
               <tabs>
                 <tab heading="Result">
                   <alert v-ref:my-alert :can-close="true"></alert>
-                  <v-form :async="true" :submit-callback="showMessage">
-                    <v-input type="text" :value.sync="message" :required="true"></v-input>
+                  <f-form :async="true" :submit-callback="showMessage">
+                    <f-input type="text" :value.sync="message" :required="true"></f-input>
                     <button type="submit" class="button">Submit</button>
-                  </v-form>
+                  </f-form>
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
 &lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
-&lt;v-form :async="true" :submit-callback="showMessage"&gt;
-  &lt;v-input type="text" :value.sync="message" :required="true"&gt;&lt;/v-input&gt;
+&lt;f-form :async="true" :submit-callback="showMessage"&gt;
+  &lt;f-input type="text" :value.sync="message" :required="true"&gt;&lt;/f-input&gt;
   &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
-&lt;/v-form&gt;
+&lt;/f-form&gt;
 </code></pre>
                 </tab>
                 <tab heading="JavaScript">
@@ -477,8 +477,8 @@ new Vue({
         <!-- input -->
         <div class="row" id="input">
           <div class="small-12 column">
-            <h2>vInput</h2>
-            <p>The vInput component provides a quick and easy way to add a standardized form input with automatic validation. The vInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
+            <h2>fInput</h2>
+            <p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
             <h4>Params</h4>
             <dl>
               <dt>type</dt>
@@ -501,11 +501,11 @@ new Vue({
             <div id="input_demo">
               <tabs>
                 <tab heading="Result">
-                  <v-input type="email" label="Email" :value.sync="email" />
+                  <f-input type="email" label="Email" :value.sync="email" />
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;v-input type="email" label="Email" :value.sync="email" /&gt;
+&lt;f-input type="email" label="Email" :value.sync="email" /&gt;
 </code></pre>
                 </tab>
                 <tab heading="JavaScript">
@@ -527,7 +527,7 @@ new Vue({
         <!-- select -->
         <div class="row" id="select">
           <div class="small-12 column">
-            <h2>vSelect</h2>
+            <h2>fSelect</h2>
             <p>Renders a select input given a set of options</p>
             <h4>Params</h4>
             <dl>
@@ -543,12 +543,12 @@ new Vue({
             <div id="select_demo">
               <tabs>
                 <tab heading="Result">
-                  <v-select :selected.sync="selectedOption" :options="selectOptions"></v-select>
+                  <f-select :selected.sync="selectedOption" :options="selectOptions"></f-select>
                   <p>selected: {{ selectedOption }}</p>
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;v-select :selected.sync="selectedOption" :options="selectOptions"&gt;&lt;/v-select&gt;
+&lt;f-select :selected.sync="selectedOption" :options="selectOptions"&gt;&lt;/f-select&gt;
 </code></pre>
                 </tab>
                 <tab heading="JavaScript">
@@ -577,7 +577,7 @@ new Vue({
         <!-- checkbox -->
         <div class="row" id="checkbox">
           <div class="small-12 column">
-            <h2>vCheckbox</h2>
+            <h2>fCheckbox</h2>
             <p>Renders a checkbox input</p>
             <h4>Params</h4>
             <dl>
@@ -591,12 +591,12 @@ new Vue({
             <div id="checkbox_demo">
               <tabs>
                 <tab heading="Result">
-                  <v-checkbox :checked.sync="checked" label="My checkbox"></v-checkbox>
+                  <f-checkbox :checked.sync="checked" label="My checkbox"></f-checkbox>
                   <p>checked: {{ checked }}</p>
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;v-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/v-checkbox&gt;
+&lt;f-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/f-checkbox&gt;
 </code></pre>
                 </tab>
                 <tab heading="JavaScript">
@@ -617,7 +617,7 @@ new Vue({
 
         <div class="row" id="radio">
           <div class="small-12 column">
-            <h2>vRadio</h2>
+            <h2>fRadio</h2>
             <p>Renders a radio button input</p>
             <h4>Params</h4>
             <dl>
@@ -635,12 +635,12 @@ new Vue({
             <div id="radio_demo">
               <tabs>
                 <tab heading="Result">
-                  <v-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"><v-radio>
+                  <f-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"><f-radio>
                   <p>Selected: {{ selectedOption }}</p>
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;v-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"&gt;&lt;v-radio&gt;
+&lt;f-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"&gt;&lt;f-radio&gt;
 </code></pre>
                 </tab>
                 <tab heading="JavaScript">

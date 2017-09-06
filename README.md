@@ -50,10 +50,10 @@ Forge.castAll();
   - prompt
   - tabs
   - tab
-  - vCheckbox
-  - vForm
-  - vInput
-  - vSelect
+  - fCheckbox
+  - fForm
+  - fInput
+  - fSelect
 
 ### Coverage
 

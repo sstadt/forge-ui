@@ -1,13 +1,13 @@
 
-import vInputComponent from './vInputComponent.js';
+import fInputComponent from './fInputComponent.js';
 
 Vue.config.silent = true;
 
-describe('The vInput component', function () {
+describe('The fInput component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(vInputComponent);
+    component = _.clone(fInputComponent);
   });
 
   it('to be an object', function () {

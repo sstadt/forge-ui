@@ -677,12 +677,6 @@ ul.tab-nav {
     ul.tab-nav li:hover {
       color: #0a0a0a; }
 
-.checkbox.error {
-  color: #ec5840; }
-
-.radio.error {
-  color: #ec5840; }
-
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -748,3 +742,9 @@ select {
   background-repeat: no-repeat;
   background-size: 9px 6px;
   padding-right: 1.5rem; }
+
+.checkbox.error {
+  color: #ec5840; }
+
+.radio.error {
+  color: #ec5840; }
