@@ -1,4 +1,135 @@
 
+.button {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin: $button-margin;
+  font-family: $button-font-family;
+  padding: $button-padding;
+  border: $button-border-size $button-border-style $button-border-color;
+  border-radius: $button-radius;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out, border-color 0.25s ease-out;
+  font-size: rem-calc($button-font-size);
+  line-height: $button-line-height;
+  text-align: center;
+  background-color: $button-background-color-default;
+  color: $button-color;
+  -webkit-appearance: none;
+
+  &:hover {
+    color: $button-color;
+    text-decoration: none;
+    background-color: $button-background-color-hover-default;
+  }
+
+  &.secondary {
+    background-color: $button-background-color-secondary;
+
+    &:hover {
+      background-color: $button-background-color-secondary-hover;
+    }
+  }
+
+  &.success {
+    background-color: $button-background-color-success;
+
+    &:hover {
+      background-color: $button-background-color-success-hover;
+    }
+  }
+
+  &.warning {
+    background-color: $button-background-color-warning;
+
+    &:hover {
+      background-color: $button-background-color-warning-hover;
+    }
+  }
+
+  &.alert {
+    background-color: $button-background-color-alert;
+
+    &:hover {
+      background-color: $button-background-color-alert-hover;
+    }
+  }
+
+  &.hollow {
+    color: $button-background-color-default;
+    background-color: $button-border-color;
+    border-color: $button-background-color-default;
+    border-width: $button-hollow-border-size;
+    border-style: $button-hollow-border-style;
+
+    &:hover {
+      color: $button-background-color-hover-default;
+      background-color: transparent;
+      border-color: $button-background-color-hover-default;
+    }
+
+    &.secondary {
+      color: $button-background-color-secondary;
+      border-color: $button-background-color-secondary;
+
+      &:hover {
+        color: $button-background-color-secondary-hover;
+        border-color: $button-background-color-secondary-hover;
+      }
+    }
+
+    &.success {
+      color: $button-background-color-success;
+      border-color: $button-background-color-success;
+
+      &:hover {
+        color: $button-background-color-success-hover;
+        border-color: $button-background-color-success-hover;
+      }
+    }
+
+    &.warning {
+      color: $button-background-color-warning;
+      border-color: $button-background-color-warning;
+
+      &:hover {
+        color: $button-background-color-warning-hover;
+        border-color: $button-background-color-warning-hover;
+      }
+    }
+
+    &.alert {
+      color: $button-background-color-alert;
+      border-color: $button-background-color-alert;
+
+      &:hover {
+        color: $button-background-color-alert-hover;
+        border-color: $button-background-color-alert-hover;
+      }
+    }
+  }
+
+  &.tiny {
+    font-size: rem-calc($button-tiny-font-size);
+  }
+
+  &.small {
+    font-size: rem-calc($button-small-font-size);
+  }
+
+  &.large {
+    font-size: rem-calc($button-large-font-size);
+  }
+
+  &.expand {
+    display: block;
+    width: 100%;
+  }
+
+  &.inline-form {
+    margin-top: rem-calc($form-field-line-height * $form-field-font-size);
+  }
+}
+
 .close-button {
   background-color: transparent;
   border: none;

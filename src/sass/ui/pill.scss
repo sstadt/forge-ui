@@ -1,0 +1,27 @@
+
+.pill {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: $pill-border-radius;
+  background-color: $light-gray;
+
+  &.primary {
+    color: white;
+    background-color: $primary-color;
+  }
+
+  &.secondary {
+    color: white;
+    background-color: $secondary-color;
+  }
+
+  &.warning {
+    color: white;
+    background-color: $warning-color;
+  }
+
+  &.alert {
+    color: white;
+    background-color: $alert-color;
+  }
+}

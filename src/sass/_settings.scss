@@ -34,7 +34,7 @@ $global-margin: 1rem !default;
 $global-padding: 1rem !default;
 $global-weight-normal: normal !default;
 $global-weight-bold: bold !default;
-$global-radius: 0 !default;
+$global-radius: 2px !default;
 
 $breakpoint-medium: 600px !default;
 $breakpoint-large: 1200px !default;
@@ -104,7 +104,35 @@ $list-inline-spacing: rem-calc(8) !default;
 /// @group buttons
 ////
 
+$button-color: #fefefe !default;
+$button-font-size: 14 !default;
+$button-font-family: inherit !default;
+$button-line-height: 1 !default;
+$button-hover-darken: 10% !default;
+$button-border-color: transparent !default;
+$button-border-size: 1px !default;
+$button-border-style: solid !default;
+$button-hollow-border-size: 1px !default;
+$button-hollow-border-style: solid;
+$button-radius: $global-radius !default;
+$button-padding: 0.85em 1em !default;
+$button-margin: 0 0 1rem 0 !default;
 
+$button-background-color-default: $primary-color !default;
+$button-background-color-secondary: $secondary-color !default;
+$button-background-color-success: $success-color !default;
+$button-background-color-warning: $warning-color !default;
+$button-background-color-alert: $alert-color !default;
+
+$button-background-color-hover-default: darken($button-background-color-default, $button-hover-darken) !default;
+$button-background-color-secondary-hover: darken($secondary-color, $button-hover-darken) !default;
+$button-background-color-success-hover: darken($success-color, $button-hover-darken) !default;
+$button-background-color-warning-hover: darken($warning-color, $button-hover-darken) !default;
+$button-background-color-alert-hover: darken($alert-color, $button-hover-darken) !default;
+
+$button-tiny-font-size: 10 !default;
+$button-small-font-size: 12 !default;
+$button-large-font-size: 20 !default;
 
 ////
 /// @group forms
@@ -113,7 +141,7 @@ $list-inline-spacing: rem-calc(8) !default;
 $form-field-background-color: transparent !default;
 $form-field-color: $global-font-color !default;
 $form-field-line-height: 1.5 !default;
-$form-field-font-size: 1rem !default;
+$form-field-font-size: 16 !default;
 $form-field-font-family: inherit !default;
 $form-field-font-weight: normal;
 $form-field-border-color: #cacaca !default;
@@ -125,6 +153,12 @@ $form-field-height: 2.4375rem !default;
 $form-field-width: 100% !default;
 $form-field-radius: $global-radius !default;
 $form-field-shadow-color: rgba(10, 10, 10, 0.1) !default;
+
+////
+/// @group pills
+////
+
+$pill-border-radius: $global-radius !default;
 
 ////
 /// @group ForgeUI-loader

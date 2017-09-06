@@ -386,6 +386,88 @@ hr {
   margin: 20px 0;
   border-top: 1px solid #ddd; }
 
+.button {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  font-family: inherit;
+  padding: 0.85em 1em;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out, border-color 0.25s ease-out;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-align: center;
+  background-color: #2199e8;
+  color: #fefefe;
+  -webkit-appearance: none; }
+  .button:hover {
+    color: #fefefe;
+    text-decoration: none;
+    background-color: #147dc2; }
+  .button.secondary {
+    background-color: #777; }
+    .button.secondary:hover {
+      background-color: #5e5e5e; }
+  .button.success {
+    background-color: #3adb76; }
+    .button.success:hover {
+      background-color: #23bf5d; }
+  .button.warning {
+    background-color: #ffae00; }
+    .button.warning:hover {
+      background-color: #cc8b00; }
+  .button.alert {
+    background-color: #ec5840; }
+    .button.alert:hover {
+      background-color: #e23317; }
+  .button.hollow {
+    color: #2199e8;
+    background-color: transparent;
+    border-color: #2199e8;
+    border-width: 1px;
+    border-style: solid; }
+    .button.hollow:hover {
+      color: #147dc2;
+      background-color: transparent;
+      border-color: #147dc2; }
+    .button.hollow.secondary {
+      color: #777;
+      border-color: #777; }
+      .button.hollow.secondary:hover {
+        color: #5e5e5e;
+        border-color: #5e5e5e; }
+    .button.hollow.success {
+      color: #3adb76;
+      border-color: #3adb76; }
+      .button.hollow.success:hover {
+        color: #23bf5d;
+        border-color: #23bf5d; }
+    .button.hollow.warning {
+      color: #ffae00;
+      border-color: #ffae00; }
+      .button.hollow.warning:hover {
+        color: #cc8b00;
+        border-color: #cc8b00; }
+    .button.hollow.alert {
+      color: #ec5840;
+      border-color: #ec5840; }
+      .button.hollow.alert:hover {
+        color: #e23317;
+        border-color: #e23317; }
+  .button.tiny {
+    font-size: 0.625rem; }
+  .button.small {
+    font-size: 0.75rem; }
+  .button.large {
+    font-size: 1.25rem; }
+  .button.expand {
+    display: block;
+    width: 100%; }
+  .button.inline-form {
+    margin-top: 1.5rem; }
+
 .close-button {
   background-color: transparent;
   border: none;
@@ -394,14 +476,14 @@ hr {
   font-size: 1.25rem;
   background-color: transparent; }
 
-ul .inline, ol .inline {
+ul.inline, ol.inline {
   margin: 0;
   padding: 0 0 1rem; }
-  ul .inline li, ol .inline li {
+  ul.inline li, ol.inline li {
     display: inline-block;
     padding: 0;
     list-style: none; }
-    ul .inline li:not(:last-child), ol .inline li:not(:last-child) {
+    ul.inline li:not(:last-child), ol.inline li:not(:last-child) {
       margin-right: rem-calc(8); }
 
 dl dt {
@@ -410,6 +492,24 @@ dl dt {
 
 dl dd {
   margin: 0; }
+
+.pill {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 2px;
+  background-color: #e6e6e6; }
+  .pill.primary {
+    color: white;
+    background-color: #2199e8; }
+  .pill.secondary {
+    color: white;
+    background-color: #777; }
+  .pill.warning {
+    color: white;
+    background-color: #ffae00; }
+  .pill.alert {
+    color: white;
+    background-color: #ec5840; }
 
 .alert-box {
   position: relative;
@@ -603,7 +703,7 @@ select {
   height: 2.4375rem;
   padding: 0.5rem;
   border: 1px solid #cacaca;
-  border-radius: 0;
+  border-radius: 2px;
   background-color: transparent;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   font-family: inherit;
