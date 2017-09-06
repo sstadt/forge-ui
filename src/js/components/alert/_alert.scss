@@ -4,6 +4,7 @@
   padding: $global-padding $global-padding * 2 $global-padding $global-padding;
   background-color: $alert-background-color-default;
   border: 1px solid $alert-border-color;
+  margin-bottom: $global-margin;
 
   &.primary { background-color: $alert-background-color-primary; }
   &.secondary { background-color: $alert-background-color-secondary; }

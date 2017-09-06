@@ -15,19 +15,20 @@ $medium-gray: #cacaca !default;
 $dark-gray: #8a8a8a !default;
 $black: #0a0a0a !default;
 
-$overlay-opacity: 0.6;
+$overlay-opacity: 0.6 !default;
 
 ////
 /// @group global
 ////
 
 $global-font-size: 100% !default;
+$global-font-color: #0a0a0a !default;
 $global-width: rem-calc(1200) !default;
 $global-lineheight: 1.5 !default;
 
 $body-background: $white !default;
 $body-font-color: $black !default;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif !default;
+$body-font-family: 'Open Sans', sans-serif !default;
 
 $global-margin: 1rem !default;
 $global-padding: 1rem !default;
@@ -35,8 +36,8 @@ $global-weight-normal: normal !default;
 $global-weight-bold: bold !default;
 $global-radius: 0 !default;
 
-$breakpoint-medium: 600px;
-$breakpoint-large: 1200px;
+$breakpoint-medium: 600px !default;
+$breakpoint-large: 1200px !default;
 
 ////
 /// @group type
@@ -44,24 +45,24 @@ $breakpoint-large: 1200px;
 
 $base-font-size: 16 !default;
 
-$paragraph-font-family: inherit;
-$paragraph-font-weight: normal;
-$paragraph-font-size: $base-font-size;
-$paragraph-line-height: 1.6;
-$paragraph-margin-bottom: 20;
-$paragraph-aside-font-size: 14;
-$paragraph-aside-line-height: 1.35;
-$paragraph-aside-font-style: italic;
-$paragraph-text-rendering: optimizeLegibility;
+$paragraph-font-family: inherit !default;
+$paragraph-font-weight: normal !default;
+$paragraph-font-size: $base-font-size !default;
+$paragraph-line-height: 1.6 !default;
+$paragraph-margin-bottom: 20 !default;
+$paragraph-aside-font-size: 14 !default;
+$paragraph-aside-line-height: 1.35 !default;
+$paragraph-aside-font-style: italic !default;
+$paragraph-text-rendering: optimizeLegibility !default;
 
-$header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$header-font-weight: bold;
-$header-font-style: normal;
-$header-font-color: #222;
-$header-line-height: 1.4;
-$header-top-margin: .2rem;
-$header-bottom-margin: .5rem;
-$header-text-rendering: optimizeLegibility;
+$header-font-family: 'Hind', sans-serif !default;
+$header-font-weight: bold !default;
+$header-font-style: normal !default;
+$header-font-color: #222 !default;
+$header-line-height: 1.4 !default;
+$header-top-margin: .2rem !default;
+$header-bottom-margin: .5rem !default;
+$header-text-rendering: optimizeLegibility !default;
 
 $h1-font-size: 44 !default;
 $h2-font-size: 37 !default;
@@ -70,17 +71,17 @@ $h4-font-size: 23 !default;
 $h5-font-size: 18 !default;
 $h6-font-size: $base-font-size !default;
 
-$small-font-size: 60%;
-$small-font-color: scale-color($header-font-color, $lightness: 35%);
+$small-font-size: 60% !default;
+$small-font-color: scale-color($header-font-color, $lightness: 35%) !default;
 
-$anchor-text-decoration: none;
-$anchor-font-color: $primary-color;
-$anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-text-decoration: none !default;
+$anchor-font-color: $primary-color !default;
+$anchor-font-color-hover: scale-color($primary-color, $lightness: -14%) !default;
 
-$hr-border-width: 1px;
-$hr-border-style: solid;
-$hr-border-color: #ddd;
-$hr-margin: 20px;
+$hr-border-width: 1px !default;
+$hr-border-style: solid !default;
+$hr-border-color: #ddd !default;
+$hr-margin: 20px !default;
 
 ////
 /// @group grid
@@ -104,6 +105,26 @@ $list-inline-spacing: rem-calc(8) !default;
 ////
 
 
+
+////
+/// @group forms
+////
+
+$form-field-background-color: transparent !default;
+$form-field-color: $global-font-color !default;
+$form-field-line-height: 1.5 !default;
+$form-field-font-size: 1rem !default;
+$form-field-font-family: inherit !default;
+$form-field-font-weight: normal;
+$form-field-border-color: #cacaca !default;
+$form-field-border-size: 1px !default;
+$form-field-border-style: solid !default;
+$form-field-padding: 0.5rem !default;
+$form-field-margin: 0 0 $global-margin !default;
+$form-field-height: 2.4375rem !default;
+$form-field-width: 100% !default;
+$form-field-radius: $global-radius !default;
+$form-field-shadow-color: rgba(10, 10, 10, 0.1) !default;
 
 ////
 /// @group ForgeUI-loader
