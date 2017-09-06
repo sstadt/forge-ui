@@ -64,3 +64,4 @@ gulp test
 ### TODO
 
  - document CSS components
+ - pull in notifications component from game table
