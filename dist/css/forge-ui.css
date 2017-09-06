@@ -377,6 +377,7 @@ small {
   color: #6f6f6f; }
 
 a {
+  text-decoration: none;
   color: #2199e8; }
   a:hover {
     text-decoration: none;

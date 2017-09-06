@@ -38,6 +38,7 @@ small {
 }
 
 a {
+  text-decoration: $anchor-text-decoration;
   color: $anchor-font-color;
 
   &:hover {

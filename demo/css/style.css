@@ -9,7 +9,10 @@ pre[class*="language-"]::first-line {
 
 .docs-nav.menu {
   background: #fafafa;
+  padding: 0;
   padding-bottom: 1rem;
+  list-style: none;
+  margin: 0;
 }
 
 .docs-nav.menu li small {
@@ -23,12 +26,13 @@ pre[class*="language-"]::first-line {
 
 .docs-nav.menu a {
   font-size: 0.85rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-
+  padding: 0.5rem 0.9rem;
+  display: block;
+  text-decoration: none;
 }
 
 .docs-nav.menu a:hover {
+  text-decoration: none;
   background: rgba(0, 0, 0, 0.05);
 }
 
