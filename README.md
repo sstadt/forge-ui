@@ -54,6 +54,7 @@ Forge.castAll();
   - fForm
   - fInput
   - fSelect
+  - fRadio
 
 ### Coverage
 
