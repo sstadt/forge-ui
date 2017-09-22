@@ -26,6 +26,6 @@
   }
 }
 
-@include small-only { @include block-grids('small') }
-@include medium-only { @include block-grids('medium') }
+@include block-grids('small')
+@include medium-up { @include block-grids('medium') }
 @include large-up { @include block-grids('large') }

@@ -8,6 +8,7 @@ ul, ol {
       display: inline-block;
       padding: 0;
       list-style: none;
+      margin-bottom: $global-margin;
 
       &:not(:last-child) {
         margin-right: $list-inline-spacing;

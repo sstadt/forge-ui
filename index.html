@@ -17,7 +17,7 @@
     <div class="row">
       <div class="large-12 column">
         <h1>ForgeUI Kitchen Sink</h1>
-        <!-- TODO add description of toolkit here -->
+        <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are keps minimal to avoid the need for style overwrites or excessive configuration inherent to many modern frameworks.</p>
         <hr/>
       </div>
     </div>
@@ -26,10 +26,14 @@
     <div class="row">
       <div class="hide-small medium-3 column">
         <ul class="vertical menu docs-nav">
-          <li class="docs-nav-title">General</li>
+          <li class="docs-nav-title">CSS Components</li>
           <li><a href="#transitions">Transitions</a></li>
           <li><a href="#buttons">Buttons</a></li>
-          <li class="docs-nav-title">Components</li>
+          <li><a href="#inline-list">Inline List</a></li>
+          <li><a href="#pills">Pills</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="#block-grid">Block Grid</a></li>
+          <li class="docs-nav-title">Vue.js Components</li>
           <li><a href="#alert">Alert</a></li>
           <li><a href="#icon">Icon</a></li>
           <li><a href="#loader">Loader</a></li>
@@ -51,7 +55,7 @@
         <!--
         <div class="row" id="sample">
           <div class="small-12 column">
-            <h2>Component Name</h2>
+            <h3 class="docs-heading">Component Name</h3>
             <p>Component description</p>
             <h4>Params</h4>
             <dl>
@@ -77,10 +81,12 @@
         </div>
         -->
 
+        <h2 class="docs-heading">CSS Components</h2>
+
         <!-- transitions -->
         <div class="row" id="transitions">
           <div class="small-12 column">
-            <h2>Transitions</h2>
+            <h3 class="docs-heading">Transitions</h3>
             <p>To use any of the transitions, simple add the keyword to the transition name to the element you will be showing/hiding as described in the <a href="https://vuejs.org/guide/transitions.html" target="_blank">Vue documentation</a>.</p>
             <p>The following transitions are available as part of ForgeUI:</p>
             <ul>
@@ -93,10 +99,64 @@
           </div>
         </div>
 
-        <!-- buttons -->
-        <div class="row" id="transitions">
+        <!-- type -->
+        <div class="row" id="type">
           <div class="small-12 column">
-            <h2>Buttons</h2>
+            <h3 class="docs-heading">Type</h3>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <h1>h1. Lorem Ipsum</h1>
+                <h2>h2. Lorem Ipsum</h2>
+                <h3>h3. Lorem Ipsum</h3>
+                <h4>h4. Lorem Ipsum</h4>
+                <h5>h5. Lorem Ipsum</h5>
+                <h6>h6. Lorem Ipsum</h6>
+                <p>p. Lorem Ipsum</p>
+                <p><small>small. Lorem Ipsum</small></p>
+                <p><a href="#">Link</a></p>
+              </div>
+              <div class="small-12 medium-6 column">
+<pre><code class="language-html">
+&lt;h1&gt;h1. Lorem Ipsum&lt;/h1&gt;
+&lt;h2&gt;h2. Lorem Ipsum&lt;/h2&gt;
+&lt;h3&gt;h3. Lorem Ipsum&lt;/h3&gt;
+&lt;h4&gt;h4. Lorem Ipsum&lt;/h4&gt;
+&lt;h5&gt;h5. Lorem Ipsum&lt;/h5&gt;
+&lt;h6&gt;h6. Lorem Ipsum&lt;/h6&gt;
+&lt;p&gt;p. Lorem Ipsum&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;small. Lorem Ipsum&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- type -->
+        <div class="row" id="inline-list">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Inline List</h3>
+            <ul class="inline">
+              <li>One Item</li>
+              <li>Two Item</li>
+              <li>Red Item</li>
+              <li>Blue Item</li>
+            </ul>
+<pre><code class="language-html">
+&lt;ul class="inline"&gt;
+  &lt;li&gt;One Item&lt;/li&gt;
+  &lt;li&gt;Two Item&lt;/li&gt;
+  &lt;li&gt;Red Item&lt;/li&gt;
+  &lt;li&gt;Blue Item&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </div>
+        </div>
+
+        <!-- buttons -->
+        <div class="row" id="buttons">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Buttons</h3>
             <p>So. Many. Buttons.</p>
             <p>Each button needs a <span class="pill">button</span> class. The following classes can be mixed and matched to change the type of button:</p>
             <ul class="inline">
@@ -111,45 +171,207 @@
               <li><span class="pill">expand</span></li>
               <li><span class="pill">inline-form</span></li>
             </ul>
-            <div>
-              <button type="button" class="button">Button</button>
-              <button type="button" class="button secondary">Button</button>
-              <button type="button" class="button success">Button</button>
-              <button type="button" class="button warning">Button</button>
-              <button type="button" class="button alert">Button</button>
-            </div>
-            <div>
-              <button type="button" class="button tiny">Button</button>
-              <button type="button" class="button small">Button</button>
-              <button type="button" class="button">Button</button>
-              <button type="button" class="button large">Button</button>
-            </div>
-            <div>
-              <button type="button" class="button hollow">Button</button>
-              <button type="button" class="button hollow secondary">Button</button>
-              <button type="button" class="button hollow success">Button</button>
-              <button type="button" class="button hollow warning">Button</button>
-              <button type="button" class="button hollow alert">Button</button>
-            </div>
-            <div>
-              <button type="button" class="button expand">Button</button>
-            </div>
-            <div>
-              <button type="button" class="button expand hollow">Button</button>
-            </div>
-            <div>
-              <button type="button" class="button expand tiny">Button</button>
-              <button type="button" class="button expand small">Button</button>
-              <button type="button" class="button expand">Button</button>
-              <button type="button" class="button expand large">Button</button>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <div>
+                  <button type="button" class="button">Button</button>
+                  <button type="button" class="button secondary">Button</button>
+                  <button type="button" class="button success">Button</button>
+                  <button type="button" class="button warning">Button</button>
+                  <button type="button" class="button alert">Button</button>
+                </div>
+                <div>
+                  <button type="button" class="button tiny">Button</button>
+                  <button type="button" class="button small">Button</button>
+                  <button type="button" class="button">Button</button>
+                  <button type="button" class="button large">Button</button>
+                </div>
+                <div>
+                  <button type="button" class="button hollow">Button</button>
+                  <button type="button" class="button hollow secondary">Button</button>
+                  <button type="button" class="button hollow success">Button</button>
+                  <button type="button" class="button hollow warning">Button</button>
+                  <button type="button" class="button hollow alert">Button</button>
+                </div>
+                <div>
+                  <button type="button" class="button expand">Button</button>
+                </div>
+                <div>
+                  <button type="button" class="button expand hollow">Button</button>
+                </div>
+                <div>
+                  <button type="button" class="button expand tiny">Button</button>
+                  <button type="button" class="button expand small">Button</button>
+                  <button type="button" class="button expand">Button</button>
+                  <button type="button" class="button expand large">Button</button>
+                </div>
+              </div>
+              <div class="small-12 medium-6 column">
+<pre><code class="language-html">
+&lt;div&gt;
+  &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button secondary"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button success"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button warning"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button alert"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button tiny"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button small"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button large"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button hollow"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow secondary"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow success"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow warning"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow alert"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button expand hollow"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button expand tiny"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button expand small"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button expand large"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- pills -->
+        <div class="row" id="pills">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Pill</h3>
+            <p>Pills are a simple way to highlight a portion of text. They are inline elements and can be modified by any of the color classes</p>
+            <ul class="inline">
+              <li><span class="pill">default</span></li>
+              <li><span class="pill primary">primary</span></li>
+              <li><span class="pill secondary">secondary</span></li>
+              <li><span class="pill success">success</span></li>
+              <li><span class="pill warning">warning</span></li>
+              <li><span class="pill alert">alert</span></li>
+            </ul>
+<pre><code class="language-html">
+&lt;ul class="inline"&gt;
+  &lt;li&gt;&lt;span class="pill"&gt;default&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill primary"&gt;primary&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill secondary"&gt;secondary&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill success"&gt;success&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill warning"&gt;warning&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill alert"&gt;alert&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </div>
+        </div>
+
+        <!-- grid -->
+        <div class="row" id="grid">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Grid</h3>
+            <p>Grid columns should be nested under a <span class="pill">row</span> element. Columns can be separated using a 12-column system with <span class="pill">small</span>, <span class="pill">medium</span>, and <span class="pill">large</span> prefixes for responsive changes in column flow. All columns should include the <span class="pill">column</span> class.</p>
+            <div class="demo-grid">
+              <div class="row">
+                <div class="small-12 column"><span>12</span></div>
+              </div>
+              <div class="row">
+                <div class="small-1 column"><span>1</span></div>
+                <div class="small-2 column"><span>2</span></div>
+                <div class="small-3 column"><span>3</span></div>
+                <div class="small-6 column"><span>6</span></div>
+              </div>
+              <div class="row">
+                <div class="small-4 column"><span>12</span></div>
+                <div class="small-8 column"><span>12</span></div>
+              </div>
+            </div>
+<pre><code class="language-html">
+&lt;div class="row"&gt;
+  &lt;div class="small-12 column"&gt;12&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-1 column"&gt;1&lt;/div&gt;
+  &lt;div class="small-2 column"&gt;2&lt;/div&gt;
+  &lt;div class="small-3 column"&gt;3&lt;/div&gt;
+  &lt;div class="small-6 column"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-4 column"&gt;12&lt;/div&gt;
+  &lt;div class="small-8 column"&gt;12&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+
+        <!-- block grid -->
+        <div class="row" id="block-grid">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Block Grid</h3>
+            <p>The block grid uses a <span class="pill">row</span> parent just like the normal grid, but instead of setting the column size on the column, it is set with a <span class="pill">small-up-X</span>, <span class="pill">medium-up-X</span>, or <span class="pill">large-up-X</span> class, where X represents the number of columns before each line break, and is a number 1 through <span class="pill">$block-grid-column-count</span> (8 by default).</p>
+            <div class="demo-grid">
+              <div class="row small-up-8">
+                <div class="column"><span>1</span></div>
+                <div class="column"><span>2</span></div>
+                <div class="column"><span>3</span></div>
+                <div class="column"><span>4</span></div>
+                <div class="column"><span>5</span></div>
+                <div class="column"><span>6</span></div>
+                <div class="column"><span>7</span></div>
+                <div class="column"><span>8</span></div>
+                <div class="column"><span>9</span></div>
+                <div class="column"><span>10</span></div>
+                <div class="column"><span>11</span></div>
+                <div class="column"><span>12</span></div>
+                <div class="column"><span>13</span></div>
+                <div class="column"><span>14</span></div>
+                <div class="column"><span>15</span></div>
+                <div class="column"><span>16</span></div>
+                <div class="column"><span>17</span></div>
+                <div class="column"><span>18</span></div>
+                <div class="column"><span>19</span></div>
+                <div class="column"><span>20</span></div>
+              </div>
+            </div>
+<pre><code class="language-html">
+&lt;div class="row small-up-8"&gt;
+  &lt;div class="column"&gt;1&lt;/div&gt;
+  &lt;div class="column"&gt;2&lt;/div&gt;
+  &lt;div class="column"&gt;3&lt;/div&gt;
+  &lt;div class="column"&gt;4&lt;/div&gt;
+  &lt;div class="column"&gt;5&lt;/div&gt;
+  &lt;div class="column"&gt;6&lt;/div&gt;
+  &lt;div class="column"&gt;7&lt;/div&gt;
+  &lt;div class="column"&gt;8&lt;/div&gt;
+  &lt;div class="column"&gt;9&lt;/div&gt;
+  &lt;div class="column"&gt;10&lt;/div&gt;
+  &lt;div class="column"&gt;11&lt;/div&gt;
+  &lt;div class="column"&gt;12&lt;/div&gt;
+  &lt;div class="column"&gt;13&lt;/div&gt;
+  &lt;div class="column"&gt;14&lt;/div&gt;
+  &lt;div class="column"&gt;15&lt;/div&gt;
+  &lt;div class="column"&gt;16&lt;/div&gt;
+  &lt;div class="column"&gt;17&lt;/div&gt;
+  &lt;div class="column"&gt;18&lt;/div&gt;
+  &lt;div class="column"&gt;19&lt;/div&gt;
+  &lt;div class="column"&gt;20&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+
+        <h2 class="docs-heading">Vue.js Components</h2>
+
         <!-- alert -->
         <div class="row" id="alert">
           <div class="small-12 column">
-            <h2>Alert</h2>
+            <h3 class="docs-heading">Alert</h3>
             <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
             <h4>Params</h4>
             <dl>
@@ -237,7 +459,7 @@ new Vue({
         <!-- modal -->
         <div class="row" id="modal">
           <div class="small-12 column">
-            <h2>Modal</h2>
+            <h3 class="docs-heading">Modal</h3>
             <p>A simple modal dialog that is controlled by a single visibility variable</p>
             <h4>Params</h4>
             <dl>
@@ -252,7 +474,7 @@ new Vue({
                   <button type="button" class="button" v-on:click="showModal = true">Open Modal</button>
                   <modal :show.sync="showModal">
                     <div slot="header">
-                      <h3>Look, a Modal!</h3>
+                      <h3 class="docs-heading">Look, a Modal!</h3>
                     </div>
                     <div slot="content">
                       <p>some super awesome modal content</p>
@@ -294,7 +516,7 @@ new Vue({
         <!-- prompt -->
         <div class="row" id="prompt">
           <div class="small-12 column">
-            <h2>Prompt</h2>
+            <h3 class="docs-heading">Prompt</h3>
             <p>A simple prompt component meant to replace the native prompt and confirm methods. This will allow you to style the dialog to match your site and prevent users from asking the browser to suppress further dialogs.</p>
             <p>This component is meant to get input back from the user. If you simply need to notify the user of something, use an alert component to display the information and it's <em>canClose</em> property if the information should be dismissable.</p>
             <p>With great power comes great responsibility. These dialogs cannot be suppressed by the browser, so take care not to inundate the user with an endless stream of repeditive dialogs.</p>
@@ -358,7 +580,7 @@ new Vue({
         <!-- tabs -->
         <div class="row" id="tabs">
           <div class="small-12 column">
-            <h2>Tabs</h2>
+            <h3 class="docs-heading">Tabs</h3>
             <p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
             <h4>Tabs Params</h4>
             <dl>
@@ -420,7 +642,7 @@ new Vue({
         <!-- form -->
         <div class="row" id="form">
           <div class="small-12 column">
-            <h2>fForm</h2>
+            <h3 class="docs-heading">fForm</h3>
             <p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
             <p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
             <h4>Params</h4>
@@ -477,7 +699,7 @@ new Vue({
         <!-- input -->
         <div class="row" id="input">
           <div class="small-12 column">
-            <h2>fInput</h2>
+            <h3 class="docs-heading">fInput</h3>
             <p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
             <h4>Params</h4>
             <dl>
@@ -527,7 +749,7 @@ new Vue({
         <!-- select -->
         <div class="row" id="select">
           <div class="small-12 column">
-            <h2>fSelect</h2>
+            <h3 class="docs-heading">fSelect</h3>
             <p>Renders a select input given a set of options</p>
             <h4>Params</h4>
             <dl>
@@ -577,7 +799,7 @@ new Vue({
         <!-- checkbox -->
         <div class="row" id="checkbox">
           <div class="small-12 column">
-            <h2>fCheckbox</h2>
+            <h3 class="docs-heading">fCheckbox</h3>
             <p>Renders a checkbox input</p>
             <h4>Params</h4>
             <dl>
@@ -617,7 +839,7 @@ new Vue({
 
         <div class="row" id="radio">
           <div class="small-12 column">
-            <h2>fRadio</h2>
+            <h3 class="docs-heading">fRadio</h3>
             <p>Renders a radio button input</p>
             <h4>Params</h4>
             <dl>

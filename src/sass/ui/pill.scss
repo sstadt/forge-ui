@@ -15,6 +15,11 @@
     background-color: $secondary-color;
   }
 
+  &.success {
+    color: white;
+    background-color: $success-color;
+  }
+
   &.warning {
     color: white;
     background-color: $warning-color;
