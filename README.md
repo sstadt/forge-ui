@@ -64,5 +64,5 @@ gulp test
 
 ### TODO
 
- - document media queries
+ - add CSS variables to all documented CSS and Vue components
  - pull in notifications component from game table

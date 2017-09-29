@@ -28,6 +28,7 @@
         <ul class="vertical menu docs-nav">
           <li class="docs-nav-title">CSS Components</li>
           <li><a href="#transitions">Transitions</a></li>
+          <li><a href="#media-queries">Media Queries</a></li>
           <li><a href="#buttons">Buttons</a></li>
           <li><a href="#inline-list">Inline List</a></li>
           <li><a href="#pills">Pills</a></li>
@@ -35,7 +36,7 @@
           <li><a href="#block-grid">Block Grid</a></li>
           <li class="docs-nav-title">Vue.js Components</li>
           <li><a href="#alert">Alert</a></li>
-          <li><a href="#icon">Icon</a></li>
+          <!-- <li><a href="#icon">Icon</a></li> TODO: create a standard icon set to package with the UI -->
           <li><a href="#loader">Loader</a></li>
           <li><a href="#modal">Modal</a></li>
           <li><a href="#prompt">Prompt</a></li>
@@ -96,6 +97,69 @@
               <li>zoom-in</li>
               <li>zoom-out</li>
             </ul>
+          </div>
+        </div>
+
+        <!-- media queries -->
+        <div class="row" id="transitions">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Media Queries</h3>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <p>ForgeUI uses a set of media query mixins modeled after the type of device you want to apply styling to. ForgeUI is mobile first, so mobile styling should be applied first, and overrides for larger screen sizes should be applied with media queries.</p>
+                <p>Please use the small-only media query sparingly!</p>
+              </div>
+              <div class="small-12 medium-6 column">
+<pre><code class="language-css">
+@include small-only() {
+  // mobile only styling
+}
+
+@include medium-up() {
+  // tablet and larger styling
+}
+
+@include medium-only() {
+  // tablet only styling
+}
+
+@include large-up() {
+  // desktop and larger styling
+}
+</code></pre>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <p>ForgeUI also has a full list of visibility helpers that can be used anywhere. The visibility classes only apply <span class="pill">display: none;</span> where appropriate, never any other display class. So these utilities are usable on elements with any type of display.</p>
+                <div class="alert-box secondary">
+                  <ul>
+                    <li class="show-small">This text shows on <em>small</em> screens</li>
+                    <li class="show-medium">This text shows on <em>medium</em> screens</li>
+                    <li class="show-medium-up">This text shows on <em>medium or larger</em> screens</li>
+                    <li class="show-large">This text shows on <em>large</em> screens</li>
+                    <li class="hide-small">This text hides on <em>small</em> screens</li>
+                    <li class="hide-medium">This text hides on <em>medium</em> screens</li>
+                    <li class="hide-large">This text hides on <em>large</em> screens</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="small-12 medium-6 column">
+<pre><code class="language-html">
+&lt;div class="alert-box secondary"&gt;
+  &lt;ul&gt;
+    &lt;li class="show-small"&gt;This text shows on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium-up"&gt;This text shows on &lt;em&gt;medium or larger&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium"&gt;This text shows on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-large"&gt;This text shows on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-small"&gt;This text hides on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-medium"&gt;This text hides on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-large"&gt;This text hides on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+              </div>
+            </div>
           </div>
         </div>
 
