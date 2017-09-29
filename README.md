@@ -64,5 +64,7 @@ gulp test
 
 ### TODO
 
- - add CSS variables to all documented CSS and Vue components
+ - add CSS variables to all documented Vue components
+ - add documentation for mixins
+ - add links to section headers in the kitchen sink menu
  - pull in notifications component from game table
