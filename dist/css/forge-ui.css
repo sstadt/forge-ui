@@ -391,7 +391,7 @@ a {
 
 hr {
   margin: 20px 0;
-  border-top: 1px solid #ddd; }
+  border-top: 1px solid #cacaca; }
 
 .button {
   cursor: pointer;
@@ -499,7 +499,7 @@ dl dt {
   margin-bottom: 0.3rem; }
 
 dl dd {
-  margin: 0; }
+  margin: 0 0 1rem; }
 
 .pill {
   display: inline-block;
@@ -521,6 +521,18 @@ dl dd {
   .pill.alert {
     color: white;
     background-color: #ec5840; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse; }
+  .table th {
+    text-align: left; }
+  .table th, .table td {
+    padding: 0.5rem 1rem; }
+  .table thead {
+    border-bottom: 1px solid #cacaca; }
+  .table tbody tr:nth-of-type(even) {
+    background-color: #f0f0f0; }
 
 .alert-box {
   position: relative;

@@ -50,9 +50,9 @@ $paragraph-font-weight: normal !default;
 $paragraph-font-size: $base-font-size !default;
 $paragraph-line-height: 1.6 !default;
 $paragraph-margin-bottom: 20 !default;
-$paragraph-aside-font-size: 14 !default;
-$paragraph-aside-line-height: 1.35 !default;
-$paragraph-aside-font-style: italic !default;
+// $paragraph-aside-font-size: 14 !default;
+// $paragraph-aside-line-height: 1.35 !default;
+// $paragraph-aside-font-style: italic !default;
 $paragraph-text-rendering: optimizeLegibility !default;
 
 $header-font-family: 'Hind', sans-serif !default;
@@ -80,7 +80,7 @@ $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%) !default
 
 $hr-border-width: 1px !default;
 $hr-border-style: solid !default;
-$hr-border-color: #ddd !default;
+$hr-border-color: $medium-gray !default;
 $hr-margin: 20px !default;
 
 ////
@@ -90,7 +90,6 @@ $hr-margin: 20px !default;
 $grid-row-width: $global-width !default;
 $grid-column-count: 12 !default;
 $grid-column-gutter: 30px !default;
-// $grid-column-align-edge: true !default;
 $block-grid-column-count: 8 !default;
 
 ////
@@ -113,7 +112,7 @@ $button-border-color: transparent !default;
 $button-border-size: 1px !default;
 $button-border-style: solid !default;
 $button-hollow-border-size: 1px !default;
-$button-hollow-border-style: solid;
+$button-hollow-border-style: solid !default;
 $button-radius: $global-radius !default;
 $button-padding: 0.85em 1em !default;
 $button-margin: 0 0 1rem 0 !default;
@@ -155,10 +154,19 @@ $form-field-radius: $global-radius !default;
 $form-field-shadow-color: rgba(10, 10, 10, 0.1) !default;
 
 ////
+/// @group table
+////
+
+$table-zebra-stripe-background-color: lighten($light-gray, 4%) !default;
+$table-cell-padding: $global-padding / 2 $global-padding !default;
+$table-head-border: 1px solid $medium-gray !default;
+
+////
 /// @group pills
 ////
 
 $pill-border-radius: $global-radius !default;
+$pill-background-color-default: $light-gray !default;
 
 ////
 /// @group ForgeUI-loader
