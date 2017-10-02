@@ -6,8 +6,7 @@ var component = {
   props: {
     value: {
       type: Boolean,
-      required: true,
-      twoWay: true
+      required: true
     },
     label: {
       type: String,

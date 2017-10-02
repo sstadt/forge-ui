@@ -18,56 +18,6 @@ describe('The fSelect component', function () {
     expect(component.template).toEqual(jasmine.any(String));
   });
 
-  describe('props', function () {
-    it('should be an object', function () {
-      expect(component.props).toEqual(jasmine.any(Object));
-    });
-
-    describe('label', function () {
-      it('should be a string', function () {
-        expect(component.props.label.type).toEqual(String);
-      });
-
-      it('should default to an empty string', function () {
-        expect(component.props.label.default).toEqual('');
-      });
-    });
-
-    describe('selected', function () {
-      it('should be a string', function () {
-        expect(component.props.selected.type).toEqual(String);
-      });
-
-      it('should be required', function () {
-        expect(component.props.selected.required).toEqual(true);
-      });
-
-      it('should be a twoWay binding', function () {
-        expect(component.props.selected.twoWay).toEqual(true);
-      });
-    });
-
-    describe('options', function () {
-      it('should be an array', function () {
-        expect(component.props.options.type).toEqual(Array);
-      });
-
-      it('should be required', function () {
-        expect(component.props.options.required).toEqual(true);
-      });
-    });
-
-    describe('required', function () {
-      it('should be a boolean', function () {
-        expect(component.props.required.type).toEqual(Boolean);
-      });
-
-      it('should default to false', function () {
-        expect(component.props.required.default).toEqual(false);
-      });
-    });
-  });
-
   describe('methods', function () {
     var componentInstance;
 
@@ -76,30 +26,30 @@ describe('The fSelect component', function () {
     });
 
     describe('#isValid', function () {
-      it('should return true if required is false and selected is empty', function () {
+      it('should return true if required is false and selectedValue is empty', function () {
         componentInstance.required = false;
-        componentInstance.selected = '';
+        componentInstance.selectedValue = '';
         expect(componentInstance.isValid()).toEqual(true);
         expect(componentInstance.isError).toEqual(true);
       });
 
-      it('should return true if required is false and selected is not empty', function () {
+      it('should return true if required is false and selectedValue is not empty', function () {
         componentInstance.required = false;
-        componentInstance.selected = 'foo';
+        componentInstance.selectedValue = 'foo';
         expect(componentInstance.isValid()).toEqual(true);
         expect(componentInstance.isError).toEqual(true);
       });
 
-      it('should return false if required is true and selected is empty', function () {
+      it('should return false if required is true and selectedValue is empty', function () {
         componentInstance.required = true;
-        componentInstance.selected = '';
+        componentInstance.selectedValue = '';
         expect(componentInstance.isValid()).toEqual(false);
         expect(componentInstance.isError).toEqual(false);
       });
 
-      it('should return true if required is true and selected is not empty', function () {
+      it('should return true if required is true and selectedValue is not empty', function () {
         componentInstance.required = true;
-        componentInstance.selected = 'foo';
+        componentInstance.selectedValue = 'foo';
         expect(componentInstance.isValid()).toEqual(true);
         expect(componentInstance.isError).toEqual(true);
       });

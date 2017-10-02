@@ -16,32 +16,31 @@ describe('The modal component', function () {
     expect(component.template).toEqual(jasmine.any(String));
   });
 
-  describe('props', function () {
-    it('should be an object', function () {
-      expect(component.props).toEqual(jasmine.any(Object));
+  describe('methods', function () {
+    var componentInstance;
+
+    beforeEach(function () {
+      componentInstance = new Vue(component);
     });
 
-    describe('show', function () {
-      it('should be a boolean', function () {
-        expect(component.props.show.type).toEqual(Boolean);
+    describe('#open', function () {
+      beforeEach(function () {
+        componentInstance.open();
       });
 
-      it('should be required', function () {
-        expect(component.props.show.required).toEqual(true);
-      });
-
-      it('should be a two way binding', function () {
-        expect(component.props.show.twoWay).toEqual(true);
+      it('should open the modal', function () {
+        expect(componentInstance.show).toEqual(true);
       });
     });
 
-    describe('modalSize', function () {
-      it('should be a string', function () {
-        expect(component.props.modalSize.type).toEqual(String);
+    describe('#close', function () {
+      beforeEach(function () {
+        componentInstance.show = true;
+        componentInstance.close();
       });
 
-      it('should default to full', function () {
-        expect(component.props.modalSize.default).toEqual('full');
+      it('should close the modal', function () {
+        expect(componentInstance.show).toEqual(false);
       });
     });
   });

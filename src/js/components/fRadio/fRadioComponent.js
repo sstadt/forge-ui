@@ -33,7 +33,6 @@ var component = {
   },
   watch: {
     selectedOption() {
-      console.log(this.selectedOption);
       this.$emit('input', this.selectedOption);
     }
   },
