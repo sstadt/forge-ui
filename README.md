@@ -6,6 +6,8 @@ A collection of basic, reusable Vue.js components. Components are collected in F
 
 ForgeUI aims to provide all the basic UI functionality you need without the need for rebuilding common interface components or use overly elaborate and specific CSS selectors to reskin the interface to match your own designs and style guide. Components are deliberately kept simple, and stylesheets and templates are fully customizable _before_ you've added anything to the page.
 
+*ForgeUI v0.5.0 was updated to work with Vue 2.0*
+
 Full Docs: http://sstadt.github.io/forge-ui/
 
 ## Quick Start

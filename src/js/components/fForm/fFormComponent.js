@@ -1,4 +1,6 @@
 
+import _ from 'lodash';
+
 import template from './fFormTemplate.html';
 
 var component = {

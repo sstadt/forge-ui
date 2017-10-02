@@ -17467,7 +17467,7 @@
 /* 9 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<transition :name=\"transition\">\n  <div class=\"modal\" v-show=\"show\">\n    <div v-on:click.prevent :class=\"{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }\">\n      <div class=\"modal-header\">\n        <slot name=\"header\"></slot>\n      </div>\n      <slot name=\"content\"></slot>\n      <span @click=\"close()\" aria-label=\"Close\">&#215;</span>\n    </div>\n  </div>\n</transition>\n";
+	module.exports = "\n<transition :name=\"transition\">\n  <div class=\"modal\" v-show=\"show\">\n    <div class=\"modal-overlay\" @click=\"close()\"></div>\n    <div @click.prevent :class=\"{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }\">\n      <div class=\"modal-header\">\n        <slot name=\"header\"></slot>\n      </div>\n      <slot name=\"content\"></slot>\n      <span @click=\"close()\" aria-label=\"Close\">&#215;</span>\n    </div>\n  </div>\n</transition>\n";
 
 /***/ }),
 /* 10 */
@@ -17478,6 +17478,10 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _lodash = __webpack_require__(1);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
 
 	var _promptTemplate = __webpack_require__(11);
 
@@ -17502,9 +17506,9 @@
 	  vm.show = true;
 
 	  unwatch = vm.$watch('$data.confirmed', function (newVal, oldVal) {
-	    if (newVal && _.isFunction(options.yes)) {
+	    if (newVal && _lodash2.default.isFunction(options.yes)) {
 	      options.yes(showInput ? vm.promptValue : null);
-	    } else if (!newVal && _.isFunction(options.no)) {
+	    } else if (!newVal && _lodash2.default.isFunction(options.no)) {
 	      options.no();
 	    }
 	    unwatch();
@@ -17554,7 +17558,7 @@
 /* 11 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n\n<div class=\"prompt prompt-modal\" :transition=\"transition\" v-show=\"show\">\n  <div class=\"prompt-overlay\" v-on:click=\"no()\"></div>\n  <div class=\"prompt-content\">\n    <f-form v-if=\"showInput\" :submit-callback=\"yes\" :ajax=\"true\">\n      <p>{{ questionLabel }}</p>\n      <f-input type=\"text\" ref=\"response\" name=\"promptResponse\" v-model=\"promptValue\" :required=\"true\"></f-input>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\">{{ yesLabel }}</button>\n      </div>\n    </f-form>\n    <div v-else>\n      <p>{{ questionLabel }}</p>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\" v-on:click=\"yes()\">{{ yesLabel }}</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<transition :name=\"transition\">\n  <div class=\"prompt prompt-modal\" v-show=\"show\">\n    <div class=\"prompt-overlay\" @click=\"no()\"></div>\n    <div class=\"prompt-content\">\n      <f-form v-if=\"showInput\" :submit-callback=\"yes\" :ajax=\"true\">\n        <p>{{ questionLabel }}</p>\n        <f-input type=\"text\" ref=\"response\" name=\"promptResponse\" v-model=\"promptValue\" :required=\"true\"></f-input>\n        <div class=\"controls\">\n          <button type=\"button\" class=\"button small\" @click=\"no()\">{{ noLabel }}</button>\n          <button type=\"submit\" class=\"button small\">{{ yesLabel }}</button>\n        </div>\n      </f-form>\n      <div v-else>\n        <p>{{ questionLabel }}</p>\n        <div class=\"controls\">\n          <button type=\"button\" class=\"button small\" @click=\"no()\">{{ noLabel }}</button>\n          <button type=\"submit\" class=\"button small\" @click=\"yes()\">{{ yesLabel }}</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</transition>\n";
 
 /***/ }),
 /* 12 */
@@ -17605,6 +17609,10 @@
 	  value: true
 	});
 
+	var _lodash = __webpack_require__(1);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
 	var _tabsTemplate = __webpack_require__(15);
 
 	var _tabsTemplate2 = _interopRequireDefault(_tabsTemplate);
@@ -17624,7 +17632,7 @@
 	      this.tabs.push(newTab);
 	    },
 	    activate: function activate(selectedTab) {
-	      _.forEach(this.tabs, function (tab) {
+	      _lodash2.default.forEach(this.tabs, function (tab) {
 	        tab.active = selectedTab.heading === tab.heading;
 	      });
 	    }
@@ -17695,6 +17703,10 @@
 	  value: true
 	});
 
+	var _lodash = __webpack_require__(1);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
 	var _fFormTemplate = __webpack_require__(19);
 
 	var _fFormTemplate2 = _interopRequireDefault(_fFormTemplate);
@@ -17735,7 +17747,7 @@
 	          formIsValid = true;
 
 	      for (var i = 0, j = self.$children.length; i < j; i++) {
-	        if (_.isFunction(self.$children[i].isValid)) {
+	        if (_lodash2.default.isFunction(self.$children[i].isValid)) {
 	          // has input validation attached
 	          formIsValid = formIsValid && self.$children[i].isValid();
 	        }
@@ -17763,6 +17775,10 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _lodash = __webpack_require__(1);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
 
 	var _fInputTemplate = __webpack_require__(21);
 
@@ -17822,7 +17838,7 @@
 	      return this.error.length === 0;
 	    },
 
-	    debounceValidate: _.debounce(function () {
+	    debounceValidate: _lodash2.default.debounce(function () {
 	      this.validate();
 	    }, 500),
 	    validate: function validate() {
@@ -17887,6 +17903,10 @@
 	  value: true
 	});
 
+	var _lodash = __webpack_require__(1);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
 	var _fSelectTemplate = __webpack_require__(24);
 
 	var _fSelectTemplate2 = _interopRequireDefault(_fSelectTemplate);
@@ -17927,7 +17947,7 @@
 	  },
 	  ready: function ready() {
 	    var self = this,
-	        selectedIndex = _.findIndex(self.options, function (option) {
+	        selectedIndex = _lodash2.default.findIndex(self.options, function (option) {
 	      return option.value === self.selectedValue;
 	    });
 
@@ -17973,8 +17993,7 @@
 	  props: {
 	    value: {
 	      type: Boolean,
-	      required: true,
-	      twoWay: true
+	      required: true
 	    },
 	    label: {
 	      type: String,
@@ -18062,7 +18081,6 @@
 
 	  watch: {
 	    selectedOption: function selectedOption() {
-	      console.log(this.selectedOption);
 	      this.$emit('input', this.selectedOption);
 	    }
 	  },

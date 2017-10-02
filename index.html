@@ -1142,7 +1142,7 @@ new Vue({
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;button type="button" class="button" v-on:click="showModal = true"&gt;Open Modal&lt;/button&gt;
+&lt;button type="button" class="button" @click="openModal()"&gt;Open Modal&lt;/button&gt;
 
 &lt;modal ref="myModal"&gt;
   &lt;div slot="header"&gt;

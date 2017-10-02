@@ -6,7 +6,15 @@
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: $modal-overlay-color;
+
+  .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $modal-overlay-color;
+  }
 }
 
 .modal-content {

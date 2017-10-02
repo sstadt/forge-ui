@@ -631,8 +631,14 @@ h1 svg.icon-image, h1 svg.icon-image, h3 svg.icon-image, h4 svg.icon-image, h5 s
   height: 100%;
   top: 0;
   left: 0;
-  overflow-y: auto;
-  background-color: rgba(10, 10, 10, 0.6); }
+  overflow-y: auto; }
+  .modal .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.6); }
 
 .modal-content {
   position: absolute;

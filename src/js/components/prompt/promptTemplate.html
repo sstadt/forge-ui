@@ -1,22 +1,23 @@
 
-
-<div class="prompt prompt-modal" :transition="transition" v-show="show">
-  <div class="prompt-overlay" v-on:click="no()"></div>
-  <div class="prompt-content">
-    <f-form v-if="showInput" :submit-callback="yes" :ajax="true">
-      <p>{{ questionLabel }}</p>
-      <f-input type="text" ref="response" name="promptResponse" v-model="promptValue" :required="true"></f-input>
-      <div class="controls">
-        <button type="button" class="button small" v-on:click="no()">{{ noLabel }}</button>
-        <button type="submit" class="button small">{{ yesLabel }}</button>
-      </div>
-    </f-form>
-    <div v-else>
-      <p>{{ questionLabel }}</p>
-      <div class="controls">
-        <button type="button" class="button small" v-on:click="no()">{{ noLabel }}</button>
-        <button type="submit" class="button small" v-on:click="yes()">{{ yesLabel }}</button>
+<transition :name="transition">
+  <div class="prompt prompt-modal" v-show="show">
+    <div class="prompt-overlay" @click="no()"></div>
+    <div class="prompt-content">
+      <f-form v-if="showInput" :submit-callback="yes" :ajax="true">
+        <p>{{ questionLabel }}</p>
+        <f-input type="text" ref="response" name="promptResponse" v-model="promptValue" :required="true"></f-input>
+        <div class="controls">
+          <button type="button" class="button small" @click="no()">{{ noLabel }}</button>
+          <button type="submit" class="button small">{{ yesLabel }}</button>
+        </div>
+      </f-form>
+      <div v-else>
+        <p>{{ questionLabel }}</p>
+        <div class="controls">
+          <button type="button" class="button small" @click="no()">{{ noLabel }}</button>
+          <button type="submit" class="button small" @click="yes()">{{ yesLabel }}</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</transition>

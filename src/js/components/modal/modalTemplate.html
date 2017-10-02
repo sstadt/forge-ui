@@ -1,7 +1,8 @@
 
 <transition :name="transition">
   <div class="modal" v-show="show">
-    <div v-on:click.prevent :class="{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }">
+    <div class="modal-overlay" @click="close()"></div>
+    <div @click.prevent :class="{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }">
       <div class="modal-header">
         <slot name="header"></slot>
       </div>

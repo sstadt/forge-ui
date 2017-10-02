@@ -1,4 +1,6 @@
 
+import _ from 'lodash';
+
 import template from './promptTemplate.html';
 
 var defaultLabels = {
