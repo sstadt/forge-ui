@@ -46,6 +46,8 @@
           <li><a href="#select">fSelect</a></li>
           <li><a href="#checkbox">fCheckbox</a></li>
           <li><a href="#radio">fRadio</a></li>
+          <li class="docs-nav-title">Customizing Forge</li>
+          <li><a href="#cast">Forge.cast()</a></li>
         </ul>
       </div>
 
@@ -1545,6 +1547,30 @@ new Vue({
               </tabs>
             </div>
             <hr/>
+          </div>
+        </div>
+
+        <h2 class="docs-heading">Customizing Forge</h2>
+        <p>ForgeUI is built to customize. The following options giv eyou the ability to modify component templates and/or rename components for maximum flexibility. This allows you to keep the components from this library in sync with your apps style guide without clobbering styles or duplicating code.</p>
+
+        <div class="row" id="cast">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Forge.cast()</h3>
+            <p>Forge.cast() method is your primary way of customizing components before registering them to Vue. Use this method to change component templates or to rename components without creating a new component file.</p>
+            <p>You can customize and rename as many components as you like, up until the point where <span class="pill">Vue.use(Forge)</span> is invoked, at which point all unregistered components will be added to Vue.</p>
+            <p>Forge will register all components that have not been registered to the default component names. For example, is you rename the modal component, and then add Forge to Vue, Forge will still initialize the default modal component to the <span class="pill">&lt;modal&gt;&lt;/modal&gt;</span> component. However, if you change the template of the modal component, Forge will not re-register the same element. This ensures that all the components used by Forge are available, without clobbering any component customizations that have already been registered to Forge.</p>
+<pre><code class="language-js">
+Forge.cast(component, template, componentName);
+</pre></code>
+            <h4>Params</h4>
+            <dl>
+              <dt>component</dt>
+              <dd><em>String; required</em><br/>The name of the component you would like to customize.</dd>
+              <dt>template</dt>
+              <dd><em>String; optional</em><br/>The HTML string to use as a template for the new component. Dive into the <span class="pill">src/js/components</span> folder to find templates you can use as a starting point to customize your own component templates.</dd>
+              <dt>componentName</dt>
+              <dd><em>String; optional</em><br/>The name of the new component. Will change the name of the tag that the component is mounted to once registered to Vue. For example, calling <span class="pill">Forge.cast('modal', null, 'my-modal')</span> will allow you to place a modal on the page using the <span class="pill">&lt;my-modal&gt;&lt;/my-modal&gt;</span> element.</dd>
+            </dl>
           </div>
         </div>
 
