@@ -22,7 +22,7 @@ Import ForgeUI components to Vue
 
 ```
 import Vue from 'vue';
-import forge from 'forge-ui';
+import Forge from 'forge-ui';
 
 // Register a component with a custom template (optional)
 import myTemplate from './template.html';
