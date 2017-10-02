@@ -1,5 +1,5 @@
 
-Forge.castAll();
+Vue.use(Forge);
 
 Vue.config.debug = true;
 

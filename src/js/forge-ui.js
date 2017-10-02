@@ -1,42 +1,65 @@
 
+import _ from 'lodash';
+
 import componentList from './componentList.js';
 
 var Forge = {
 
-  /**
-   * template
-   *
-   * Register a template to a component
-   *
-   * @param component string The name of the component
-   * @param template  string The template to register to the component
-   */
-  template(component, template) {
-    if (componentList.hasOwnProperty(component)) {
-      componentList[component].template = template;
-    }
-  },
+  // bucket for registering components
+  components: {},
 
   /**
    * cast
    *
-   * Register a component to Vue
+   * Register a component to Forge
    *
    * @param component string The name of the component
+   * @param template  string optional - The template to register to the component
+   * @param template  string optional - The name to register the component to Vue with
    */
-  cast(component) {
-    if (componentList.hasOwnProperty(component)) {
-      Vue.component(component, componentList[component]);
+  cast(componentName, template, customName) {
+    if (componentList.hasOwnProperty(componentName)) {
+      let name = customName || componentName;
+
+      if (!this.components.hasOwnProperty(name)) {
+        let component = _.clone(componentList[componentName]);
+
+        if (_.isString(template)) {
+          component.template = template;
+        }
+
+        this.components[name] = component;
+      }
+    } else {
+      console.error(`ForgeUI does not currently include a component with name ${componentName}`)
     }
   },
 
   /**
    * castAll
    *
-   * Register all components to Vue
+   * Register all unregistered components to Forge with defualt templates
    */
   castAll() {
-    _.forEach(componentList, (component, name) => Forge.cast(name));
+    _.forEach(componentList, (component, name) => this.cast(name));
+  },
+
+  /**
+   * install
+   *
+   * Vue.js plugin installer
+   *
+   * @param Vue     object Vue.js instance
+   * @param options object Options object - currently unused
+   */
+  install(Vue, options) {
+    // register to Forge anything that's left to register
+    this.castAll();
+
+    // register component list to Vue
+    for (let name in this.components) {
+      Vue.component(name, this.components[name]);
+    }
   }
 
 };
