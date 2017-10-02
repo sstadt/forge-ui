@@ -1560,7 +1560,18 @@ new Vue({
             <p>You can customize and rename as many components as you like, up until the point where <span class="pill">Vue.use(Forge)</span> is invoked, at which point all unregistered components will be added to Vue.</p>
             <p>Forge will register all components that have not been registered to the default component names. For example, is you rename the modal component, and then add Forge to Vue, Forge will still initialize the default modal component to the <span class="pill">&lt;modal&gt;&lt;/modal&gt;</span> component. However, if you change the template of the modal component, Forge will not re-register the same element. This ensures that all the components used by Forge are available, without clobbering any component customizations that have already been registered to Forge.</p>
 <pre><code class="language-js">
-Forge.cast(component, template, componentName);
+import Vue from 'vue';
+import forge from 'forge-ui';
+
+// Register a component with a custom template (optional)
+import myTemplate from './template.html';
+Forge.cast('modal', myTemplate);
+
+// Register a component with a custom name (optional)
+Forge.cast('modal', null, 'my-modal'); // you can now use the modal component with &lt;my-modal&gt;&lt;/my-modal&gt;
+
+// Register all Forge components to Vue
+Vue.use(Forge);
 </pre></code>
             <h4>Params</h4>
             <dl>
