@@ -1,7 +1,7 @@
 
 <div class="tabs">
   <ul class="tab-nav">
-    <li v-for="tab in tabs" v-bind:class="{ 'active': (activeTab === tab.heading) }" v-on:click.prevent="activate(tab.heading)">
+    <li v-for="tab in tabs" :class="{ 'active': tab.active }" @click="activate(tab)">
       {{ tab.heading }}
     </li>
   </ul>

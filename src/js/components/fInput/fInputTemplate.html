@@ -1,23 +1,23 @@
 
-<label class="v-input">
+<label class="f-input">
   {{ label }}
   <div class="input-wrap">
-    <i class="fa fa-{{ icon }}" v-if="icon"></i>
+    <i :class="['fa', 'fa-' + icon]" v-if="icon"></i>
     <textarea v-if="type === 'textarea'"
-      v-el:input
+      ref="input"
       :class="{ 'error': error.length > 0 }"
-      name="{{ name }}"
-      placeholder="{{ placeholder }}"
+      :name="name"
+      :placeholder="placeholder"
       v-model="value"
-      v-on:blur="validate()"></textarea>
+      @blur="validate()"></textarea>
     <input v-else
-      v-el:input
+      ref="input"
       :class="{ 'error': error.length > 0 }"
-      name="{{ name }}"
-      type="{{ type }}"
-      placeholder="{{ placeholder }}"
+      :name="name"
+      :placeholder="placeholder"
+      type="text"
       v-model="value"
-      v-on:blur="validate()" />
+      @blur="validate()" />
     <small v-if="error.length > 0" transition="slide-up-x-small" class="error">{{ error }}</small>
   </div>
 </label>

@@ -65,7 +65,7 @@
             </dl>
             <div id="sample_demo">
               <tabs>
-                <tab heading="Result">
+                <tab heading="Result" :selected="true">
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
@@ -1048,8 +1048,8 @@
             </dl>
             <div id="alert_demo">
               <tabs>
-                <tab heading="Result">
-                  <alert v-ref:my-alert :can-close="true"></alert>
+                <tab heading="Result" :selected="true">
+                  <alert ref="myAlert" :can-close="true"></alert>
                   <div class="row">
                     <div class="small-12 medium-5 column">
                       <f-input type="text" label="Alert Message" :value.sync="alertMessage"></f-input>
@@ -1064,7 +1064,7 @@
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
+&lt;alert ref="myAlert" :can-close="true"&gt;&lt;/alert&gt;
 &lt;div class="row"&gt;
   &lt;div class="small-12 medium-5 column"&gt;
     &lt;f-input type="text" label="Alert Message" :value.sync="alertMessage"&gt;&lt;/f-input&gt;
@@ -1123,7 +1123,7 @@ new Vue({
             </dl>
             <div id="modal_demo">
               <tabs>
-                <tab heading="Result">
+                <tab heading="Result" :selected="true">
                   <button type="button" class="button" v-on:click="showModal = true">Open Modal</button>
                   <modal :show.sync="showModal">
                     <div slot="header">
@@ -1190,14 +1190,14 @@ new Vue({
             </ul>
             <div id="prompt_demo">
               <tabs>
-                <tab heading="Result">
-                  <prompt v-ref:my-prompt></prompt>
+                <tab heading="Result" :selected="true">
+                  <prompt ref="myPrompt"></prompt>
                   <button type="button" class="button" v-on:click="prompt('ask')">vm.$refs.myPrompt.ask()</button>
                   <button type="button" class="button" v-on:click="prompt('confirm')">vm.$refs.myPrompt.confirm()</button>
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;prompt v-ref:my-prompt&gt;&lt;/prompt&gt;
+&lt;prompt ref="myPrompt"&gt;&lt;/prompt&gt;
 &lt;button type="button" class="button" v-on:click="prompt('ask')"&gt;vm.$refs.myPrompt.ask()&lt;/button&gt;
 &lt;button type="button" class="button" v-on:click="prompt('confirm')"&gt;vm.$refs.myPrompt.confirm()&lt;/button&gt;
 </code></pre>
@@ -1251,9 +1251,9 @@ new Vue({
             </dl>
             <div id="tabs_demo">
               <tabs>
-                <tab heading="Result">
+                <tab heading="Result" :selected="true">
                   <tabs>
-                    <tab heading="Foo">
+                    <tab heading="Foo" :selected="true">
                       <p>Some tab content</p>
                     </tab>
                     <tab heading="Bar">
@@ -1267,7 +1267,7 @@ new Vue({
                 <tab heading="HTML">
 <pre><code class="language-html">
 &lt;tabs&gt;
-  &lt;tab heading="Foo"&gt;
+  &lt;tab heading="Foo" :selected="true"&gt;
     &lt;p&gt;Some tab content&lt;/p&gt;
   &lt;/tab&gt;
   &lt;tab heading="Bar"&gt;
@@ -1311,8 +1311,8 @@ new Vue({
             </dl>
             <div id="form_demo">
               <tabs>
-                <tab heading="Result">
-                  <alert v-ref:my-alert :can-close="true"></alert>
+                <tab heading="Result" :selected="true">
+                  <alert ref="myAlert" :can-close="true"></alert>
                   <f-form :async="true" :submit-callback="showMessage">
                     <f-input type="text" :value.sync="message" :required="true"></f-input>
                     <button type="submit" class="button">Submit</button>
@@ -1320,7 +1320,7 @@ new Vue({
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;alert v-ref:my-alert :can-close="true"&gt;&lt;/alert&gt;
+&lt;alert ref="myAlert" :can-close="true"&gt;&lt;/alert&gt;
 &lt;f-form :async="true" :submit-callback="showMessage"&gt;
   &lt;f-input type="text" :value.sync="message" :required="true"&gt;&lt;/f-input&gt;
   &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
@@ -1375,7 +1375,7 @@ new Vue({
             </dl>
             <div id="input_demo">
               <tabs>
-                <tab heading="Result">
+                <tab heading="Result" :selected="true">
                   <f-input type="email" label="Email" :value.sync="email" />
                 </tab>
                 <tab heading="HTML">
@@ -1417,7 +1417,7 @@ new Vue({
             </dl>
             <div id="select_demo">
               <tabs>
-                <tab heading="Result">
+                <tab heading="Result" :selected="true">
                   <f-select :selected.sync="selectedOption" :options="selectOptions"></f-select>
                   <p>selected: {{ selectedOption }}</p>
                 </tab>
@@ -1465,7 +1465,7 @@ new Vue({
             </dl>
             <div id="checkbox_demo">
               <tabs>
-                <tab heading="Result">
+                <tab heading="Result" :selected="true">
                   <f-checkbox :checked.sync="checked" label="My checkbox"></f-checkbox>
                   <p>checked: {{ checked }}</p>
                 </tab>
@@ -1509,13 +1509,13 @@ new Vue({
             </dl>
             <div id="radio_demo">
               <tabs>
-                <tab heading="Result">
-                  <f-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"><f-radio>
+                <tab heading="Result" :selected="true">
+                  <f-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" name="myRadioOptions"><f-radio>
                   <p>Selected: {{ selectedOption }}</p>
                 </tab>
                 <tab heading="HTML">
 <pre><code class="language-html">
-&lt;f-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" :name="myRadioOptions"&gt;&lt;f-radio&gt;
+&lt;f-radio label="My Radio Group" :selected.sync="selectedOption" :options="radioOptions" name="myRadioOptions"&gt;&lt;f-radio&gt;
 </code></pre>
                 </tab>
                 <tab heading="JavaScript">
@@ -1543,7 +1543,7 @@ new Vue({
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script> -->
     <script type="text/javascript" src="dist/js/forge-ui.js"></script>
     <script type="text/javascript" src="demo/js/script.js"></script>

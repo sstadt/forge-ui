@@ -1,7 +1,9 @@
 
-<form v-if="async" v-el:form v-on:submit.prevent="submitForm" :method="method" :action="action" novalidate>
-  <slot></slot>
-</form>
-<form v-else v-el:form v-on:submit="submitForm" :method="method" :action="action" novalidate>
-  <slot></slot>
-</form>
+<div class="f-form">
+  <form v-if="async" ref="form" v-on:submit.prevent="submitForm" :method="method" :action="action" novalidate>
+    <slot></slot>
+  </form>
+  <form v-else ref="form" v-on:submit="submitForm" :method="method" :action="action" novalidate>
+    <slot></slot>
+  </form>
+</div>

@@ -4,7 +4,7 @@
 The prompt component initializes itself with functions that are handy to access if you need to get simple data from a user. To access these methods, assign a ref to the prompt:
 
 ```html
-<prompt v-ref:my-prompt></prompt>
+<prompt ref:my-prompt></prompt>
 ```
 
 ### $prompt.ask

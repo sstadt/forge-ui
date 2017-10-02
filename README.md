@@ -27,7 +27,7 @@ import myTemplate from './template.html';
 Forge.cast('modal', myTemplate);
 
 // Register a component with a custom name (optional)
-Forge.cast('modal', null, 'my-modal'); // you can not use the modal component with <my-modal></my-modal>
+Forge.cast('modal', null, 'my-modal'); // you can now use the modal component with <my-modal></my-modal>
 
 // Register all Forge components to Vue
 Vue.use(Forge);

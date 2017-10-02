@@ -5,7 +5,7 @@ var component = {
   template,
   data() {
     return {
-      selected: '',
+      selectedOption: '',
       isError: false
     };
   },

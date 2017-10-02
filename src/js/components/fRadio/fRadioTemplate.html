@@ -1,6 +1,8 @@
 
-<label v-if="label.length > 0">{{ label }}</label>
-<span v-for="option in options">
-  <input type="radio" :name="name" :value="option.value" :id="option.name" v-model="selected">
-  <label :for="option.name">{{ option.label }}</label>
-</span>
+<div class="f-radio">
+  <label v-if="label.length > 0">{{ label }}</label>
+  <span v-for="option in options">
+    <input type="radio" :name="name" :value="option.value" :id="option.name" v-model="selectedOption">
+    <label :for="option.name">{{ option.label }}</label>
+  </span>
+</div>
