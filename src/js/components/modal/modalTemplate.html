@@ -1,10 +1,12 @@
 
-<div class="modal" :transition="transition" v-show="show">
-  <div v-on:click.prevent :class="{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }">
-    <div class="modal-header">
-      <slot name="header"></slot>
+<transition :name="transition">
+  <div class="modal" v-show="show">
+    <div v-on:click.prevent :class="{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }">
+      <div class="modal-header">
+        <slot name="header"></slot>
+      </div>
+      <slot name="content"></slot>
+      <span @click="close()" aria-label="Close">&#215;</span>
     </div>
-    <slot name="content"></slot>
-    <span v-on:click="show = false" aria-label="Close">&#215;</span>
   </div>
-</div>
+</transition>

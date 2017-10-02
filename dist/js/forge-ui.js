@@ -17436,11 +17436,6 @@
 	var component = {
 	  template: _modalTemplate2.default,
 	  props: {
-	    show: {
-	      type: Boolean,
-	      required: true,
-	      twoWay: true
-	    },
 	    modalSize: {
 	      type: String,
 	      default: 'full'
@@ -17448,6 +17443,20 @@
 	    transition: {
 	      type: String,
 	      default: 'zoom-out'
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      show: false
+	    };
+	  },
+
+	  methods: {
+	    open: function open() {
+	      this.show = true;
+	    },
+	    close: function close() {
+	      this.show = false;
 	    }
 	  }
 	};
@@ -17458,7 +17467,7 @@
 /* 9 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<div class=\"modal\" :transition=\"transition\" v-show=\"show\">\n  <div v-on:click.prevent :class=\"{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }\">\n    <div class=\"modal-header\">\n      <slot name=\"header\"></slot>\n    </div>\n    <slot name=\"content\"></slot>\n    <span v-on:click=\"show = false\" aria-label=\"Close\">&#215;</span>\n  </div>\n</div>\n";
+	module.exports = "\n<transition :name=\"transition\">\n  <div class=\"modal\" v-show=\"show\">\n    <div v-on:click.prevent :class=\"{ 'modal-content': true, 'small': modalSize === 'small', 'full': modalSize === 'full' }\">\n      <div class=\"modal-header\">\n        <slot name=\"header\"></slot>\n      </div>\n      <slot name=\"content\"></slot>\n      <span @click=\"close()\" aria-label=\"Close\">&#215;</span>\n    </div>\n  </div>\n</transition>\n";
 
 /***/ }),
 /* 10 */
@@ -17529,15 +17538,6 @@
 	    };
 	  },
 
-	  // watch: {
-	  //   show(val) {
-	  //     if (val === true && this.$children.length > 0) {
-	  //       this.promptValue = '';
-	  //       console.log(this.$refs);
-	  //       // this.$children[0].$children[0].$els.input.focus();
-	  //     }
-	  //   }
-	  // },
 	  methods: {
 	    yes: function yes() {
 	      this.confirmed = true;
@@ -17554,7 +17554,7 @@
 /* 11 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n\n<div class=\"prompt prompt-modal\" :transition=\"transition\" v-show=\"show\">\n  <div class=\"prompt-overlay\" v-on:click=\"no()\"></div>\n  <div class=\"prompt-content\">\n    <v-form v-if=\"showInput\" :submit-callback=\"yes\" :ajax=\"true\">\n      <p>{{ questionLabel }}</p>\n      <f-input type=\"text\" ref=\"response\" name=\"promptResponse\" :value.sync=\"promptValue\" :required=\"true\"></f-input>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\">{{ yesLabel }}</button>\n      </div>\n    </v-form>\n    <div v-else>\n      <p>{{ questionLabel }}</p>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\" v-on:click=\"yes()\">{{ yesLabel }}</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n\n<div class=\"prompt prompt-modal\" :transition=\"transition\" v-show=\"show\">\n  <div class=\"prompt-overlay\" v-on:click=\"no()\"></div>\n  <div class=\"prompt-content\">\n    <f-form v-if=\"showInput\" :submit-callback=\"yes\" :ajax=\"true\">\n      <p>{{ questionLabel }}</p>\n      <f-input type=\"text\" ref=\"response\" name=\"promptResponse\" v-model=\"promptValue\" :required=\"true\"></f-input>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\">{{ yesLabel }}</button>\n      </div>\n    </f-form>\n    <div v-else>\n      <p>{{ questionLabel }}</p>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"button small\" v-on:click=\"no()\">{{ noLabel }}</button>\n        <button type=\"submit\" class=\"button small\" v-on:click=\"yes()\">{{ yesLabel }}</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ }),
 /* 12 */
@@ -17611,32 +17611,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// var component = {
-	//   template,
-	//   data() {
-	//     return {
-	//       tabs: [],
-	//       activeTab: ''
-	//     };
-	//   },
-	//   events: {
-	//     TAB_COMPONENT_TAB_CREATED(heading) {
-	//       var self = this,
-	//         active = this.tabs.length === 0;
-	//
-	//       this.tabs.push({ heading, active });
-	//       if (active) this.activate(heading);
-	//     }
-	//   },
-	//   methods: {
-	//     activate(heading) {
-	//       this.activeTab = heading;
-	//       this.$broadcast('TAB_COMPONENT_TAB_CLICKED', heading);
-	//     }
-	//   }
-	// };
-
-
 	var component = {
 	  template: _tabsTemplate2.default,
 	  data: function data() {
@@ -17680,30 +17654,6 @@
 	var _tabTemplate2 = _interopRequireDefault(_tabTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// module.exports = {
-	//   template,
-	//   props: {
-	//     heading: {
-	//       type: String,
-	//       required: true
-	//     }
-	//   },
-	//   data() {
-	//     return {
-	//       active: false
-	//     };
-	//   },
-	//   ready() {
-	//     this.$dispatch('TAB_COMPONENT_TAB_CREATED', this.heading);
-	//   },
-	//   events: {
-	//     TAB_COMPONENT_TAB_CLICKED(msg) {
-	//       this.active = this.heading === msg;
-	//     }
-	//   }
-	// };
-
 
 	var component = {
 	  template: _tabTemplate2.default,
@@ -17762,7 +17712,7 @@
 	      type: String,
 	      default: ''
 	    },
-	    async: {
+	    ajax: {
 	      type: Boolean,
 	      default: false
 	    },
@@ -17772,11 +17722,11 @@
 	  },
 	  methods: {
 	    submitForm: function submitForm(event) {
-	      if (this.async || !this.isValid()) {
+	      if (this.ajax || !this.isValid()) {
 	        event.preventDefault();
 	      }
 
-	      if (this.async && this.isValid() && typeof this.submitCallback === 'function') {
+	      if (this.ajax && this.isValid() && typeof this.submitCallback === 'function') {
 	        this.submitCallback();
 	      }
 	    },
@@ -17802,7 +17752,7 @@
 /* 19 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<div class=\"f-form\">\n  <form v-if=\"async\" ref=\"form\" v-on:submit.prevent=\"submitForm\" :method=\"method\" :action=\"action\" novalidate>\n    <slot></slot>\n  </form>\n  <form v-else ref=\"form\" v-on:submit=\"submitForm\" :method=\"method\" :action=\"action\" novalidate>\n    <slot></slot>\n  </form>\n</div>\n";
+	module.exports = "\n<form ref=\"form\" v-on:submit=\"submitForm\" :method=\"method\" :action=\"action\" novalidate>\n  <slot></slot>\n</form>\n";
 
 /***/ }),
 /* 20 */
@@ -17843,8 +17793,7 @@
 	    },
 	    value: {
 	      type: String,
-	      required: true,
-	      twoWay: true
+	      required: true
 	    },
 	    required: {
 	      type: Boolean,
@@ -17857,10 +17806,16 @@
 	  },
 	  data: function data() {
 	    return {
-	      error: ''
+	      error: '',
+	      inputValue: this.value
 	    };
 	  },
 
+	  watch: {
+	    inputValue: function inputValue() {
+	      this.$emit('input', this.inputValue);
+	    }
+	  },
 	  methods: {
 	    isValid: function isValid() {
 	      this.validate();
@@ -17899,7 +17854,7 @@
 /* 21 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"value\"\n      @blur=\"validate()\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"value\"\n      @blur=\"validate()\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
+	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @blur=\"validate()\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @blur=\"validate()\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
 
 /***/ }),
 /* 22 */
@@ -17945,10 +17900,9 @@
 	      type: String,
 	      default: ''
 	    },
-	    selected: {
+	    value: {
 	      type: String,
-	      required: true,
-	      twoWay: true
+	      required: true
 	    },
 	    options: {
 	      type: Array,
@@ -17961,23 +17915,30 @@
 	  },
 	  data: function data() {
 	    return {
-	      isError: false
+	      isError: false,
+	      selectedValue: this.value
 	    };
+	  },
+
+	  watch: {
+	    selectedValue: function selectedValue() {
+	      this.$emit('input', this.selectedValue);
+	    }
 	  },
 	  ready: function ready() {
 	    var self = this,
 	        selectedIndex = _.findIndex(self.options, function (option) {
-	      return option.value === self.selected;
+	      return option.value === self.selectedValue;
 	    });
 
 	    if (self.required && selectedIndex === -1) {
-	      self.selected = self.options[0].value;
+	      self.selectedValue = self.options[0].value;
 	    }
 	  },
 
 	  methods: {
 	    isValid: function isValid() {
-	      this.isError = !this.required || this.selected.length > 0;
+	      this.isError = !this.required || this.selectedValue.length > 0;
 	      return this.isError;
 	    }
 	  }
@@ -17989,7 +17950,7 @@
 /* 24 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label class=\"v-select\">\n  {{ label }}\n  <select v-model=\"selected\" :class=\"{ 'error': isError }\">\n    <option v-if=\"!required\" value=\"\"></option>\n    <option v-for=\"option in options\" :value=\"option.value\">{{ option.label }}</option>\n  </select>\n</label>\n";
+	module.exports = "\n<label class=\"v-select\">\n  {{ label }}\n  <select v-model=\"selectedValue\" :class=\"{ 'error': isError }\">\n    <option v-if=\"!required\" value=\"\"></option>\n    <option v-for=\"option in options\" :value=\"option.value\">{{ option.label }}</option>\n  </select>\n</label>\n";
 
 /***/ }),
 /* 25 */
@@ -18009,14 +17970,8 @@
 
 	var component = {
 	  template: _fCheckboxTemplate2.default,
-	  data: function data() {
-	    return {
-	      isError: false
-	    };
-	  },
-
 	  props: {
-	    checked: {
+	    value: {
 	      type: Boolean,
 	      required: true,
 	      twoWay: true
@@ -18030,9 +17985,21 @@
 	      default: false
 	    }
 	  },
+	  data: function data() {
+	    return {
+	      isError: false,
+	      isChecked: this.value
+	    };
+	  },
+
+	  watch: {
+	    isChecked: function isChecked() {
+	      this.$emit('input', this.isChecked);
+	    }
+	  },
 	  methods: {
 	    isValid: function isValid() {
-	      this.isError = this.required ? !this.checked : false;
+	      this.isError = this.required ? !this.isChecked : false;
 	      return !this.isError;
 	    }
 	  }
@@ -18044,7 +18011,7 @@
 /* 26 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label><input type=\"checkbox\" v-model=\"checked\" /> {{ label }}</label>\n";
+	module.exports = "\n<label><input type=\"checkbox\" v-model=\"isChecked\" /> {{ label }}</label>\n";
 
 /***/ }),
 /* 27 */
@@ -18064,13 +18031,6 @@
 
 	var component = {
 	  template: _fRadioTemplate2.default,
-	  data: function data() {
-	    return {
-	      selectedOption: '',
-	      isError: false
-	    };
-	  },
-
 	  props: {
 	    label: {
 	      type: String,
@@ -18084,7 +18044,7 @@
 	      type: Array,
 	      required: true
 	    },
-	    selected: {
+	    value: {
 	      type: String,
 	      required: true
 	    },
@@ -18093,9 +18053,22 @@
 	      default: false
 	    }
 	  },
+	  data: function data() {
+	    return {
+	      selectedOption: '',
+	      isError: false
+	    };
+	  },
+
+	  watch: {
+	    selectedOption: function selectedOption() {
+	      console.log(this.selectedOption);
+	      this.$emit('input', this.selectedOption);
+	    }
+	  },
 	  methods: {
 	    isValid: function isValid() {
-	      this.isError = this.required ? this.selected.length === 0 : false;
+	      this.isError = this.required ? this.selectedOption.length === 0 : false;
 	      return !this.isError;
 	    }
 	  }
@@ -18107,7 +18080,7 @@
 /* 28 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<div class=\"f-radio\">\n  <label v-if=\"label.length > 0\">{{ label }}</label>\n  <span v-for=\"option in options\">\n    <input type=\"radio\" :name=\"name\" :value=\"option.value\" :id=\"option.name\" v-model=\"selectedOption\">\n    <label :for=\"option.name\">{{ option.label }}</label>\n  </span>\n</div>\n";
+	module.exports = "\n<div :class=\"{ 'f-radio': true, 'error': isError }\">\n  <label v-if=\"label.length > 0\">{{ label }}</label>\n  <span class=\"f-radio__option\" v-for=\"option in options\">\n    <input type=\"radio\" :name=\"name\" :value=\"option.value\" :id=\"option.name\" v-model=\"selectedOption\">\n    <label :for=\"option.name\">{{ option.label }}</label>\n  </span>\n</div>\n";
 
 /***/ })
 /******/ ]);

@@ -24,8 +24,7 @@ var component = {
     },
     value: {
       type: String,
-      required: true,
-      twoWay: true
+      required: true
     },
     required: {
       type: Boolean,
@@ -38,8 +37,14 @@ var component = {
   },
   data() {
     return {
-      error: ''
+      error: '',
+      inputValue: this.value
     };
+  },
+  watch: {
+    inputValue() {
+      this.$emit('input', this.inputValue);
+    }
   },
   methods: {
     isValid() {

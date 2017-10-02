@@ -26,8 +26,13 @@ new Vue({
 
 new Vue({
   el: '#modal_demo',
-  data: {
-    showModal: false
+  methods: {
+    openModal() {
+      this.$refs.myModal.open();
+    },
+    closeModal() {
+      this.$refs.myModal.close();
+    }
   }
 });
 
@@ -38,7 +43,6 @@ new Vue({
       this.$refs.myPrompt[method]({
         question: 'Judge me by my size, do you?',
         yes: function (answer) {
-          console.log(answer);
           // if method is 'ask',
           // the dialog input value will be passed as the first argument
         },

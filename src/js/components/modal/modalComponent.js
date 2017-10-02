@@ -4,11 +4,6 @@ import template from './modalTemplate.html';
 var component = {
   template,
   props: {
-    show: {
-      type: Boolean,
-      required: true,
-      twoWay: true
-    },
     modalSize: {
       type: String,
       default: 'full'
@@ -16,6 +11,19 @@ var component = {
     transition: {
       type: String,
       default: 'zoom-out'
+    }
+  },
+  data() {
+    return {
+      show: false
+    }
+  },
+  methods: {
+    open() {
+      this.show = true;
+    },
+    close() {
+      this.show = false;
     }
   }
 };

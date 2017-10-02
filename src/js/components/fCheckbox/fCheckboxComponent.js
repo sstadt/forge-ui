@@ -3,13 +3,8 @@ import template from './fCheckboxTemplate.html';
 
 var component = {
   template,
-  data() {
-    return {
-      isError: false
-    };
-  },
   props: {
-    checked: {
+    value: {
       type: Boolean,
       required: true,
       twoWay: true
@@ -23,9 +18,20 @@ var component = {
       default: false
     }
   },
+  data() {
+    return {
+      isError: false,
+      isChecked: this.value
+    };
+  },
+  watch: {
+    isChecked() {
+      this.$emit('input', this.isChecked);
+    }
+  },
   methods: {
     isValid() {
-      this.isError = (this.required) ? !this.checked : false;
+      this.isError = (this.required) ? !this.isChecked : false;
       return !this.isError;
     }
   }

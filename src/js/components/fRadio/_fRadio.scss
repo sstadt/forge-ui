@@ -1,4 +1,19 @@
 
-.radio.error {
-  color: $alert-color;
+.f-radio {
+  > label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  &.error {
+    color: $alert-color;
+  }
+
+  &__option {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
 }

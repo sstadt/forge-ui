@@ -12,7 +12,7 @@ var component = {
       type: String,
       default: ''
     },
-    async: {
+    ajax: {
       type: Boolean,
       default: false
     },
@@ -22,11 +22,11 @@ var component = {
   },
   methods: {
     submitForm(event) {
-      if (this.async || !this.isValid()) {
+      if (this.ajax || !this.isValid()) {
         event.preventDefault();
       }
 
-      if (this.async && this.isValid() && typeof this.submitCallback === 'function') {
+      if (this.ajax && this.isValid() && typeof this.submitCallback === 'function') {
         this.submitCallback();
       }
     },

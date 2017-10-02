@@ -3,12 +3,6 @@ import template from './fRadioTemplate.html';
 
 var component = {
   template,
-  data() {
-    return {
-      selectedOption: '',
-      isError: false
-    };
-  },
   props: {
     label: {
       type: String,
@@ -22,7 +16,7 @@ var component = {
       type: Array,
       required: true
     },
-    selected: {
+    value: {
       type: String,
       required: true
     },
@@ -31,9 +25,21 @@ var component = {
       default: false
     }
   },
+  data() {
+    return {
+      selectedOption: '',
+      isError: false
+    };
+  },
+  watch: {
+    selectedOption() {
+      console.log(this.selectedOption);
+      this.$emit('input', this.selectedOption);
+    }
+  },
   methods: {
     isValid() {
-      this.isError = (this.required) ? this.selected.length === 0 : false;
+      this.isError = (this.required) ? this.selectedOption.length === 0 : false;
       return !this.isError;
     }
   }

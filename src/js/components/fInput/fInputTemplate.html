@@ -8,7 +8,7 @@
       :class="{ 'error': error.length > 0 }"
       :name="name"
       :placeholder="placeholder"
-      v-model="value"
+      v-model="inputValue"
       @blur="validate()"></textarea>
     <input v-else
       ref="input"
@@ -16,7 +16,7 @@
       :name="name"
       :placeholder="placeholder"
       type="text"
-      v-model="value"
+      v-model="inputValue"
       @blur="validate()" />
     <small v-if="error.length > 0" transition="slide-up-x-small" class="error">{{ error }}</small>
   </div>

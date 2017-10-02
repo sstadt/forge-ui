@@ -8,10 +8,9 @@ var component = {
       type: String,
       default: ''
     },
-    selected: {
+    value: {
       type: String,
-      required: true,
-      twoWay: true
+      required: true
     },
     options: {
       type: Array,
@@ -24,20 +23,26 @@ var component = {
   },
   data() {
     return {
-      isError: false
+      isError: false,
+      selectedValue: this.value
     };
+  },
+  watch: {
+    selectedValue() {
+      this.$emit('input', this.selectedValue);
+    }
   },
   ready() {
     var self = this,
-      selectedIndex = _.findIndex(self.options, (option) => option.value === self.selected);
+      selectedIndex = _.findIndex(self.options, (option) => option.value === self.selectedValue);
 
     if (self.required && selectedIndex === -1) {
-      self.selected = self.options[0].value;
+      self.selectedValue = self.options[0].value;
     }
   },
   methods: {
     isValid() {
-      this.isError = !this.required || this.selected.length > 0;
+      this.isError = !this.required || this.selectedValue.length > 0;
       return this.isError;
     }
   }

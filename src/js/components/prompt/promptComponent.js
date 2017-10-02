@@ -53,15 +53,6 @@ var component = {
       }
     };
   },
-  // watch: {
-  //   show(val) {
-  //     if (val === true && this.$children.length > 0) {
-  //       this.promptValue = '';
-  //       console.log(this.$refs);
-  //       // this.$children[0].$children[0].$els.input.focus();
-  //     }
-  //   }
-  // },
   methods: {
     yes() {
       this.confirmed = true;

@@ -1,7 +1,7 @@
 
-<div class="f-radio">
+<div :class="{ 'f-radio': true, 'error': isError }">
   <label v-if="label.length > 0">{{ label }}</label>
-  <span v-for="option in options">
+  <span class="f-radio__option" v-for="option in options">
     <input type="radio" :name="name" :value="option.value" :id="option.name" v-model="selectedOption">
     <label :for="option.name">{{ option.label }}</label>
   </span>

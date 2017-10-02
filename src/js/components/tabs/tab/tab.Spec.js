@@ -46,45 +46,4 @@ describe('The tab component', function () {
     });
   });
 
-  describe('ready lifecycle method', function () {
-    var componentInstance;
-
-    beforeEach(function () {
-      componentInstance = new Vue(component);
-      componentInstance.heading = 'foo';
-      spyOn(componentInstance, '$dispatch');
-      componentInstance.$mount('body');
-    });
-
-    it('should dispatch a TAB_COMPONENT_TAB_CREATED with the tab heading', function () {
-      expect(componentInstance.$dispatch).toHaveBeenCalledWith('TAB_COMPONENT_TAB_CREATED', 'foo');
-    });
-  });
-
-  describe('events', function () {
-    var componentInstance;
-
-    beforeEach(function () {
-      componentInstance = new Vue(component);
-      componentInstance.heading = 'foo';
-    });
-
-    it('should be an object', function () {
-      expect(component.events).toEqual(jasmine.any(Object));
-    });
-
-    describe('TAB_COMPONENT_TAB_CLICKED', function () {
-      it('should activate if passed the name of the heading', function () {
-        componentInstance.$emit('TAB_COMPONENT_TAB_CLICKED', 'foo');
-        expect(componentInstance.active).toEqual(true);
-      });
-
-      it('should deactivate if not passed the name of the heading', function () {
-        componentInstance.active = true;
-        componentInstance.$emit('TAB_COMPONENT_TAB_CLICKED', 'bar');
-        expect(componentInstance.active).toEqual(false);
-      });
-    });
-  });
-
 });
