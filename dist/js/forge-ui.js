@@ -58,6 +58,10 @@
 
 	var _componentList2 = _interopRequireDefault(_componentList);
 
+	var _forgeUtil = __webpack_require__(11);
+
+	var _forgeUtil2 = _interopRequireDefault(_forgeUtil);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Forge = {
@@ -79,9 +83,9 @@
 	      var name = customName || componentName;
 
 	      if (!this.components.hasOwnProperty(name)) {
-	        var component = _lodash2.default.clone(_componentList2.default[componentName]);
+	        var component = _forgeUtil2.default.clone(_componentList2.default[componentName]);
 
-	        if (_lodash2.default.isString(template)) {
+	        if (_forgeUtil2.default.isString(template)) {
 	          component.template = template;
 	        }
 
@@ -99,11 +103,9 @@
 	   * Register all unregistered components to Forge with defualt templates
 	   */
 	  castAll: function castAll() {
-	    var _this = this;
-
-	    _lodash2.default.forEach(_componentList2.default, function (component, name) {
-	      return _this.cast(name);
-	    });
+	    for (var component in _componentList2.default) {
+	      this.cast(component);
+	    }
 	  },
 
 
@@ -17265,35 +17267,35 @@
 
 	var _promptComponent2 = _interopRequireDefault(_promptComponent);
 
-	var _loaderComponent = __webpack_require__(12);
+	var _loaderComponent = __webpack_require__(13);
 
 	var _loaderComponent2 = _interopRequireDefault(_loaderComponent);
 
-	var _tabsComponent = __webpack_require__(14);
+	var _tabsComponent = __webpack_require__(15);
 
 	var _tabsComponent2 = _interopRequireDefault(_tabsComponent);
 
-	var _tabComponent = __webpack_require__(16);
+	var _tabComponent = __webpack_require__(17);
 
 	var _tabComponent2 = _interopRequireDefault(_tabComponent);
 
-	var _fFormComponent = __webpack_require__(18);
+	var _fFormComponent = __webpack_require__(19);
 
 	var _fFormComponent2 = _interopRequireDefault(_fFormComponent);
 
-	var _fInputComponent = __webpack_require__(20);
+	var _fInputComponent = __webpack_require__(21);
 
 	var _fInputComponent2 = _interopRequireDefault(_fInputComponent);
 
-	var _fSelectComponent = __webpack_require__(23);
+	var _fSelectComponent = __webpack_require__(24);
 
 	var _fSelectComponent2 = _interopRequireDefault(_fSelectComponent);
 
-	var _fCheckboxComponent = __webpack_require__(25);
+	var _fCheckboxComponent = __webpack_require__(26);
 
 	var _fCheckboxComponent2 = _interopRequireDefault(_fCheckboxComponent);
 
-	var _fRadioComponent = __webpack_require__(27);
+	var _fRadioComponent = __webpack_require__(28);
 
 	var _fRadioComponent2 = _interopRequireDefault(_fRadioComponent);
 
@@ -17479,11 +17481,11 @@
 	  value: true
 	});
 
-	var _lodash = __webpack_require__(1);
+	var _forgeUtil = __webpack_require__(11);
 
-	var _lodash2 = _interopRequireDefault(_lodash);
+	var _forgeUtil2 = _interopRequireDefault(_forgeUtil);
 
-	var _promptTemplate = __webpack_require__(11);
+	var _promptTemplate = __webpack_require__(12);
 
 	var _promptTemplate2 = _interopRequireDefault(_promptTemplate);
 
@@ -17506,9 +17508,9 @@
 	  vm.show = true;
 
 	  unwatch = vm.$watch('$data.confirmed', function (newVal, oldVal) {
-	    if (newVal && _lodash2.default.isFunction(options.yes)) {
+	    if (newVal && _forgeUtil2.default.isFunction(options.yes)) {
 	      options.yes(showInput ? vm.promptValue : null);
-	    } else if (!newVal && _lodash2.default.isFunction(options.no)) {
+	    } else if (!newVal && _forgeUtil2.default.isFunction(options.no)) {
 	      options.no();
 	    }
 	    unwatch();
@@ -17558,10 +17560,55 @@
 /* 11 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<transition :name=\"transition\">\n  <div class=\"prompt prompt-modal\" v-show=\"show\">\n    <div class=\"prompt-overlay\" @click=\"no()\"></div>\n    <div class=\"prompt-content\">\n      <f-form v-if=\"showInput\" :submit-callback=\"yes\" :ajax=\"true\">\n        <p>{{ questionLabel }}</p>\n        <f-input type=\"text\" ref=\"response\" name=\"promptResponse\" v-model=\"promptValue\" :required=\"true\"></f-input>\n        <div class=\"controls\">\n          <button type=\"button\" class=\"button small\" @click=\"no()\">{{ noLabel }}</button>\n          <button type=\"submit\" class=\"button small\">{{ yesLabel }}</button>\n        </div>\n      </f-form>\n      <div v-else>\n        <p>{{ questionLabel }}</p>\n        <div class=\"controls\">\n          <button type=\"button\" class=\"button small\" @click=\"no()\">{{ noLabel }}</button>\n          <button type=\"submit\" class=\"button small\" @click=\"yes()\">{{ yesLabel }}</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</transition>\n";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  clone: function clone(obj) {
+	    var copy = obj.constructor();
+
+	    for (var attr in obj) {
+	      if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+	    }
+
+	    return copy;
+	  },
+	  isFunction: function isFunction(func) {
+	    return func && {}.toString.call(func) === '[object Function]';
+	  },
+	  isString: function isString(str) {
+	    return typeof str === 'string';
+	  },
+	  debounce: function debounce(func) {
+	    var timeout;
+
+	    return function () {
+	      var context = this,
+	          args = arguments,
+	          callNow = immediate && !timeout,
+	          later = function later() {
+	        timeout = null;
+	        if (!immediate) func.apply(context, args);
+	      };
+
+	      clearTimeout(timeout);
+
+	      timeout = setTimeout(later, wait);
+	      if (callNow) func.apply(context, args);
+	    };
+	  }
+	};
 
 /***/ }),
 /* 12 */
+/***/ (function(module, exports) {
+
+	module.exports = "\n<transition :name=\"transition\">\n  <div class=\"prompt prompt-modal\" v-show=\"show\">\n    <div class=\"prompt-overlay\" @click=\"no()\"></div>\n    <div class=\"prompt-content\">\n      <f-form v-if=\"showInput\" :submit-callback=\"yes\" :ajax=\"true\">\n        <p>{{ questionLabel }}</p>\n        <f-input type=\"text\" ref=\"response\" name=\"promptResponse\" v-model=\"promptValue\" :required=\"true\"></f-input>\n        <div class=\"controls\">\n          <button type=\"button\" class=\"button small\" @click=\"no()\">{{ noLabel }}</button>\n          <button type=\"submit\" class=\"button small\">{{ yesLabel }}</button>\n        </div>\n      </f-form>\n      <div v-else>\n        <p>{{ questionLabel }}</p>\n        <div class=\"controls\">\n          <button type=\"button\" class=\"button small\" @click=\"no()\">{{ noLabel }}</button>\n          <button type=\"submit\" class=\"button small\" @click=\"yes()\">{{ yesLabel }}</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</transition>\n";
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17570,7 +17617,7 @@
 	  value: true
 	});
 
-	var _loaderTemplate = __webpack_require__(13);
+	var _loaderTemplate = __webpack_require__(14);
 
 	var _loaderTemplate2 = _interopRequireDefault(_loaderTemplate);
 
@@ -17594,13 +17641,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"loader\">Loading...</div>\n";
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17609,11 +17656,7 @@
 	  value: true
 	});
 
-	var _lodash = __webpack_require__(1);
-
-	var _lodash2 = _interopRequireDefault(_lodash);
-
-	var _tabsTemplate = __webpack_require__(15);
+	var _tabsTemplate = __webpack_require__(16);
 
 	var _tabsTemplate2 = _interopRequireDefault(_tabsTemplate);
 
@@ -17632,7 +17675,7 @@
 	      this.tabs.push(newTab);
 	    },
 	    activate: function activate(selectedTab) {
-	      _lodash2.default.forEach(this.tabs, function (tab) {
+	      this.tabs.forEach(function (tab) {
 	        tab.active = selectedTab.heading === tab.heading;
 	      });
 	    }
@@ -17642,13 +17685,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"tabs\">\n  <ul class=\"tab-nav\">\n    <li v-for=\"tab in tabs\" :class=\"{ 'active': tab.active }\" @click=\"activate(tab)\">\n      {{ tab.heading }}\n    </li>\n  </ul>\n\n  <div class=\"tab-content\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17657,7 +17700,7 @@
 	  value: true
 	});
 
-	var _tabTemplate = __webpack_require__(17);
+	var _tabTemplate = __webpack_require__(18);
 
 	var _tabTemplate2 = _interopRequireDefault(_tabTemplate);
 
@@ -17688,13 +17731,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"tab\" v-show=\"active\">\n  <slot></slot>\n</div>\n";
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17707,9 +17750,13 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _fFormTemplate = __webpack_require__(19);
+	var _fFormTemplate = __webpack_require__(20);
 
 	var _fFormTemplate2 = _interopRequireDefault(_fFormTemplate);
+
+	var _forgeUtil = __webpack_require__(11);
+
+	var _forgeUtil2 = _interopRequireDefault(_forgeUtil);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17747,7 +17794,7 @@
 	          formIsValid = true;
 
 	      for (var i = 0, j = self.$children.length; i < j; i++) {
-	        if (_lodash2.default.isFunction(self.$children[i].isValid)) {
+	        if (_forgeUtil2.default.isFunction(self.$children[i].isValid)) {
 	          // has input validation attached
 	          formIsValid = formIsValid && self.$children[i].isValid();
 	        }
@@ -17761,13 +17808,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<form ref=\"form\" v-on:submit=\"submitForm\" :method=\"method\" :action=\"action\" novalidate>\n  <slot></slot>\n</form>\n";
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17776,17 +17823,17 @@
 	  value: true
 	});
 
-	var _lodash = __webpack_require__(1);
+	var _forgeUtil = __webpack_require__(11);
 
-	var _lodash2 = _interopRequireDefault(_lodash);
+	var _forgeUtil2 = _interopRequireDefault(_forgeUtil);
 
-	var _fInputTemplate = __webpack_require__(21);
+	var _fInputTemplate = __webpack_require__(22);
 
 	var _fInputTemplate2 = _interopRequireDefault(_fInputTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var validationRules = __webpack_require__(22);
+	var validationRules = __webpack_require__(23);
 
 	var component = {
 	  template: _fInputTemplate2.default,
@@ -17838,7 +17885,7 @@
 	      return this.error.length === 0;
 	    },
 
-	    debounceValidate: _lodash2.default.debounce(function () {
+	    debounceValidate: _forgeUtil2.default.debounce(function () {
 	      this.validate();
 	    }, 500),
 	    validate: function validate() {
@@ -17867,13 +17914,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @blur=\"validate()\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @blur=\"validate()\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -17894,7 +17941,7 @@
 	};
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17907,7 +17954,7 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _fSelectTemplate = __webpack_require__(24);
+	var _fSelectTemplate = __webpack_require__(25);
 
 	var _fSelectTemplate2 = _interopRequireDefault(_fSelectTemplate);
 
@@ -17947,7 +17994,7 @@
 	  },
 	  ready: function ready() {
 	    var self = this,
-	        selectedIndex = _lodash2.default.findIndex(self.options, function (option) {
+	        selectedIndex = self.options.findIndex(function (option) {
 	      return option.value === self.selectedValue;
 	    });
 
@@ -17967,13 +18014,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<label class=\"v-select\">\n  {{ label }}\n  <select v-model=\"selectedValue\" :class=\"{ 'error': isError }\">\n    <option v-if=\"!required\" value=\"\"></option>\n    <option v-for=\"option in options\" :value=\"option.value\">{{ option.label }}</option>\n  </select>\n</label>\n";
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17982,7 +18029,7 @@
 	  value: true
 	});
 
-	var _fCheckboxTemplate = __webpack_require__(26);
+	var _fCheckboxTemplate = __webpack_require__(27);
 
 	var _fCheckboxTemplate2 = _interopRequireDefault(_fCheckboxTemplate);
 
@@ -18027,13 +18074,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<label><input type=\"checkbox\" v-model=\"isChecked\" /> {{ label }}</label>\n";
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18042,7 +18089,7 @@
 	  value: true
 	});
 
-	var _fRadioTemplate = __webpack_require__(28);
+	var _fRadioTemplate = __webpack_require__(29);
 
 	var _fRadioTemplate2 = _interopRequireDefault(_fRadioTemplate);
 
@@ -18095,7 +18142,7 @@
 	exports.default = component;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<div :class=\"{ 'f-radio': true, 'error': isError }\">\n  <label v-if=\"label.length > 0\">{{ label }}</label>\n  <span class=\"f-radio__option\" v-for=\"option in options\">\n    <input type=\"radio\" :name=\"name\" :value=\"option.value\" :id=\"option.name\" v-model=\"selectedOption\">\n    <label :for=\"option.name\">{{ option.label }}</label>\n  </span>\n</div>\n";

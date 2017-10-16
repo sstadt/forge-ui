@@ -2,6 +2,7 @@
 import _ from 'lodash';
 
 import template from './fFormTemplate.html';
+import forgeUtil from '../../forge-util.js';
 
 var component = {
   template,
@@ -37,7 +38,7 @@ var component = {
         formIsValid = true;
 
       for (var i = 0, j = self.$children.length; i < j; i++) {
-        if (_.isFunction(self.$children[i].isValid)) { // has input validation attached
+        if (forgeUtil.isFunction(self.$children[i].isValid)) { // has input validation attached
           formIsValid = formIsValid && self.$children[i].isValid();
         }
       }

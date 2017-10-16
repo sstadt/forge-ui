@@ -1,5 +1,6 @@
 
 import promptComponent from './promptComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
 
@@ -7,7 +8,7 @@ describe('The prompt component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.extend(promptComponent);
+    component = forgeUtil.clone(promptComponent);
   });
 
   it('to be an object', function () {

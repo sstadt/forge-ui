@@ -1,5 +1,5 @@
 
-import _ from 'lodash';
+import forgeUtil from '../../forge-util.js';
 
 import template from './promptTemplate.html';
 
@@ -20,9 +20,9 @@ function prompt(vm, options, showInput) {
   vm.show = true;
 
   unwatch = vm.$watch('$data.confirmed', function (newVal, oldVal) {
-    if (newVal && _.isFunction(options.yes)) {
+    if (newVal && forgeUtil.isFunction(options.yes)) {
       options.yes((showInput) ? vm.promptValue : null);
-    } else if (!newVal && _.isFunction (options.no)) {
+    } else if (!newVal && forgeUtil.isFunction (options.no)) {
       options.no();
     }
     unwatch();

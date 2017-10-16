@@ -1,5 +1,5 @@
 
-import _ from 'lodash';
+import forgeUtil from '../../forge-util.js';
 
 import template from './fInputTemplate.html';
 
@@ -53,7 +53,7 @@ var component = {
       this.validate();
       return (this.error.length === 0);
     },
-    debounceValidate: _.debounce(function () {
+    debounceValidate: forgeUtil.debounce(function () {
       this.validate();
     }, 500),
     validate() {

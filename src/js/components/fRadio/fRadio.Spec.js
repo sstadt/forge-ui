@@ -1,5 +1,6 @@
 
 import fCheckboxComponent from './fRadioComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
 
@@ -7,7 +8,7 @@ describe('The fRadio component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(fCheckboxComponent);
+    component = forgeUtil.clone(fCheckboxComponent);
   });
 
   it('to be an object', function () {

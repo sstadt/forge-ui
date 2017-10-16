@@ -1,11 +1,12 @@
 
 import loaderComponent from './loaderComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 describe('The loader component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(loaderComponent);
+    component = forgeUtil.clone(loaderComponent);
   });
 
   it('to be an object', function () {

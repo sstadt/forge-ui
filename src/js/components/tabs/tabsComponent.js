@@ -1,6 +1,4 @@
 
-import _ from 'lodash';
-
 import template from './tabsTemplate.html';
 
 var component = {
@@ -15,7 +13,7 @@ var component = {
       this.tabs.push(newTab);
     },
     activate(selectedTab) {
-      _.forEach(this.tabs, function (tab) {
+      this.tabs.forEach(function (tab) {
         tab.active = selectedTab.heading === tab.heading;
       });
     }

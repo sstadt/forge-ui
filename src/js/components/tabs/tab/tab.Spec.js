@@ -1,5 +1,6 @@
 
 import tabComponent from './tabComponent.js';
+import forgeUtil from '../../../forge-util.js';
 
 Vue.config.silent = true;
 
@@ -7,7 +8,7 @@ describe('The tab component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(tabComponent);
+    component = forgeUtil.clone(tabComponent);
   });
 
   it('to be an object', function () {

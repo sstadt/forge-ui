@@ -36,7 +36,7 @@ var component = {
   },
   ready() {
     var self = this,
-      selectedIndex = _.findIndex(self.options, (option) => option.value === self.selectedValue);
+      selectedIndex = self.options.findIndex((option) => option.value === self.selectedValue);
 
     if (self.required && selectedIndex === -1) {
       self.selectedValue = self.options[0].value;

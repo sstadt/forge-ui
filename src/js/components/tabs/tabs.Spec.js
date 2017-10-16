@@ -1,6 +1,7 @@
 
 import tabsComponent from './tabsComponent.js';
 import tabComponent from './tab/tabComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
 
@@ -8,7 +9,7 @@ describe('The tabs component', function () {
   var component, componentInstance;
 
   beforeEach(function () {
-    component = _.extend(tabsComponent);
+    component = forgeUtil.clone(tabsComponent);
   });
 
   it('to be an object', function () {

@@ -1,5 +1,6 @@
 
 import alertComponent from './alertComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
 
@@ -7,7 +8,7 @@ describe('The alert component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(alertComponent);
+    component = forgeUtil.clone(alertComponent);
   });
 
   it('to be an object', function () {

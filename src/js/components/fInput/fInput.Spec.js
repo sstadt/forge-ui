@@ -1,5 +1,6 @@
 
 import fInputComponent from './fInputComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
 
@@ -7,7 +8,7 @@ describe('The fInput component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(fInputComponent);
+    component = forgeUtil.clone(fInputComponent);
   });
 
   it('to be an object', function () {

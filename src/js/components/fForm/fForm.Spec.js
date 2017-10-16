@@ -1,5 +1,6 @@
 
 import fFormComponent from './fFormComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
 
@@ -7,7 +8,7 @@ describe('The fForm component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(fFormComponent);
+    component = forgeUtil.clone(fFormComponent);
   });
 
   it('to be an object', function () {

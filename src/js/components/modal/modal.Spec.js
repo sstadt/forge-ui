@@ -1,11 +1,12 @@
 
 import modalComponent from './modalComponent.js';
+import forgeUtil from '../../forge-util.js';
 
 describe('The modal component', function () {
   var component;
 
   beforeEach(function () {
-    component = _.clone(modalComponent);
+    component = forgeUtil.clone(modalComponent);
   });
 
   it('to be an object', function () {
