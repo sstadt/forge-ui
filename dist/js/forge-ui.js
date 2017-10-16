@@ -17581,7 +17581,7 @@
 	  isString: function isString(str) {
 	    return typeof str === 'string';
 	  },
-	  debounce: function debounce(func) {
+	  debounce: function debounce(func, wait, immediate) {
 	    var timeout;
 
 	    return function () {
@@ -17863,7 +17863,7 @@
 	      default: false
 	    },
 	    equalTo: {
-	      type: Object,
+	      type: String,
 	      default: null
 	    }
 	  },
@@ -17900,7 +17900,7 @@
 	        this.error = validationRules[this.type].defaultError;
 
 	        // equivalency validation
-	      } else if (this.equalTo && this.equalTo.value !== this.value) {
+	      } else if (this.equalTo && this.equalTo !== this.value) {
 	        this.error = 'Must match ' + this.equalTo.label;
 
 	        // input is valid
@@ -17917,7 +17917,7 @@
 /* 22 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @blur=\"validate()\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @blur=\"validate()\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
+	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @change=\"debounceValidate\"\n      @blur=\"validate\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @change=\"debounceValidate\"\n      @blur=\"validate\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
 
 /***/ }),
 /* 23 */

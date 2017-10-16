@@ -33,7 +33,7 @@ var component = {
       default: false
     },
     equalTo: {
-      type: Object,
+      type: String,
       default: null
     }
   },
@@ -68,7 +68,7 @@ var component = {
         this.error = validationRules[this.type].defaultError;
 
       // equivalency validation
-      } else if (this.equalTo && this.equalTo.value !== this.value) {
+      } else if (this.equalTo && this.equalTo !== this.value) {
         this.error = 'Must match ' + this.equalTo.label;
 
       // input is valid

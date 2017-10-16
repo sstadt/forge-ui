@@ -19,7 +19,7 @@ export default {
     return typeof str === 'string';
   },
 
-  debounce(func) {
+  debounce(func, wait, immediate) {
     var timeout;
 
   	return function() {
