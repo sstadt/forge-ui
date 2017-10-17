@@ -1251,19 +1251,12 @@ new Vue({
           <div class="small-12 column">
             <h3 class="docs-heading">Tabs</h3>
             <p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
-            <h4>Tabs Params</h4>
-            <dl>
-              <dt>active</dt>
-              <dd><em>Number; defaults to 0</em><br/>the index of the tab that should be open initially</dd>
-            </dl>
             <h4>Tab Params</h4>
             <dl>
               <dt>heading</dt>
               <dd><em>String; required</em><br/>the text to display in the clickable tab navigation</dd>
-            </dl>
-            <dl>
-              <dt>clickCallback</dt>
-              <dd><em>Function</em><br/>a callback function to execute when activating a tab</dd>
+              <dt>heading</dt>
+              <dd><em>Boolean</em><br/>activates the tab on mount when set to true</dd>
             </dl>
             <div id="tabs_demo">
               <tabs>
