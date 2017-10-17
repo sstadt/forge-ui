@@ -5,12 +5,13 @@
     margin-bottom: 0.3rem;
   }
 
-  &.error {
-    color: $alert-color;
-  }
 
   &__option {
     display: inline-block;
+
+    .error & {
+      color: $alert-color;
+    }
 
     &:not(:last-child) {
       margin-right: 10px;

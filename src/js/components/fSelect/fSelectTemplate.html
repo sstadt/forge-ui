@@ -1,8 +1,10 @@
 
-<label class="v-select">
-  {{ label }}
-  <select v-model="selectedValue" :class="{ 'error': isError }">
-    <option v-if="!required" value=""></option>
-    <option v-for="option in options" :value="option.value">{{ option.label }}</option>
-  </select>
-</label>
+<div class="f-select">
+  <label>
+    {{ label }}
+    <select v-model="selectedValue">
+      <option v-if="!required" value=""></option>
+      <option v-for="option in options" :value="option.value">{{ option.label }}</option>
+    </select>
+  </label>
+</div>

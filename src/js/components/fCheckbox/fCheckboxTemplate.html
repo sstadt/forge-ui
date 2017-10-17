@@ -1,2 +1,4 @@
 
-<label><input type="checkbox" v-model="isChecked" /> {{ label }}</label>
+<div :class="{ 'f-checkbox': true, 'error': isError }">
+  <label><input type="checkbox" v-model="isChecked" /> {{ label }}</label>
+</div>

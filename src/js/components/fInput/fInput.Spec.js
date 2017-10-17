@@ -82,7 +82,7 @@ describe('The fInput component', function () {
 
       describe('when equalTo is provided a value', function () {
         beforeEach(function () {
-          componentInstance.equalTo = 'foo';
+          componentInstance.equalTo = { label: 'Foo', value: 'foo' };
         });
 
         it('should return false if the value does not match', function () {

@@ -46,6 +46,10 @@
           <li><a href="#select">fSelect</a></li>
           <li><a href="#checkbox">fCheckbox</a></li>
           <li><a href="#radio">fRadio</a></li>
+          <li class="docs-nav-title">Form Validation</li>
+          <li><a href="#required-validation">Required</a></li>
+          <li><a href="#type-validation">Type</a></li>
+          <li><a href="#match-validation">Match</a></li>
           <li class="docs-nav-title">Customizing Forge</li>
           <li><a href="#cast">Forge.cast()</a></li>
         </ul>
@@ -1321,11 +1325,16 @@ new Vue({
               <dt>submitCallback</dt>
               <dd><em>Function</em><br/>Callback function to execute on form submission</dd>
             </dl>
+            <h4>Events</h4>
+            <dl>
+              <dt>submit</dt>
+              <dd>If ajax is set to true, a submit event will be dispatched on submission of a valid form</dd>
+            </dl>
             <div id="form_demo">
               <tabs>
                 <tab heading="Result" :selected="true">
                   <alert ref="myAlert" :can-close="true"></alert>
-                  <f-form :ajax="true" :submit-callback="showMessage">
+                  <f-form :ajax="true" @submit="showMessage">
                     <f-input type="text" :value.sync="message" :required="true"></f-input>
                     <button type="submit" class="button">Submit</button>
                   </f-form>
@@ -1333,7 +1342,7 @@ new Vue({
                 <tab heading="HTML">
 <pre><code class="language-html">
 &lt;alert ref="myAlert" :can-close="true"&gt;&lt;/alert&gt;
-&lt;f-form :ajax="true" :submit-callback="showMessage"&gt;
+&lt;f-form :ajax="true" @submit="showMessage"&gt;
   &lt;f-input type="text" :value.sync="message" :required="true"&gt;&lt;/f-input&gt;
   &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
 &lt;/f-form&gt;
@@ -1550,12 +1559,169 @@ new Vue({
           </div>
         </div>
 
+        <h2 class="docs-heading">Form Validation</h2>
+        <p>ForgeUI form components include built in validation you can leverage with easy to use attributes. To customize the look of the error messages, review the next section on customizing component templates.</p>
+
+        <div class="row" id="required-validation">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Required Field Validation</h3>
+            <p>You can easy check for required values by attaching the <span class="pill">:required="true"</span> to most Forge input components.</p>
+            <p>Attaching the required attribute to a select element will prevent that element from rendering an empty option as a child of the select.</p>
+
+            <tabs>
+              <tab heading="Result" :selected="true">
+                <f-form :ajax="true" @submit="submit">
+                  <f-input type="text" v-model="input" label="My Input" :required="true"></f-input>
+                  <f-select v-model="selectedOption" :options="selectOptions" :required="true"></f-select>
+                  <f-checkbox v-model="checked" label="My checkbox" :required="true"></f-checkbox>
+                  <f-radio v-model="selectedOption" :options="radioOptions" label="My Radio Group" name="myRadioOptions" :required="true"></f-radio>
+                  <button type="submit" class="button">Submit</button>
+                </f-form>
+              </tab>
+              <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-form :ajax="true" @submit="submit"&gt;
+  &lt;f-input type="text" v-model="input" label="My Input" :required="true"&gt;&lt;/f-input&gt;
+  &lt;f-select v-model="selectedOption" :options="selectOptions" :required="true"&gt;&lt;/f-select&gt;
+  &lt;f-checkbox v-model="checked" label="My checkbox" :required="true"&gt;&lt;/f-checkbox&gt;
+  &lt;f-radio v-model="selectedOption" :options="radioOptions" label="My Radio Group" name="myRadioOptions" :required="true"&gt;&lt;/f-radio&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
+</code></pre>
+              </tab>
+              <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#required-validation',
+  data: {
+    input: '',
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ],
+    checked: false,
+    selectedOption: '',
+    radioOptions: [
+      { name: 'radioOptionOne', label: 'One Option', value: '1' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' },
+    ]
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+</pre></code>
+              </tab>
+            </tabs>
+          </div>
+        </div>
+
+        <div class="row" id="type-validation">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Field Type Validation</h3>
+            <p>Validating a form field against a particular type is as simple as passing a type attribute to the component. To skip field type validation, set your input type to text.</p>
+            <p>This is the current list of input types that are automatically validated:</p>
+            <ul>
+              <li>email</li>
+              <li>url</li>
+              <li>number</li>
+            </ul>
+
+            <tabs>
+              <tab heading="Result" :selected="true">
+                <f-form :ajax="true" @submit="submit">
+                  <f-input type="email" v-model="emailInput" label="Email"></f-input>
+                  <f-input type="url" v-model="urlInput" label="URL"></f-input>
+                  <f-input type="number" v-model="numberInput" label="Number"></f-input>
+                  <button type="submit" class="button">Submit</button>
+                </f-form>
+              </tab>
+              <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-form :ajax="true" @submit="submit"&gt;
+  &lt;f-input type="email" v-model="emailInput" label="Email"&gt;&lt;/f-input&gt;
+  &lt;f-input type="url" v-model="urlInput" label="URL"&gt;&lt;/f-input&gt;
+  &lt;f-input type="number" v-model="numberInput" label="Number"&gt;&lt;/f-input&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
+</code></pre>
+              </tab>
+              <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#type-validation',
+  data: {
+    emailInput: '',
+    urlInput: '',
+    numberInput: ''
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+</pre></code>
+              </tab>
+            </tabs>
+          </div>
+        </div>
+
+        <div class="row" id="match-validation">
+          <div class="small-12 column">
+            <h3 class="docs-heading">Match Validation</h3>
+            <p>To match an input's value against the value of another input, pass the match value into the input via the <span class="fill">equal-to</span> attribute.</p>
+
+            <tabs>
+              <tab heading="Result" :selected="true">
+                <f-form :ajax="true" @submit="submit">
+                  <f-input type="text" v-model="passwordInput" label="Password"></f-input>
+                  <f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"></f-input>
+                  <button type="submit" class="button">Submit</button>
+                </f-form>
+              </tab>
+                <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-form :ajax="true" @submit="submit"&gt;
+  &lt;f-input type="text" v-model="passwordInput" label="Password"&gt;&lt;/f-input&gt;
+  &lt;f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"&gt;&lt;/f-input&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
+</code></pre>
+              </tab>
+              <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#match-validation',
+  data: {
+    passwordInput: '',
+    confirmInput: ''
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+</pre></code>
+              </tab>
+            </tabs>
+          </div>
+        </div>
+
+
+
         <h2 class="docs-heading">Customizing Forge</h2>
         <p>ForgeUI is built to customize. The following options giv eyou the ability to modify component templates and/or rename components for maximum flexibility. This allows you to keep the components from this library in sync with your apps style guide without clobbering styles or duplicating code.</p>
 
         <div class="row" id="cast">
           <div class="small-12 column">
-            <h3 class="docs-heading">Forge.cast()</h3>
+            <h3 class="docs-heading">Forge.cast(<em>component</em>, <em>template</em>, <em>componentName</em>)</h3>
             <p>Forge.cast() method is your primary way of customizing components before registering them to Vue. Use this method to change component templates or to rename components without creating a new component file.</p>
             <p>You can customize and rename as many components as you like, up until the point where <span class="pill">Vue.use(Forge)</span> is invoked, at which point all unregistered components will be added to Vue.</p>
             <p>Forge will register all components that have not been registered to the default component names. For example, is you rename the modal component, and then add Forge to Vue, Forge will still initialize the default modal component to the <span class="pill">&lt;modal&gt;&lt;/modal&gt;</span> component. However, if you change the template of the modal component, Forge will not re-register the same element. This ensures that all the components used by Forge are available, without clobbering any component customizations that have already been registered to Forge.</p>

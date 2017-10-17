@@ -32,18 +32,12 @@ var component = {
       this.$emit('input', this.selectedValue);
     }
   },
-  ready() {
+  mounted() {
     var self = this,
       selectedIndex = self.options.findIndex((option) => option.value === self.selectedValue);
 
     if (self.required && selectedIndex === -1) {
       self.selectedValue = self.options[0].value;
-    }
-  },
-  methods: {
-    isValid() {
-      this.isError = !this.required || this.selectedValue.length > 0;
-      return this.isError;
     }
   }
 };

@@ -53,12 +53,12 @@ describe('The fForm component', function () {
         expect(mockEvent.preventDefault).not.toHaveBeenCalled();
       });
 
-      it('should call the submitCallback if this is an ajax form, the form is valid, and the callback is a function', function () {
+      it('should emit a submit event if this is an ajax form, the form is valid, and the callback is a function', function () {
         spyOn(componentInstance, 'isValid').and.returnValue(true);
-        componentInstance.submitCallback = jasmine.createSpy();
+        spyOn(componentInstance, '$emit');
         componentInstance.ajax = true;
         componentInstance.submitForm(mockEvent);
-        expect(componentInstance.submitCallback).toHaveBeenCalled();
+        expect(componentInstance.$emit).toHaveBeenCalledWith('submit');
       });
     });
 

@@ -19,42 +19,4 @@ describe('The fSelect component', function () {
     expect(component.template).toEqual(jasmine.any(String));
   });
 
-  describe('methods', function () {
-    var componentInstance;
-
-    beforeEach(function () {
-      componentInstance = new Vue(component);
-    });
-
-    describe('#isValid', function () {
-      it('should return true if required is false and selectedValue is empty', function () {
-        componentInstance.required = false;
-        componentInstance.selectedValue = '';
-        expect(componentInstance.isValid()).toEqual(true);
-        expect(componentInstance.isError).toEqual(true);
-      });
-
-      it('should return true if required is false and selectedValue is not empty', function () {
-        componentInstance.required = false;
-        componentInstance.selectedValue = 'foo';
-        expect(componentInstance.isValid()).toEqual(true);
-        expect(componentInstance.isError).toEqual(true);
-      });
-
-      it('should return false if required is true and selectedValue is empty', function () {
-        componentInstance.required = true;
-        componentInstance.selectedValue = '';
-        expect(componentInstance.isValid()).toEqual(false);
-        expect(componentInstance.isError).toEqual(false);
-      });
-
-      it('should return true if required is true and selectedValue is not empty', function () {
-        componentInstance.required = true;
-        componentInstance.selectedValue = 'foo';
-        expect(componentInstance.isValid()).toEqual(true);
-        expect(componentInstance.isError).toEqual(true);
-      });
-    });
-  });
-
 });

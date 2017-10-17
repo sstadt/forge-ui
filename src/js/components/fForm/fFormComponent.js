@@ -16,9 +16,6 @@ var component = {
     ajax: {
       type: Boolean,
       default: false
-    },
-    submitCallback: {
-      type: Function
     }
   },
   methods: {
@@ -27,8 +24,8 @@ var component = {
         event.preventDefault();
       }
 
-      if (this.ajax && this.isValid() && typeof this.submitCallback === 'function') {
-        this.submitCallback();
+      if (this.ajax && this.isValid()) {
+        this.$emit('submit');
       }
     },
     isValid() {
@@ -37,7 +34,8 @@ var component = {
 
       for (var i = 0, j = self.$children.length; i < j; i++) {
         if (forgeUtil.isFunction(self.$children[i].isValid)) { // has input validation attached
-          formIsValid = formIsValid && self.$children[i].isValid();
+          let inputIsValid = self.$children[i].isValid();
+          formIsValid = formIsValid && inputIsValid;
         }
       }
 

@@ -757,7 +757,7 @@ select {
   select.error {
     border-color: #ec5840; }
 
-.input-wrap {
+.input-wrap, .f-select, .f-checkbox, .f-radio {
   margin: 0 0 1rem; }
 
 span.error, small.error {
@@ -772,17 +772,16 @@ select {
   background-size: 9px 6px;
   padding-right: 1.5rem; }
 
-.checkbox.error {
+.f-checkbox.error {
   color: #ec5840; }
 
 .f-radio > label {
   display: block;
   margin-bottom: 0.3rem; }
 
-.f-radio.error {
-  color: #ec5840; }
-
 .f-radio__option {
   display: inline-block; }
+  .error .f-radio__option {
+    color: #ec5840; }
   .f-radio__option:not(:last-child) {
     margin-right: 10px; }

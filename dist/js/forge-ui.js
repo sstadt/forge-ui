@@ -659,9 +659,6 @@
 	    ajax: {
 	      type: Boolean,
 	      default: false
-	    },
-	    submitCallback: {
-	      type: Function
 	    }
 	  },
 	  methods: {
@@ -670,8 +667,8 @@
 	        event.preventDefault();
 	      }
 
-	      if (this.ajax && this.isValid() && typeof this.submitCallback === 'function') {
-	        this.submitCallback();
+	      if (this.ajax && this.isValid()) {
+	        this.$emit('submit');
 	      }
 	    },
 	    isValid: function isValid() {
@@ -681,7 +678,8 @@
 	      for (var i = 0, j = self.$children.length; i < j; i++) {
 	        if (_forgeUtil2.default.isFunction(self.$children[i].isValid)) {
 	          // has input validation attached
-	          formIsValid = formIsValid && self.$children[i].isValid();
+	          var inputIsValid = self.$children[i].isValid();
+	          formIsValid = formIsValid && inputIsValid;
 	        }
 	      }
 
@@ -748,7 +746,7 @@
 	      default: false
 	    },
 	    equalTo: {
-	      type: String,
+	      type: Object,
 	      default: null
 	    }
 	  },
@@ -786,7 +784,7 @@
 	        this.error = validationRules[this.type].defaultError;
 
 	        // equivalency validation
-	      } else if (this.equalTo && this.equalTo !== this.inputValue) {
+	      } else if (this.equalTo && this.equalTo.value !== this.inputValue) {
 	        this.error = 'Must match ' + this.equalTo.label;
 
 	        // input is valid
@@ -874,7 +872,7 @@
 	      this.$emit('input', this.selectedValue);
 	    }
 	  },
-	  ready: function ready() {
+	  mounted: function mounted() {
 	    var self = this,
 	        selectedIndex = self.options.findIndex(function (option) {
 	      return option.value === self.selectedValue;
@@ -882,13 +880,6 @@
 
 	    if (self.required && selectedIndex === -1) {
 	      self.selectedValue = self.options[0].value;
-	    }
-	  },
-
-	  methods: {
-	    isValid: function isValid() {
-	      this.isError = !this.required || this.selectedValue.length > 0;
-	      return this.isError;
 	    }
 	  }
 	};
@@ -899,7 +890,7 @@
 /* 23 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label class=\"v-select\">\n  {{ label }}\n  <select v-model=\"selectedValue\" :class=\"{ 'error': isError }\">\n    <option v-if=\"!required\" value=\"\"></option>\n    <option v-for=\"option in options\" :value=\"option.value\">{{ option.label }}</option>\n  </select>\n</label>\n";
+	module.exports = "\n<div class=\"f-select\">\n  <label>\n    {{ label }}\n    <select v-model=\"selectedValue\">\n      <option v-if=\"!required\" value=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option.value\">{{ option.label }}</option>\n    </select>\n  </label>\n</div>\n";
 
 /***/ }),
 /* 24 */
@@ -959,7 +950,7 @@
 /* 25 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label><input type=\"checkbox\" v-model=\"isChecked\" /> {{ label }}</label>\n";
+	module.exports = "\n<div :class=\"{ 'f-checkbox': true, 'error': isError }\">\n  <label><input type=\"checkbox\" v-model=\"isChecked\" /> {{ label }}</label>\n</div>\n";
 
 /***/ }),
 /* 26 */

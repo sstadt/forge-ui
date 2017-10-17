@@ -108,3 +108,55 @@ new Vue({
     ]
   }
 });
+
+new Vue({
+  el: '#required-validation',
+  data: {
+    input: '',
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ],
+    checked: false,
+    selectedOption: '',
+    radioOptions: [
+      { name: 'radioOptionOne', label: 'One Option', value: '1' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' },
+    ]
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+
+new Vue({
+  el: '#type-validation',
+  data: {
+    emailInput: '',
+    urlInput: '',
+    numberInput: ''
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+
+new Vue({
+  el: '#match-validation',
+  data: {
+    passwordInput: '',
+    confirmInput: ''
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
