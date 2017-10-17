@@ -1,6 +1,4 @@
 
-import _ from 'lodash';
-
 import template from './fSelectTemplate.html';
 
 var component = {

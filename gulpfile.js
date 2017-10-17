@@ -6,6 +6,7 @@ var uglifyJS   = require('gulp-uglify');
 var uglifyCSS  = require('gulp-uglifycss');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
+var serve      = require('gulp-serve');
 var webpack    = require('gulp-webpack');
 var Server     = require('karma').Server;
 
@@ -43,10 +44,14 @@ gulp.task('test', function (done) {
 });
 
 
-gulp.task('dev', ['default'], function () {
+gulp.task('serve', serve());
+
+
+gulp.task('dev', ['default', 'serve'], function () {
 	livereload.listen({ start: true });
   gulp.watch(['src/**/*.scss'], ['sass']);
   gulp.watch(['src/js/**/*.js', 'src/js/**/*.html'], ['js']);
+
 });
 
 

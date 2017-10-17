@@ -1,6 +1,4 @@
 
-import _ from 'lodash';
-
 import template from './fFormTemplate.html';
 import forgeUtil from '../../forge-util.js';
 

@@ -1,6 +1,4 @@
 
-import _ from 'lodash';
-
 import componentList from './componentList.js';
 import forgeUtil from './forge-util.js';
 
