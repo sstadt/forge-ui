@@ -139,7 +139,8 @@ new Vue({
   data: {
     emailInput: '',
     urlInput: '',
-    numberInput: ''
+    numberInput: '',
+    telInput: ''
   },
   methods: {
     submit() {

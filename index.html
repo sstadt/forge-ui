@@ -1630,6 +1630,7 @@ new Vue({
               <li>email</li>
               <li>url</li>
               <li>number</li>
+              <li>tel</li>
             </ul>
 
             <tabs>
@@ -1638,6 +1639,7 @@ new Vue({
                   <f-input type="email" v-model="emailInput" label="Email"></f-input>
                   <f-input type="url" v-model="urlInput" label="URL"></f-input>
                   <f-input type="number" v-model="numberInput" label="Number"></f-input>
+                  <f-input type="tel" v-model="telInput" label="Tel"></f-input>
                   <button type="submit" class="button">Submit</button>
                 </f-form>
               </tab>
@@ -1647,6 +1649,7 @@ new Vue({
   &lt;f-input type="email" v-model="emailInput" label="Email"&gt;&lt;/f-input&gt;
   &lt;f-input type="url" v-model="urlInput" label="URL"&gt;&lt;/f-input&gt;
   &lt;f-input type="number" v-model="numberInput" label="Number"&gt;&lt;/f-input&gt;
+  &lt;f-input type="tel" v-model="telInput" label="Tel"&gt;&lt;/f-input&gt;
   &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
 &lt;/f-form&gt;
 </code></pre>
@@ -1658,7 +1661,8 @@ new Vue({
   data: {
     emailInput: '',
     urlInput: '',
-    numberInput: ''
+    numberInput: '',
+    telInput: ''
   },
   methods: {
     submit() {
