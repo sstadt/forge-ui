@@ -1315,8 +1315,6 @@ new Vue({
               <dd><em>String; defaults to an empty string</em><br/>The URL to submit the form to, if not configured as ajax</dd>
               <dt>ajax</dt>
               <dd><em>Boolean; defaults to false</em><br/>Set to true to override default form submission behavior; useful if you only want to trigger the submitCallback</dd>
-              <dt>submitCallback</dt>
-              <dd><em>Function</em><br/>Callback function to execute on form submission</dd>
             </dl>
             <h4>Events</h4>
             <dl>
@@ -1370,10 +1368,10 @@ new Vue({
             <p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
             <h4>Params</h4>
             <dl>
+              <dt>v-model</dt>
+              <dd><em>String; required</em><br/>The input value</dd>
               <dt>type</dt>
               <dd><em>String; required</em><br/>The input type; set to textarea to render a textarea instead of an input</dd>
-              <dt>value</dt>
-              <dd><em>String; required</em><br/>The input value</dd>
               <dt>label</dt>
               <dd><em>String</em><br/>The input label text</dd>
               <dt>name</dt>
@@ -1420,10 +1418,10 @@ new Vue({
             <p>Renders a select input given a set of options</p>
             <h4>Params</h4>
             <dl>
+              <dt>v-model</dt>
+              <dd><em>String; required</em><br/>The selected value</dd>
               <dt>label</dt>
               <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
-              <dt>selected</dt>
-              <dd><em>String; required</em><br/>The selected value</dd>
               <dt>options</dt>
               <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a <em>label</em> and <em>value</em> parameter</dd>
               <dt>required</dt>
@@ -1470,7 +1468,7 @@ new Vue({
             <p>Renders a checkbox input</p>
             <h4>Params</h4>
             <dl>
-              <dt>checked</dt>
+              <dt>v-model</dt>
               <dd><em>Boolean; required</em><br/>True if checked; false if not</dd>
               <dt>label</dt>
               <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
@@ -1510,14 +1508,14 @@ new Vue({
             <p>Renders a radio button input</p>
             <h4>Params</h4>
             <dl>
+              <dt>v-model</dt>
+              <dd><em>String; required</em><br/>The selected value.</dd>
               <dt>label</dt>
               <dd><em>String; defaults to an empty string</em><br/>Renders a label above the radio options is passed a string value.</dd>
               <dt>name</dt>
               <dd><em>String; required</em><br/>The name for the radio button group.</dd>
               <dt>options</dt>
               <dd><em>Array; required</em><br/>An array of options to render for this radio button group. Each array element should be an object with a <em>name</em>, <em>label</em>, and <em>value</em>.</dd>
-              <dt>selected</dt>
-              <dd><em>String; required</em><br/>The selected value.</dd>
               <dt>required</dt>
               <dd><em>Boolean; defaults to false</em><br/>True if required.</dd>
             </dl>

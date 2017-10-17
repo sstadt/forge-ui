@@ -603,6 +603,7 @@
 	      required: true
 	    },
 	    selected: {
+	      type: Boolean,
 	      default: false
 	    }
 	  },
