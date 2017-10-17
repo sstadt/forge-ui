@@ -38,12 +38,12 @@ describe('The fInput component', function () {
         });
 
         it('should return false when not populated', function () {
-          componentInstance.value = '';
+          componentInstance.inputValue = '';
           expect(componentInstance.isValid()).toEqual(false);
         });
 
         it('should return true when populated', function () {
-          componentInstance.value = 'foo';
+          componentInstance.inputValue = 'foo';
           expect(componentInstance.isValid()).toEqual(true);
         });
       });
@@ -54,12 +54,12 @@ describe('The fInput component', function () {
         });
 
         it('should return false with an invalid email', function () {
-          componentInstance.value = 'foo';
+          componentInstance.inputValue = 'foo';
           expect(componentInstance.isValid()).toEqual(false);
         });
 
         it('should return true with a valid email', function () {
-          componentInstance.value = 'foo@bar.com';
+          componentInstance.inputValue = 'foo@bar.com';
           expect(componentInstance.isValid()).toEqual(true);
         });
       });
@@ -70,28 +70,28 @@ describe('The fInput component', function () {
         });
 
         it('should return false with an invalid url', function () {
-          componentInstance.value = 'foo';
+          componentInstance.inputValue = 'foo';
           expect(componentInstance.isValid()).toEqual(false);
         });
 
         it('should return true with a valid url', function () {
-          componentInstance.value = 'http://www.foo.com';
+          componentInstance.inputValue = 'http://www.foo.com';
           expect(componentInstance.isValid()).toEqual(true);
         });
       });
 
       describe('when equalTo is provided a value', function () {
         beforeEach(function () {
-          componentInstance.equalTo = { label: 'test', value: 'foo' };
+          componentInstance.equalTo = 'foo';
         });
 
         it('should return false if the value does not match', function () {
-          componentInstance.value = 'bar';
+          componentInstance.inputValue = 'bar';
           expect(componentInstance.isValid()).toEqual(false);
         });
 
         it('should return true if the value matches', function () {
-          componentInstance.value = 'foo';
+          componentInstance.inputValue = 'foo';
           expect(componentInstance.isValid()).toEqual(true);
         });
       });

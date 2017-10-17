@@ -46,6 +46,7 @@ var component = {
   watch: {
     inputValue() {
       this.$emit('input', this.inputValue);
+      this.debounceValidate();
     }
   },
   methods: {
@@ -60,15 +61,15 @@ var component = {
       var label = this.label || this.name;
 
       // required validation
-      if (this.required && this.value.length === 0) {
+      if (this.required && this.inputValue.length === 0) {
         this.error = label + ' is required';
 
       // html5 data type validation
-      } else if (validationRules.hasOwnProperty(this.type) && !validationRules[this.type].regex.test(this.value)) {
+      } else if (validationRules.hasOwnProperty(this.type) && !validationRules[this.type].regex.test(this.inputValue)) {
         this.error = validationRules[this.type].defaultError;
 
       // equivalency validation
-      } else if (this.equalTo && this.equalTo !== this.value) {
+      } else if (this.equalTo && this.equalTo !== this.inputValue) {
         this.error = 'Must match ' + this.equalTo.label;
 
       // input is valid

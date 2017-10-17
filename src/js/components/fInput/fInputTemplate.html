@@ -9,7 +9,6 @@
       :name="name"
       :placeholder="placeholder"
       v-model="inputValue"
-      @change="debounceValidate"
       @blur="validate"></textarea>
     <input v-else
       ref="input"
@@ -18,7 +17,6 @@
       :placeholder="placeholder"
       type="text"
       v-model="inputValue"
-      @change="debounceValidate"
       @blur="validate" />
     <small v-if="error.length > 0" transition="slide-up-x-small" class="error">{{ error }}</small>
   </div>

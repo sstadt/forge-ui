@@ -762,6 +762,7 @@
 	  watch: {
 	    inputValue: function inputValue() {
 	      this.$emit('input', this.inputValue);
+	      this.debounceValidate();
 	    }
 	  },
 	  methods: {
@@ -777,15 +778,15 @@
 	      var label = this.label || this.name;
 
 	      // required validation
-	      if (this.required && this.value.length === 0) {
+	      if (this.required && this.inputValue.length === 0) {
 	        this.error = label + ' is required';
 
 	        // html5 data type validation
-	      } else if (validationRules.hasOwnProperty(this.type) && !validationRules[this.type].regex.test(this.value)) {
+	      } else if (validationRules.hasOwnProperty(this.type) && !validationRules[this.type].regex.test(this.inputValue)) {
 	        this.error = validationRules[this.type].defaultError;
 
 	        // equivalency validation
-	      } else if (this.equalTo && this.equalTo !== this.value) {
+	      } else if (this.equalTo && this.equalTo !== this.inputValue) {
 	        this.error = 'Must match ' + this.equalTo.label;
 
 	        // input is valid
@@ -802,7 +803,7 @@
 /* 20 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @change=\"debounceValidate\"\n      @blur=\"validate\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @change=\"debounceValidate\"\n      @blur=\"validate\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
+	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @blur=\"validate\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @blur=\"validate\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
 
 /***/ }),
 /* 21 */
