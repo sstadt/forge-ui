@@ -1,0 +1,90 @@
+---
+title: 'Media Queries'
+id: 'media-queries'
+---
+
+<div class="row">
+  <div class="small-12 large-6 column">
+    <p>ForgeUI uses a set of media query mixins modeled after the type of device you want to apply styling to. ForgeUI is mobile first, so mobile styling should be applied first, and overrides for larger screen sizes should be applied with media queries.</p>
+    <p>Please use the small-only media query sparingly!</p>
+    <dl>
+      <dt>small-only</dt>
+      <dd>(max-width: $breakpoint-medium - 1)</dt>
+      <dt>medium-up</dt>
+      <dd>(min-width: $breakpoint-medium)</dt>
+      <dt>medium-only</dt>
+      <dd>(min-width: $breakpoint-medium) and (max-width: $breakpoint-large - 1)</dt>
+      <dt>large-up</dt>
+      <dd>(min-width: $breakpoint-large)</dt>
+    </dl>
+  </div>
+  <div class="small-12 large-6 column">
+<pre><code class="language-css">
+@include small-only() {
+  // mobile only styling
+}
+
+@include medium-up() {
+  // tablet and larger styling
+}
+
+@include medium-only() {
+  // tablet only styling
+}
+
+@include large-up() {
+  // desktop and larger styling
+}
+</code></pre>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 large-6 column">
+    <p>ForgeUI also has a full list of visibility helpers that can be used anywhere. The visibility classes only apply <span class="pill">display: none;</span> where appropriate, never any other display class. So these utilities are usable on elements with any type of display.</p>
+    <div class="alert-box secondary">
+      <ul>
+        <li class="show-small">This text shows on <em>small</em> screens</li>
+        <li class="show-medium">This text shows on <em>medium</em> screens</li>
+        <li class="show-medium-up">This text shows on <em>medium or larger</em> screens</li>
+        <li class="show-large">This text shows on <em>large</em> screens</li>
+        <li class="hide-small">This text hides on <em>small</em> screens</li>
+        <li class="hide-medium">This text hides on <em>medium</em> screens</li>
+        <li class="hide-large">This text hides on <em>large</em> screens</li>
+      </ul>
+    </div>
+  </div>
+  <div class="small-12 large-6 column">
+<pre><code class="language-html">
+&lt;div class="alert-box secondary"&gt;
+  &lt;ul&gt;
+    &lt;li class="show-small"&gt;This text shows on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium-up"&gt;This text shows on &lt;em&gt;medium or larger&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium"&gt;This text shows on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-large"&gt;This text shows on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-small"&gt;This text hides on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-medium"&gt;This text hides on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-large"&gt;This text hides on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$breakpoint-medium</td>
+      <td>Number</td>
+      <td>600px</td>
+      <td>The default breakpoint for medium screens.</td>
+    </tr>
+    <tr>
+      <td>$breakpoint-large</td>
+      <td>Number</td>
+      <td>1200px</td>
+      <td>The default breakpoint for large screens.</td>
+    </tr>
+  </tbody>
+</table>

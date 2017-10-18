@@ -1,0 +1,303 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeUI</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="demo/css/prism.css">
+    <link rel="stylesheet" href="dist/css/forge-ui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-12 column">
+        <h1>ForgeUI Kitchen Sink</h1>
+        <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are keps minimal to avoid the need for style overwrites or excessive configuration inherent to many modern frameworks.</p>
+        <hr/>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="hide-small medium-3 column">
+        <ul class="vertical menu docs-nav">
+            <li class="docs-nav-title">CSS Components</li>
+              <li><a href="#media-queries">Media Queries</a></li>
+              <li><a href="#transitions">Transitions</a></li>
+            <li class="docs-nav-title">Vue.js Components</li>
+            <li class="docs-nav-title">Form Validation</li>
+            <li class="docs-nav-title">Customizing Forge</li>
+        </ul>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <!-- Start demo content -->
+
+          <h2 class="docs-heading">CSS Components</h2>
+          <div class="row">
+            <div class="small-12 column">
+              
+
+<p>ForgeUI CSS components do not require JavaScript, and can be used freely once the ForgeUI CSS has been included on the page.</p>
+<p>Most of the styling can be configured through CSS variables. Global CSS variables are listed below, while component-specific variables can be found alongside in the documentation for each component.</p>
+<p>All CSS variables are flagged as <span class="pill">!default</span> in ForgeUI, so you can override them at any point.</p>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$primary-color</td>
+      <td>Color</td>
+      <td>#2199e8</td>
+      <td>Used throughout styling whenever the <span class="pill">primary</span> class can be appended to an element.</td>
+    </tr>
+    <tr>
+      <td>$secondary-color</td>
+      <td>Color</td>
+      <td>#777</td>
+      <td>Used throughout styling whenever the <span class="pill">secondary</span> class can be appended to an element.</td>
+    </tr>
+    <tr>
+      <td>$success-color</td>
+      <td>Color</td>
+      <td>#3adb76</td>
+      <td>Used throughout styling whenever the <span class="pill">success</span> class can be appended to an element.</td>
+    </tr>
+    <tr>
+      <td>$warning-color</td>
+      <td>Color</td>
+      <td>#ffae00</td>
+      <td>Used throughout styling whenever the <span class="pill">warning</span> class can be appended to an element.</td>
+    </tr>
+    <tr>
+      <td>$alert-color</td>
+      <td>Color</td>
+      <td>#ec5840</td>
+      <td>Used throughout styling whenever the <span class="pill">alert</span> class can be appended to an element. This color is also used to color input borders and error messages when the input value is invalid.</td>
+    </tr>
+    <tr>
+      <td>$white</td>
+      <td>Color</td>
+      <td>#fefefe</td>
+      <td>Used by default as the body background color. Change this value when you want the default white color to change site-wide. To change only the body background color, use the <span class="pill">$body-background</span> variable.</td>
+    </tr>
+    <tr>
+      <td>$light-gray</td>
+      <td>Color</td>
+      <td>#e6e6e6</td>
+      <td>Used by default as the default pill background color. Change this value when you want the default light gray color to change site-wide. To change only the pill default background color, use the <span class="pill">$pill-background-color-default</span> variable.</td>
+    </tr>
+    <tr>
+      <td>$medium-gray</td>
+      <td>Color</td>
+      <td>#cacaca</td>
+      <td>Placeholder for a medium gray variable; currently unused.</td>
+    </tr>
+    <tr>
+      <td>$dark-gray</td>
+      <td>Color</td>
+      <td>#8a8a8a</td>
+      <td>Used by default as the default tab nav color. Change this value when you want the default dark gray color to change site-wide. To change only the tab nav color, use the <span class="pill">$tab-nav-font-color</span> variable.</td>
+    </tr>
+    <tr>
+      <td>$black</td>
+      <td>Color</td>
+      <td>#0a0a0a</td>
+      <td>Used by default as the body font color and the base for transparent overlay colors. Change this value when you want the default black color to change site-wide. To change only body font color or overlay base colors, use the appropriate variable.</td>
+    </tr>
+    <tr>
+      <td>$overlay-opacity</td>
+      <td>Number</td>
+      <td>0.6</td>
+      <td>The opacity of various overlays in ForgeUI; used in conjunction with base colors to add alpha transparency for overlays.</td>
+    </tr>
+    <tr>
+      <td>$global-width</td>
+      <td>Number</td>
+      <td>rem-calc(1200)</td>
+      <td>The default maximum column width.</td>
+    </tr>
+    <tr>
+      <td>$body-background</td>
+      <td>Color</td>
+      <td>$white</td>
+      <td>The default body background color.</td>
+    </tr>
+    <tr>
+      <td>$global-margin</td>
+      <td>Number</td>
+      <td>1rem</td>
+      <td>Used throughout the site to vertically space out various content elements.</td>
+    </tr>
+    <tr>
+      <td>$global-padding</td>
+      <td>Number</td>
+      <td>1rem</td>
+      <td>Used throughout the site to add padding to various elements.</td>
+    </tr>
+    <tr>
+      <td>$global-radius</td>
+      <td>Number</td>
+      <td>2px</td>
+      <td>The default border radius.</td>
+    </tr>
+  </tbody>
+</table>
+
+              <hr/>
+            </div>
+          </div>
+            <div class="row" id="media-queries">
+              <div class="small-12 column">
+                <h3 class="docs-heading">Media Queries</h3>
+                
+
+<div class="row">
+  <div class="small-12 large-6 column">
+    <p>ForgeUI uses a set of media query mixins modeled after the type of device you want to apply styling to. ForgeUI is mobile first, so mobile styling should be applied first, and overrides for larger screen sizes should be applied with media queries.</p>
+    <p>Please use the small-only media query sparingly!</p>
+    <dl>
+      <dt>small-only</dt>
+      <dd>(max-width: $breakpoint-medium - 1)</dt>
+      <dt>medium-up</dt>
+      <dd>(min-width: $breakpoint-medium)</dt>
+      <dt>medium-only</dt>
+      <dd>(min-width: $breakpoint-medium) and (max-width: $breakpoint-large - 1)</dt>
+      <dt>large-up</dt>
+      <dd>(min-width: $breakpoint-large)</dt>
+    </dl>
+  </div>
+  <div class="small-12 large-6 column">
+<pre><code class="language-css">
+@include small-only() {
+  // mobile only styling
+}
+
+@include medium-up() {
+  // tablet and larger styling
+}
+
+@include medium-only() {
+  // tablet only styling
+}
+
+@include large-up() {
+  // desktop and larger styling
+}
+</code></pre>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 large-6 column">
+    <p>ForgeUI also has a full list of visibility helpers that can be used anywhere. The visibility classes only apply <span class="pill">display: none;</span> where appropriate, never any other display class. So these utilities are usable on elements with any type of display.</p>
+    <div class="alert-box secondary">
+      <ul>
+        <li class="show-small">This text shows on <em>small</em> screens</li>
+        <li class="show-medium">This text shows on <em>medium</em> screens</li>
+        <li class="show-medium-up">This text shows on <em>medium or larger</em> screens</li>
+        <li class="show-large">This text shows on <em>large</em> screens</li>
+        <li class="hide-small">This text hides on <em>small</em> screens</li>
+        <li class="hide-medium">This text hides on <em>medium</em> screens</li>
+        <li class="hide-large">This text hides on <em>large</em> screens</li>
+      </ul>
+    </div>
+  </div>
+  <div class="small-12 large-6 column">
+<pre><code class="language-html">
+&lt;div class="alert-box secondary"&gt;
+  &lt;ul&gt;
+    &lt;li class="show-small"&gt;This text shows on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium-up"&gt;This text shows on &lt;em&gt;medium or larger&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium"&gt;This text shows on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-large"&gt;This text shows on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-small"&gt;This text hides on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-medium"&gt;This text hides on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-large"&gt;This text hides on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$breakpoint-medium</td>
+      <td>Number</td>
+      <td>600px</td>
+      <td>The default breakpoint for medium screens.</td>
+    </tr>
+    <tr>
+      <td>$breakpoint-large</td>
+      <td>Number</td>
+      <td>1200px</td>
+      <td>The default breakpoint for large screens.</td>
+    </tr>
+  </tbody>
+</table>
+
+                <hr/>
+              </div>
+            </div>
+            <div class="row" id="transitions">
+              <div class="small-12 column">
+                <h3 class="docs-heading">Transitions</h3>
+                
+
+<!-- <h3 class="docs-heading">Transitions</h3> -->
+<p>To use any of the transitions, simple add the keyword to the transition name to the element you will be showing/hiding as described in the <a href="https://vuejs.org/guide/transitions.html" target="_blank">Vue documentation</a>.</p>
+<p>The following transitions are available as part of ForgeUI:</p>
+<ul>
+  <li>fade</li>
+  <li>expand</li>
+  <li>slide-fade</li>
+  <li>zoom-in</li>
+  <li>zoom-out</li>
+</ul>
+
+                <hr/>
+              </div>
+            </div>
+          <h2 class="docs-heading">Vue.js Components</h2>
+          <div class="row">
+            <div class="small-12 column">
+              
+
+              <hr/>
+            </div>
+          </div>
+          <h2 class="docs-heading">Form Validation</h2>
+          <div class="row">
+            <div class="small-12 column">
+              
+
+              <hr/>
+            </div>
+          </div>
+          <h2 class="docs-heading">Customizing Forge</h2>
+          <div class="row">
+            <div class="small-12 column">
+              
+
+              <hr/>
+            </div>
+          </div>
+
+        <!-- End demo content -->
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+    <script type="text/javascript" src="dist/js/forge-ui.js"></script>
+    <script type="text/javascript" src="demo/js/script.js"></script>
+  </body>
+</html>
