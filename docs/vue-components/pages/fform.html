@@ -1,0 +1,56 @@
+---
+title: 'fForm'
+id: 'vue-fform'
+---
+
+<p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
+<p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
+<h4>Params</h4>
+<dl>
+  <dt>method</dt>
+  <dd><em>String; defaults to POST</em><br/>Form submission method; supports GET and POST just like a standard form</dd>
+  <dt>action</dt>
+  <dd><em>String; defaults to an empty string</em><br/>The URL to submit the form to, if not configured as ajax</dd>
+  <dt>ajax</dt>
+  <dd><em>Boolean; defaults to false</em><br/>Set to true to override default form submission behavior; useful if you only want to trigger the submitCallback</dd>
+</dl>
+<h4>Events</h4>
+<dl>
+  <dt>submit</dt>
+  <dd>If ajax is set to true, a submit event will be dispatched on submission of a valid form</dd>
+</dl>
+<div id="form_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <alert ref="myAlert" :can-close="true"></alert>
+      <f-form :ajax="true" @submit="showMessage">
+        <f-input type="text" :value.sync="message" :required="true"></f-input>
+        <button type="submit" class="button">Submit</button>
+      </f-form>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;alert ref="myAlert" :can-close="true"&gt;&lt;/alert&gt;
+&lt;f-form :ajax="true" @submit="showMessage"&gt;
+  &lt;f-input type="text" :value.sync="message" :required="true"&gt;&lt;/f-input&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#form_demo',
+  data: {
+    message: ''
+  },
+  methods: {
+    showMessage() {
+      this.$refs.myAlert.success(this.message);
+    }
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>

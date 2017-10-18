@@ -1,0 +1,67 @@
+---
+title: 'Block Grid'
+id: 'block-grid'
+---
+
+<p>The block grid uses a <span class="pill">row</span> parent just like the normal grid, but instead of setting the column size on the column, it is set with a <span class="pill">small-up-X</span>, <span class="pill">medium-up-X</span>, or <span class="pill">large-up-X</span> class, where X represents the number of columns before each line break, and is a number 1 through <span class="pill">$block-grid-column-count</span> (8 by default).</p>
+<div class="demo-grid">
+  <div class="row small-up-8">
+    <div class="column"><span>1</span></div>
+    <div class="column"><span>2</span></div>
+    <div class="column"><span>3</span></div>
+    <div class="column"><span>4</span></div>
+    <div class="column"><span>5</span></div>
+    <div class="column"><span>6</span></div>
+    <div class="column"><span>7</span></div>
+    <div class="column"><span>8</span></div>
+    <div class="column"><span>9</span></div>
+    <div class="column"><span>10</span></div>
+    <div class="column"><span>11</span></div>
+    <div class="column"><span>12</span></div>
+    <div class="column"><span>13</span></div>
+    <div class="column"><span>14</span></div>
+    <div class="column"><span>15</span></div>
+    <div class="column"><span>16</span></div>
+    <div class="column"><span>17</span></div>
+    <div class="column"><span>18</span></div>
+    <div class="column"><span>19</span></div>
+    <div class="column"><span>20</span></div>
+  </div>
+</div>
+<pre><code class="language-html">
+&lt;div class="row small-up-8"&gt;
+  &lt;div class="column"&gt;1&lt;/div&gt;
+  &lt;div class="column"&gt;2&lt;/div&gt;
+  &lt;div class="column"&gt;3&lt;/div&gt;
+  &lt;div class="column"&gt;4&lt;/div&gt;
+  &lt;div class="column"&gt;5&lt;/div&gt;
+  &lt;div class="column"&gt;6&lt;/div&gt;
+  &lt;div class="column"&gt;7&lt;/div&gt;
+  &lt;div class="column"&gt;8&lt;/div&gt;
+  &lt;div class="column"&gt;9&lt;/div&gt;
+  &lt;div class="column"&gt;10&lt;/div&gt;
+  &lt;div class="column"&gt;11&lt;/div&gt;
+  &lt;div class="column"&gt;12&lt;/div&gt;
+  &lt;div class="column"&gt;13&lt;/div&gt;
+  &lt;div class="column"&gt;14&lt;/div&gt;
+  &lt;div class="column"&gt;15&lt;/div&gt;
+  &lt;div class="column"&gt;16&lt;/div&gt;
+  &lt;div class="column"&gt;17&lt;/div&gt;
+  &lt;div class="column"&gt;18&lt;/div&gt;
+  &lt;div class="column"&gt;19&lt;/div&gt;
+  &lt;div class="column"&gt;20&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$block-grid-column-count</td>
+      <td>Number</td>
+      <td>8</td>
+      <td>The maximum number of columns in a block grid.</td>
+    </tr>
+  </tbody>
+</table>

@@ -39,19 +39,18 @@
         <!-- Start demo content -->
 
         {{#each sections}}
-          <h2 class="docs-heading">{{title}}</h2>
+          <h2 class="docs-heading">{{{title}}}</h2>
           <div class="row">
             <div class="small-12 column">
               {{{__content}}}
-              <hr/>
             </div>
           </div>
           {{#each pages}}
             <div class="row" id="{{id}}">
               <div class="small-12 column">
-                <h3 class="docs-heading">{{title}}</h3>
+                <h3 class="docs-heading">{{{title}}}</h3>
                 {{{__content}}}
-                <hr/>
+                <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
           {{/each}}

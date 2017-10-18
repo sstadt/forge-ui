@@ -1,0 +1,58 @@
+---
+title: 'Required Field Validation'
+id: 'validation-required'
+---
+
+<p>You can easy check for required values by attaching the <span class="pill">:required="true"</span> to most Forge input components.</p>
+<p>Attaching the required attribute to a select element will prevent that element from rendering an empty option as a child of the select.</p>
+
+<tabs>
+  <tab heading="Result" :selected="true">
+    <f-form :ajax="true" @submit="submit">
+      <f-input type="text" v-model="input" label="My Input" :required="true"></f-input>
+      <f-select v-model="selectedOption" :options="selectOptions" :required="true"></f-select>
+      <f-checkbox v-model="checked" label="My checkbox" :required="true"></f-checkbox>
+      <f-radio v-model="selectedOption" :options="radioOptions" label="My Radio Group" name="myRadioOptions" :required="true"></f-radio>
+      <button type="submit" class="button">Submit</button>
+    </f-form>
+  </tab>
+  <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-form :ajax="true" @submit="submit"&gt;
+  &lt;f-input type="text" v-model="input" label="My Input" :required="true"&gt;&lt;/f-input&gt;
+  &lt;f-select v-model="selectedOption" :options="selectOptions" :required="true"&gt;&lt;/f-select&gt;
+  &lt;f-checkbox v-model="checked" label="My checkbox" :required="true"&gt;&lt;/f-checkbox&gt;
+  &lt;f-radio v-model="selectedOption" :options="radioOptions" label="My Radio Group" name="myRadioOptions" :required="true"&gt;&lt;/f-radio&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
+</code></pre>
+  </tab>
+  <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#required-validation',
+  data: {
+    input: '',
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ],
+    checked: false,
+    selectedOption: '',
+    radioOptions: [
+      { name: 'radioOptionOne', label: 'One Option', value: '1' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' },
+    ]
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+</pre></code>
+  </tab>
+</tabs>

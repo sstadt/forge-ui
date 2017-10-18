@@ -1,0 +1,61 @@
+---
+title: 'Prompt'
+id: 'vue-prompt'
+---
+
+<p>A simple prompt component meant to replace the native prompt and confirm methods. This will allow you to style the dialog to match your site and prevent users from asking the browser to suppress further dialogs.</p>
+<p>This component is meant to get input back from the user. If you simply need to notify the user of something, use an alert component to display the information and it's <em>canClose</em> property if the information should be dismissable.</p>
+<p>With great power comes great responsibility. These dialogs cannot be suppressed by the browser, so take care not to inundate the user with an endless stream of repeditive dialogs.</p>
+<h4>Methods</h4>
+<dl>
+  <dt>ask</dt>
+  <dd>This provides a text input to the user to enter a custom answer similar to the native prompt() method. When clicking the confirm button the dialog input will be validated before calling the provided yes() function.</dd>
+  <dt>confirm</dt>
+  <dd>This provides a yes or no dialog similar to the native confirm() method.</dd>
+</dl>
+<p>Both prompt methods take an options object supporting the following parameters:</p>
+<ul>
+  <li><strong>question</strong> the dialog label to present to the user</li>
+  <li><strong>yesLabel</strong> the confirm button label</li>
+  <li><strong>noLabel</strong> the cancel button label</li>
+  <li><strong>yes</strong> a function to execute when the user clicks the confirm button</li>
+  <li><strong>no</strong> a function to execute when the user clicks the cancel button</li>
+</ul>
+<div id="prompt_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <prompt ref="myPrompt"></prompt>
+      <button type="button" class="button" v-on:click="prompt('ask')">vm.$refs.myPrompt.ask()</button>
+      <button type="button" class="button" v-on:click="prompt('confirm')">vm.$refs.myPrompt.confirm()</button>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;prompt ref="myPrompt"&gt;&lt;/prompt&gt;
+&lt;button type="button" class="button" v-on:click="prompt('ask')"&gt;vm.$refs.myPrompt.ask()&lt;/button&gt;
+&lt;button type="button" class="button" v-on:click="prompt('confirm')"&gt;vm.$refs.myPrompt.confirm()&lt;/button&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#prompt_demo',
+  methods: {
+    prompt(method) {
+      this.$refs.myPrompt[method]({
+        question: 'Judge me by my size, do you?',
+        yes: function (answer) {
+          // if method is 'ask',
+          // the dialog input value will be passed as the first argument
+        },
+        no: function () {
+          // the prompt will close itself,
+          // but you can use this option to trigger side effects
+        }
+      });
+    }
+  }
+});
+</code></pre>
+    </tab>
+  </tabs>
+</div>

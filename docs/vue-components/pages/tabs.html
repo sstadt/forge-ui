@@ -1,0 +1,52 @@
+---
+title: 'Tabs'
+id: 'vue-tabs'
+---
+
+<p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
+<h4>Tab Params</h4>
+<dl>
+  <dt>heading</dt>
+  <dd><em>String; required</em><br/>the text to display in the clickable tab navigation</dd>
+  <dt>selected</dt>
+  <dd><em>Boolean</em><br/>activates the tab on mount when set to true</dd>
+</dl>
+<div id="tabs_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <tabs>
+        <tab heading="Foo" :selected="true">
+          <p>Some tab content</p>
+        </tab>
+        <tab heading="Bar">
+          <p>Some content for another tab</p>
+        </tab>
+        <tab heading="Baz">
+          <p>Even more tab content!</p>
+        </tab>
+      </tabs>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;tabs&gt;
+  &lt;tab heading="Foo" :selected="true"&gt;
+    &lt;p&gt;Some tab content&lt;/p&gt;
+  &lt;/tab&gt;
+  &lt;tab heading="Bar"&gt;
+    &lt;p&gt;Some content for another tab&lt;/p&gt;
+  &lt;/tab&gt;
+  &lt;tab heading="Baz"&gt;
+    &lt;p&gt;Even more tab content!&lt;/p&gt;
+  &lt;/tab&gt;
+&lt;/tabs&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#tabs_demo'
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>

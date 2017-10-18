@@ -1,0 +1,38 @@
+---
+title: 'fCheckbox'
+id: 'vue-fcheckbox'
+---
+
+<p>Renders a checkbox input</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>Boolean; required</em><br/>True if checked; false if not</dd>
+  <dt>label</dt>
+  <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>If true, shows an error when not checked; see <a href="#form">forms</a></dd>
+</dl>
+<div id="checkbox_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-checkbox v-model="checked" label="My checkbox"></f-checkbox>
+      <p>checked: {{ checked }}</p>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/f-checkbox&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#checkbox_demo',
+  data: {
+    checked: false
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>

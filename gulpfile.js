@@ -58,22 +58,22 @@ gulp.task('docs', function () {
   let docsData = { sections: [] };
 
   sections.forEach((section) => {
-    let sectionData = frontMatter.loadFront(`./inc/${section}/_section.html`);
-    let pageList = fs.readdirSync(`./inc/${section}/pages`);
+    let sectionData = frontMatter.loadFront(`./docs/${section}/_section.html`);
+    let pageList = fs.readdirSync(`./docs/${section}/pages`);
 
     sectionData.pages = [];
 
     pageList.forEach((page) => {
-      let pageData = frontMatter.loadFront(`./inc/${section}/pages/${page}`);
+      let pageData = frontMatter.loadFront(`./docs/${section}/pages/${page}`);
       sectionData.pages.push(pageData);
     });
 
     docsData.sections.push(sectionData);
   });
 
-  gulp.src('./inc/docs.hb')
+  gulp.src('./docs/index.hb')
     .pipe(handlebars(docsData))
-    .pipe(rename('test.html'))
+    .pipe(rename('index.html'))
     .pipe(gulp.dest('./'));
 });
 
@@ -85,7 +85,7 @@ gulp.task('dev', ['default', 'serve'], function () {
 	livereload.listen({ start: true });
   gulp.watch(['src/**/*.scss'], ['sass']);
   gulp.watch(['src/js/**/*.js', 'src/js/**/*.html'], ['js']);
-  gulp.watch(['inc/**/*'], ['docs']);
+  gulp.watch(['docs/**/*'], ['docs']);
 });
 
 

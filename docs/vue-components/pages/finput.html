@@ -1,0 +1,47 @@
+---
+title: 'fInput'
+id: 'vue-finput'
+---
+
+<p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>String; required</em><br/>The input value</dd>
+  <dt>type</dt>
+  <dd><em>String; required</em><br/>The input type; set to textarea to render a textarea instead of an input</dd>
+  <dt>label</dt>
+  <dd><em>String</em><br/>The input label text</dd>
+  <dt>name</dt>
+  <dd><em>String</em><br/>The name attribute for the input</dd>
+  <dt>placeholder</dt>
+  <dd><em>String</em><br/>The input placeholder text</dd>
+  <!-- <dt>icon</dt> TODO: implement some standard icons and the icon component docs
+  <dd><em>String</em><br/>Renders an icon on the right side of the input if provided a value</dd> -->
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>True if the input should be required; see <a href="#form">forms</a></dd>
+  <dt>equalTo</dt>
+  <dd><em>String; defaults to null</em><br/>Set to another observable to test equivalency</dd>
+</dl>
+<div id="input_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-input type="email" label="Email" :value.sync="email" />
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-input type="email" label="Email" :value.sync="email" /&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#input_demo',
+  data: {
+    email: ''
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>

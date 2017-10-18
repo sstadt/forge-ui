@@ -1,0 +1,41 @@
+---
+title: 'Match Validation'
+id: 'validation-match'
+---
+
+<p>To match an input's value against the value of another input, pass the match value into the input via the <span class="fill">equal-to</span> attribute.</p>
+
+<tabs>
+  <tab heading="Result" :selected="true">
+    <f-form :ajax="true" @submit="submit">
+      <f-input type="text" v-model="passwordInput" label="Password"></f-input>
+      <f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"></f-input>
+      <button type="submit" class="button">Submit</button>
+    </f-form>
+  </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-form :ajax="true" @submit="submit"&gt;
+  &lt;f-input type="text" v-model="passwordInput" label="Password"&gt;&lt;/f-input&gt;
+  &lt;f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"&gt;&lt;/f-input&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
+</code></pre>
+  </tab>
+  <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#match-validation',
+  data: {
+    passwordInput: '',
+    confirmInput: ''
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+</pre></code>
+  </tab>
+</tabs>

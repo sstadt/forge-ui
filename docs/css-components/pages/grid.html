@@ -1,0 +1,61 @@
+---
+title: 'Grid'
+id: 'grid'
+---
+
+<p>Grid columns should be nested under a <span class="pill">row</span> element. Columns can be separated using a 12-column system with <span class="pill">small</span>, <span class="pill">medium</span>, and <span class="pill">large</span> prefixes for responsive changes in column flow. All columns should include the <span class="pill">column</span> class.</p>
+<div class="demo-grid">
+  <div class="row">
+    <div class="small-12 column"><span>12</span></div>
+  </div>
+  <div class="row">
+    <div class="small-1 column"><span>1</span></div>
+    <div class="small-2 column"><span>2</span></div>
+    <div class="small-3 column"><span>3</span></div>
+    <div class="small-6 column"><span>6</span></div>
+  </div>
+  <div class="row">
+    <div class="small-4 column"><span>4</span></div>
+    <div class="small-8 column"><span>8</span></div>
+  </div>
+</div>
+<pre><code class="language-html">
+&lt;div class="row"&gt;
+  &lt;div class="small-12 column"&gt;12&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-1 column"&gt;1&lt;/div&gt;
+  &lt;div class="small-2 column"&gt;2&lt;/div&gt;
+  &lt;div class="small-3 column"&gt;3&lt;/div&gt;
+  &lt;div class="small-6 column"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-4 column"&gt;4&lt;/div&gt;
+  &lt;div class="small-8 column"&gt;8&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$grid-row-width</td>
+      <td>Number</td>
+      <td>$global-width</td>
+      <td>The maximum width of a grid row. Rows that are shorter than their prent element will be horizontally centered.</td>
+    </tr>
+    <tr>
+      <td>$grid-column-count</td>
+      <td>Number</td>
+      <td>12</td>
+      <td>The maximum number of columns per row.</td>
+    </tr>
+    <tr>
+      <td>$grid-column-gutter</td>
+      <td>Number</td>
+      <td>30px</td>
+      <td>The spacing between columns. Each row will include negative left and right margins equal to half of this value.</td>
+    </tr>
+  </tbody>
+</table>

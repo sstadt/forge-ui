@@ -1,0 +1,46 @@
+---
+title: 'fRadio'
+id: 'vue-fradio'
+---
+
+<p>Renders a radio button input</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>String; required</em><br/>The selected value.</dd>
+  <dt>label</dt>
+  <dd><em>String; defaults to an empty string</em><br/>Renders a label above the radio options is passed a string value.</dd>
+  <dt>name</dt>
+  <dd><em>String; required</em><br/>The name for the radio button group.</dd>
+  <dt>options</dt>
+  <dd><em>Array; required</em><br/>An array of options to render for this radio button group. Each array element should be an object with a <em>name</em>, <em>label</em>, and <em>value</em>.</dd>
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>True if required.</dd>
+</dl>
+<div id="radio_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-radio label="My Radio Group" v-model="selectedOption" :options="radioOptions" name="myRadioOptions"></f-radio>
+      <p>selected: {{ selectedOption }}</p>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-radio label="My Radio Group" v-model="selectedOption" :options="radioOptions" name="myRadioOptions"&gt;&lt;f-radio&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#radio_demo',
+  data: {
+    selectedOption: '',
+    radioOptions: [
+      { name: 'radioOptionOne', label: 'One Option', value: '1' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' }
+    ]
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>

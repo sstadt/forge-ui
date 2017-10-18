@@ -1,0 +1,254 @@
+---
+title: 'Buttons'
+id: 'buttons'
+---
+
+<p>So. Many. Buttons.</p>
+<p>Each button needs a <span class="pill">button</span> class. The following classes can be mixed and matched to change the type of button:</p>
+<ul class="inline">
+  <li><span class="pill">secondary</span></li>
+  <li><span class="pill">success</span></li>
+  <li><span class="pill">warning</span></li>
+  <li><span class="pill">alert</span></li>
+  <li><span class="pill">hollow</span></li>
+  <li><span class="pill">tiny</span></li>
+  <li><span class="pill">small</span></li>
+  <li><span class="pill">large</span></li>
+  <li><span class="pill">expand</span></li>
+  <li><span class="pill">inline-form</span></li>
+</ul>
+<div class="row">
+  <div class="small-12 large-6 column">
+    <div>
+      <button type="button" class="button">Button</button>
+      <button type="button" class="button secondary">Button</button>
+      <button type="button" class="button success">Button</button>
+      <button type="button" class="button warning">Button</button>
+      <button type="button" class="button alert">Button</button>
+    </div>
+    <div>
+      <button type="button" class="button tiny">Button</button>
+      <button type="button" class="button small">Button</button>
+      <button type="button" class="button">Button</button>
+      <button type="button" class="button large">Button</button>
+    </div>
+    <div>
+      <button type="button" class="button hollow">Button</button>
+      <button type="button" class="button hollow secondary">Button</button>
+      <button type="button" class="button hollow success">Button</button>
+      <button type="button" class="button hollow warning">Button</button>
+      <button type="button" class="button hollow alert">Button</button>
+    </div>
+    <div>
+      <button type="button" class="button expand">Button</button>
+    </div>
+    <div>
+      <button type="button" class="button expand hollow">Button</button>
+    </div>
+    <div>
+      <button type="button" class="button expand tiny">Button</button>
+      <button type="button" class="button expand small">Button</button>
+      <button type="button" class="button expand">Button</button>
+      <button type="button" class="button expand large">Button</button>
+    </div>
+  </div>
+  <div class="small-12 large-6 column">
+<pre><code class="language-html">
+&lt;div&gt;
+  &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button secondary"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button success"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button warning"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button alert"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button tiny"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button small"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button large"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button hollow"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow secondary"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow success"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow warning"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button hollow alert"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button expand hollow"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button type="button" class="button expand tiny"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button expand small"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
+  &lt;button type="button" class="button expand large"&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$button-color</td>
+      <td>Color</td>
+      <td>#fefefe</td>
+      <td>Button text color.</td>
+    </tr>
+    <tr>
+      <td>$button-font-size</td>
+      <td>Number</td>
+      <td>14</td>
+      <td>Button font color.</td>
+    </tr>
+    <tr>
+      <td>$button-font-family</td>
+      <td>String</td>
+      <td>inherit</td>
+      <td>Button font family.</td>
+    </tr>
+    <tr>
+      <td>$button-line-height</td>
+      <td>Number</td>
+      <td>1</td>
+      <td>Button line height.</td>
+    </tr>
+    <tr>
+      <td>$button-hover-darken</td>
+      <td>Number</td>
+      <td>10%</td>
+      <td>The amount to darken the button background color on hover.</td>
+    </tr>
+    <tr>
+      <td>$button-border-color</td>
+      <td>Color</td>
+      <td>transparent</td>
+      <td>Button border color.</td>
+    </tr>
+    <tr>
+      <td>$button-border-size</td>
+      <td>Number</td>
+      <td>1px</td>
+      <td>button border size.</td>
+    </tr>
+    <tr>
+      <td>$button-border-style</td>
+      <td>String</td>
+      <td>solid</td>
+      <td>Button border style.</td>
+    </tr>
+    <tr>
+      <td>$button-hollow-border-size</td>
+      <td>Number</td>
+      <td>1px</td>
+      <td>Border size for hollow buttons.</td>
+    </tr>
+    <tr>
+      <td>$button-hollow-border-style</td>
+      <td>String</td>
+      <td>solid</td>
+      <td>Button border style for hollow buttons.</td>
+    </tr>
+    <tr>
+      <td>$button-radius</td>
+      <td>Number</td>
+      <td>$global-radius</td>
+      <td>Button border radius.</td>
+    </tr>
+    <tr>
+      <td>$button-padding</td>
+      <td>Number</td>
+      <td>0.85em 1em</td>
+      <td>Button padding.</td>
+    </tr>
+    <tr>
+      <td>$button-margin</td>
+      <td>Number</td>
+      <td>0 0 1rem 0</td>
+      <td>Button margins.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-default</td>
+      <td>Color</td>
+      <td>$primary-color</td>
+      <td>Default button background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-secondary</td>
+      <td>Color</td>
+      <td>$secondary-color</td>
+      <td>Secondary button background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-success</td>
+      <td>Color</td>
+      <td>$success-color</td>
+      <td>Success button background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-warning</td>
+      <td>Color</td>
+      <td>$warning-color</td>
+      <td>Warning button background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-alert</td>
+      <td>Color</td>
+      <td>$alert-color</td>
+      <td>Alert button background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-hover-default</td>
+      <td>Color</td>
+      <td>darken($button-background-color-default, $button-hover-darken)</td>
+      <td>Default button hover background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-secondary-hover</td>
+      <td>Color</td>
+      <td>darken($secondary-color, $button-hover-darken)</td>
+      <td>Secondary button hover background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-success-hover</td>
+      <td>Color</td>
+      <td>darken($success-color, $button-hover-darken)</td>
+      <td>Success button hover background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-warning-hover</td>
+      <td>Color</td>
+      <td>darken($warning-color, $button-hover-darken)</td>
+      <td>Warning button hover background color.</td>
+    </tr>
+    <tr>
+      <td>$button-background-color-alert-hover</td>
+      <td>Color</td>
+      <td>darken($alert-color, $button-hover-darken)</td>
+      <td>Alert button hover background color.</td>
+    </tr>
+    <tr>
+      <td>$button-tiny-font-size</td>
+      <td>Number</td>
+      <td>10</td>
+      <td>Tiny button font size.</td>
+    </tr>
+    <tr>
+      <td>$button-small-font-size</td>
+      <td>Number</td>
+      <td>12</td>
+      <td>Small button font size.</td>
+    </tr>
+    <tr>
+      <td>$button-large-font-size</td>
+      <td>Number</td>
+      <td>20</td>
+      <td>Large button font size.</td>
+    </tr>
+  </tbody>
+</table>

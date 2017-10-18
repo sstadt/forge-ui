@@ -1,0 +1,46 @@
+---
+title: 'fSelect'
+id: 'vue-fselect'
+---
+
+<p>Renders a select input given a set of options</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>String; required</em><br/>The selected value</dd>
+  <dt>label</dt>
+  <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
+  <dt>options</dt>
+  <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a <em>label</em> and <em>value</em> parameter</dd>
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
+</dl>
+<div id="select_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-select v-model="selectedOption" :options="selectOptions"></f-select>
+      <p>selected: {{ selectedOption }}</p>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-select v-model="selectedOption" :options="selectOptions"&gt;&lt;/f-select&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#select_demo',
+  data: {
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ]
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>

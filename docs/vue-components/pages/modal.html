@@ -1,0 +1,64 @@
+---
+title: 'Modal'
+id: 'vue-modal'
+---
+
+<p>A simple modal dialog.</p>
+<h4>Params</h4>
+<dl>
+  <dt>modalSize</dt>
+  <dd><em>String</em><br/>Sets the size of the modal. Can be set to 'small' or 'full' to increase or decrease the size of the modal.</dd>
+</dl>
+<h4>Methods</h4>
+<dl>
+  <dt>open()</dt>
+  <dd>Open the dialog.</dd>
+  <dt>close()</dt>
+  <dd>Close the dialog.</dd>
+</dl>
+<div id="modal_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <button type="button" class="button" @click="openModal()">Open Modal</button>
+      <modal ref="myModal">
+        <div slot="header">
+          <h3 class="docs-heading">Look, a Modal!</h3>
+        </div>
+        <div slot="content">
+          <p>some super awesome modal content</p>
+          <button type="button" class="button" @click="closeModal()">Close</button>
+        </div>
+      </modal>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;button type="button" class="button" @click="openModal()"&gt;Open Modal&lt;/button&gt;
+
+&lt;modal ref="myModal"&gt;
+  &lt;div slot="header"&gt;
+    &lt;h3&gt;Look, a Modal!&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div slot="content"&gt;
+    &lt;p&gt;some super awesome modal content&lt;/p&gt;
+    &lt;button type="button" class="button" @click="closeModal()"&gt;Close&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/modal&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#modal_demo',
+  methods: {
+    openModal() {
+      this.$refs.myModal.open();
+    },
+    closeModal() {
+      this.$refs.myModal.close();
+    }
+  }
+});
+</code></pre>
+    </tab>
+  </tabs>
+</div>
