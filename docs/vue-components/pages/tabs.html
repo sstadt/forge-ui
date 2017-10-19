@@ -5,13 +5,7 @@ index: 2
 ---
 
 <p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
-<h4>Tab Params</h4>
-<dl>
-  <dt>heading</dt>
-  <dd><em>String; required</em><br/>the text to display in the clickable tab navigation</dd>
-  <dt>selected</dt>
-  <dd><em>Boolean</em><br/>activates the tab on mount when set to true</dd>
-</dl>
+
 <div id="tabs_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -51,3 +45,69 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param (tab)</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading</td>
+      <td>String</td>
+      <td>true</td>
+      <td>false</td>
+      <td>The text to display in the clickable tab navigation.</td>
+    </tr>
+    <tr>
+      <td>selected</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>Activates the tab on mount when set to true.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$tab-content-padding</td>
+      <td>Number</td>
+      <td>$global-padding</td>
+      <td>Spacing between tab content and tab nav.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-font-color</td>
+      <td>Color</td>
+      <td>$dark-gray</td>
+      <td>Inactive tab nav font color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-font-color-hover</td>
+      <td>Color</td>
+      <td>$body-font-color</td>
+      <td>Hovered tab nav font color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-font-color-active</td>
+      <td>Color</td>
+      <td>$body-font-color</td>
+      <td>Active tab nav font color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-border-color</td>
+      <td>Color</td>
+      <td>$body-font-color</td>
+      <td>Tab nav border color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-padding</td>
+      <td>Numbers</td>
+      <td>4px 10px</td>
+      <td>Tab nav item padding.</td>
+    </tr>
+  </tbody>
+</table>

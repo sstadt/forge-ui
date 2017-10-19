@@ -5,18 +5,7 @@ index: 3
 ---
 
 <p>A simple modal dialog.</p>
-<h4>Params</h4>
-<dl>
-  <dt>modalSize</dt>
-  <dd><em>String</em><br/>Sets the size of the modal. Can be set to 'small' or 'full' to increase or decrease the size of the modal.</dd>
-</dl>
-<h4>Methods</h4>
-<dl>
-  <dt>open()</dt>
-  <dd>Open the dialog.</dd>
-  <dt>close()</dt>
-  <dd>Close the dialog.</dd>
-</dl>
+
 <div id="modal_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -63,3 +52,79 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>modalSize</td>
+      <td>String</td>
+      <td>false</td>
+      <td>full</td>
+      <td>The size of the modal. Can be small or full.</td>
+    </tr>
+    <tr>
+      <td>transition</td>
+      <td>String</td>
+      <td>false</td>
+      <td>zoom-out</td>
+      <td>the modal show/hide transition.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Method</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open()</td>
+      <td>Open the modal.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Close the modal.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$modal-size-default</td>
+      <td>Number</td>
+      <td>580px</td>
+      <td>Width for full sized modals.</td>
+    </tr>
+    <tr>
+      <td>$modal-size-small</td>
+      <td>Number</td>
+      <td>300px</td>
+      <td>Width for small sized modals.</td>
+    </tr>
+    <tr>
+      <td>$modal-padding</td>
+      <td>Number</td>
+      <td>$global-padding</td>
+      <td>Modal padding.</td>
+    </tr>
+    <tr>
+      <td>$modal-background-color</td>
+      <td>Color</td>
+      <td>$body-background</td>
+      <td>Modal background color.</td>
+    </tr>
+    <tr>
+      <td>$modal-overlay-color</td>
+      <td>Color</td>
+      <td>rgba($black, $overlay-opacity)</td>
+      <td>Modal overlay background color.</td>
+    </tr>
+  </tbody>
+</table>

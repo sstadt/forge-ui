@@ -5,19 +5,7 @@ index: 9
 ---
 
 <p>Renders a radio button input</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The selected value.</dd>
-  <dt>label</dt>
-  <dd><em>String; defaults to an empty string</em><br/>Renders a label above the radio options is passed a string value.</dd>
-  <dt>name</dt>
-  <dd><em>String; required</em><br/>The name for the radio button group.</dd>
-  <dt>options</dt>
-  <dd><em>Array; required</em><br/>An array of options to render for this radio button group. Each array element should be an object with a <em>name</em>, <em>label</em>, and <em>value</em>.</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>True if required.</dd>
-</dl>
+
 <div id="radio_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -45,3 +33,46 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>The selected value.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>The label for the radio button group.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>The name for the radio button group.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>Array</td>
+      <td>true</td>
+      <td></td>
+      <td>An array of options to render for the radio group: <span class="pill">{ name: 'foo', label: 'bar', value: 'baz' }</span></td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If set to true, will invalidate the input if an option is not selected.</td>
+    </tr>
+  </tbody>
+</table>

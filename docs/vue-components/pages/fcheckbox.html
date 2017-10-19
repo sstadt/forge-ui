@@ -5,15 +5,7 @@ index: 8
 ---
 
 <p>Renders a checkbox input</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>Boolean; required</em><br/>True if checked; false if not</dd>
-  <dt>label</dt>
-  <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>If true, shows an error when not checked; see <a href="#form">forms</a></dd>
-</dl>
+
 <div id="checkbox_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -37,3 +29,32 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>Boolean</td>
+      <td>true</td>
+      <td></td>
+      <td>True if checked; false if not.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Boolean</td>
+      <td>true</td>
+      <td></td>
+      <td>The checkbox label.</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If true, will invalidate the input if the checkbox is unchecked.</td>
+    </tr>
+  </tbody>
+</table>

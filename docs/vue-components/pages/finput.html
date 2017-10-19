@@ -5,25 +5,7 @@ index: 6
 ---
 
 <p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The input value</dd>
-  <dt>type</dt>
-  <dd><em>String; required</em><br/>The input type; set to textarea to render a textarea instead of an input</dd>
-  <dt>label</dt>
-  <dd><em>String</em><br/>The input label text</dd>
-  <dt>name</dt>
-  <dd><em>String</em><br/>The name attribute for the input</dd>
-  <dt>placeholder</dt>
-  <dd><em>String</em><br/>The input placeholder text</dd>
-  <!-- <dt>icon</dt> TODO: implement some standard icons and the icon component docs
-  <dd><em>String</em><br/>Renders an icon on the right side of the input if provided a value</dd> -->
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>True if the input should be required; see <a href="#form">forms</a></dd>
-  <dt>equalTo</dt>
-  <dd><em>String; defaults to null</em><br/>Set to another observable to test equivalency</dd>
-</dl>
+
 <div id="input_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -46,3 +28,60 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>Input value.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>Input type. Will render a textarea if set to textarea. Changing type does not otherwise change the actual input type attribute, but is used for automatic type validation on form submission.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>The input label. Label or name will be used in error messaging for invalid inputs on form submission.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>false</td>
+      <td></td>
+      <td>The input name. Label or name will be used in error messaging for invalid inputs on form submission.</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td>String</td>
+      <td>false</td>
+      <td></td>
+      <td>Input placeholder text.</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If set to true, will invalidate the input if the value is an empty string.</td>
+    </tr>
+    <tr>
+      <td>equal-to</td>
+      <td>String</td>
+      <td>false</td>
+      <td></td>
+      <td>If set, will invalidate the input if it's value does not match the value of equal-to.</td>
+    </tr>
+  </tbody>
+</table>

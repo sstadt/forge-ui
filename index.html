@@ -1025,26 +1025,7 @@
                 
 
 <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
-<h4>Params</h4>
-<dl>
-  <dt>canClose</dt>
-  <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
-</dl>
-<h4>Methods</h4>
-<dl>
-  <dt>message</dt>
-  <dd>Display a callout message with no additional color class.</dd>
-  <dt>primary</dt>
-  <dd>Display a callout message with the primary color class.</dd>
-  <dt>secondary</dt>
-  <dd>Display a callout message with the secondary color class.</dd>
-  <dt>success</dt>
-  <dd>Display a callout message with the success color class.</dd>
-  <dt>warning</dt>
-  <dd>Display a callout message with the warning color class.</dd>
-  <dt>alert</dt>
-  <dd>Display a callout message with the alert color class.</dd>
-</dl>
+
 <div id="alert_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1104,6 +1085,109 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>canClose</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>Set to true to display the close button in the top right corner.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Method</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>message(message)</td>
+      <td>Display a callout message with no additional color class.</td>
+    </tr>
+    <tr>
+      <td>primary(message)</td>
+      <td>Display a callout message with the primary color class.</td>
+    </tr>
+    <tr>
+      <td>secondary(message)</td>
+      <td>Display a callout message with the secondary color class.</td>
+    </tr>
+    <tr>
+      <td>success(message)</td>
+      <td>Display a callout message with the success color class.</td>
+    </tr>
+    <tr>
+      <td>warning(message)</td>
+      <td>Display a callout message with the warning color class.</td>
+    </tr>
+    <tr>
+      <td>alert(message)</td>
+      <td>Display a callout message with the alert color class.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$alert-background-color-default</td>
+      <td>Color</td>
+      <td>transparent</td>
+      <td>Alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-primary</td>
+      <td>Color</td>
+      <td>#d7ecfa</td>
+      <td>Primary alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-secondary</td>
+      <td>Color</td>
+      <td>#eaeaea</td>
+      <td>Secondary alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-success</td>
+      <td>Color</td>
+      <td>#e1faea</td>
+      <td>Success alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-warning</td>
+      <td>Color</td>
+      <td>#fff3d9</td>
+      <td>Warning alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-alert</td>
+      <td>Color</td>
+      <td>#f7e4e1</td>
+      <td>Alert alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-border-color</td>
+      <td>Color</td>
+      <td>rgba(10, 10, 10, 0.25)</td>
+      <td>Alert box border color.</td>
+    </tr>
+    <tr>
+      <td>$alert-message-padding</td>
+      <td>Number</td>
+      <td>4px</td>
+      <td>Vertical spacing between alert box messages.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1113,13 +1197,7 @@ new Vue({
                 
 
 <p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
-<h4>Tab Params</h4>
-<dl>
-  <dt>heading</dt>
-  <dd><em>String; required</em><br/>the text to display in the clickable tab navigation</dd>
-  <dt>selected</dt>
-  <dd><em>Boolean</em><br/>activates the tab on mount when set to true</dd>
-</dl>
+
 <div id="tabs_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1160,6 +1238,72 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param (tab)</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading</td>
+      <td>String</td>
+      <td>true</td>
+      <td>false</td>
+      <td>The text to display in the clickable tab navigation.</td>
+    </tr>
+    <tr>
+      <td>selected</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>Activates the tab on mount when set to true.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$tab-content-padding</td>
+      <td>Number</td>
+      <td>$global-padding</td>
+      <td>Spacing between tab content and tab nav.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-font-color</td>
+      <td>Color</td>
+      <td>$dark-gray</td>
+      <td>Inactive tab nav font color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-font-color-hover</td>
+      <td>Color</td>
+      <td>$body-font-color</td>
+      <td>Hovered tab nav font color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-font-color-active</td>
+      <td>Color</td>
+      <td>$body-font-color</td>
+      <td>Active tab nav font color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-border-color</td>
+      <td>Color</td>
+      <td>$body-font-color</td>
+      <td>Tab nav border color.</td>
+    </tr>
+    <tr>
+      <td>$tab-nav-padding</td>
+      <td>Numbers</td>
+      <td>4px 10px</td>
+      <td>Tab nav item padding.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1169,18 +1313,7 @@ new Vue({
                 
 
 <p>A simple modal dialog.</p>
-<h4>Params</h4>
-<dl>
-  <dt>modalSize</dt>
-  <dd><em>String</em><br/>Sets the size of the modal. Can be set to 'small' or 'full' to increase or decrease the size of the modal.</dd>
-</dl>
-<h4>Methods</h4>
-<dl>
-  <dt>open()</dt>
-  <dd>Open the dialog.</dd>
-  <dt>close()</dt>
-  <dd>Close the dialog.</dd>
-</dl>
+
 <div id="modal_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1228,6 +1361,82 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>modalSize</td>
+      <td>String</td>
+      <td>false</td>
+      <td>full</td>
+      <td>The size of the modal. Can be small or full.</td>
+    </tr>
+    <tr>
+      <td>transition</td>
+      <td>String</td>
+      <td>false</td>
+      <td>zoom-out</td>
+      <td>the modal show/hide transition.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Method</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open()</td>
+      <td>Open the modal.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Close the modal.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$modal-size-default</td>
+      <td>Number</td>
+      <td>580px</td>
+      <td>Width for full sized modals.</td>
+    </tr>
+    <tr>
+      <td>$modal-size-small</td>
+      <td>Number</td>
+      <td>300px</td>
+      <td>Width for small sized modals.</td>
+    </tr>
+    <tr>
+      <td>$modal-padding</td>
+      <td>Number</td>
+      <td>$global-padding</td>
+      <td>Modal padding.</td>
+    </tr>
+    <tr>
+      <td>$modal-background-color</td>
+      <td>Color</td>
+      <td>$body-background</td>
+      <td>Modal background color.</td>
+    </tr>
+    <tr>
+      <td>$modal-overlay-color</td>
+      <td>Color</td>
+      <td>rgba($black, $overlay-opacity)</td>
+      <td>Modal overlay background color.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1239,13 +1448,6 @@ new Vue({
 <p>A simple prompt component meant to replace the native prompt and confirm methods. This will allow you to style the dialog to match your site and prevent users from asking the browser to suppress further dialogs.</p>
 <p>This component is meant to get input back from the user. If you simply need to notify the user of something, use an alert component to display the information and it's <em>canClose</em> property if the information should be dismissable.</p>
 <p>With great power comes great responsibility. These dialogs cannot be suppressed by the browser, so take care not to inundate the user with an endless stream of repeditive dialogs.</p>
-<h4>Methods</h4>
-<dl>
-  <dt>ask</dt>
-  <dd>This provides a text input to the user to enter a custom answer similar to the native prompt() method. When clicking the confirm button the dialog input will be validated before calling the provided yes() function.</dd>
-  <dt>confirm</dt>
-  <dd>This provides a yes or no dialog similar to the native confirm() method.</dd>
-</dl>
 <p>Both prompt methods take an options object supporting the following parameters:</p>
 <ul>
   <li><strong>question</strong> the dialog label to present to the user</li>
@@ -1254,6 +1456,7 @@ new Vue({
   <li><strong>yes</strong> a function to execute when the user clicks the confirm button</li>
   <li><strong>no</strong> a function to execute when the user clicks the cancel button</li>
 </ul>
+
 <div id="prompt_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1293,6 +1496,54 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Method</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ask(options)</td>
+      <td>This provides a text input to the user to enter a custom answer similar to the native prompt() method. When clicking the confirm button the dialog input will be validated before calling the provided yes() function.</td>
+    </tr>
+    <tr>
+      <td>confirm(options)</td>
+      <td>This provides a yes or no dialog similar to the native confirm() method.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$prompt-width</td>
+      <td>Number</td>
+      <td>400px</td>
+      <td>Prompt modal width.</td>
+    </tr>
+    <tr>
+      <td>$prompt-padding</td>
+      <td>Number</td>
+      <td>$global-padding</td>
+      <td>Prompt modal padding.</td>
+    </tr>
+    <tr>
+      <td>$prompt-background-color</td>
+      <td>Color</td>
+      <td>$body-background</td>
+      <td>Prompt modal background color.</td>
+    </tr>
+    <tr>
+      <td>$prompt-overlay-color</td>
+      <td>Color</td>
+      <td>rgba($black, $overlay-opacity)</td>
+      <td>Prompt overlay background color.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1303,20 +1554,7 @@ new Vue({
 
 <p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
 <p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
-<h4>Params</h4>
-<dl>
-  <dt>method</dt>
-  <dd><em>String; defaults to POST</em><br/>Form submission method; supports GET and POST just like a standard form</dd>
-  <dt>action</dt>
-  <dd><em>String; defaults to an empty string</em><br/>The URL to submit the form to, if not configured as ajax</dd>
-  <dt>ajax</dt>
-  <dd><em>Boolean; defaults to false</em><br/>Set to true to override default form submission behavior; useful if you only want to trigger the submitCallback</dd>
-</dl>
-<h4>Events</h4>
-<dl>
-  <dt>submit</dt>
-  <dd>If ajax is set to true, a submit event will be dispatched on submission of a valid form</dd>
-</dl>
+
 <div id="form_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1353,6 +1591,145 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>method</td>
+      <td>String</td>
+      <td>false</td>
+      <td>POST</td>
+      <td>Form method; GET or POST.</td>
+    </tr>
+    <tr>
+      <td>action</td>
+      <td>String</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>Form action.</td>
+    </tr>
+    <tr>
+      <td>ajax</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>When set to true, prevents default form submission if the form is valid.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Event</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>submit</td>
+      <td>If ajax is set to true, a submit event will be dispatched on submission of a valid form.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$form-field-background-color</td>
+      <td>Color</td>
+      <td>transparent</td>
+      <td>Background color for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-color</td>
+      <td>Color</td>
+      <td>$global-font-color</td>
+      <td>Text color for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-line-height</td>
+      <td>Number</td>
+      <td>1.5</td>
+      <td>Line height for form input.</td>
+    </tr>
+    <tr>
+      <td>$form-field-font-size</td>
+      <td>Number</td>
+      <td>16</td>
+      <td>Font size for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-font-family</td>
+      <td>String</td>
+      <td>inherit</td>
+      <td>Font family for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-font-weight</td>
+      <td>String</td>
+      <td>normal</td>
+      <td>Font weight for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-border-color</td>
+      <td>Color</td>
+      <td>#cacaca</td>
+      <td>Border color for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-border-size</td>
+      <td>Number</td>
+      <td>1px</td>
+      <td>Border size for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-border-style</td>
+      <td>String</td>
+      <td>solid</td>
+      <td>border style for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-radius</td>
+      <td>Number</td>
+      <td>$global-radius</td>
+      <td>border radius for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-padding</td>
+      <td>Number</td>
+      <td>0.5rem</td>
+      <td>Padding for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-margin</td>
+      <td>Number</td>
+      <td>0 0 $global-margin</td>
+      <td>Margin for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-height</td>
+      <td>Number</td>
+      <td>2.4375rem</td>
+      <td>Height for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-width</td>
+      <td>Number</td>
+      <td>100%</td>
+      <td>Width for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-shadow-color</td>
+      <td>Color</td>
+      <td>rgba(10, 10, 10, 0.1)</td>
+      <td>Inner shadow for focused input and select elements.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1362,25 +1739,7 @@ new Vue({
                 
 
 <p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The input value</dd>
-  <dt>type</dt>
-  <dd><em>String; required</em><br/>The input type; set to textarea to render a textarea instead of an input</dd>
-  <dt>label</dt>
-  <dd><em>String</em><br/>The input label text</dd>
-  <dt>name</dt>
-  <dd><em>String</em><br/>The name attribute for the input</dd>
-  <dt>placeholder</dt>
-  <dd><em>String</em><br/>The input placeholder text</dd>
-  <!-- <dt>icon</dt> TODO: implement some standard icons and the icon component docs
-  <dd><em>String</em><br/>Renders an icon on the right side of the input if provided a value</dd> -->
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>True if the input should be required; see <a href="#form">forms</a></dd>
-  <dt>equalTo</dt>
-  <dd><em>String; defaults to null</em><br/>Set to another observable to test equivalency</dd>
-</dl>
+
 <div id="input_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1404,6 +1763,63 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>Input value.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>Input type. Will render a textarea if set to textarea. Changing type does not otherwise change the actual input type attribute, but is used for automatic type validation on form submission.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>The input label. Label or name will be used in error messaging for invalid inputs on form submission.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>false</td>
+      <td></td>
+      <td>The input name. Label or name will be used in error messaging for invalid inputs on form submission.</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td>String</td>
+      <td>false</td>
+      <td></td>
+      <td>Input placeholder text.</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If set to true, will invalidate the input if the value is an empty string.</td>
+    </tr>
+    <tr>
+      <td>equal-to</td>
+      <td>String</td>
+      <td>false</td>
+      <td></td>
+      <td>If set, will invalidate the input if it's value does not match the value of equal-to.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1413,17 +1829,7 @@ new Vue({
                 
 
 <p>Renders a select input given a set of options</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The selected value</dd>
-  <dt>label</dt>
-  <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
-  <dt>options</dt>
-  <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a <em>label</em> and <em>value</em> parameter</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
-</dl>
+
 <div id="select_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1454,6 +1860,42 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>The selected option value.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>The select label.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>Array</td>
+      <td>true</td>
+      <td></td>
+      <td>An array of options objects to render: <span class="pill">{ label: 'foo', value: 'bar' }</span></td>
+    </tr>
+    <tr>
+      <td>requires</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If set to true, the select will not render an empty option element, and will set the selected option to the first available option.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1463,15 +1905,7 @@ new Vue({
                 
 
 <p>Renders a checkbox input</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>Boolean; required</em><br/>True if checked; false if not</dd>
-  <dt>label</dt>
-  <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>If true, shows an error when not checked; see <a href="#form">forms</a></dd>
-</dl>
+
 <div id="checkbox_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1496,6 +1930,35 @@ new Vue({
   </tabs>
 </div>
 
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>Boolean</td>
+      <td>true</td>
+      <td></td>
+      <td>True if checked; false if not.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Boolean</td>
+      <td>true</td>
+      <td></td>
+      <td>The checkbox label.</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If true, will invalidate the input if the checkbox is unchecked.</td>
+    </tr>
+  </tbody>
+</table>
+
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
@@ -1505,19 +1968,7 @@ new Vue({
                 
 
 <p>Renders a radio button input</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The selected value.</dd>
-  <dt>label</dt>
-  <dd><em>String; defaults to an empty string</em><br/>Renders a label above the radio options is passed a string value.</dd>
-  <dt>name</dt>
-  <dd><em>String; required</em><br/>The name for the radio button group.</dd>
-  <dt>options</dt>
-  <dd><em>Array; required</em><br/>An array of options to render for this radio button group. Each array element should be an object with a <em>name</em>, <em>label</em>, and <em>value</em>.</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>True if required.</dd>
-</dl>
+
 <div id="radio_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -1545,6 +1996,49 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>The selected value.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>The label for the radio button group.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>The name for the radio button group.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>Array</td>
+      <td>true</td>
+      <td></td>
+      <td>An array of options to render for the radio group: <span class="pill">{ name: 'foo', label: 'bar', value: 'baz' }</span></td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If set to true, will invalidate the input if an option is not selected.</td>
+    </tr>
+  </tbody>
+</table>
 
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>

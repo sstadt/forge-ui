@@ -6,20 +6,7 @@ index: 5
 
 <p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
 <p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
-<h4>Params</h4>
-<dl>
-  <dt>method</dt>
-  <dd><em>String; defaults to POST</em><br/>Form submission method; supports GET and POST just like a standard form</dd>
-  <dt>action</dt>
-  <dd><em>String; defaults to an empty string</em><br/>The URL to submit the form to, if not configured as ajax</dd>
-  <dt>ajax</dt>
-  <dd><em>Boolean; defaults to false</em><br/>Set to true to override default form submission behavior; useful if you only want to trigger the submitCallback</dd>
-</dl>
-<h4>Events</h4>
-<dl>
-  <dt>submit</dt>
-  <dd>If ajax is set to true, a submit event will be dispatched on submission of a valid form</dd>
-</dl>
+
 <div id="form_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -55,3 +42,142 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>method</td>
+      <td>String</td>
+      <td>false</td>
+      <td>POST</td>
+      <td>Form method; GET or POST.</td>
+    </tr>
+    <tr>
+      <td>action</td>
+      <td>String</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>Form action.</td>
+    </tr>
+    <tr>
+      <td>ajax</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>When set to true, prevents default form submission if the form is valid.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Event</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>submit</td>
+      <td>If ajax is set to true, a submit event will be dispatched on submission of a valid form.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$form-field-background-color</td>
+      <td>Color</td>
+      <td>transparent</td>
+      <td>Background color for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-color</td>
+      <td>Color</td>
+      <td>$global-font-color</td>
+      <td>Text color for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-line-height</td>
+      <td>Number</td>
+      <td>1.5</td>
+      <td>Line height for form input.</td>
+    </tr>
+    <tr>
+      <td>$form-field-font-size</td>
+      <td>Number</td>
+      <td>16</td>
+      <td>Font size for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-font-family</td>
+      <td>String</td>
+      <td>inherit</td>
+      <td>Font family for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-font-weight</td>
+      <td>String</td>
+      <td>normal</td>
+      <td>Font weight for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-border-color</td>
+      <td>Color</td>
+      <td>#cacaca</td>
+      <td>Border color for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-border-size</td>
+      <td>Number</td>
+      <td>1px</td>
+      <td>Border size for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-border-style</td>
+      <td>String</td>
+      <td>solid</td>
+      <td>border style for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-radius</td>
+      <td>Number</td>
+      <td>$global-radius</td>
+      <td>border radius for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-padding</td>
+      <td>Number</td>
+      <td>0.5rem</td>
+      <td>Padding for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-margin</td>
+      <td>Number</td>
+      <td>0 0 $global-margin</td>
+      <td>Margin for form inputs.</td>
+    </tr>
+    <tr>
+      <td>$form-field-height</td>
+      <td>Number</td>
+      <td>2.4375rem</td>
+      <td>Height for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-width</td>
+      <td>Number</td>
+      <td>100%</td>
+      <td>Width for input and select elements.</td>
+    </tr>
+    <tr>
+      <td>$form-field-shadow-color</td>
+      <td>Color</td>
+      <td>rgba(10, 10, 10, 0.1)</td>
+      <td>Inner shadow for focused input and select elements.</td>
+    </tr>
+  </tbody>
+</table>

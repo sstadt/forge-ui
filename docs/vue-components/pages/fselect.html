@@ -5,17 +5,7 @@ index: 7
 ---
 
 <p>Renders a select input given a set of options</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The selected value</dd>
-  <dt>label</dt>
-  <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
-  <dt>options</dt>
-  <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a <em>label</em> and <em>value</em> parameter</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
-</dl>
+
 <div id="select_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -45,3 +35,39 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>The selected option value.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>The select label.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>Array</td>
+      <td>true</td>
+      <td></td>
+      <td>An array of options objects to render: <span class="pill">{ label: 'foo', value: 'bar' }</span></td>
+    </tr>
+    <tr>
+      <td>requires</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If set to true, the select will not render an empty option element, and will set the selected option to the first available option.</td>
+    </tr>
+  </tbody>
+</table>

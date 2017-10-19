@@ -5,26 +5,7 @@ index: 1
 ---
 
 <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
-<h4>Params</h4>
-<dl>
-  <dt>canClose</dt>
-  <dd><em>Boolean; defaults to false</em><br/>Set to true to display the close button in the top right corner.</dd>
-</dl>
-<h4>Methods</h4>
-<dl>
-  <dt>message</dt>
-  <dd>Display a callout message with no additional color class.</dd>
-  <dt>primary</dt>
-  <dd>Display a callout message with the primary color class.</dd>
-  <dt>secondary</dt>
-  <dd>Display a callout message with the secondary color class.</dd>
-  <dt>success</dt>
-  <dd>Display a callout message with the success color class.</dd>
-  <dt>warning</dt>
-  <dd>Display a callout message with the warning color class.</dd>
-  <dt>alert</dt>
-  <dd>Display a callout message with the alert color class.</dd>
-</dl>
+
 <div id="alert_demo">
   <tabs>
     <tab heading="Result" :selected="true">
@@ -83,3 +64,106 @@ new Vue({
     </tab>
   </tabs>
 </div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>canClose</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>Set to true to display the close button in the top right corner.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Method</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>message(message)</td>
+      <td>Display a callout message with no additional color class.</td>
+    </tr>
+    <tr>
+      <td>primary(message)</td>
+      <td>Display a callout message with the primary color class.</td>
+    </tr>
+    <tr>
+      <td>secondary(message)</td>
+      <td>Display a callout message with the secondary color class.</td>
+    </tr>
+    <tr>
+      <td>success(message)</td>
+      <td>Display a callout message with the success color class.</td>
+    </tr>
+    <tr>
+      <td>warning(message)</td>
+      <td>Display a callout message with the warning color class.</td>
+    </tr>
+    <tr>
+      <td>alert(message)</td>
+      <td>Display a callout message with the alert color class.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$alert-background-color-default</td>
+      <td>Color</td>
+      <td>transparent</td>
+      <td>Alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-primary</td>
+      <td>Color</td>
+      <td>#d7ecfa</td>
+      <td>Primary alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-secondary</td>
+      <td>Color</td>
+      <td>#eaeaea</td>
+      <td>Secondary alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-success</td>
+      <td>Color</td>
+      <td>#e1faea</td>
+      <td>Success alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-warning</td>
+      <td>Color</td>
+      <td>#fff3d9</td>
+      <td>Warning alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-background-color-alert</td>
+      <td>Color</td>
+      <td>#f7e4e1</td>
+      <td>Alert alert box background color.</td>
+    </tr>
+    <tr>
+      <td>$alert-border-color</td>
+      <td>Color</td>
+      <td>rgba(10, 10, 10, 0.25)</td>
+      <td>Alert box border color.</td>
+    </tr>
+    <tr>
+      <td>$alert-message-padding</td>
+      <td>Number</td>
+      <td>4px</td>
+      <td>Vertical spacing between alert box messages.</td>
+    </tr>
+  </tbody>
+</table>
