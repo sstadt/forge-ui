@@ -17,7 +17,7 @@
     <div class="row">
       <div class="large-12 column">
         <h1>ForgeUI Kitchen Sink</h1>
-        <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are keps minimal to avoid the need for style overwrites or excessive configuration inherent to many modern frameworks.</p>
+        <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are kept minimal to avoid the need for style overwrites or excessive configuration inherent in many modern frameworks.</p>
         <hr/>
       </div>
     </div>
@@ -27,28 +27,28 @@
       <div class="hide-small medium-3 column">
         <ul class="vertical menu docs-nav">
             <li class="docs-nav-title">CSS Components</li>
-              <li><a href="#buttons">Buttons</a></li>
-              <li><a href="#block-grid">Block Grid</a></li>
-              <li><a href="#grid">Grid</a></li>
-              <li><a href="#inline-list">Inline Lists</a></li>
-              <li><a href="#media-queries">Media Queries</a></li>
-              <li><a href="#pills">Pill</a></li>
-              <li><a href="#transitions">Transitions</a></li>
               <li><a href="#type">Type</a></li>
+              <li><a href="#inline-list">Inline Lists</a></li>
+              <li><a href="#buttons">Buttons</a></li>
+              <li><a href="#pills">Pill</a></li>
+              <li><a href="#grid">Grid</a></li>
+              <li><a href="#block-grid">Block Grid</a></li>
+              <li><a href="#media-queries">Media Queries</a></li>
+              <li><a href="#transitions">Transitions</a></li>
             <li class="docs-nav-title">Vue.js Components</li>
               <li><a href="#vue-alert">Alert</a></li>
-              <li><a href="#vue-fcheckbox">fCheckbox</a></li>
-              <li><a href="#vue-fform">fForm</a></li>
-              <li><a href="#vue-finput">fInput</a></li>
-              <li><a href="#vue-fradio">fRadio</a></li>
-              <li><a href="#vue-fselect">fSelect</a></li>
+              <li><a href="#vue-tabs">Tabs</a></li>
               <li><a href="#vue-modal">Modal</a></li>
               <li><a href="#vue-prompt">Prompt</a></li>
-              <li><a href="#vue-tabs">Tabs</a></li>
+              <li><a href="#vue-fform">fForm</a></li>
+              <li><a href="#vue-finput">fInput</a></li>
+              <li><a href="#vue-fselect">fSelect</a></li>
+              <li><a href="#vue-fcheckbox">fCheckbox</a></li>
+              <li><a href="#vue-fradio">fRadio</a></li>
             <li class="docs-nav-title">Form Validation</li>
-              <li><a href="#match-validation">Match Validation</a></li>
               <li><a href="#required-validation">Required Field Validation</a></li>
               <li><a href="#type-validation">Field Type Validation</a></li>
+              <li><a href="#match-validation">Match Validation</a></li>
             <li class="docs-nav-title">Customizing Forge</li>
               <li><a href="#foge-cast">Forge.cast()</a></li>
         </ul>
@@ -171,6 +171,294 @@
 
             </div>
           </div>
+            <div class="row" id="type">
+              <div class="small-12 column">
+                <h3 class="docs-heading">Type</h3>
+                
+
+<div class="row">
+  <div class="small-12 large-6 column">
+    <h1>h1. Lorem Ipsum</h1>
+    <h2>h2. Lorem Ipsum</h2>
+    <h3>h3. Lorem Ipsum</h3>
+    <h4>h4. Lorem Ipsum</h4>
+    <h5>h5. Lorem Ipsum</h5>
+    <h6>h6. Lorem Ipsum</h6>
+    <p>p. Lorem Ipsum</p>
+    <p><small>small. Lorem Ipsum</small></p>
+    <p><a href="#">Link</a></p>
+  </div>
+  <div class="small-12 large-6 column">
+<pre><code class="language-html">
+&lt;h1&gt;h1. Lorem Ipsum&lt;/h1&gt;
+&lt;h2&gt;h2. Lorem Ipsum&lt;/h2&gt;
+&lt;h3&gt;h3. Lorem Ipsum&lt;/h3&gt;
+&lt;h4&gt;h4. Lorem Ipsum&lt;/h4&gt;
+&lt;h5&gt;h5. Lorem Ipsum&lt;/h5&gt;
+&lt;h6&gt;h6. Lorem Ipsum&lt;/h6&gt;
+&lt;p&gt;p. Lorem Ipsum&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;small. Lorem Ipsum&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$body-font-color</td>
+      <td>Color</td>
+      <td>$black</td>
+      <td>The default body font color.</td>
+    </tr>
+    <tr>
+      <td>$body-font-family</td>
+      <td>String</td>
+      <td>'Open Sans', sans-serif</td>
+      <td>The default body font family.</td>
+    </tr>
+    <tr>
+      <td>$global-weight-normal</td>
+      <td>String or Number</td>
+      <td>normal</td>
+      <td>The default font weight for normal text.</td>
+    </tr>
+    <tr>
+      <td>$global-weight-bold</td>
+      <td>String or Number</td>
+      <td>bold</td>
+      <td>The default font weight for bold text.</td>
+    </tr>
+    <tr>
+      <td>$base-font-size</td>
+      <td>Number</td>
+      <td>16</td>
+      <td>Used as the base font size when calculating rem via the rem-calc() function.</td>
+    </tr>
+    <tr>
+      <td>$paragraph-font-family</td>
+      <td>String</td>
+      <td>inherit</td>
+      <td>Paragraph font family.</td>
+    </tr>
+    <tr>
+      <td>$paragraph-font-weight</td>
+      <td>String or Number</td>
+      <td>normal</td>
+      <td>Paragraph font weight.</td>
+    </tr>
+    <tr>
+      <td>$paragraph-font-size</td>
+      <td>Number</td>
+      <td>$base-font-size</td>
+      <td>Paragraph font size.</td>
+    </tr>
+    <tr>
+      <td>$paragraph-line-height</td>
+      <td>Number</td>
+      <td>1.6</td>
+      <td>Paragraph line height.</td>
+    </tr>
+    <tr>
+      <td>$paragraph-margin-bottom</td>
+      <td>Number</td>
+      <td>20</td>
+      <td>Paragraph bottom margin.</td>
+    </tr>
+    <tr>
+      <td>$paragraph-text-rendering</td>
+      <td>String</td>
+      <td>optimizeLegibility</td>
+      <td>Paragraph text rendering.</td>
+    </tr>
+    <tr>
+      <td>$header-font-family</td>
+      <td>String</td>
+      <td>'Hind', sans-serif</td>
+      <td>Heading font family.</td>
+    </tr>
+    <tr>
+      <td>$header-font-weight</td>
+      <td>String or Number</td>
+      <td>bold</td>
+      <td>Header font weight.</td>
+    </tr>
+    <tr>
+      <td>$header-font-style</td>
+      <td>String</td>
+      <td>normal</td>
+      <td>Header font style</td>
+    </tr>
+    <tr>
+      <td>$header-font-color</td>
+      <td>Color</td>
+      <td>#222</td>
+      <td>Header font color.</td>
+    </tr>
+    <tr>
+      <td>$header-line-height</td>
+      <td>Number</td>
+      <td>1.4</td>
+      <td>Header line height.</td>
+    </tr>
+    <tr>
+      <td>$header-top-margin</td>
+      <td>Number</td>
+      <td>.2rem</td>
+      <td>Header top margin.</td>
+    </tr>
+    <tr>
+      <td>$header-bottom-margin</td>
+      <td>Number</td>
+      <td>.5rem</td>
+      <td>Header bottom margin.</td>
+    </tr>
+    <tr>
+      <td>$header-text-rendering</td>
+      <td>String</td>
+      <td>optimizeLegibility</td>
+      <td>Header text rendering.</td>
+    </tr>
+    <tr>
+      <td>$h1-font-size</td>
+      <td>Number</td>
+      <td>44</td>
+      <td>H1 font size.</td>
+    </tr>
+    <tr>
+      <td>$h2-font-size</td>
+      <td>Number</td>
+      <td>37</td>
+      <td>H2 font size.</td>
+    </tr>
+    <tr>
+      <td>$h3-font-size</td>
+      <td>Number</td>
+      <td>27</td>
+      <td>H3 font size.</td>
+    </tr>
+    <tr>
+      <td>$h4-font-size</td>
+      <td>Number</td>
+      <td>23</td>
+      <td>H4 font size.</td>
+    </tr>
+    <tr>
+      <td>$h5-font-size</td>
+      <td>Number</td>
+      <td>18</td>
+      <td>H5 font size.</td>
+    </tr>
+    <tr>
+      <td>$h6-font-size</td>
+      <td>Number</td>
+      <td>$base-font-size</td>
+      <td>H6 font size.</td>
+    </tr>
+    <tr>
+      <td>$small-font-size</td>
+      <td>Number</td>
+      <td>60%</td>
+      <td>Font size for small elements nested inside a header.</td>
+    </tr>
+    <tr>
+      <td>$small-font-color</td>
+      <td>Color</td>
+      <td>scale-color($header-font-color, $lightness 35%)</td>
+      <td>Small element font color.</td>
+    </tr>
+    <tr>
+      <td>$anchor-text-decoration</td>
+      <td>String</td>
+      <td>none</td>
+      <td>Anchor text decoration.</td>
+    </tr>
+    <tr>
+      <td>$anchor-font-color</td>
+      <td>Color</td>
+      <td>$primary-color</td>
+      <td>Anchor font color.</td>
+    </tr>
+    <tr>
+      <td>$anchor-font-color-hover</td>
+      <td>Color</td>
+      <td>scale-color($primary-color, $lightness -14%)</td>
+      <td>Anchor hover font color.</td>
+    </tr>
+    <tr>
+      <td>$hr-border-width</td>
+      <td>Number</td>
+      <td>1px</td>
+      <td>HR size.</td>
+    </tr>
+    <tr>
+      <td>$hr-border-style</td>
+      <td>String</td>
+      <td>solid</td>
+      <td>HR border style.</td>
+    </tr>
+    <tr>
+      <td>$hr-border-color</td>
+      <td>Color</td>
+      <td>$medium-gray</td>
+      <td>HR border color.</td>
+    </tr>
+    <tr>
+      <td>$hr-margin</td>
+      <td>Number</td>
+      <td>20px</td>
+      <td>HR margins.</td>
+    </tr>
+  </tbody>
+</table>
+
+                <p class="back-to-top"><a href="#">Back to top</a></p>
+              </div>
+            </div>
+            <div class="row" id="inline-list">
+              <div class="small-12 column">
+                <h3 class="docs-heading">Inline Lists</h3>
+                
+
+<ul class="inline">
+  <li>One Item</li>
+  <li>Two Item</li>
+  <li>Red Item</li>
+  <li>Blue Item</li>
+</ul>
+<pre><code class="language-html">
+&lt;ul class="inline"&gt;
+  &lt;li&gt;One Item&lt;/li&gt;
+  &lt;li&gt;Two Item&lt;/li&gt;
+  &lt;li&gt;Red Item&lt;/li&gt;
+  &lt;li&gt;Blue Item&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$list-inline-padding</td>
+      <td>Number</td>
+      <td>$global-padding</td>
+      <td>Inline list padding.</td>
+    </tr>
+    <tr>
+      <td>$list-inline-spacing</td>
+      <td>Number</td>
+      <td>rem-calc(8)</td>
+      <td>Inline list element horizontal spacing.</td>
+    </tr>
+  </tbody>
+</table>
+
+                <p class="back-to-top"><a href="#">Back to top</a></p>
+              </div>
+            </div>
             <div class="row" id="buttons">
               <div class="small-12 column">
                 <h3 class="docs-heading">Buttons</h3>
@@ -429,59 +717,29 @@
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
-            <div class="row" id="block-grid">
+            <div class="row" id="pills">
               <div class="small-12 column">
-                <h3 class="docs-heading">Block Grid</h3>
+                <h3 class="docs-heading">Pill</h3>
                 
 
-<p>The block grid uses a <span class="pill">row</span> parent just like the normal grid, but instead of setting the column size on the column, it is set with a <span class="pill">small-up-X</span>, <span class="pill">medium-up-X</span>, or <span class="pill">large-up-X</span> class, where X represents the number of columns before each line break, and is a number 1 through <span class="pill">$block-grid-column-count</span> (8 by default).</p>
-<div class="demo-grid">
-  <div class="row small-up-8">
-    <div class="column"><span>1</span></div>
-    <div class="column"><span>2</span></div>
-    <div class="column"><span>3</span></div>
-    <div class="column"><span>4</span></div>
-    <div class="column"><span>5</span></div>
-    <div class="column"><span>6</span></div>
-    <div class="column"><span>7</span></div>
-    <div class="column"><span>8</span></div>
-    <div class="column"><span>9</span></div>
-    <div class="column"><span>10</span></div>
-    <div class="column"><span>11</span></div>
-    <div class="column"><span>12</span></div>
-    <div class="column"><span>13</span></div>
-    <div class="column"><span>14</span></div>
-    <div class="column"><span>15</span></div>
-    <div class="column"><span>16</span></div>
-    <div class="column"><span>17</span></div>
-    <div class="column"><span>18</span></div>
-    <div class="column"><span>19</span></div>
-    <div class="column"><span>20</span></div>
-  </div>
-</div>
+<p>Pills are a simple way to highlight a portion of text. They are inline elements and can be modified by any of the color classes</p>
+<ul class="inline">
+  <li><span class="pill">default</span></li>
+  <li><span class="pill primary">primary</span></li>
+  <li><span class="pill secondary">secondary</span></li>
+  <li><span class="pill success">success</span></li>
+  <li><span class="pill warning">warning</span></li>
+  <li><span class="pill alert">alert</span></li>
+</ul>
 <pre><code class="language-html">
-&lt;div class="row small-up-8"&gt;
-  &lt;div class="column"&gt;1&lt;/div&gt;
-  &lt;div class="column"&gt;2&lt;/div&gt;
-  &lt;div class="column"&gt;3&lt;/div&gt;
-  &lt;div class="column"&gt;4&lt;/div&gt;
-  &lt;div class="column"&gt;5&lt;/div&gt;
-  &lt;div class="column"&gt;6&lt;/div&gt;
-  &lt;div class="column"&gt;7&lt;/div&gt;
-  &lt;div class="column"&gt;8&lt;/div&gt;
-  &lt;div class="column"&gt;9&lt;/div&gt;
-  &lt;div class="column"&gt;10&lt;/div&gt;
-  &lt;div class="column"&gt;11&lt;/div&gt;
-  &lt;div class="column"&gt;12&lt;/div&gt;
-  &lt;div class="column"&gt;13&lt;/div&gt;
-  &lt;div class="column"&gt;14&lt;/div&gt;
-  &lt;div class="column"&gt;15&lt;/div&gt;
-  &lt;div class="column"&gt;16&lt;/div&gt;
-  &lt;div class="column"&gt;17&lt;/div&gt;
-  &lt;div class="column"&gt;18&lt;/div&gt;
-  &lt;div class="column"&gt;19&lt;/div&gt;
-  &lt;div class="column"&gt;20&lt;/div&gt;
-&lt;/div&gt;
+&lt;ul class="inline"&gt;
+  &lt;li&gt;&lt;span class="pill"&gt;default&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill primary"&gt;primary&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill secondary"&gt;secondary&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill success"&gt;success&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill warning"&gt;warning&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="pill alert"&gt;alert&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
 <table class="table">
   <thead>
@@ -489,10 +747,16 @@
   </thead>
   <tbody>
     <tr>
-      <td>$block-grid-column-count</td>
+      <td>$pill-border-radius</td>
       <td>Number</td>
-      <td>8</td>
-      <td>The maximum number of columns in a block grid.</td>
+      <td>$global-radius</td>
+      <td>Pill border radius.</td>
+    </tr>
+    <tr>
+      <td>$pill-background-color-default</td>
+      <td>Color</td>
+      <td>$light-gray</td>
+      <td>Default pill background color.</td>
     </tr>
   </tbody>
 </table>
@@ -565,24 +829,59 @@
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
-            <div class="row" id="inline-list">
+            <div class="row" id="block-grid">
               <div class="small-12 column">
-                <h3 class="docs-heading">Inline Lists</h3>
+                <h3 class="docs-heading">Block Grid</h3>
                 
 
-<ul class="inline">
-  <li>One Item</li>
-  <li>Two Item</li>
-  <li>Red Item</li>
-  <li>Blue Item</li>
-</ul>
+<p>The block grid uses a <span class="pill">row</span> parent just like the normal grid, but instead of setting the column size on the column, it is set with a <span class="pill">small-up-X</span>, <span class="pill">medium-up-X</span>, or <span class="pill">large-up-X</span> class, where X represents the number of columns before each line break, and is a number 1 through <span class="pill">$block-grid-column-count</span> (8 by default).</p>
+<div class="demo-grid">
+  <div class="row small-up-8">
+    <div class="column"><span>1</span></div>
+    <div class="column"><span>2</span></div>
+    <div class="column"><span>3</span></div>
+    <div class="column"><span>4</span></div>
+    <div class="column"><span>5</span></div>
+    <div class="column"><span>6</span></div>
+    <div class="column"><span>7</span></div>
+    <div class="column"><span>8</span></div>
+    <div class="column"><span>9</span></div>
+    <div class="column"><span>10</span></div>
+    <div class="column"><span>11</span></div>
+    <div class="column"><span>12</span></div>
+    <div class="column"><span>13</span></div>
+    <div class="column"><span>14</span></div>
+    <div class="column"><span>15</span></div>
+    <div class="column"><span>16</span></div>
+    <div class="column"><span>17</span></div>
+    <div class="column"><span>18</span></div>
+    <div class="column"><span>19</span></div>
+    <div class="column"><span>20</span></div>
+  </div>
+</div>
 <pre><code class="language-html">
-&lt;ul class="inline"&gt;
-  &lt;li&gt;One Item&lt;/li&gt;
-  &lt;li&gt;Two Item&lt;/li&gt;
-  &lt;li&gt;Red Item&lt;/li&gt;
-  &lt;li&gt;Blue Item&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class="row small-up-8"&gt;
+  &lt;div class="column"&gt;1&lt;/div&gt;
+  &lt;div class="column"&gt;2&lt;/div&gt;
+  &lt;div class="column"&gt;3&lt;/div&gt;
+  &lt;div class="column"&gt;4&lt;/div&gt;
+  &lt;div class="column"&gt;5&lt;/div&gt;
+  &lt;div class="column"&gt;6&lt;/div&gt;
+  &lt;div class="column"&gt;7&lt;/div&gt;
+  &lt;div class="column"&gt;8&lt;/div&gt;
+  &lt;div class="column"&gt;9&lt;/div&gt;
+  &lt;div class="column"&gt;10&lt;/div&gt;
+  &lt;div class="column"&gt;11&lt;/div&gt;
+  &lt;div class="column"&gt;12&lt;/div&gt;
+  &lt;div class="column"&gt;13&lt;/div&gt;
+  &lt;div class="column"&gt;14&lt;/div&gt;
+  &lt;div class="column"&gt;15&lt;/div&gt;
+  &lt;div class="column"&gt;16&lt;/div&gt;
+  &lt;div class="column"&gt;17&lt;/div&gt;
+  &lt;div class="column"&gt;18&lt;/div&gt;
+  &lt;div class="column"&gt;19&lt;/div&gt;
+  &lt;div class="column"&gt;20&lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 <table class="table">
   <thead>
@@ -590,16 +889,10 @@
   </thead>
   <tbody>
     <tr>
-      <td>$list-inline-padding</td>
+      <td>$block-grid-column-count</td>
       <td>Number</td>
-      <td>$global-padding</td>
-      <td>Inline list padding.</td>
-    </tr>
-    <tr>
-      <td>$list-inline-spacing</td>
-      <td>Number</td>
-      <td>rem-calc(8)</td>
-      <td>Inline list element horizontal spacing.</td>
+      <td>8</td>
+      <td>The maximum number of columns in a block grid.</td>
     </tr>
   </tbody>
 </table>
@@ -701,53 +994,6 @@
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
-            <div class="row" id="pills">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Pill</h3>
-                
-
-<p>Pills are a simple way to highlight a portion of text. They are inline elements and can be modified by any of the color classes</p>
-<ul class="inline">
-  <li><span class="pill">default</span></li>
-  <li><span class="pill primary">primary</span></li>
-  <li><span class="pill secondary">secondary</span></li>
-  <li><span class="pill success">success</span></li>
-  <li><span class="pill warning">warning</span></li>
-  <li><span class="pill alert">alert</span></li>
-</ul>
-<pre><code class="language-html">
-&lt;ul class="inline"&gt;
-  &lt;li&gt;&lt;span class="pill"&gt;default&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class="pill primary"&gt;primary&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class="pill secondary"&gt;secondary&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class="pill success"&gt;success&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class="pill warning"&gt;warning&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class="pill alert"&gt;alert&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-<table class="table">
-  <thead>
-    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$pill-border-radius</td>
-      <td>Number</td>
-      <td>$global-radius</td>
-      <td>Pill border radius.</td>
-    </tr>
-    <tr>
-      <td>$pill-background-color-default</td>
-      <td>Color</td>
-      <td>$light-gray</td>
-      <td>Default pill background color.</td>
-    </tr>
-  </tbody>
-</table>
-
-                <p class="back-to-top"><a href="#">Back to top</a></p>
-              </div>
-            </div>
             <div class="row" id="transitions">
               <div class="small-12 column">
                 <h3 class="docs-heading">Transitions</h3>
@@ -762,252 +1008,6 @@
   <li>zoom-in</li>
   <li>zoom-out</li>
 </ul>
-
-                <p class="back-to-top"><a href="#">Back to top</a></p>
-              </div>
-            </div>
-            <div class="row" id="type">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Type</h3>
-                
-
-<div class="row">
-  <div class="small-12 large-6 column">
-    <h1>h1. Lorem Ipsum</h1>
-    <h2>h2. Lorem Ipsum</h2>
-    <h3>h3. Lorem Ipsum</h3>
-    <h4>h4. Lorem Ipsum</h4>
-    <h5>h5. Lorem Ipsum</h5>
-    <h6>h6. Lorem Ipsum</h6>
-    <p>p. Lorem Ipsum</p>
-    <p><small>small. Lorem Ipsum</small></p>
-    <p><a href="#">Link</a></p>
-  </div>
-  <div class="small-12 large-6 column">
-<pre><code class="language-html">
-&lt;h1&gt;h1. Lorem Ipsum&lt;/h1&gt;
-&lt;h2&gt;h2. Lorem Ipsum&lt;/h2&gt;
-&lt;h3&gt;h3. Lorem Ipsum&lt;/h3&gt;
-&lt;h4&gt;h4. Lorem Ipsum&lt;/h4&gt;
-&lt;h5&gt;h5. Lorem Ipsum&lt;/h5&gt;
-&lt;h6&gt;h6. Lorem Ipsum&lt;/h6&gt;
-&lt;p&gt;p. Lorem Ipsum&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;small. Lorem Ipsum&lt;/small&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/p&gt;
-</code></pre>
-  </div>
-</div>
-<table class="table">
-  <thead>
-    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$body-font-color</td>
-      <td>Color</td>
-      <td>$black</td>
-      <td>The default body font color.</td>
-    </tr>
-    <tr>
-      <td>$body-font-family</td>
-      <td>String</td>
-      <td>'Open Sans', sans-serif</td>
-      <td>The default body font family.</td>
-    </tr>
-    <tr>
-      <td>$global-weight-normal</td>
-      <td>String or Number</td>
-      <td>normal</td>
-      <td>The default font weight for normal text.</td>
-    </tr>
-    <tr>
-      <td>$global-weight-bold</td>
-      <td>String or Number</td>
-      <td>bold</td>
-      <td>The default font weight for bold text.</td>
-    </tr>
-    <tr>
-      <td>$base-font-size</td>
-      <td>Number</td>
-      <td>16</td>
-      <td>Used as the base font size when calculating rem via the rem-calc() function.</td>
-    </tr>
-    <tr>
-      <td>$paragraph-font-family</td>
-      <td>String</td>
-      <td>inherit</td>
-      <td>Paragraph font family.</td>
-    </tr>
-    <tr>
-      <td>$paragraph-font-weight</td>
-      <td>String or Number</td>
-      <td>normal</td>
-      <td>Paragraph font weight.</td>
-    </tr>
-    <tr>
-      <td>$paragraph-font-size</td>
-      <td>Number</td>
-      <td>$base-font-size</td>
-      <td>Paragraph font size.</td>
-    </tr>
-    <tr>
-      <td>$paragraph-line-height</td>
-      <td>Number</td>
-      <td>1.6</td>
-      <td>Paragraph line height.</td>
-    </tr>
-    <tr>
-      <td>$paragraph-margin-bottom</td>
-      <td>Number</td>
-      <td>20</td>
-      <td>Paragraph bottom margin.</td>
-    </tr>
-    <tr>
-      <td>$paragraph-text-rendering</td>
-      <td>String</td>
-      <td>optimizeLegibility</td>
-      <td>Paragraph text rendering.</td>
-    </tr>
-    <tr>
-      <td>$header-font-family</td>
-      <td>String</td>
-      <td>'Hind', sans-serif</td>
-      <td>Heading font family.</td>
-    </tr>
-    <tr>
-      <td>$header-font-weight</td>
-      <td>String or Number</td>
-      <td>bold</td>
-      <td>Header font weight.</td>
-    </tr>
-    <tr>
-      <td>$header-font-style</td>
-      <td>String</td>
-      <td>normal</td>
-      <td>Header font style</td>
-    </tr>
-    <tr>
-      <td>$header-font-color</td>
-      <td>Color</td>
-      <td>#222</td>
-      <td>Header font color.</td>
-    </tr>
-    <tr>
-      <td>$header-line-height</td>
-      <td>Number</td>
-      <td>1.4</td>
-      <td>Header line height.</td>
-    </tr>
-    <tr>
-      <td>$header-top-margin</td>
-      <td>Number</td>
-      <td>.2rem</td>
-      <td>Header top margin.</td>
-    </tr>
-    <tr>
-      <td>$header-bottom-margin</td>
-      <td>Number</td>
-      <td>.5rem</td>
-      <td>Header bottom margin.</td>
-    </tr>
-    <tr>
-      <td>$header-text-rendering</td>
-      <td>String</td>
-      <td>optimizeLegibility</td>
-      <td>Header text rendering.</td>
-    </tr>
-    <tr>
-      <td>$h1-font-size</td>
-      <td>Number</td>
-      <td>44</td>
-      <td>H1 font size.</td>
-    </tr>
-    <tr>
-      <td>$h2-font-size</td>
-      <td>Number</td>
-      <td>37</td>
-      <td>H2 font size.</td>
-    </tr>
-    <tr>
-      <td>$h3-font-size</td>
-      <td>Number</td>
-      <td>27</td>
-      <td>H3 font size.</td>
-    </tr>
-    <tr>
-      <td>$h4-font-size</td>
-      <td>Number</td>
-      <td>23</td>
-      <td>H4 font size.</td>
-    </tr>
-    <tr>
-      <td>$h5-font-size</td>
-      <td>Number</td>
-      <td>18</td>
-      <td>H5 font size.</td>
-    </tr>
-    <tr>
-      <td>$h6-font-size</td>
-      <td>Number</td>
-      <td>$base-font-size</td>
-      <td>H6 font size.</td>
-    </tr>
-    <tr>
-      <td>$small-font-size</td>
-      <td>Number</td>
-      <td>60%</td>
-      <td>Font size for small elements nested inside a header.</td>
-    </tr>
-    <tr>
-      <td>$small-font-color</td>
-      <td>Color</td>
-      <td>scale-color($header-font-color, $lightness 35%)</td>
-      <td>Small element font color.</td>
-    </tr>
-    <tr>
-      <td>$anchor-text-decoration</td>
-      <td>String</td>
-      <td>none</td>
-      <td>Anchor text decoration.</td>
-    </tr>
-    <tr>
-      <td>$anchor-font-color</td>
-      <td>Color</td>
-      <td>$primary-color</td>
-      <td>Anchor font color.</td>
-    </tr>
-    <tr>
-      <td>$anchor-font-color-hover</td>
-      <td>Color</td>
-      <td>scale-color($primary-color, $lightness -14%)</td>
-      <td>Anchor hover font color.</td>
-    </tr>
-    <tr>
-      <td>$hr-border-width</td>
-      <td>Number</td>
-      <td>1px</td>
-      <td>HR size.</td>
-    </tr>
-    <tr>
-      <td>$hr-border-style</td>
-      <td>String</td>
-      <td>solid</td>
-      <td>HR border style.</td>
-    </tr>
-    <tr>
-      <td>$hr-border-color</td>
-      <td>Color</td>
-      <td>$medium-gray</td>
-      <td>HR border color.</td>
-    </tr>
-    <tr>
-      <td>$hr-margin</td>
-      <td>Number</td>
-      <td>20px</td>
-      <td>HR margins.</td>
-    </tr>
-  </tbody>
-</table>
 
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
@@ -1107,250 +1107,53 @@ new Vue({
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
-            <div class="row" id="vue-fcheckbox">
+            <div class="row" id="vue-tabs">
               <div class="small-12 column">
-                <h3 class="docs-heading">fCheckbox</h3>
+                <h3 class="docs-heading">Tabs</h3>
                 
 
-<p>Renders a checkbox input</p>
-<h4>Params</h4>
+<p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
+<h4>Tab Params</h4>
 <dl>
-  <dt>v-model</dt>
-  <dd><em>Boolean; required</em><br/>True if checked; false if not</dd>
-  <dt>label</dt>
-  <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>If true, shows an error when not checked; see <a href="#form">forms</a></dd>
+  <dt>heading</dt>
+  <dd><em>String; required</em><br/>the text to display in the clickable tab navigation</dd>
+  <dt>selected</dt>
+  <dd><em>Boolean</em><br/>activates the tab on mount when set to true</dd>
 </dl>
-<div id="checkbox_demo">
+<div id="tabs_demo">
   <tabs>
     <tab heading="Result" :selected="true">
-      <f-checkbox v-model="checked" label="My checkbox"></f-checkbox>
-      <p>checked: {{ checked }}</p>
+      <tabs>
+        <tab heading="Foo" :selected="true">
+          <p>Some tab content</p>
+        </tab>
+        <tab heading="Bar">
+          <p>Some content for another tab</p>
+        </tab>
+        <tab heading="Baz">
+          <p>Even more tab content!</p>
+        </tab>
+      </tabs>
     </tab>
     <tab heading="HTML">
 <pre><code class="language-html">
-&lt;f-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/f-checkbox&gt;
+&lt;tabs&gt;
+  &lt;tab heading="Foo" :selected="true"&gt;
+    &lt;p&gt;Some tab content&lt;/p&gt;
+  &lt;/tab&gt;
+  &lt;tab heading="Bar"&gt;
+    &lt;p&gt;Some content for another tab&lt;/p&gt;
+  &lt;/tab&gt;
+  &lt;tab heading="Baz"&gt;
+    &lt;p&gt;Even more tab content!&lt;/p&gt;
+  &lt;/tab&gt;
+&lt;/tabs&gt;
 </code></pre>
     </tab>
     <tab heading="JavaScript">
 <pre><code class="language-js">
 new Vue({
-  el: '#checkbox_demo',
-  data: {
-    checked: false
-  }
-});
-</pre></code>
-    </tab>
-  </tabs>
-</div>
-
-                <p class="back-to-top"><a href="#">Back to top</a></p>
-              </div>
-            </div>
-            <div class="row" id="vue-fform">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fForm</h3>
-                
-
-<p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
-<p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
-<h4>Params</h4>
-<dl>
-  <dt>method</dt>
-  <dd><em>String; defaults to POST</em><br/>Form submission method; supports GET and POST just like a standard form</dd>
-  <dt>action</dt>
-  <dd><em>String; defaults to an empty string</em><br/>The URL to submit the form to, if not configured as ajax</dd>
-  <dt>ajax</dt>
-  <dd><em>Boolean; defaults to false</em><br/>Set to true to override default form submission behavior; useful if you only want to trigger the submitCallback</dd>
-</dl>
-<h4>Events</h4>
-<dl>
-  <dt>submit</dt>
-  <dd>If ajax is set to true, a submit event will be dispatched on submission of a valid form</dd>
-</dl>
-<div id="form_demo">
-  <tabs>
-    <tab heading="Result" :selected="true">
-      <alert ref="myAlert" :can-close="true"></alert>
-      <f-form :ajax="true" @submit="showMessage">
-        <f-input type="text" :value.sync="message" :required="true"></f-input>
-        <button type="submit" class="button">Submit</button>
-      </f-form>
-    </tab>
-    <tab heading="HTML">
-<pre><code class="language-html">
-&lt;alert ref="myAlert" :can-close="true"&gt;&lt;/alert&gt;
-&lt;f-form :ajax="true" @submit="showMessage"&gt;
-  &lt;f-input type="text" :value.sync="message" :required="true"&gt;&lt;/f-input&gt;
-  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
-&lt;/f-form&gt;
-</code></pre>
-    </tab>
-    <tab heading="JavaScript">
-<pre><code class="language-js">
-new Vue({
-  el: '#form_demo',
-  data: {
-    message: ''
-  },
-  methods: {
-    showMessage() {
-      this.$refs.myAlert.success(this.message);
-    }
-  }
-});
-</pre></code>
-    </tab>
-  </tabs>
-</div>
-
-                <p class="back-to-top"><a href="#">Back to top</a></p>
-              </div>
-            </div>
-            <div class="row" id="vue-finput">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fInput</h3>
-                
-
-<p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The input value</dd>
-  <dt>type</dt>
-  <dd><em>String; required</em><br/>The input type; set to textarea to render a textarea instead of an input</dd>
-  <dt>label</dt>
-  <dd><em>String</em><br/>The input label text</dd>
-  <dt>name</dt>
-  <dd><em>String</em><br/>The name attribute for the input</dd>
-  <dt>placeholder</dt>
-  <dd><em>String</em><br/>The input placeholder text</dd>
-  <!-- <dt>icon</dt> TODO: implement some standard icons and the icon component docs
-  <dd><em>String</em><br/>Renders an icon on the right side of the input if provided a value</dd> -->
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>True if the input should be required; see <a href="#form">forms</a></dd>
-  <dt>equalTo</dt>
-  <dd><em>String; defaults to null</em><br/>Set to another observable to test equivalency</dd>
-</dl>
-<div id="input_demo">
-  <tabs>
-    <tab heading="Result" :selected="true">
-      <f-input type="email" label="Email" :value.sync="email" />
-    </tab>
-    <tab heading="HTML">
-<pre><code class="language-html">
-&lt;f-input type="email" label="Email" :value.sync="email" /&gt;
-</code></pre>
-    </tab>
-    <tab heading="JavaScript">
-<pre><code class="language-js">
-new Vue({
-  el: '#input_demo',
-  data: {
-    email: ''
-  }
-});
-</pre></code>
-    </tab>
-  </tabs>
-</div>
-
-                <p class="back-to-top"><a href="#">Back to top</a></p>
-              </div>
-            </div>
-            <div class="row" id="vue-fradio">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fRadio</h3>
-                
-
-<p>Renders a radio button input</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The selected value.</dd>
-  <dt>label</dt>
-  <dd><em>String; defaults to an empty string</em><br/>Renders a label above the radio options is passed a string value.</dd>
-  <dt>name</dt>
-  <dd><em>String; required</em><br/>The name for the radio button group.</dd>
-  <dt>options</dt>
-  <dd><em>Array; required</em><br/>An array of options to render for this radio button group. Each array element should be an object with a <em>name</em>, <em>label</em>, and <em>value</em>.</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>True if required.</dd>
-</dl>
-<div id="radio_demo">
-  <tabs>
-    <tab heading="Result" :selected="true">
-      <f-radio label="My Radio Group" v-model="selectedOption" :options="radioOptions" name="myRadioOptions"></f-radio>
-      <p>selected: {{ selectedOption }}</p>
-    </tab>
-    <tab heading="HTML">
-<pre><code class="language-html">
-&lt;f-radio label="My Radio Group" v-model="selectedOption" :options="radioOptions" name="myRadioOptions"&gt;&lt;f-radio&gt;
-</code></pre>
-    </tab>
-    <tab heading="JavaScript">
-<pre><code class="language-js">
-new Vue({
-  el: '#radio_demo',
-  data: {
-    selectedOption: '',
-    radioOptions: [
-      { name: 'radioOptionOne', label: 'One Option', value: '1' },
-      { name: 'radioOptionTwo', label: 'Two Option', value: '2' }
-    ]
-  }
-});
-</pre></code>
-    </tab>
-  </tabs>
-</div>
-
-                <p class="back-to-top"><a href="#">Back to top</a></p>
-              </div>
-            </div>
-            <div class="row" id="vue-fselect">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fSelect</h3>
-                
-
-<p>Renders a select input given a set of options</p>
-<h4>Params</h4>
-<dl>
-  <dt>v-model</dt>
-  <dd><em>String; required</em><br/>The selected value</dd>
-  <dt>label</dt>
-  <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
-  <dt>options</dt>
-  <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a <em>label</em> and <em>value</em> parameter</dd>
-  <dt>required</dt>
-  <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
-</dl>
-<div id="select_demo">
-  <tabs>
-    <tab heading="Result" :selected="true">
-      <f-select v-model="selectedOption" :options="selectOptions"></f-select>
-      <p>selected: {{ selectedOption }}</p>
-    </tab>
-    <tab heading="HTML">
-<pre><code class="language-html">
-&lt;f-select v-model="selectedOption" :options="selectOptions"&gt;&lt;/f-select&gt;
-</code></pre>
-    </tab>
-    <tab heading="JavaScript">
-<pre><code class="language-js">
-new Vue({
-  el: '#select_demo',
-  data: {
-    selectedOption: '',
-    selectOptions: [
-      { label: 'One Option', value: '1' },
-      { label: 'Two Option', value: '2' },
-      { label: 'Red Option', value: 'Red' },
-      { label: 'Blue Option', value: 'Blue' }
-    ]
-  }
+  el: '#tabs_demo'
 });
 </pre></code>
     </tab>
@@ -1493,53 +1296,250 @@ new Vue({
                 <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
-            <div class="row" id="vue-tabs">
+            <div class="row" id="vue-fform">
               <div class="small-12 column">
-                <h3 class="docs-heading">Tabs</h3>
+                <h3 class="docs-heading">fForm</h3>
                 
 
-<p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
-<h4>Tab Params</h4>
+<p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
+<p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
+<h4>Params</h4>
 <dl>
-  <dt>heading</dt>
-  <dd><em>String; required</em><br/>the text to display in the clickable tab navigation</dd>
-  <dt>selected</dt>
-  <dd><em>Boolean</em><br/>activates the tab on mount when set to true</dd>
+  <dt>method</dt>
+  <dd><em>String; defaults to POST</em><br/>Form submission method; supports GET and POST just like a standard form</dd>
+  <dt>action</dt>
+  <dd><em>String; defaults to an empty string</em><br/>The URL to submit the form to, if not configured as ajax</dd>
+  <dt>ajax</dt>
+  <dd><em>Boolean; defaults to false</em><br/>Set to true to override default form submission behavior; useful if you only want to trigger the submitCallback</dd>
 </dl>
-<div id="tabs_demo">
+<h4>Events</h4>
+<dl>
+  <dt>submit</dt>
+  <dd>If ajax is set to true, a submit event will be dispatched on submission of a valid form</dd>
+</dl>
+<div id="form_demo">
   <tabs>
     <tab heading="Result" :selected="true">
-      <tabs>
-        <tab heading="Foo" :selected="true">
-          <p>Some tab content</p>
-        </tab>
-        <tab heading="Bar">
-          <p>Some content for another tab</p>
-        </tab>
-        <tab heading="Baz">
-          <p>Even more tab content!</p>
-        </tab>
-      </tabs>
+      <alert ref="myAlert" :can-close="true"></alert>
+      <f-form :ajax="true" @submit="showMessage">
+        <f-input type="text" :value.sync="message" :required="true"></f-input>
+        <button type="submit" class="button">Submit</button>
+      </f-form>
     </tab>
     <tab heading="HTML">
 <pre><code class="language-html">
-&lt;tabs&gt;
-  &lt;tab heading="Foo" :selected="true"&gt;
-    &lt;p&gt;Some tab content&lt;/p&gt;
-  &lt;/tab&gt;
-  &lt;tab heading="Bar"&gt;
-    &lt;p&gt;Some content for another tab&lt;/p&gt;
-  &lt;/tab&gt;
-  &lt;tab heading="Baz"&gt;
-    &lt;p&gt;Even more tab content!&lt;/p&gt;
-  &lt;/tab&gt;
-&lt;/tabs&gt;
+&lt;alert ref="myAlert" :can-close="true"&gt;&lt;/alert&gt;
+&lt;f-form :ajax="true" @submit="showMessage"&gt;
+  &lt;f-input type="text" :value.sync="message" :required="true"&gt;&lt;/f-input&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
 </code></pre>
     </tab>
     <tab heading="JavaScript">
 <pre><code class="language-js">
 new Vue({
-  el: '#tabs_demo'
+  el: '#form_demo',
+  data: {
+    message: ''
+  },
+  methods: {
+    showMessage() {
+      this.$refs.myAlert.success(this.message);
+    }
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>
+
+                <p class="back-to-top"><a href="#">Back to top</a></p>
+              </div>
+            </div>
+            <div class="row" id="vue-finput">
+              <div class="small-12 column">
+                <h3 class="docs-heading">fInput</h3>
+                
+
+<p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>String; required</em><br/>The input value</dd>
+  <dt>type</dt>
+  <dd><em>String; required</em><br/>The input type; set to textarea to render a textarea instead of an input</dd>
+  <dt>label</dt>
+  <dd><em>String</em><br/>The input label text</dd>
+  <dt>name</dt>
+  <dd><em>String</em><br/>The name attribute for the input</dd>
+  <dt>placeholder</dt>
+  <dd><em>String</em><br/>The input placeholder text</dd>
+  <!-- <dt>icon</dt> TODO: implement some standard icons and the icon component docs
+  <dd><em>String</em><br/>Renders an icon on the right side of the input if provided a value</dd> -->
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>True if the input should be required; see <a href="#form">forms</a></dd>
+  <dt>equalTo</dt>
+  <dd><em>String; defaults to null</em><br/>Set to another observable to test equivalency</dd>
+</dl>
+<div id="input_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-input type="email" label="Email" :value.sync="email" />
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-input type="email" label="Email" :value.sync="email" /&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#input_demo',
+  data: {
+    email: ''
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>
+
+                <p class="back-to-top"><a href="#">Back to top</a></p>
+              </div>
+            </div>
+            <div class="row" id="vue-fselect">
+              <div class="small-12 column">
+                <h3 class="docs-heading">fSelect</h3>
+                
+
+<p>Renders a select input given a set of options</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>String; required</em><br/>The selected value</dd>
+  <dt>label</dt>
+  <dd><em>String; defaults to an empty string</em><br/>The label to render for the select input</dd>
+  <dt>options</dt>
+  <dd><em>Array; required</em><br/>An array of options to render in the select menu; each array element should be an object with a <em>label</em> and <em>value</em> parameter</dd>
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>When set to false, will render a select option with no value</dd>
+</dl>
+<div id="select_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-select v-model="selectedOption" :options="selectOptions"></f-select>
+      <p>selected: {{ selectedOption }}</p>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-select v-model="selectedOption" :options="selectOptions"&gt;&lt;/f-select&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#select_demo',
+  data: {
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ]
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>
+
+                <p class="back-to-top"><a href="#">Back to top</a></p>
+              </div>
+            </div>
+            <div class="row" id="vue-fcheckbox">
+              <div class="small-12 column">
+                <h3 class="docs-heading">fCheckbox</h3>
+                
+
+<p>Renders a checkbox input</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>Boolean; required</em><br/>True if checked; false if not</dd>
+  <dt>label</dt>
+  <dd><em>String; required</em><br/>The label to render with the checkbox</dd>
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>If true, shows an error when not checked; see <a href="#form">forms</a></dd>
+</dl>
+<div id="checkbox_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-checkbox v-model="checked" label="My checkbox"></f-checkbox>
+      <p>checked: {{ checked }}</p>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/f-checkbox&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#checkbox_demo',
+  data: {
+    checked: false
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>
+
+                <p class="back-to-top"><a href="#">Back to top</a></p>
+              </div>
+            </div>
+            <div class="row" id="vue-fradio">
+              <div class="small-12 column">
+                <h3 class="docs-heading">fRadio</h3>
+                
+
+<p>Renders a radio button input</p>
+<h4>Params</h4>
+<dl>
+  <dt>v-model</dt>
+  <dd><em>String; required</em><br/>The selected value.</dd>
+  <dt>label</dt>
+  <dd><em>String; defaults to an empty string</em><br/>Renders a label above the radio options is passed a string value.</dd>
+  <dt>name</dt>
+  <dd><em>String; required</em><br/>The name for the radio button group.</dd>
+  <dt>options</dt>
+  <dd><em>Array; required</em><br/>An array of options to render for this radio button group. Each array element should be an object with a <em>name</em>, <em>label</em>, and <em>value</em>.</dd>
+  <dt>required</dt>
+  <dd><em>Boolean; defaults to false</em><br/>True if required.</dd>
+</dl>
+<div id="radio_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-radio label="My Radio Group" v-model="selectedOption" :options="radioOptions" name="myRadioOptions"></f-radio>
+      <p>selected: {{ selectedOption }}</p>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-radio label="My Radio Group" v-model="selectedOption" :options="radioOptions" name="myRadioOptions"&gt;&lt;f-radio&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#radio_demo',
+  data: {
+    selectedOption: '',
+    radioOptions: [
+      { name: 'radioOptionOne', label: 'One Option', value: '1' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' }
+    ]
+  }
 });
 </pre></code>
     </tab>
@@ -1556,51 +1556,6 @@ new Vue({
 
             </div>
           </div>
-            <div class="row" id="match-validation">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Match Validation</h3>
-                
-
-<p>To match an input's value against the value of another input, pass the match value into the input via the <span class="fill">equal-to</span> attribute.</p>
-
-<tabs>
-  <tab heading="Result" :selected="true">
-    <f-form :ajax="true" @submit="submit">
-      <f-input type="text" v-model="passwordInput" label="Password"></f-input>
-      <f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"></f-input>
-      <button type="submit" class="button">Submit</button>
-    </f-form>
-  </tab>
-    <tab heading="HTML">
-<pre><code class="language-html">
-&lt;f-form :ajax="true" @submit="submit"&gt;
-  &lt;f-input type="text" v-model="passwordInput" label="Password"&gt;&lt;/f-input&gt;
-  &lt;f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"&gt;&lt;/f-input&gt;
-  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
-&lt;/f-form&gt;
-</code></pre>
-  </tab>
-  <tab heading="JavaScript">
-<pre><code class="language-js">
-new Vue({
-  el: '#match-validation',
-  data: {
-    passwordInput: '',
-    confirmInput: ''
-  },
-  methods: {
-    submit() {
-      alert('Form is valid!');
-    }
-  }
-});
-</pre></code>
-  </tab>
-</tabs>
-
-                <p class="back-to-top"><a href="#">Back to top</a></p>
-              </div>
-            </div>
             <div class="row" id="required-validation">
               <div class="small-12 column">
                 <h3 class="docs-heading">Required Field Validation</h3>
@@ -1707,6 +1662,51 @@ new Vue({
     urlInput: '',
     numberInput: '',
     telInput: ''
+  },
+  methods: {
+    submit() {
+      alert('Form is valid!');
+    }
+  }
+});
+</pre></code>
+  </tab>
+</tabs>
+
+                <p class="back-to-top"><a href="#">Back to top</a></p>
+              </div>
+            </div>
+            <div class="row" id="match-validation">
+              <div class="small-12 column">
+                <h3 class="docs-heading">Match Validation</h3>
+                
+
+<p>To match an input's value against the value of another input, pass the match value into the input via the <span class="fill">equal-to</span> attribute.</p>
+
+<tabs>
+  <tab heading="Result" :selected="true">
+    <f-form :ajax="true" @submit="submit">
+      <f-input type="text" v-model="passwordInput" label="Password"></f-input>
+      <f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"></f-input>
+      <button type="submit" class="button">Submit</button>
+    </f-form>
+  </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-form :ajax="true" @submit="submit"&gt;
+  &lt;f-input type="text" v-model="passwordInput" label="Password"&gt;&lt;/f-input&gt;
+  &lt;f-input type="text" v-model="confirmInput" label="Confirm Password" :equal-to="{ label: 'Password', value: passwordInput }"&gt;&lt;/f-input&gt;
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/f-form&gt;
+</code></pre>
+  </tab>
+  <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#match-validation',
+  data: {
+    passwordInput: '',
+    confirmInput: ''
   },
   methods: {
     submit() {
