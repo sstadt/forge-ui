@@ -34,6 +34,7 @@
     "gulp-webpack": "^1.5.0",
     "handlebars": "^4.0.11",
     "html-loader": "^0.4.3",
+    "node-normalize-scss": "^3.0.0",
     "opn": "^5.1.0",
     "run-sequence": "^2.2.0",
     "vue": "^1.0.26",

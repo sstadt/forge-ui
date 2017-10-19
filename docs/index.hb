@@ -14,49 +14,54 @@
     <link rel="stylesheet" href="demo/css/style.css">
   </head>
   <body>
-    <div class="row">
-      <div class="large-12 column">
-        <h1>ForgeUI Kitchen Sink</h1>
-        <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are kept minimal to avoid the need for style overwrites or excessive configuration inherent in many modern frameworks.</p>
-        <hr/>
+
+    <div class="page-header">
+      <div class="wrapper">
+        <div class="row">
+          <div class="large-12 column">
+            <h1>ForgeUI Kitchen Sink</h1>
+            <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are kept minimal to avoid the need for style overwrites or excessive configuration inherent in many modern frameworks.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-
-    <div class="row">
-      <div class="hide-small medium-3 column">
-        <ul class="vertical menu docs-nav">
-          {{#each sections}}
-            <li class="docs-nav-title">{{title}}</li>
-            {{#each pages}}
-              <li><a href="#{{id}}">{{title}}</a></li>
+    <div class="wrapper">
+      <div class="row">
+        <div class="hide-small medium-3 column">
+          <ul class="vertical menu docs-nav">
+            {{#each sections}}
+              <li class="docs-nav-title">{{title}}</li>
+              {{#each pages}}
+                <li><a href="#{{id}}">{{title}}</a></li>
+              {{/each}}
             {{/each}}
-          {{/each}}
-        </ul>
-      </div>
+          </ul>
+        </div>
 
-      <div class="small-12 medium-9 column">
-        <!-- Start demo content -->
+        <div class="small-12 medium-9 column">
+          <!-- Start demo content -->
 
-        {{#each sections}}
-          <h2 class="docs-heading">{{{title}}}</h2>
-          <div class="row">
-            <div class="small-12 column">
-              {{{__content}}}
-            </div>
-          </div>
-          {{#each pages}}
-            <div class="row" id="{{id}}">
+          {{#each sections}}
+            <h2 class="docs-heading">{{{title}}}</h2>
+            <div class="row">
               <div class="small-12 column">
-                <h3 class="docs-heading">{{{title}}}</h3>
                 {{{__content}}}
-                <p class="back-to-top"><a href="#">Back to top</a></p>
               </div>
             </div>
+            {{#each pages}}
+              <div class="row" id="{{id}}">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">{{{title}}}</h3>
+                  {{{__content}}}
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+            {{/each}}
           {{/each}}
-        {{/each}}
 
-        <!-- End demo content -->
+          <!-- End demo content -->
+        </div>
       </div>
     </div>
 

@@ -14,53 +14,57 @@
     <link rel="stylesheet" href="demo/css/style.css">
   </head>
   <body>
-    <div class="row">
-      <div class="large-12 column">
-        <h1>ForgeUI Kitchen Sink</h1>
-        <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are kept minimal to avoid the need for style overwrites or excessive configuration inherent in many modern frameworks.</p>
-        <hr/>
+
+    <div class="page-header">
+      <div class="wrapper">
+        <div class="row">
+          <div class="large-12 column">
+            <h1>ForgeUI Kitchen Sink</h1>
+            <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are kept minimal to avoid the need for style overwrites or excessive configuration inherent in many modern frameworks.</p>
+          </div>
+        </div>
       </div>
     </div>
 
+    <div class="wrapper">
+      <div class="row">
+        <div class="hide-small medium-3 column">
+          <ul class="vertical menu docs-nav">
+              <li class="docs-nav-title">CSS Components</li>
+                <li><a href="#type">Type</a></li>
+                <li><a href="#inline-list">Inline Lists</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#pills">Pill</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#block-grid">Block Grid</a></li>
+                <li><a href="#media-queries">Media Queries</a></li>
+                <li><a href="#transitions">Transitions</a></li>
+              <li class="docs-nav-title">Vue.js Components</li>
+                <li><a href="#vue-alert">Alert</a></li>
+                <li><a href="#vue-tabs">Tabs</a></li>
+                <li><a href="#vue-modal">Modal</a></li>
+                <li><a href="#vue-prompt">Prompt</a></li>
+                <li><a href="#vue-fform">fForm</a></li>
+                <li><a href="#vue-finput">fInput</a></li>
+                <li><a href="#vue-fselect">fSelect</a></li>
+                <li><a href="#vue-fcheckbox">fCheckbox</a></li>
+                <li><a href="#vue-fradio">fRadio</a></li>
+              <li class="docs-nav-title">Form Validation</li>
+                <li><a href="#required-validation">Required Field Validation</a></li>
+                <li><a href="#type-validation">Field Type Validation</a></li>
+                <li><a href="#match-validation">Match Validation</a></li>
+              <li class="docs-nav-title">Customizing Forge</li>
+                <li><a href="#foge-cast">Forge.cast()</a></li>
+          </ul>
+        </div>
 
-    <div class="row">
-      <div class="hide-small medium-3 column">
-        <ul class="vertical menu docs-nav">
-            <li class="docs-nav-title">CSS Components</li>
-              <li><a href="#type">Type</a></li>
-              <li><a href="#inline-list">Inline Lists</a></li>
-              <li><a href="#buttons">Buttons</a></li>
-              <li><a href="#pills">Pill</a></li>
-              <li><a href="#grid">Grid</a></li>
-              <li><a href="#block-grid">Block Grid</a></li>
-              <li><a href="#media-queries">Media Queries</a></li>
-              <li><a href="#transitions">Transitions</a></li>
-            <li class="docs-nav-title">Vue.js Components</li>
-              <li><a href="#vue-alert">Alert</a></li>
-              <li><a href="#vue-tabs">Tabs</a></li>
-              <li><a href="#vue-modal">Modal</a></li>
-              <li><a href="#vue-prompt">Prompt</a></li>
-              <li><a href="#vue-fform">fForm</a></li>
-              <li><a href="#vue-finput">fInput</a></li>
-              <li><a href="#vue-fselect">fSelect</a></li>
-              <li><a href="#vue-fcheckbox">fCheckbox</a></li>
-              <li><a href="#vue-fradio">fRadio</a></li>
-            <li class="docs-nav-title">Form Validation</li>
-              <li><a href="#required-validation">Required Field Validation</a></li>
-              <li><a href="#type-validation">Field Type Validation</a></li>
-              <li><a href="#match-validation">Match Validation</a></li>
-            <li class="docs-nav-title">Customizing Forge</li>
-              <li><a href="#foge-cast">Forge.cast()</a></li>
-        </ul>
-      </div>
+        <div class="small-12 medium-9 column">
+          <!-- Start demo content -->
 
-      <div class="small-12 medium-9 column">
-        <!-- Start demo content -->
-
-          <h2 class="docs-heading">CSS Components</h2>
-          <div class="row">
-            <div class="small-12 column">
-              
+            <h2 class="docs-heading">CSS Components</h2>
+            <div class="row">
+              <div class="small-12 column">
+                
 
 <p>ForgeUI CSS components do not require JavaScript, and can be used freely once the ForgeUI CSS has been included on the page.</p>
 <p>Most of the styling can be configured through CSS variables. Global CSS variables are listed below, while component-specific variables can be found alongside in the documentation for each component.</p>
@@ -169,12 +173,12 @@
   </tbody>
 </table>
 
+              </div>
             </div>
-          </div>
-            <div class="row" id="type">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Type</h3>
-                
+              <div class="row" id="type">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Type</h3>
+                  
 
 <div class="row">
   <div class="small-12 large-6 column">
@@ -414,13 +418,13 @@
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="inline-list">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Inline Lists</h3>
-                
+              <div class="row" id="inline-list">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Inline Lists</h3>
+                  
 
 <ul class="inline">
   <li>One Item</li>
@@ -456,13 +460,13 @@
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="buttons">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Buttons</h3>
-                
+              <div class="row" id="buttons">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Buttons</h3>
+                  
 
 <p>So. Many. Buttons.</p>
 <p>Each button needs a <span class="pill">button</span> class. The following classes can be mixed and matched to change the type of button:</p>
@@ -478,6 +482,7 @@
   <li><span class="pill">expand</span></li>
   <li><span class="pill">inline-form</span></li>
 </ul>
+
 <div class="row">
   <div class="small-12 large-6 column">
     <div>
@@ -500,6 +505,8 @@
       <button type="button" class="button hollow warning">Button</button>
       <button type="button" class="button hollow alert">Button</button>
     </div>
+  </div>
+  <div class="small-12 large-6 column">
     <div>
       <button type="button" class="button expand">Button</button>
     </div>
@@ -513,43 +520,49 @@
       <button type="button" class="button expand large">Button</button>
     </div>
   </div>
-  <div class="small-12 large-6 column">
+</div>
+
 <pre><code class="language-html">
-&lt;div&gt;
-  &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button secondary"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button success"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button warning"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button alert"&gt;Button&lt;/button&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;button type="button" class="button tiny"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button small"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button large"&gt;Button&lt;/button&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;button type="button" class="button hollow"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button hollow secondary"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button hollow success"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button hollow warning"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button hollow alert"&gt;Button&lt;/button&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;button type="button" class="button expand hollow"&gt;Button&lt;/button&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;button type="button" class="button expand tiny"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button expand small"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
-  &lt;button type="button" class="button expand large"&gt;Button&lt;/button&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-12 large-6 column"&gt;
+    &lt;div&gt;
+      &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button secondary"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button success"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button warning"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button alert"&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button type="button" class="button tiny"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button small"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button large"&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button type="button" class="button hollow"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button hollow secondary"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button hollow success"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button hollow warning"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button hollow alert"&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="small-12 large-6 column"&gt;
+    &lt;div&gt;
+      &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button type="button" class="button expand hollow"&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button type="button" class="button expand tiny"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button expand small"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button expand"&gt;Button&lt;/button&gt;
+      &lt;button type="button" class="button expand large"&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-  </div>
-</div>
+
 <table class="table">
   <thead>
     <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
@@ -714,13 +727,13 @@
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="pills">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Pill</h3>
-                
+              <div class="row" id="pills">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Pill</h3>
+                  
 
 <p>Pills are a simple way to highlight a portion of text. They are inline elements and can be modified by any of the color classes</p>
 <ul class="inline">
@@ -761,13 +774,13 @@
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="grid">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Grid</h3>
-                
+              <div class="row" id="grid">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Grid</h3>
+                  
 
 <p>Grid columns should be nested under a <span class="pill">row</span> element. Columns can be separated using a 12-column system with <span class="pill">small</span>, <span class="pill">medium</span>, and <span class="pill">large</span> prefixes for responsive changes in column flow. All columns should include the <span class="pill">column</span> class.</p>
 <div class="demo-grid">
@@ -826,13 +839,13 @@
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="block-grid">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Block Grid</h3>
-                
+              <div class="row" id="block-grid">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Block Grid</h3>
+                  
 
 <p>The block grid uses a <span class="pill">row</span> parent just like the normal grid, but instead of setting the column size on the column, it is set with a <span class="pill">small-up-X</span>, <span class="pill">medium-up-X</span>, or <span class="pill">large-up-X</span> class, where X represents the number of columns before each line break, and is a number 1 through <span class="pill">$block-grid-column-count</span> (8 by default).</p>
 <div class="demo-grid">
@@ -897,16 +910,16 @@
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="media-queries">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Media Queries</h3>
-                
+              <div class="row" id="media-queries">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Media Queries</h3>
+                  
 
 <div class="row">
-  <div class="small-12 large-6 column">
+  <div class="small-12 column">
     <p>ForgeUI uses a set of media query mixins modeled after the type of device you want to apply styling to. ForgeUI is mobile first, so mobile styling should be applied first, and overrides for larger screen sizes should be applied with media queries.</p>
     <p>Please use the small-only media query sparingly!</p>
     <dl>
@@ -919,8 +932,6 @@
       <dt>large-up</dt>
       <dd>(min-width: $breakpoint-large)</dt>
     </dl>
-  </div>
-  <div class="small-12 large-6 column">
 <pre><code class="language-css">
 @include small-only() {
   // mobile only styling
@@ -938,10 +949,6 @@
   // desktop and larger styling
 }
 </code></pre>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 large-6 column">
     <p>ForgeUI also has a full list of visibility helpers that can be used anywhere. The visibility classes only apply <span class="pill">display: none;</span> where appropriate, never any other display class. So these utilities are usable on elements with any type of display.</p>
     <div class="alert-box secondary">
       <ul>
@@ -954,8 +961,6 @@
         <li class="hide-large">This text hides on <em>large</em> screens</li>
       </ul>
     </div>
-  </div>
-  <div class="small-12 large-6 column">
 <pre><code class="language-html">
 &lt;div class="alert-box secondary"&gt;
   &lt;ul&gt;
@@ -971,6 +976,7 @@
 </code></pre>
   </div>
 </div>
+
 <table class="table">
   <thead>
     <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
@@ -991,13 +997,13 @@
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="transitions">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Transitions</h3>
-                
+              <div class="row" id="transitions">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Transitions</h3>
+                  
 
 <p>To use any of the transitions, simple add the keyword to the transition name to the element you will be showing/hiding as described in the <a href="https://vuejs.org/guide/transitions.html" target="_blank">Vue documentation</a>.</p>
 <p>The following transitions are available as part of ForgeUI:</p>
@@ -1009,20 +1015,20 @@
   <li>zoom-out</li>
 </ul>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+            <h2 class="docs-heading">Vue.js Components</h2>
+            <div class="row">
+              <div class="small-12 column">
+                
+
               </div>
             </div>
-          <h2 class="docs-heading">Vue.js Components</h2>
-          <div class="row">
-            <div class="small-12 column">
-              
-
-            </div>
-          </div>
-            <div class="row" id="vue-alert">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Alert</h3>
-                
+              <div class="row" id="vue-alert">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Alert</h3>
+                  
 
 <p>The alert component is designed to have it's methods accessed via ref in a parent component. Calling the appropriate method attached to the ref will render an error in the box. Setting the error as a new type will clear the previous errors in the alert.</p>
 
@@ -1188,13 +1194,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-tabs">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Tabs</h3>
-                
+              <div class="row" id="vue-tabs">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Tabs</h3>
+                  
 
 <p>The Tabs component acts as a wrapper for any number of Tab components. Minimal configuration is needed to render a set of tabs, so long as the component is registered to vue.</p>
 
@@ -1304,13 +1310,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-modal">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Modal</h3>
-                
+              <div class="row" id="vue-modal">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Modal</h3>
+                  
 
 <p>A simple modal dialog.</p>
 
@@ -1437,13 +1443,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-prompt">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Prompt</h3>
-                
+              <div class="row" id="vue-prompt">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Prompt</h3>
+                  
 
 <p>A simple prompt component meant to replace the native prompt and confirm methods. This will allow you to style the dialog to match your site and prevent users from asking the browser to suppress further dialogs.</p>
 <p>This component is meant to get input back from the user. If you simply need to notify the user of something, use an alert component to display the information and it's <em>canClose</em> property if the information should be dismissable.</p>
@@ -1544,13 +1550,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-fform">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fForm</h3>
-                
+              <div class="row" id="vue-fform">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">fForm</h3>
+                  
 
 <p>The fForm component automatically validates it's child components on form submission and can be configured use default submission behavior or execute a callback function is inline or AJAX behavior is more desirable.</p>
 <p>If there are any errors in the configured validation errors will be triggered on inputs and the form will not submit or execute the submitCallback.</p>
@@ -1730,13 +1736,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-finput">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fInput</h3>
-                
+              <div class="row" id="vue-finput">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">fInput</h3>
+                  
 
 <p>The fInput component provides a quick and easy way to add a standardized form input with automatic validation. The fInput directive can generate a textarea or any html5 input type. Validation occurs automatically on blur.</p>
 
@@ -1820,13 +1826,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-fselect">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fSelect</h3>
-                
+              <div class="row" id="vue-fselect">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">fSelect</h3>
+                  
 
 <p>Renders a select input given a set of options</p>
 
@@ -1896,13 +1902,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-fcheckbox">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fCheckbox</h3>
-                
+              <div class="row" id="vue-fcheckbox">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">fCheckbox</h3>
+                  
 
 <p>Renders a checkbox input</p>
 
@@ -1959,13 +1965,13 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="vue-fradio">
-              <div class="small-12 column">
-                <h3 class="docs-heading">fRadio</h3>
-                
+              <div class="row" id="vue-fradio">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">fRadio</h3>
+                  
 
 <p>Renders a radio button input</p>
 
@@ -2040,20 +2046,20 @@ new Vue({
   </tbody>
 </table>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+            <h2 class="docs-heading">Form Validation</h2>
+            <div class="row">
+              <div class="small-12 column">
+                
+
               </div>
             </div>
-          <h2 class="docs-heading">Form Validation</h2>
-          <div class="row">
-            <div class="small-12 column">
-              
-
-            </div>
-          </div>
-            <div class="row" id="required-validation">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Required Field Validation</h3>
-                
+              <div class="row" id="required-validation">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Required Field Validation</h3>
+                  
 
 <p>You can easy check for required values by attaching the <span class="pill">:required="true"</span> to most Forge input components.</p>
 <p>Attaching the required attribute to a select element will prevent that element from rendering an empty option as a child of the select.</p>
@@ -2109,13 +2115,13 @@ new Vue({
   </tab>
 </tabs>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="type-validation">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Field Type Validation</h3>
-                
+              <div class="row" id="type-validation">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Field Type Validation</h3>
+                  
 
 <p>Validating a form field against a particular type is as simple as passing a type attribute to the component. To skip field type validation, set your input type to text.</p>
 <p>This is the current list of input types that are automatically validated:</p>
@@ -2167,13 +2173,13 @@ new Vue({
   </tab>
 </tabs>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-            <div class="row" id="match-validation">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Match Validation</h3>
-                
+              <div class="row" id="match-validation">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Match Validation</h3>
+                  
 
 <p>To match an input's value against the value of another input, pass the match value into the input via the <span class="fill">equal-to</span> attribute.</p>
 
@@ -2212,22 +2218,22 @@ new Vue({
   </tab>
 </tabs>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
-          <h2 class="docs-heading">Customizing Forge</h2>
-          <div class="row">
-            <div class="small-12 column">
-              
+            <h2 class="docs-heading">Customizing Forge</h2>
+            <div class="row">
+              <div class="small-12 column">
+                
 
 <p>ForgeUI is built to customize. The following options giv eyou the ability to modify component templates and/or rename components for maximum flexibility. This allows you to keep the components from this library in sync with your apps style guide without clobbering styles or duplicating code.</p>
 
+              </div>
             </div>
-          </div>
-            <div class="row" id="foge-cast">
-              <div class="small-12 column">
-                <h3 class="docs-heading">Forge.cast()</h3>
-                
+              <div class="row" id="foge-cast">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Forge.cast()</h3>
+                  
 
 <p>The Forge.cast() method is your primary way of customizing components before registering them to Vue. Use this method to change component templates or to rename components without creating a new component file.</p>
 <p>You can customize and rename as many components as you like, up until the point where <span class="pill">Vue.use(Forge)</span> is invoked, at which point all unregistered components will be added to Vue.</p>
@@ -2256,11 +2262,12 @@ Vue.use(Forge);
   <dd><em>String; optional</em><br/>The name of the new component. Will change the name of the tag that the component is mounted to once registered to Vue. For example, calling <span class="pill">Forge.cast('modal', null, 'my-modal')</span> will allow you to place a modal on the page using the <span class="pill">&lt;my-modal&gt;&lt;/my-modal&gt;</span> element.</dd>
 </dl>
 
-                <p class="back-to-top"><a href="#">Back to top</a></p>
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
               </div>
-            </div>
 
-        <!-- End demo content -->
+          <!-- End demo content -->
+        </div>
       </div>
     </div>
 

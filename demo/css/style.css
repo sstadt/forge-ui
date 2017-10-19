@@ -1,4 +1,15 @@
 
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  background-color: #e6e6e6;
+  padding: 40px 0;
+}
+
 code {
   border: none;
 }
