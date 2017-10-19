@@ -55,6 +55,7 @@
                 <li><a href="#match-validation">Match Validation</a></li>
               <li class="docs-nav-title">Customizing Forge</li>
                 <li><a href="#foge-cast">Forge.cast()</a></li>
+                <li><a href="#scss">Customizing SCSS</a></li>
           </ul>
         </div>
 
@@ -2279,6 +2280,37 @@ Forge.cast('modal', null, 'my-modal'); // you can now use the modal component wi
 
 // Register all Forge components to Vue
 Vue.use(Forge);
+</pre></code>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+              <div class="row" id="scss">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Customizing SCSS</h3>
+                  
+
+<p>Forge comes with a compiled and minified CSS file in the dist folder for prototyping and quick starts. For more customization of the styling, each Vue and CSS component comes with a host of SCSS variables that can be configured to taste for each app.</p>
+<p>Each variable is declared as a default, so overriding these values is easy. First, though, you'll need to set up your main SCSS file with a settings import and Forge import.</p>
+
+<pre><code class="language-css">
+/* /scss/style.css */
+
+@import "_settings";
+@import "forge-ui";
+
+/* ... */
+</pre></code>
+
+<p>At this point, customization is as easy as finding the component in the documentation you wish to modify, and capying the variable name into _settings.scss.</p>
+<p>For example, if we want to change the body background color to an off-white color we could add the following to _settings.scss:</p>
+
+<pre><code class="language-css">
+/* /scss/_settings.scss */
+
+$body-background: #fefefe;
+
+/* ... */
 </pre></code>
 
                   <p class="back-to-top"><a href="#">Back to top</a></p>
