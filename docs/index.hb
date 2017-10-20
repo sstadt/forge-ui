@@ -19,7 +19,7 @@
       <div class="wrapper">
         <div class="row">
           <div class="large-12 column">
-            <h1>ForgeUI Kitchen Sink</h1>
+            <h1>ForgeUI</h1>
             <p>Forge UI is a Vue.js component library and CSS framework. Vue components are reusable, with customizable templates. CSS framework components are kept minimal to avoid the need for style overwrites or excessive configuration inherent in many modern frameworks.</p>
           </div>
         </div>

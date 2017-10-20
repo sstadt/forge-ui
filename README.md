@@ -14,13 +14,13 @@ Full Docs: http://sstadt.github.io/forge-ui/
 
 Install via npm
 
-```
+```shell
 npm install forge-ui --save
 ```
 
 Import ForgeUI components to Vue
 
-```
+```js
 import Vue from 'vue';
 import Forge from 'forge-ui';
 

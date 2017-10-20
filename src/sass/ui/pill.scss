@@ -2,7 +2,7 @@
 .pill {
   display: inline-block;
   padding: 0 8px;
-  border-radius: $pill-border-radius;
+  border-radius: $pill-radius;
   background-color: $pill-background-color-default;
 
   &.primary {
