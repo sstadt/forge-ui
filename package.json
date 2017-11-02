@@ -1,6 +1,6 @@
 {
   "name": "forge-ui",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "",
   "main": "src/js/forge-ui.js",
   "scripts": {
@@ -36,6 +36,7 @@
     "html-loader": "^0.4.3",
     "node-normalize-scss": "^3.0.0",
     "opn": "^5.1.0",
+    "path": "^0.12.7",
     "run-sequence": "^2.2.0",
     "vue": "^1.0.26",
     "webpack": "^1.13.1",
