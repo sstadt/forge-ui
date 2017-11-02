@@ -2290,7 +2290,21 @@ Vue.use(Forge);
                   <h3 class="docs-heading">Customizing SCSS</h3>
                   
 
-<p>Forge comes with a compiled and minified CSS file in the dist folder for prototyping and quick starts. For more customization of the styling, each Vue and CSS component comes with a host of SCSS variables that can be configured to taste for each app.</p>
+<p>Forge comes with a compiled and minified CSS file in the dist folder for prototyping and quick starts. To import the SCSS files as part of your build process, forge comes packages with an extra utility file in the root of the module that will allow you to easily add the appropriate include paths to your Gulp build.</p>
+
+<pre><code class="language-js">
+/* gulpfile.js */
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+gulp.task('styles', function () {
+  return gulp.src('path/to/styles.scss')
+    .pipe(sass({includePaths: require('forge-ui/includePaths').includePaths})
+    .pipe(gulp.dest('dist/css'));
+});
+</pre></code>
+
+<p>For more customization of the styling, each Vue and CSS component comes with a host of SCSS variables that can be configured to taste for each app.</p>
 <p>Each variable is declared as a default, so overriding these values is easy. First, though, you'll need to set up your main SCSS file with a settings import and Forge import.</p>
 
 <pre><code class="language-css">
