@@ -9,11 +9,11 @@ index: 7
 <div id="input_demo">
   <tabs>
     <tab heading="Result" :selected="true">
-      <f-input type="email" label="Email" :value.sync="email" />
+      <f-input type="email" label="Email" v-model="email" />
     </tab>
     <tab heading="HTML">
 <pre><code class="language-html">
-&lt;f-input type="email" label="Email" :value.sync="email" /&gt;
+&lt;f-input type="email" label="Email" v-model="email" /&gt;
 </code></pre>
     </tab>
     <tab heading="JavaScript">

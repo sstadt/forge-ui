@@ -53,3 +53,7 @@ Vue.use(Forge);
 ```
 gulp test
 ```
+
+### TODO
+
+ - fade out alert before removing items from the list

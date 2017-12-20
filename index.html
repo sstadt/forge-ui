@@ -1638,26 +1638,30 @@ new Vue({
   <tabs>
     <tab heading="Result" :selected="true">
       <snackbar ref="mySnackbar"></snackbar>
-      <div class="row">
-        <div class="small-12 medium-5 column">
-          <f-input type="text" label="Alert Message" v-model="toast"></f-input>
+      <f-form :ajax="true" @submit="newToast">
+        <div class="row">
+          <div class="small-12 medium-5 column">
+            <f-input type="text" label="Alert Message" v-model="toast" :required="true"></f-input>
+          </div>
+          <div class="small-12 medium-2 column">
+            <button type="submit" class="button expanded inline-form">Toast!</button>
+          </div>
         </div>
-        <div class="small-12 medium-2 column">
-          <button type="button" class="button expanded inline-form" @click="newToast">Toast!</button>
-        </div>
-      </div>
+      </f-form>
     </tab>
     <tab heading="HTML">
 <pre><code class="language-html">
 &lt;snackbar ref="mySnackbar"&gt;&lt;/snackbar&gt;
-&lt;div class="row"&gt;
-  &lt;div class="small-12 medium-5 column"&gt;
-    &lt;f-input type="text" label="Alert Message" v-model="toast"&gt;&lt;/f-input&gt;
+&lt;f-form :ajax="true" @submit="newToast"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="small-12 medium-5 column"&gt;
+      &lt;f-input type="text" label="Alert Message" v-model="toast"&gt;&lt;/f-input&gt;
+    &lt;/div&gt;
+    &lt;div class="small-12 medium-2 column"&gt;
+      &lt;button type="button" class="button expanded inline-form" @click="newToast"&gt;Toast!&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="small-12 medium-2 column"&gt;
-    &lt;button type="button" class="button expanded inline-form" @click="newToast"&gt;Toast!&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;/f-form&gt;
 </pre></code>
     </tab>
     <tab heading="JavaScript">
@@ -1963,11 +1967,11 @@ new Vue({
 <div id="input_demo">
   <tabs>
     <tab heading="Result" :selected="true">
-      <f-input type="email" label="Email" :value.sync="email" />
+      <f-input type="email" label="Email" v-model="email" />
     </tab>
     <tab heading="HTML">
 <pre><code class="language-html">
-&lt;f-input type="email" label="Email" :value.sync="email" /&gt;
+&lt;f-input type="email" label="Email" v-model="email" /&gt;
 </code></pre>
     </tab>
     <tab heading="JavaScript">
@@ -2058,7 +2062,7 @@ new Vue({
     </tab>
     <tab heading="HTML">
 <pre><code class="language-html">
-&lt;f-checkbox :checked.sync="checked" label="My checkbox"&gt;&lt;/f-checkbox&gt;
+&lt;f-checkbox v-model="checked" label="My checkbox"&gt;&lt;/f-checkbox&gt;
 </code></pre>
     </tab>
     <tab heading="JavaScript">
