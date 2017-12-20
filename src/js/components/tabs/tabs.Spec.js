@@ -1,6 +1,5 @@
 
 import tabsComponent from './tabsComponent.js';
-import tabComponent from './tab/tabComponent.js';
 import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
@@ -40,19 +39,30 @@ describe('The tabs component', function () {
       spyOn(componentInstance, '$broadcast');
     });
 
-    // describe('#activate', function () {
-    //   beforeEach(function () {
-    //     componentInstance.activate('foo');
-    //   });
-    //
-    //   it('should set the active tab to the passed parameter', function () {
-    //     expect(componentInstance.activeTab).toEqual('foo');
-    //   });
-    //
-    //   it('should broadcast an event with the name of the active tab', function () {
-    //     expect(componentInstance.$broadcast).toHaveBeenCalledWith('TAB_COMPONENT_TAB_CLICKED', 'foo');
-    //   });
-    // });
+    describe('#addTab', function () {
+      beforeEach(function () {
+        componentInstance.addTab({ active: false });
+      });
+
+      it('should set add the new tab to the tabs component', function () {
+        expect(componentInstance.tabs).toEqual([{ active: false }]);
+      });
+    });
+
+    describe('#activate', function () {
+      beforeEach(function () {
+        componentInstance.addTab({ active: false, heading: 'foo' });
+        componentInstance.addTab({ active: false, heading: 'bar' });
+        componentInstance.addTab({ active: false, heading: 'baz' });
+        componentInstance.activate({ heading: 'bar' });
+      });
+
+      it('should activate the tab with the appropriate heading', function () {
+        expect(componentInstance.tabs[0].active).toEqual(false);
+        expect(componentInstance.tabs[1].active).toEqual(true);
+        expect(componentInstance.tabs[2].active).toEqual(false);
+      });
+    });
   });
 
 });

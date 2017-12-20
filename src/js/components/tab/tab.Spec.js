@@ -1,6 +1,6 @@
 
 import tabComponent from './tabComponent.js';
-import forgeUtil from '../../../forge-util.js';
+import forgeUtil from '../../forge-util.js';
 
 Vue.config.silent = true;
 

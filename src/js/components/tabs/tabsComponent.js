@@ -12,9 +12,9 @@ var component = {
     addTab(newTab) {
       this.tabs.push(newTab);
     },
-    activate(selectedTab) {
+    activate({ heading }) {
       this.tabs.forEach(function (tab) {
-        tab.active = selectedTab.heading === tab.heading;
+        tab.active = heading === tab.heading;
       });
     }
   }

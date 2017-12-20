@@ -563,9 +563,11 @@
 	    addTab: function addTab(newTab) {
 	      this.tabs.push(newTab);
 	    },
-	    activate: function activate(selectedTab) {
+	    activate: function activate(_ref) {
+	      var heading = _ref.heading;
+
 	      this.tabs.forEach(function (tab) {
-	        tab.active = selectedTab.heading === tab.heading;
+	        tab.active = heading === tab.heading;
 	      });
 	    }
 	  }
