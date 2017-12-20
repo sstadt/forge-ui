@@ -1076,6 +1076,20 @@ h1 svg.icon-image, h1 svg.icon-image, h3 svg.icon-image, h4 svg.icon-image, h5 s
   transform: translateX(-50%) translateY(-50%);
   background-color: #fefefe; }
 
+.snackbar {
+  padding: 1rem 1.5rem;
+  position: fixed;
+  background-color: #32322f;
+  border-radius: 2px; }
+  .snackbar p {
+    display: inline-block;
+    line-height: 29px;
+    color: #fefefe;
+    margin: 0;
+    padding-right: 1rem; }
+  .snackbar .button {
+    margin-bottom: 0; }
+
 .tab {
   padding-top: 1rem; }
 
@@ -1089,7 +1103,7 @@ ul.tab-nav {
     margin: 0;
     display: inline-block;
     cursor: pointer;
-    color: #8a8a8a;
+    color: #32322f;
     padding: 4px 10px; }
     ul.tab-nav li.active {
       color: #0a0a0a;

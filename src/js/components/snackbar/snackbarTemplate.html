@@ -1,0 +1,7 @@
+
+<transition :name="transition" @after-leave="reset">
+  <div class="snackbar" v-show="show" :style="positionStyle">
+    <p>{{ message }}</p>
+    <button type="button" class="button tiny" v-if="typeof action === 'function'" @click="executeAction">{{ actionLabel }}</button>
+  </div>
+</transition>

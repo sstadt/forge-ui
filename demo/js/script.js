@@ -72,6 +72,20 @@ new Vue({
 });
 
 new Vue({
+  el: '#snackbar_demo',
+  data: {
+    toast: ''
+  },
+  methods: {
+    newToast() {
+      if (this.toast !== '') {
+        this.$refs.mySnackbar.toast(this.toast, () => alert('bar'));
+      }
+    }
+  }
+});
+
+new Vue({
   el: '#input_demo',
   data: {
     email: ''

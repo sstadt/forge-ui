@@ -6,6 +6,7 @@ import promptComponent from './components/prompt/promptComponent.js';
 import loaderComponent from './components/loader/loaderComponent.js';
 import tabsComponent from './components/tabs/tabsComponent.js';
 import tabComponent from './components/tab/tabComponent.js';
+import snackbarComponent from './components/snackbar/snackbarComponent.js';
 import fFormComponent from './components/fForm/fFormComponent.js';
 import fInputComponent from './components/fInput/fInputComponent.js';
 import fSelectComponent from './components/fSelect/fSelectComponent.js';
@@ -20,6 +21,7 @@ var componentList = {
   loader: loaderComponent,
   tabs: tabsComponent,
   tab: tabComponent,
+  snackbar: snackbarComponent,
   fForm: fFormComponent,
   fInput: fInputComponent,
   fSelect: fSelectComponent,

@@ -48,11 +48,12 @@
                 <li><a href="#vue-tabs">Tabs</a></li>
                 <li><a href="#vue-modal">Modal</a></li>
                 <li><a href="#vue-prompt">Prompt</a></li>
+                <li><a href="#snackbar">Snackbar</a></li>
                 <li><a href="#vue-fform">fForm</a></li>
                 <li><a href="#vue-finput">fInput</a></li>
-                <li><a href="#vue-fselect">fSelect</a></li>
                 <li><a href="#vue-fcheckbox">fCheckbox</a></li>
                 <li><a href="#vue-fradio">fRadio</a></li>
+                <li><a href="#vue-fselect">fSelect</a></li>
               <li class="docs-nav-title">Form Validation</li>
                 <li><a href="#required-validation">Required Field Validation</a></li>
                 <li><a href="#type-validation">Field Type Validation</a></li>
@@ -1626,6 +1627,146 @@ new Vue({
                   <p class="back-to-top"><a href="#">Back to top</a></p>
                 </div>
               </div>
+              <div class="row" id="snackbar">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Snackbar</h3>
+                  
+
+<p>The snackbar component offers up an alternative alert style that shows a fixed position message for a short dureation before closing itself.</p>
+
+<div id="snackbar_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <snackbar ref="mySnackbar"></snackbar>
+      <div class="row">
+        <div class="small-12 medium-5 column">
+          <f-input type="text" label="Alert Message" v-model="toast"></f-input>
+        </div>
+        <div class="small-12 medium-2 column">
+          <button type="button" class="button expanded inline-form" @click="newToast">Toast!</button>
+        </div>
+      </div>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;snackbar ref="mySnackbar"&gt;&lt;/snackbar&gt;
+&lt;div class="row"&gt;
+  &lt;div class="small-12 medium-5 column"&gt;
+    &lt;f-input type="text" label="Alert Message" v-model="toast"&gt;&lt;/f-input&gt;
+  &lt;/div&gt;
+  &lt;div class="small-12 medium-2 column"&gt;
+    &lt;button type="button" class="button expanded inline-form" @click="newToast"&gt;Toast!&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></code>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#snackbar_demo',
+  data: {
+    toast: ''
+  },
+  methods: {
+    newToast() {
+      if (this.toast !== '') {
+        this.$refs.mySnackbar.toast(this.toast, () => alert('bar'));
+      }
+    }
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>timeout</td>
+      <td>Number</td>
+      <td>false</td>
+      <td>4000</td>
+      <td>The delay before automatically closing the snackbar. Set to zero to disable automatically closing snackbar.</td>
+    </tr>
+    <tr>
+      <td>actionLabel</td>
+      <td>String</td>
+      <td>false</td>
+      <td>Go</td>
+      <td>The label for the action button if aa action is provided as part of the <span class="pill">toast()</span> call.</td>
+    </tr>
+    <tr>
+      <td>transition</td>
+      <td>String</td>
+      <td>false</td>
+      <td>fade</td>
+      <td>The transition registered to vue to use when showing/hiding the snackbar.</td>
+    </tr>
+    <tr>
+      <td>position</td>
+      <td>String</td>
+      <td>false</td>
+      <td>bottom left</td>
+      <td>The position of the snackbar: top, bottom, left, right, top left, bottom left, top right, bottom right</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Method</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>toast(message, action)</td>
+      <td>Show the snackbar with the provided message. If a function is provided to action, a button will be shown in the snackbar that calls the provided function.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Close the snackbar.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">SCSS Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$snackbar-background-color</td>
+      <td>Color</td>
+      <td>$dark-gray</td>
+      <td>Snackbar background color.</td>
+    </tr>
+    <tr>
+      <td>$snackbar-font-color</td>
+      <td>Color</td>
+      <td>$white</td>
+      <td>Snackbar message font color.</td>
+    </tr>
+    <tr>
+      <td>$snackbar-padding</td>
+      <td>Number</td>
+      <td>1rem 1.5rem</td>
+      <td>Snackbar box padding.</td>
+    </tr>
+    <tr>
+      <td>$snackbar-border-radius</td>
+      <td>Number</td>
+      <td>$global-radius</td>
+      <td>Border radius for the snackbar box.</td>
+    </tr>
+  </tbody>
+</table>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
               <div class="row" id="vue-fform">
                 <div class="small-12 column">
                   <h3 class="docs-heading">fForm</h3>
@@ -1902,82 +2043,6 @@ new Vue({
                   <p class="back-to-top"><a href="#">Back to top</a></p>
                 </div>
               </div>
-              <div class="row" id="vue-fselect">
-                <div class="small-12 column">
-                  <h3 class="docs-heading">fSelect</h3>
-                  
-
-<p>Renders a select input given a set of options</p>
-
-<div id="select_demo">
-  <tabs>
-    <tab heading="Result" :selected="true">
-      <f-select v-model="selectedOption" :options="selectOptions"></f-select>
-      <p>selected: {{ selectedOption }}</p>
-    </tab>
-    <tab heading="HTML">
-<pre><code class="language-html">
-&lt;f-select v-model="selectedOption" :options="selectOptions"&gt;&lt;/f-select&gt;
-</code></pre>
-    </tab>
-    <tab heading="JavaScript">
-<pre><code class="language-js">
-new Vue({
-  el: '#select_demo',
-  data: {
-    selectedOption: '',
-    selectOptions: [
-      { label: 'One Option', value: '1' },
-      { label: 'Two Option', value: '2' },
-      { label: 'Red Option', value: 'Red' },
-      { label: 'Blue Option', value: 'Blue' }
-    ]
-  }
-});
-</pre></code>
-    </tab>
-  </tabs>
-</div>
-
-<table class="table">
-  <thead>
-    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>v-model</td>
-      <td>String</td>
-      <td>true</td>
-      <td></td>
-      <td>The selected option value.</td>
-    </tr>
-    <tr>
-      <td>label</td>
-      <td>Boolean</td>
-      <td>false</td>
-      <td>empty string</td>
-      <td>The select label.</td>
-    </tr>
-    <tr>
-      <td>options</td>
-      <td>Array</td>
-      <td>true</td>
-      <td></td>
-      <td>An array of options objects to render: <span class="pill">{ label: 'foo', value: 'bar' }</span></td>
-    </tr>
-    <tr>
-      <td>requires</td>
-      <td>Boolean</td>
-      <td>false</td>
-      <td>false</td>
-      <td>If set to true, the select will not render an empty option element, and will set the selected option to the first available option.</td>
-    </tr>
-  </tbody>
-</table>
-
-                  <p class="back-to-top"><a href="#">Back to top</a></p>
-                </div>
-              </div>
               <div class="row" id="vue-fcheckbox">
                 <div class="small-12 column">
                   <h3 class="docs-heading">fCheckbox</h3>
@@ -2115,6 +2180,82 @@ new Vue({
       <td>false</td>
       <td>false</td>
       <td>If set to true, will invalidate the input if an option is not selected.</td>
+    </tr>
+  </tbody>
+</table>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+              <div class="row" id="vue-fselect">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">fSelect</h3>
+                  
+
+<p>Renders a select input given a set of options</p>
+
+<div id="select_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <f-select v-model="selectedOption" :options="selectOptions"></f-select>
+      <p>selected: {{ selectedOption }}</p>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;f-select v-model="selectedOption" :options="selectOptions"&gt;&lt;/f-select&gt;
+</code></pre>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#select_demo',
+  data: {
+    selectedOption: '',
+    selectOptions: [
+      { label: 'One Option', value: '1' },
+      { label: 'Two Option', value: '2' },
+      { label: 'Red Option', value: 'Red' },
+      { label: 'Blue Option', value: 'Blue' }
+    ]
+  }
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Param</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v-model</td>
+      <td>String</td>
+      <td>true</td>
+      <td></td>
+      <td>The selected option value.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>empty string</td>
+      <td>The select label.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>Array</td>
+      <td>true</td>
+      <td></td>
+      <td>An array of options objects to render: <span class="pill">{ label: 'foo', value: 'bar' }</span></td>
+    </tr>
+    <tr>
+      <td>requires</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>If set to true, the select will not render an empty option element, and will set the selected option to the first available option.</td>
     </tr>
   </tbody>
 </table>

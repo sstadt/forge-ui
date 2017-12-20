@@ -12,7 +12,7 @@ $alert-color: #ec5840 !default;
 $white: #fefefe !default;
 $light-gray: #e6e6e6 !default;
 $medium-gray: #cacaca !default;
-$dark-gray: #8a8a8a !default;
+$dark-gray: #32322f !default;
 $black: #0a0a0a !default;
 
 $overlay-opacity: 0.6 !default;
@@ -217,3 +217,12 @@ $tab-nav-font-color-hover: $body-font-color !default;
 $tab-nav-font-color-active: $body-font-color !default;
 $tab-nav-border-color: $body-font-color !default;
 $tab-nav-padding: 4px 10px !default;
+
+////
+/// @group ForgeUI-snackbar
+////
+
+$snackbar-background-color: $dark-gray !default;
+$snackbar-font-color: $white !default;
+$snackbar-padding: 1rem 1.5rem !default;
+$snackbar-border-radius: $global-radius !default;

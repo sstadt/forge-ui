@@ -1,0 +1,19 @@
+
+.snackbar {
+  padding: $snackbar-padding;
+  position: fixed;
+  background-color: $snackbar-background-color;
+  border-radius: $snackbar-border-radius;
+
+  p {
+    display: inline-block;
+    line-height: 29px;
+    color: $snackbar-font-color;
+    margin: 0;
+    padding-right: 1rem;
+  }
+
+  .button {
+    margin-bottom: 0;
+  }
+}

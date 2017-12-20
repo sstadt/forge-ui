@@ -168,23 +168,27 @@
 
 	var _tabComponent2 = _interopRequireDefault(_tabComponent);
 
-	var _fFormComponent = __webpack_require__(17);
+	var _snackbarComponent = __webpack_require__(17);
+
+	var _snackbarComponent2 = _interopRequireDefault(_snackbarComponent);
+
+	var _fFormComponent = __webpack_require__(19);
 
 	var _fFormComponent2 = _interopRequireDefault(_fFormComponent);
 
-	var _fInputComponent = __webpack_require__(19);
+	var _fInputComponent = __webpack_require__(21);
 
 	var _fInputComponent2 = _interopRequireDefault(_fInputComponent);
 
-	var _fSelectComponent = __webpack_require__(22);
+	var _fSelectComponent = __webpack_require__(24);
 
 	var _fSelectComponent2 = _interopRequireDefault(_fSelectComponent);
 
-	var _fCheckboxComponent = __webpack_require__(24);
+	var _fCheckboxComponent = __webpack_require__(26);
 
 	var _fCheckboxComponent2 = _interopRequireDefault(_fCheckboxComponent);
 
-	var _fRadioComponent = __webpack_require__(26);
+	var _fRadioComponent = __webpack_require__(28);
 
 	var _fRadioComponent2 = _interopRequireDefault(_fRadioComponent);
 
@@ -198,6 +202,7 @@
 	  loader: _loaderComponent2.default,
 	  tabs: _tabsComponent2.default,
 	  tab: _tabComponent2.default,
+	  snackbar: _snackbarComponent2.default,
 	  fForm: _fFormComponent2.default,
 	  fInput: _fInputComponent2.default,
 	  fSelect: _fSelectComponent2.default,
@@ -638,7 +643,123 @@
 	  value: true
 	});
 
-	var _fFormTemplate = __webpack_require__(18);
+	var _snackbarTemplate = __webpack_require__(18);
+
+	var _snackbarTemplate2 = _interopRequireDefault(_snackbarTemplate);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var component = {
+	  template: _snackbarTemplate2.default,
+	  props: {
+	    timeout: {
+	      type: Number,
+	      default: 4000
+	    },
+	    actionLabel: {
+	      type: String,
+	      default: 'Go'
+	    },
+	    transition: {
+	      type: String,
+	      default: 'fade'
+	    },
+	    position: {
+	      type: String,
+	      default: 'bottom left'
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      show: false,
+	      action: null,
+	      message: ''
+	    };
+	  },
+
+	  computed: {
+	    positionStyle: function positionStyle() {
+	      var style = {};
+
+	      if (this.position === 'bottom' || this.position === 'top') {
+	        style.left = '50%';
+	        style.transform = 'translateX(-50%)';
+	      }
+
+	      if (this.position === 'left' || this.position === 'right') {
+	        style.top = '50%';
+	        style.transform = 'translateY(-50%)';
+	      }
+
+	      if (this.position.indexOf('bottom') > -1) {
+	        style.bottom = '20px';
+	      }
+
+	      if (this.position.indexOf('top') > -1) {
+	        style.top = '20px';
+	      }
+
+	      if (this.position.indexOf('left') > -1) {
+	        style.left = '20px';
+	      }
+
+	      if (this.position.indexOf('right') > -1) {
+	        style.right = '20px';
+	      }
+
+	      return style;
+	    }
+	  },
+	  methods: {
+	    toast: function toast(msg, action) {
+	      var _this = this;
+
+	      if (action) {
+	        this.action = action;
+	      }
+
+	      this.message = msg;
+	      this.show = true;
+
+	      if (this.timeout > 0) {
+	        setTimeout(function () {
+	          return _this.close();
+	        }, this.timeout);
+	      }
+	    },
+	    executeAction: function executeAction() {
+	      this.action();
+	      this.close();
+	    },
+	    close: function close() {
+	      this.show = false;
+	    },
+	    reset: function reset() {
+	      this.action = null;
+	      this.message = '';
+	    }
+	  }
+	};
+
+	exports.default = component;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+	module.exports = "\n<transition :name=\"transition\" @after-leave=\"reset\">\n  <div class=\"snackbar\" v-show=\"show\" :style=\"positionStyle\">\n    <p>{{ message }}</p>\n    <button type=\"button\" class=\"button tiny\" v-if=\"typeof action === 'function'\" @click=\"executeAction\">{{ actionLabel }}</button>\n  </div>\n</transition>\n";
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _fFormTemplate = __webpack_require__(20);
 
 	var _fFormTemplate2 = _interopRequireDefault(_fFormTemplate);
 
@@ -694,13 +815,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<form ref=\"form\" v-on:submit=\"submitForm\" :method=\"method\" :action=\"action\" novalidate>\n  <slot></slot>\n</form>\n";
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -713,13 +834,13 @@
 
 	var _forgeUtil2 = _interopRequireDefault(_forgeUtil);
 
-	var _fInputTemplate = __webpack_require__(20);
+	var _fInputTemplate = __webpack_require__(22);
 
 	var _fInputTemplate2 = _interopRequireDefault(_fInputTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var validationRules = __webpack_require__(21);
+	var validationRules = __webpack_require__(23);
 
 	var component = {
 	  template: _fInputTemplate2.default,
@@ -801,13 +922,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @blur=\"validate\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @blur=\"validate\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -832,7 +953,7 @@
 	};
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -841,7 +962,7 @@
 	  value: true
 	});
 
-	var _fSelectTemplate = __webpack_require__(23);
+	var _fSelectTemplate = __webpack_require__(25);
 
 	var _fSelectTemplate2 = _interopRequireDefault(_fSelectTemplate);
 
@@ -894,13 +1015,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"f-select\">\n  <label>\n    {{ label }}\n    <select v-model=\"selectedValue\">\n      <option v-if=\"!required\" value=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option.value\">{{ option.label }}</option>\n    </select>\n  </label>\n</div>\n";
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -909,7 +1030,7 @@
 	  value: true
 	});
 
-	var _fCheckboxTemplate = __webpack_require__(25);
+	var _fCheckboxTemplate = __webpack_require__(27);
 
 	var _fCheckboxTemplate2 = _interopRequireDefault(_fCheckboxTemplate);
 
@@ -954,13 +1075,13 @@
 	exports.default = component;
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<div :class=\"{ 'f-checkbox': true, 'error': isError }\">\n  <label><input type=\"checkbox\" v-model=\"isChecked\" /> {{ label }}</label>\n</div>\n";
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -969,7 +1090,7 @@
 	  value: true
 	});
 
-	var _fRadioTemplate = __webpack_require__(27);
+	var _fRadioTemplate = __webpack_require__(29);
 
 	var _fRadioTemplate2 = _interopRequireDefault(_fRadioTemplate);
 
@@ -1022,7 +1143,7 @@
 	exports.default = component;
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<div :class=\"{ 'f-radio': true, 'error': isError }\">\n  <label v-if=\"label.length > 0\">{{ label }}</label>\n  <span class=\"f-radio__option\" v-for=\"option in options\">\n    <input type=\"radio\" :name=\"name\" :value=\"option.value\" :id=\"option.name\" v-model=\"selectedOption\">\n    <label :for=\"option.name\">{{ option.label }}</label>\n  </span>\n</div>\n";
