@@ -53,9 +53,3 @@ Vue.use(Forge);
 ```
 gulp test
 ```
-
-### TODO
-
- - add documentation for mixins
- - add links to section headers in the kitchen sink menu
- - pull in notifications component from game table

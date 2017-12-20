@@ -17,6 +17,8 @@ var Server      = require('karma').Server;
 
 var sections = [
   'css-components',
+  'css-mixins',
+  'css-functions',
   'vue-components',
   'form-validation',
   'customizing-forge'

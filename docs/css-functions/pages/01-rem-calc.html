@@ -1,0 +1,31 @@
+---
+title: 'rem-calc(sizeInPx)'
+id: 'rem-calc'
+index: 1
+---
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Argument</th><th width="100px">Type</th><th width="100px">Required</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sizeInPx</td>
+      <td>Integer</td>
+      <td>true</td>
+      <td>The size in <em>px</em> to convert to <em>rem</em>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Returns an equivalent size in <em>rem</em>.</p>
+
+<pre><code class="language-css">
+p {
+  font-size: rem-calc(16); // 1rem
+}
+
+h1 {
+  font-size: rem-calc(24); // 1.5rem
+}
+</pre></code>

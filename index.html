@@ -39,6 +39,10 @@
                 <li><a href="#block-grid">Block Grid</a></li>
                 <li><a href="#media-queries">Media Queries</a></li>
                 <li><a href="#transitions">Transitions</a></li>
+              <li class="docs-nav-title">CSS Mixins</li>
+                <li><a href="#clearfix">Clearfix</a></li>
+              <li class="docs-nav-title">CSS Functions</li>
+                <li><a href="#rem-calc">rem-calc(sizeInPx)</a></li>
               <li class="docs-nav-title">Vue.js Components</li>
                 <li><a href="#vue-alert">Alert</a></li>
                 <li><a href="#vue-tabs">Tabs</a></li>
@@ -1015,6 +1019,74 @@
   <li>zoom-in</li>
   <li>zoom-out</li>
 </ul>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+            <h2 class="docs-heading">CSS Mixins</h2>
+            <div class="row">
+              <div class="small-12 column">
+                
+
+              </div>
+            </div>
+              <div class="row" id="clearfix">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Clearfix</h3>
+                  
+
+<p>Simple clearfix mixin.</p>
+
+<pre><code class="language-css">
+.container {
+  @include .clearfix();
+
+  img {
+    float: left;
+  }
+}
+</pre></code>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+            <h2 class="docs-heading">CSS Functions</h2>
+            <div class="row">
+              <div class="small-12 column">
+                
+
+              </div>
+            </div>
+              <div class="row" id="rem-calc">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">rem-calc(sizeInPx)</h3>
+                  
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Argument</th><th width="100px">Type</th><th width="100px">Required</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sizeInPx</td>
+      <td>Integer</td>
+      <td>true</td>
+      <td>The size in <em>px</em> to convert to <em>rem</em>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Returns an equivalent size in <em>rem</em>.</p>
+
+<pre><code class="language-css">
+p {
+  font-size: rem-calc(16); // 1rem
+}
+
+h1 {
+  font-size: rem-calc(24); // 1.5rem
+}
+</pre></code>
 
                   <p class="back-to-top"><a href="#">Back to top</a></p>
                 </div>
