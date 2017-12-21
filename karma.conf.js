@@ -14,7 +14,6 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/vue/dist/vue.min.js',
-      'node_modules/lodash/lodash.min.js',
       'src/js/**/*.Spec.js'
     ],
 
