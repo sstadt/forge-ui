@@ -43,7 +43,7 @@ describe('The tabs component', function () {
         componentInstance.addTab({ active: false });
       });
 
-      it('should set add the new tab to the tabs component', function () {
+      it('should add the new tab to the tabs component', function () {
         expect(componentInstance.tabs).toEqual([{ active: false }]);
       });
     });
