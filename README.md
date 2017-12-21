@@ -54,6 +54,12 @@ Vue.use(Forge);
 gulp test
 ```
 
-### TODO
+### Road to 1.0
 
- - fade out alert before removing items from the list
+ - fade out alert **before** removing items from the list
+ - validation for all input types
+ - custom regex validation
+ - pull docs out into a separate repo
+  - show different positioning on snackbar
+  - pull default templates into docs for easy reference
+  - centralize demo js/html and auto inject from single source

@@ -4,6 +4,7 @@ var sass        = require('gulp-sass');
 var rename      = require('gulp-rename');
 var uglifyJS    = require('gulp-uglify');
 var uglifyCSS   = require('gulp-uglifycss');
+var inlineSrc   = require('gulp-inline-source');
 var sourcemaps  = require('gulp-sourcemaps');
 var serve       = require('gulp-serve');
 var webpack     = require('gulp-webpack');
@@ -60,27 +61,32 @@ gulp.task('test', function (done) {
 gulp.task('docs', function () {
   let docsData = { sections: [] };
 
+  // build sections
   sections.forEach((section) => {
     let sectionData = frontMatter.loadFront(`./docs/${section}/_section.html`);
     let pageList = fs.readdirSync(`./docs/${section}/pages`);
 
     sectionData.pages = [];
 
+    // build section pages
     pageList.forEach((page) => {
       let pageData = frontMatter.loadFront(`./docs/${section}/pages/${page}`);
       sectionData.pages.push(pageData);
     });
 
+    // sort section pages
     sectionData.pages.sort(function (p, c) {
       if (p.index === c.index) return 0;
       return (p.index > c.index) ? 1 : -1;
     });
 
+    // add section to docs
     docsData.sections.push(sectionData);
   });
 
   gulp.src('./docs/index.hb')
     .pipe(handlebars(docsData))
+    .pipe(inlineSrc())
     .pipe(rename('index.html'))
     .pipe(gulp.dest('./'))
     .pipe(livereload());
