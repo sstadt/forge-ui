@@ -36,7 +36,6 @@ describe('The tabs component', function () {
   describe('methods', function () {
     beforeEach(function () {
       componentInstance = new Vue(component);
-      spyOn(componentInstance, '$broadcast');
     });
 
     describe('#addTab', function () {

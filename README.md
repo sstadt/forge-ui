@@ -61,5 +61,4 @@ gulp test
  - custom regex validation
  - pull docs out into a separate repo
   - show different positioning on snackbar
-  - pull default templates into docs for easy reference
   - centralize demo js/html and auto inject from single source
