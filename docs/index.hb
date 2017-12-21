@@ -8,10 +8,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
-
     <link href="_assets/prism.css" inline>
     <link href="_assets/style.css" inline>
-
     <link rel="stylesheet" href="dist/css/forge-ui.css">
   </head>
   <body>
@@ -67,9 +65,8 @@
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
     <script type="text/javascript" src="dist/js/forge-ui.js"></script>
-
     <script type="text/javascript" src="_assets/script.js" inline></script>
   </body>
 </html>
