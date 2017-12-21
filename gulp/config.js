@@ -12,6 +12,7 @@ module.exports = {
 
   babelOptions: {
     minified: true,
+    comments: false,
     presets: ['es2015', 'stage-0']
   }
 
