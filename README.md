@@ -42,6 +42,7 @@ Vue.use(Forge);
   - prompt
   - tabs
   - tab
+  - snackbar
   - fCheckbox
   - fForm
   - fInput
@@ -60,5 +61,5 @@ gulp test
  - validation for all input types
  - custom regex validation
  - pull docs out into a separate repo
-  - show different positioning on snackbar
-  - centralize demo js/html and auto inject from single source
+ - show different positioning on snackbar
+ - centralize demo js/html and auto inject from single source
