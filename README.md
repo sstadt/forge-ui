@@ -57,6 +57,8 @@ gulp test
 
 ### Road to 1.0
 
+ - comprehensive list of helpers - pull from game table
+ - flex grid
  - fade out alert **before** removing items from the list
  - validation for all input types
  - custom regex validation
