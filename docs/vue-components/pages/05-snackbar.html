@@ -73,7 +73,7 @@ new Vue({
       <td>String</td>
       <td>false</td>
       <td>Go</td>
-      <td>The label for the action button if aa action is provided as part of the <span class="pill">toast()</span> call.</td>
+      <td>The label for the action button if an action is provided as part of the <span class="pill">toast()</span> call.</td>
     </tr>
     <tr>
       <td>transition</td>
@@ -99,7 +99,7 @@ new Vue({
   <tbody>
     <tr>
       <td>toast(message, action)</td>
-      <td>Show the snackbar with the provided message. If a function is provided to action, a button will be shown in the snackbar that calls the provided function.</td>
+      <td>Show the snackbar with the provided message. If a function is provided to action, a button will be shown in the snackbar that calls the provided function. If a string is provided to action, the button will be rendered as a link with the action used for the href.</td>
     </tr>
     <tr>
       <td>close()</td>

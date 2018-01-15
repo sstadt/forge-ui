@@ -2,6 +2,7 @@
 <transition :name="transition" @after-leave="reset">
   <div class="snackbar" v-show="show" :style="positionStyle">
     <p>{{ message }}</p>
-    <button type="button" class="button tiny" v-if="typeof action === 'function'" @click="executeAction">{{ actionLabel }}</button>
+    <button type="button" class="button tiny" v-if="action && !actionIsLink" @click="executeAction">{{ actionLabel }}</button>
+    <a :href="action" class="button tiny" v-if="action && actionIsLink" @click="executeAction">{{ actionLabel }}</a>
   </div>
 </transition>

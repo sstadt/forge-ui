@@ -30,7 +30,7 @@ describe('The snackbar component', function () {
       expect(data.show).toEqual(false);
     });
 
-    it('should have an initial action value of null', function () {
+    it('should have an initial action value of an null', function () {
       expect(data.action).toEqual(null);
     });
 
@@ -85,6 +85,24 @@ describe('The snackbar component', function () {
     });
   });
 
+  describe('computed', function () {
+    var componentInstance;
+
+    beforeEach(function () {
+      componentInstance = new Vue(component);
+    });
+
+    describe('actionIsLink', function () {
+      it('should default to false', function () {
+        expect(componentInstance.actionIsLink).toEqual(false);
+      });
+
+      it('should be true if the action is a string', function () {
+        componentInstance.action = 'www.google.com';
+        expect(componentInstance.actionIsLink).toEqual(true);
+      });
+    });
+  });
 
   describe('methods', function () {
     var componentInstance;

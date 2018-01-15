@@ -59,6 +59,9 @@ var component = {
       }
 
       return style;
+    },
+    actionIsLink() {
+      return typeof this.action === 'string';
     }
   },
   methods: {
