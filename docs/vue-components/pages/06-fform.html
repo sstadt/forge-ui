@@ -12,7 +12,7 @@ index: 6
     <tab heading="Result" :selected="true">
       <alert ref="myAlert" :can-close="true"></alert>
       <f-form :ajax="true" @submit="showMessage">
-        <f-input type="text" :value.sync="message" :required="true"></f-input>
+        <f-input type="text" v-model="message" :required="true"></f-input>
         <button type="submit" class="button">Submit</button>
       </f-form>
     </tab>
@@ -20,7 +20,7 @@ index: 6
 <pre><code class="language-html">
 &lt;alert ref="myAlert" :can-close="true"&gt;&lt;/alert&gt;
 &lt;f-form :ajax="true" @submit="showMessage"&gt;
-  &lt;f-input type="text" :value.sync="message" :required="true"&gt;&lt;/f-input&gt;
+  &lt;f-input type="text" v-model="message" :required="true"&gt;&lt;/f-input&gt;
   &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
 &lt;/f-form&gt;
 </code></pre>
