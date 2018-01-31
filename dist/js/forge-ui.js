@@ -234,17 +234,25 @@
 	    canClose: {
 	      type: Boolean,
 	      default: false
+	    },
+	    transition: {
+	      type: String,
+	      default: 'fade'
 	    }
 	  },
 	  data: function data() {
 	    return {
 	      messages: [],
-	      type: ''
+	      type: '',
+	      show: false
 	    };
 	  },
 
 	  methods: {
 	    close: function close() {
+	      this.show = false;
+	    },
+	    reset: function reset() {
 	      this.messages = [];
 	    },
 	    addMessage: function addMessage(type, message) {
@@ -254,6 +262,8 @@
 	      } else {
 	        this.messages.push(message);
 	      }
+
+	      this.show = true;
 	    },
 	    message: function message(_message) {
 	      this.addMessage('', _message);
@@ -282,7 +292,7 @@
 /* 3 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<div class=\"alert-box\" v-bind:class=\"{\n    primary: type === 'primary',\n    secondary: type === 'secondary',\n    success: type === 'success',\n    warning: type === 'warning',\n    alert: type === 'alert'\n  }\" transition=\"fade\" v-show=\"messages.length > 0\">\n  <ul>\n    <li v-for=\"message in messages\" track-by=\"$index\">{{ message }}</li>\n  </ul>\n  <button class=\"close-button\" aria-label=\"Dismiss alert\" type=\"button\" v-if=\"canClose\" v-on:click=\"close()\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n";
+	module.exports = "\n<transition :name=\"transition\" @after-leave=\"reset\">\n  <div class=\"alert-box\" v-bind:class=\"{\n      primary: type === 'primary',\n      secondary: type === 'secondary',\n      success: type === 'success',\n      warning: type === 'warning',\n      alert: type === 'alert'\n    }\" v-show=\"show\">\n    <ul>\n      <li v-for=\"message in messages\" track-by=\"$index\">{{ message }}</li>\n    </ul>\n    <button class=\"close-button\" aria-label=\"Dismiss alert\" type=\"button\" v-if=\"canClose\" v-on:click=\"close()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n</transition>\n";
 
 /***/ }),
 /* 4 */
@@ -708,6 +718,9 @@
 	      }
 
 	      return style;
+	    },
+	    actionIsLink: function actionIsLink() {
+	      return typeof this.action === 'string';
 	    }
 	  },
 	  methods: {
@@ -747,7 +760,7 @@
 /* 18 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<transition :name=\"transition\" @after-leave=\"reset\">\n  <div class=\"snackbar\" v-show=\"show\" :style=\"positionStyle\">\n    <p>{{ message }}</p>\n    <button type=\"button\" class=\"button tiny\" v-if=\"typeof action === 'function'\" @click=\"executeAction\">{{ actionLabel }}</button>\n  </div>\n</transition>\n";
+	module.exports = "\n<transition :name=\"transition\" @after-leave=\"reset\">\n  <div class=\"snackbar\" v-show=\"show\" :style=\"positionStyle\">\n    <p>{{ message }}</p>\n    <button type=\"button\" class=\"button tiny\" v-if=\"action && !actionIsLink\" @click=\"executeAction\">{{ actionLabel }}</button>\n    <a :href=\"action\" class=\"button tiny\" v-if=\"action && actionIsLink\" @click=\"executeAction\">{{ actionLabel }}</a>\n  </div>\n</transition>\n";
 
 /***/ }),
 /* 19 */

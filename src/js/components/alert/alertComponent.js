@@ -7,16 +7,24 @@ var component = {
     canClose: {
       type: Boolean,
       default: false
+    },
+    transition: {
+      type: String,
+      default: 'fade'
     }
   },
   data() {
     return {
       messages: [],
-      type: ''
+      type: '',
+      show: false
     };
   },
   methods: {
     close() {
+      this.show = false;
+    },
+    reset() {
       this.messages = [];
     },
     addMessage(type, message) {
@@ -26,6 +34,8 @@ var component = {
       } else {
         this.messages.push(message);
       }
+
+      this.show = true;
     },
     message(message) {
       this.addMessage('', message);

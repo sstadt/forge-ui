@@ -60,10 +60,22 @@ describe('The alert component', function () {
     });
 
     describe('#close', function () {
-      it('should clear the messages in the alert', function () {
-        componentInstance.messages = ['test'];
+      beforeEach(function () {
         componentInstance.close();
+      });
 
+      it('should hide the alert', function () {
+        expect(componentInstance.show).toEqual(false);
+      });
+    });
+
+    describe('#reset', function () {
+      beforeEach(function () {
+        componentInstance.messages = ['test'];
+        componentInstance.reset();
+      });
+
+      it('should clear the messages in the alert', function () {
         expect(componentInstance.messages).toEqual([]);
       });
     });
@@ -71,6 +83,10 @@ describe('The alert component', function () {
     describe('#addMessage', function () {
       beforeEach(function () {
         componentInstance.addMessage('foo', 'bar');
+      });
+
+      it('should show the alert', function () {
+        expect(componentInstance.show).toEqual(true);
       });
 
       it('should set the message type', function () {
