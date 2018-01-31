@@ -74,7 +74,18 @@ new Vue({
 new Vue({
   el: '#snackbar_demo',
   data: {
-    toast: ''
+    toast: '',
+    currentPosition: 'bottom left',
+    options: [
+      { name: 'topOption', label: 'top', value: 'top' },
+      { name: 'bottomOption', label: 'bottom', value: 'bottom' },
+      { name: 'leftOption', label: 'left', value: 'left' },
+      { name: 'rightOption', label: 'right', value: 'right' },
+      { name: 'topLeftOption', label: 'top left', value: 'top left' },
+      { name: 'topRightOption', label: 'top right', value: 'top right' },
+      { name: 'bottomLeftOption', label: 'bottom left', value: 'bottom left' },
+      { name: 'bottomRightOption', label: 'bottom right', value: 'bottom right' }
+    ]
   },
   methods: {
     newToast() {
@@ -118,7 +129,7 @@ new Vue({
     selectedOption: '',
     radioOptions: [
       { name: 'radioOptionOne', label: 'One Option', value: '1' },
-      { name: 'radioOptionTwo', label: 'Two Option', value: '2' },
+      { name: 'radioOptionTwo', label: 'Two Option', value: '2' }
     ]
   }
 });

@@ -9,11 +9,14 @@ index: 5
 <div id="snackbar_demo">
   <tabs>
     <tab heading="Result" :selected="true">
-      <snackbar ref="mySnackbar"></snackbar>
+      <snackbar ref="mySnackbar" :position="currentPosition"></snackbar>
       <f-form :ajax="true" @submit="newToast">
         <div class="row">
+          <div class="small-12 column">
+            <f-radio label="Position" v-model="currentPosition" :options="options" name="positioningOptions"><f-radio>
+          </div>
           <div class="small-12 medium-5 column">
-            <f-input type="text" label="Alert Message" v-model="toast" :required="true"></f-input>
+            <f-input type="text" label="Message" v-model="toast" :required="true"></f-input>
           </div>
           <div class="small-12 medium-2 column">
             <button type="submit" class="button expanded inline-form">Toast!</button>
@@ -23,14 +26,17 @@ index: 5
     </tab>
     <tab heading="HTML">
 <pre><code class="language-html">
-&lt;snackbar ref="mySnackbar"&gt;&lt;/snackbar&gt;
+&lt;snackbar ref="mySnackbar" :position="currentPosition"&gt;&lt;/snackbar&gt;
 &lt;f-form :ajax="true" @submit="newToast"&gt;
   &lt;div class="row"&gt;
+    &lt;div class="small-12 column"&gt;
+      &lt;f-radio label="Position" v-model="currentPosition" :options="options" name="positioningOptions"&gt;&lt;f-radio&gt;
+    &lt;/div&gt;
     &lt;div class="small-12 medium-5 column"&gt;
-      &lt;f-input type="text" label="Alert Message" v-model="toast"&gt;&lt;/f-input&gt;
+      &lt;f-input type="text" label="Message" v-model="toast" :required="true"&gt;&lt;/f-input&gt;
     &lt;/div&gt;
     &lt;div class="small-12 medium-2 column"&gt;
-      &lt;button type="button" class="button expanded inline-form" @click="newToast"&gt;Toast!&lt;/button&gt;
+      &lt;button type="submit" class="button expanded inline-form"&gt;Toast!&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/f-form&gt;
@@ -41,7 +47,18 @@ index: 5
 new Vue({
   el: '#snackbar_demo',
   data: {
-    toast: ''
+    toast: '',
+    currentPosition: 'bottom left',
+    options: [
+      { name: 'topOption', label: 'top', value: 'top' },
+      { name: 'bottomOption', label: 'bottom', value: 'bottom' },
+      { name: 'leftOption', label: 'left', value: 'left' },
+      { name: 'rightOption', label: 'right', value: 'right' },
+      { name: 'topLeftOption', label: 'top left', value: 'top left' },
+      { name: 'topRightOption', label: 'top right', value: 'top right' },
+      { name: 'bottomLeftOption', label: 'bottom left', value: 'bottom left' },
+      { name: 'bottomRightOption', label: 'bottom right', value: 'bottom right' }
+    ]
   },
   methods: {
     newToast() {
@@ -50,7 +67,7 @@ new Vue({
       }
     }
   }
-});
+  });
 </pre></code>
     </tab>
   </tabs>

@@ -57,9 +57,7 @@ gulp test
 
 ### Road to 1.0
 
- - comprehensive list of helpers - pull from game table
- - flex grid
  - custom regex validation
  - pull docs out into a separate repo
- - show different positioning on snackbar
  - centralize demo js/html and auto inject from single source
+ - build out a logo and restyle the docs
