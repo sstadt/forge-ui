@@ -29,20 +29,19 @@
       <div class="row">
         <div class="hide-small medium-3 column">
           <ul class="vertical menu docs-nav">
-              <li class="docs-nav-title">CSS Components</li>
+              <li class="docs-nav-title">CSS</li>
+                <li><a href="#css-functions">Functions</a></li>
+                <li><a href="#mixins">Mixins</a></li>
+                <li><a href="#media-queries">Media Queries</a></li>
+                <li><a href="#media-queries">Helpers</a></li>
                 <li><a href="#type">Type</a></li>
-                <li><a href="#inline-list">Inline Lists</a></li>
                 <li><a href="#buttons">Buttons</a></li>
                 <li><a href="#pills">Pill</a></li>
                 <li><a href="#grid">Grid</a></li>
                 <li><a href="#block-grid">Block Grid</a></li>
-                <li><a href="#media-queries">Media Queries</a></li>
                 <li><a href="#transitions">Transitions</a></li>
-              <li class="docs-nav-title">CSS Mixins</li>
-                <li><a href="#clearfix">Clearfix</a></li>
-              <li class="docs-nav-title">CSS Functions</li>
-                <li><a href="#rem-calc">rem-calc(sizeInPx)</a></li>
-              <li class="docs-nav-title">Vue.js Components</li>
+                <li><a href="#inline-list">Inline Lists</a></li>
+              <li class="docs-nav-title">Components</li>
                 <li><a href="#vue-alert">Alert</a></li>
                 <li><a href="#vue-tabs">Tabs</a></li>
                 <li><a href="#vue-modal">Modal</a></li>
@@ -66,7 +65,7 @@
         <div class="small-12 medium-9 column">
           <!-- Start demo content -->
 
-            <h2 class="docs-heading">CSS Components</h2>
+            <h2 class="docs-heading">CSS</h2>
             <div class="row">
               <div class="small-12 column">
                 
@@ -180,6 +179,223 @@
 
               </div>
             </div>
+              <div class="row" id="css-functions">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Functions</h3>
+                  
+
+<h4>rem-calc(sizeInPx)</h4>
+<p>Returns an equivalent size in <em>rem</em>.</p>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Argument</th><th width="100px">Type</th><th width="100px">Required</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sizeInPx</td>
+      <td>Integer</td>
+      <td>true</td>
+      <td>The size in <em>px</em> to convert to <em>rem</em>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-css">
+p {
+  font-size: rem-calc(16); // 1rem
+}
+
+h1 {
+  font-size: rem-calc(24); // 1.5rem
+}
+</pre></code>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+              <div class="row" id="mixins">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Mixins</h3>
+                  
+
+<h4>clearfix()</h4>
+<p>Simple clearfix mixin.</p>
+
+<pre><code class="language-css">
+.container {
+  @include .clearfix();
+
+  img {
+    float: left;
+  }
+}
+</pre></code>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+              <div class="row" id="media-queries">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Media Queries</h3>
+                  
+
+<div class="row">
+  <div class="small-12 column">
+    <p>ForgeUI uses a set of media query mixins modeled after the type of device you want to apply styling to. ForgeUI is mobile first, so mobile styling should be applied first, and overrides for larger screen sizes should be applied with media queries.</p>
+    <p>Please use the small-only media query sparingly!</p>
+    <dl>
+      <dt>small-only</dt>
+      <dd>(max-width: $breakpoint-medium - 1)</dt>
+      <dt>medium-up</dt>
+      <dd>(min-width: $breakpoint-medium)</dt>
+      <dt>medium-only</dt>
+      <dd>(min-width: $breakpoint-medium) and (max-width: $breakpoint-large - 1)</dt>
+      <dt>large-up</dt>
+      <dd>(min-width: $breakpoint-large)</dt>
+    </dl>
+<pre><code class="language-css">
+@include small-only() {
+  // mobile only styling
+}
+
+@include medium-up() {
+  // tablet and larger styling
+}
+
+@include medium-only() {
+  // tablet only styling
+}
+
+@include large-up() {
+  // desktop and larger styling
+}
+</code></pre>
+    <p>ForgeUI also has a full list of visibility helpers that can be used anywhere. The visibility classes only apply <span class="pill">display: none;</span> where appropriate, never any other display class. So these utilities are usable on elements with any type of display.</p>
+    <div class="alert-box secondary">
+      <ul>
+        <li class="show-small">This text shows on <em>small</em> screens</li>
+        <li class="show-medium">This text shows on <em>medium</em> screens</li>
+        <li class="show-medium-up">This text shows on <em>medium or larger</em> screens</li>
+        <li class="show-large">This text shows on <em>large</em> screens</li>
+        <li class="hide-small">This text hides on <em>small</em> screens</li>
+        <li class="hide-medium">This text hides on <em>medium</em> screens</li>
+        <li class="hide-large">This text hides on <em>large</em> screens</li>
+      </ul>
+    </div>
+<pre><code class="language-html">
+&lt;div class="alert-box secondary"&gt;
+  &lt;ul&gt;
+    &lt;li class="show-small"&gt;This text shows on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium-up"&gt;This text shows on &lt;em&gt;medium or larger&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-medium"&gt;This text shows on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="show-large"&gt;This text shows on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-small"&gt;This text hides on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-medium"&gt;This text hides on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
+    &lt;li class="hide-large"&gt;This text hides on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$breakpoint-medium</td>
+      <td>Number</td>
+      <td>600px</td>
+      <td>The default breakpoint for medium screens.</td>
+    </tr>
+    <tr>
+      <td>$breakpoint-large</td>
+      <td>Number</td>
+      <td>1200px</td>
+      <td>The default breakpoint for large screens.</td>
+    </tr>
+  </tbody>
+</table>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
+              <div class="row" id="media-queries">
+                <div class="small-12 column">
+                  <h3 class="docs-heading">Helpers</h3>
+                  
+
+<p>ForgeUI sports the following helpers for quick and common CSS additions:</p>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Class</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.show-small</td>
+      <td>Show for small screens only.</td>
+    </tr>
+    <tr>
+      <td>.show-medium</td>
+      <td>Show for medium screens only.</td>
+    </tr>
+    <tr>
+      <td>.show-medium-up</td>
+      <td>Show for medium and large screens.</td>
+    </tr>
+    <tr>
+      <td>.show-large</td>
+      <td>Show for large screens.</td>
+    </tr>
+    <tr>
+      <td>.hide-small</td>
+      <td>Hide for small screens.</td>
+    </tr>
+    <tr>
+      <td>.hide-medium</td>
+      <td>Hide for medium screens.</td>
+    </tr>
+    <tr>
+      <td>.hide-medium-up</td>
+      <td>Hide for medium and large screens.</td>
+    </tr>
+    <tr>
+      <td>.hide-large</td>
+      <td>Hide for large screens.</td>
+    </tr>
+    <tr>
+      <td>.text-left</td>
+      <td>Left align text.</td>
+    </tr>
+    <tr>
+      <td>.text-right</td>
+      <td>Right align text.</td>
+    </tr>
+    <tr>
+      <td>.text-center</td>
+      <td>Center align text.</td>
+    </tr>
+    <tr>
+      <td>.uppercase</td>
+      <td>Capitalize text.</td>
+    </tr>
+    <tr>
+      <td>.float-left</td>
+      <td>Float element left.</td>
+    </tr>
+    <tr>
+      <td>.float-right</td>
+      <td>Float element right.</td>
+    </tr>
+  </tbody>
+</table>
+
+                  <p class="back-to-top"><a href="#">Back to top</a></p>
+                </div>
+              </div>
               <div class="row" id="type">
                 <div class="small-12 column">
                   <h3 class="docs-heading">Type</h3>
@@ -419,48 +635,6 @@
       <td>Number</td>
       <td>20px</td>
       <td>HR margins.</td>
-    </tr>
-  </tbody>
-</table>
-
-                  <p class="back-to-top"><a href="#">Back to top</a></p>
-                </div>
-              </div>
-              <div class="row" id="inline-list">
-                <div class="small-12 column">
-                  <h3 class="docs-heading">Inline Lists</h3>
-                  
-
-<ul class="inline">
-  <li>One Item</li>
-  <li>Two Item</li>
-  <li>Red Item</li>
-  <li>Blue Item</li>
-</ul>
-<pre><code class="language-html">
-&lt;ul class="inline"&gt;
-  &lt;li&gt;One Item&lt;/li&gt;
-  &lt;li&gt;Two Item&lt;/li&gt;
-  &lt;li&gt;Red Item&lt;/li&gt;
-  &lt;li&gt;Blue Item&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-<table class="table">
-  <thead>
-    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$list-inline-padding</td>
-      <td>Number</td>
-      <td>$global-padding</td>
-      <td>Inline list padding.</td>
-    </tr>
-    <tr>
-      <td>$list-inline-spacing</td>
-      <td>Number</td>
-      <td>rem-calc(8)</td>
-      <td>Inline list element horizontal spacing.</td>
     </tr>
   </tbody>
 </table>
@@ -918,93 +1092,6 @@
                   <p class="back-to-top"><a href="#">Back to top</a></p>
                 </div>
               </div>
-              <div class="row" id="media-queries">
-                <div class="small-12 column">
-                  <h3 class="docs-heading">Media Queries</h3>
-                  
-
-<div class="row">
-  <div class="small-12 column">
-    <p>ForgeUI uses a set of media query mixins modeled after the type of device you want to apply styling to. ForgeUI is mobile first, so mobile styling should be applied first, and overrides for larger screen sizes should be applied with media queries.</p>
-    <p>Please use the small-only media query sparingly!</p>
-    <dl>
-      <dt>small-only</dt>
-      <dd>(max-width: $breakpoint-medium - 1)</dt>
-      <dt>medium-up</dt>
-      <dd>(min-width: $breakpoint-medium)</dt>
-      <dt>medium-only</dt>
-      <dd>(min-width: $breakpoint-medium) and (max-width: $breakpoint-large - 1)</dt>
-      <dt>large-up</dt>
-      <dd>(min-width: $breakpoint-large)</dt>
-    </dl>
-<pre><code class="language-css">
-@include small-only() {
-  // mobile only styling
-}
-
-@include medium-up() {
-  // tablet and larger styling
-}
-
-@include medium-only() {
-  // tablet only styling
-}
-
-@include large-up() {
-  // desktop and larger styling
-}
-</code></pre>
-    <p>ForgeUI also has a full list of visibility helpers that can be used anywhere. The visibility classes only apply <span class="pill">display: none;</span> where appropriate, never any other display class. So these utilities are usable on elements with any type of display.</p>
-    <div class="alert-box secondary">
-      <ul>
-        <li class="show-small">This text shows on <em>small</em> screens</li>
-        <li class="show-medium">This text shows on <em>medium</em> screens</li>
-        <li class="show-medium-up">This text shows on <em>medium or larger</em> screens</li>
-        <li class="show-large">This text shows on <em>large</em> screens</li>
-        <li class="hide-small">This text hides on <em>small</em> screens</li>
-        <li class="hide-medium">This text hides on <em>medium</em> screens</li>
-        <li class="hide-large">This text hides on <em>large</em> screens</li>
-      </ul>
-    </div>
-<pre><code class="language-html">
-&lt;div class="alert-box secondary"&gt;
-  &lt;ul&gt;
-    &lt;li class="show-small"&gt;This text shows on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
-    &lt;li class="show-medium-up"&gt;This text shows on &lt;em&gt;medium or larger&lt;/em&gt; screens&lt;/li&gt;
-    &lt;li class="show-medium"&gt;This text shows on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
-    &lt;li class="show-large"&gt;This text shows on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
-    &lt;li class="hide-small"&gt;This text hides on &lt;em&gt;small&lt;/em&gt; screens&lt;/li&gt;
-    &lt;li class="hide-medium"&gt;This text hides on &lt;em&gt;medium&lt;/em&gt; screens&lt;/li&gt;
-    &lt;li class="hide-large"&gt;This text hides on &lt;em&gt;large&lt;/em&gt; screens&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-</div>
-
-<table class="table">
-  <thead>
-    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$breakpoint-medium</td>
-      <td>Number</td>
-      <td>600px</td>
-      <td>The default breakpoint for medium screens.</td>
-    </tr>
-    <tr>
-      <td>$breakpoint-large</td>
-      <td>Number</td>
-      <td>1200px</td>
-      <td>The default breakpoint for large screens.</td>
-    </tr>
-  </tbody>
-</table>
-
-                  <p class="back-to-top"><a href="#">Back to top</a></p>
-                </div>
-              </div>
               <div class="row" id="transitions">
                 <div class="small-12 column">
                   <h3 class="docs-heading">Transitions</h3>
@@ -1023,75 +1110,49 @@
                   <p class="back-to-top"><a href="#">Back to top</a></p>
                 </div>
               </div>
-            <h2 class="docs-heading">CSS Mixins</h2>
-            <div class="row">
-              <div class="small-12 column">
-                
-
-              </div>
-            </div>
-              <div class="row" id="clearfix">
+              <div class="row" id="inline-list">
                 <div class="small-12 column">
-                  <h3 class="docs-heading">Clearfix</h3>
+                  <h3 class="docs-heading">Inline Lists</h3>
                   
 
-<p>Simple clearfix mixin.</p>
-
-<pre><code class="language-css">
-.container {
-  @include .clearfix();
-
-  img {
-    float: left;
-  }
-}
-</pre></code>
-
-                  <p class="back-to-top"><a href="#">Back to top</a></p>
-                </div>
-              </div>
-            <h2 class="docs-heading">CSS Functions</h2>
-            <div class="row">
-              <div class="small-12 column">
-                
-
-              </div>
-            </div>
-              <div class="row" id="rem-calc">
-                <div class="small-12 column">
-                  <h3 class="docs-heading">rem-calc(sizeInPx)</h3>
-                  
-
+<ul class="inline">
+  <li>One Item</li>
+  <li>Two Item</li>
+  <li>Red Item</li>
+  <li>Blue Item</li>
+</ul>
+<pre><code class="language-html">
+&lt;ul class="inline"&gt;
+  &lt;li&gt;One Item&lt;/li&gt;
+  &lt;li&gt;Two Item&lt;/li&gt;
+  &lt;li&gt;Red Item&lt;/li&gt;
+  &lt;li&gt;Blue Item&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 <table class="table">
   <thead>
-    <tr><th width="200px">Argument</th><th width="100px">Type</th><th width="100px">Required</th><th>Description</th></tr>
+    <tr><th width="200px">Variable</th><th width="100px">Type</th><th width="250px">Default Value</th><th>Description</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td>sizeInPx</td>
-      <td>Integer</td>
-      <td>true</td>
-      <td>The size in <em>px</em> to convert to <em>rem</em>.</td>
+      <td>$list-inline-padding</td>
+      <td>Number</td>
+      <td>$global-padding</td>
+      <td>Inline list padding.</td>
+    </tr>
+    <tr>
+      <td>$list-inline-spacing</td>
+      <td>Number</td>
+      <td>rem-calc(8)</td>
+      <td>Inline list element horizontal spacing.</td>
     </tr>
   </tbody>
 </table>
 
-<p>Returns an equivalent size in <em>rem</em>.</p>
-
-<pre><code class="language-css">
-p {
-  font-size: rem-calc(16); // 1rem
-}
-
-h1 {
-  font-size: rem-calc(24); // 1.5rem
-}
-</pre></code>
-
                   <p class="back-to-top"><a href="#">Back to top</a></p>
                 </div>
               </div>
-            <h2 class="docs-heading">Vue.js Components</h2>
+            <h2 class="docs-heading">Components</h2>
             <div class="row">
               <div class="small-12 column">
                 

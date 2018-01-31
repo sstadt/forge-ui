@@ -59,7 +59,6 @@ gulp test
 
  - comprehensive list of helpers - pull from game table
  - flex grid
- - validation for all input types
  - custom regex validation
  - pull docs out into a separate repo
  - show different positioning on snackbar

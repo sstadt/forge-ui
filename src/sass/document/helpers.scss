@@ -1,0 +1,92 @@
+
+////
+/// @group Visibility
+////
+
+.show-small {
+  @include medium-up() {
+    display: none;
+  }
+}
+
+.hide-small {
+  @include small-only() {
+    display: none;
+  }
+}
+
+.show-medium {
+  @include small-only() {
+    display: none;
+  }
+
+  @include large-up() {
+    display: none;
+  }
+}
+
+.show-medium-up {
+  @include small-only() {
+    display: none;
+  }
+}
+
+.hide-medium {
+  @include medium-only() {
+    display: none;
+  }
+}
+
+.hide-medium-up {
+  @include medium-up() {
+    display: none;
+  }
+}
+
+.show-large {
+  @include small-only() {
+    display: none;
+  }
+
+  @include medium-only() {
+    display: none;
+  }
+}
+
+.hide-large {
+  @include large-up() {
+    display: none;
+  }
+}
+
+////
+/// @group Text Alignment
+////
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+////
+/// @group Floats
+////
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}

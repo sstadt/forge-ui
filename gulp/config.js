@@ -2,10 +2,8 @@
 module.exports = {
 
   docSections: [
-    'css-components',
-    'css-mixins',
-    'css-functions',
-    'vue-components',
+    'css',
+    'components',
     'form-validation',
     'customizing-forge'
   ],
