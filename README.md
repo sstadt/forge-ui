@@ -58,6 +58,8 @@ gulp test
 ### Road to 1.0
 
  - custom regex validation
+ - single file components
+ - standard icon set for icon component
  - pull docs out into a separate repo
  - centralize demo js/html and auto inject from single source
  - build out a logo and restyle the docs

@@ -1,6 +1,6 @@
 
 import Forge from './forge-ui.js';
-import componentList from './componentList.js';
+import componentList from './_componentList.js';
 
 const TEST_TEMPLATE = '<p>foo</p>';
 

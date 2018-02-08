@@ -80,6 +80,22 @@ describe('The fInput component', function () {
         });
       });
 
+      describe('when a custom validation pattern is provided', function () {
+        beforeEach(function () {
+          componentInstance.pattern = '[0-9]{3}-[0-9]{3}-[0-9]{4}';
+        });
+
+        it('should return false with an invalid value', function () {
+          componentInstance.inputValue = '1234';
+          expect(componentInstance.isValid()).toEqual(false);
+        });
+
+        it('should return true with a valid value', function () {
+          componentInstance.inputValue = '555-555-5555';
+          expect(componentInstance.isValid()).toEqual(true);
+        });
+      });
+
       describe('when equalTo is provided a value', function () {
         beforeEach(function () {
           componentInstance.equalTo = { label: 'Foo', value: 'foo' };

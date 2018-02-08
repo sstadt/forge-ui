@@ -847,13 +847,15 @@
 
 	var _forgeUtil2 = _interopRequireDefault(_forgeUtil);
 
-	var _fInputTemplate = __webpack_require__(22);
+	var _validationRules = __webpack_require__(22);
+
+	var _validationRules2 = _interopRequireDefault(_validationRules);
+
+	var _fInputTemplate = __webpack_require__(23);
 
 	var _fInputTemplate2 = _interopRequireDefault(_fInputTemplate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var validationRules = __webpack_require__(23);
 
 	var component = {
 	  template: _fInputTemplate2.default,
@@ -885,6 +887,10 @@
 	    equalTo: {
 	      type: Object,
 	      default: null
+	    },
+	    pattern: {
+	      type: String,
+	      default: null
 	    }
 	  },
 	  data: function data() {
@@ -894,6 +900,11 @@
 	    };
 	  },
 
+	  computed: {
+	    regex: function regex() {
+	      return this.pattern ? new RegExp(this.pattern) : false;
+	    }
+	  },
 	  watch: {
 	    inputValue: function inputValue() {
 	      this.$emit('input', this.inputValue);
@@ -916,9 +927,13 @@
 	      if (this.required && this.inputValue.length === 0) {
 	        this.error = label + ' is required';
 
+	        // custom regex validation
+	      } else if (this.regex && !this.regex.test(this.inputValue)) {
+	        this.error = _validationRules2.default.defaultError;
+
 	        // html5 data type validation
-	      } else if (validationRules.hasOwnProperty(this.type) && !validationRules[this.type].regex.test(this.inputValue)) {
-	        this.error = validationRules[this.type].defaultError;
+	      } else if (_validationRules2.default.hasOwnProperty(this.type) && !_validationRules2.default[this.type].regex.test(this.inputValue)) {
+	        this.error = _validationRules2.default[this.type].defaultError;
 
 	        // equivalency validation
 	      } else if (this.equalTo && this.equalTo.value !== this.inputValue) {
@@ -938,15 +953,13 @@
 /* 22 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @blur=\"validate\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @blur=\"validate\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports) {
-
 	'use strict';
 
-	module.exports = {
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  defaultError: 'Please enter a valid value',
 	  email: {
 	    regex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 	    defaultError: 'Please enter a valid email address'
@@ -964,6 +977,12 @@
 	    defaultError: 'Please enter a valid phone number'
 	  }
 	};
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+	module.exports = "\n<label class=\"f-input\">\n  {{ label }}\n  <div class=\"input-wrap\">\n    <i :class=\"['fa', 'fa-' + icon]\" v-if=\"icon\"></i>\n    <textarea v-if=\"type === 'textarea'\"\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      v-model=\"inputValue\"\n      @blur=\"validate\"></textarea>\n    <input v-else\n      ref=\"input\"\n      :class=\"{ 'error': error.length > 0 }\"\n      :name=\"name\"\n      :placeholder=\"placeholder\"\n      type=\"text\"\n      v-model=\"inputValue\"\n      @blur=\"validate\" />\n    <small v-if=\"error.length > 0\" transition=\"slide-up-x-small\" class=\"error\">{{ error }}</small>\n  </div>\n</label>\n";
 
 /***/ }),
 /* 24 */

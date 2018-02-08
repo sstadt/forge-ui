@@ -1,5 +1,5 @@
 
-import componentList from './componentList.js';
+import componentList from './_componentList.js';
 import forgeUtil from './forge-util.js';
 
 var Forge = {

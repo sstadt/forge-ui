@@ -1,9 +1,8 @@
 
 import forgeUtil from '../../forge-util.js';
+import validationRules from '../../_validationRules.js';
 
 import template from './fInputTemplate.html';
-
-var validationRules = require('./validationRules.js');
 
 var component = {
   template,
@@ -35,6 +34,10 @@ var component = {
     equalTo: {
       type: Object,
       default: null
+    },
+    pattern: {
+      type: String,
+      default: null
     }
   },
   data() {
@@ -42,6 +45,11 @@ var component = {
       error: '',
       inputValue: this.value
     };
+  },
+  computed: {
+    regex() {
+      return (this.pattern) ? new RegExp(this.pattern) : false;
+    }
   },
   watch: {
     inputValue() {
@@ -64,12 +72,16 @@ var component = {
       if (this.required && this.inputValue.length === 0) {
         this.error = label + ' is required';
 
+      // custom regex validation
+      } else if (this.regex && !this.regex.test(this.inputValue)) {
+        this.error = validationRules.defaultError;
+
       // html5 data type validation
       } else if (validationRules.hasOwnProperty(this.type) && !validationRules[this.type].regex.test(this.inputValue)) {
         this.error = validationRules[this.type].defaultError;
 
       // equivalency validation
-    } else if (this.equalTo && this.equalTo.value !== this.inputValue) {
+      } else if (this.equalTo && this.equalTo.value !== this.inputValue) {
         this.error = 'Must match ' + this.equalTo.label;
 
       // input is valid
