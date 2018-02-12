@@ -1,35 +1,35 @@
 
 Navigation - 16 icons
 
- - [ ] Home
- - [ ] Hamburger/Bars
- - [ ] Grid
- - [ ] More/Ellipsis
- - [ ] Chevron Left
- - [ ] Chevron Right
- - [ ] Chevron Up
- - [ ] Chevron Down
- - [ ] Caret Left
- - [ ] Caret Right
- - [ ] Caret Up
- - [ ] Caret Down
- - [ ] Arrow Left
- - [ ] Arrow Right
- - [ ] Arrow Up
- - [ ] Arrow Down
+ - [x] Home
+ - [x] Hamburger/Bars
+ - [x] Grid
+ - [x] More/Ellipsis
+ - [x] Chevron Left
+ - [x] Chevron Right
+ - [x] Chevron Up
+ - [x] Chevron Down
+ - [x] Caret Left
+ - [x] Caret Right
+ - [x] Caret Up
+ - [x] Caret Down
+ - [x] Arrow Left
+ - [x] Arrow Right
+ - [x] Arrow Up
+ - [x] Arrow Down
 
 Activity - 10 icons
 
- - [ ] User
- - [ ] Users
- - [ ] Mail
- - [ ] Share
- - [ ] Star
- - [ ] Star Half
- - [ ] Star Empty
- - [ ] Bookmark
- - [ ] Chat
- - [ ] Send
+ - [x] User
+ - [x] Users
+ - [x] Mail
+ - [x] Share
+ - [x] Star
+ - [x] Star Half
+ - [x] Star Empty
+ - [x] Bookmark
+ - [x] Chat
+ - [x] Send
 
 Apps - 29 icons
 
