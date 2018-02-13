@@ -6,7 +6,7 @@ var opn         = require('opn');
 
 require('require-dir')('./gulp/tasks');
 
-gulp.task('default', ['docs', 'styles', 'scripts']);
+gulp.task('default', ['docs', 'styles', 'scripts', 'icons']);
 
 gulp.task('serve', serve());
 

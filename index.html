@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="dist/css/forge-ui.css">
   </head>
   <body>
+    <div style="display: none;">
+      <!-- inject:svg --><!-- endinject -->
+    </div>
 
     <div class="page-header">
       <div class="wrapper">

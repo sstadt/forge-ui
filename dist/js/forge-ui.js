@@ -312,7 +312,21 @@
 
 	var component = {
 	  template: _iconTemplate2.default,
-	  props: ['name']
+	  props: {
+	    name: {
+	      type: String,
+	      required: true
+	    },
+	    size: {
+	      type: Number,
+	      default: 20
+	    }
+	  },
+	  computed: {
+	    icon: function icon() {
+	      return '#' + name;
+	    }
+	  }
 	};
 
 	exports.default = component;
@@ -321,7 +335,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<svg class=\"icon-image {{ name }}\">\n  <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-{{ name }}\"></use>\n</svg>\n";
+	module.exports = "\n<svg class=\"icon-image {{ name }}\">\n  <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" :xlink:href=\"icon\"></use>\n</svg>\n";
 
 /***/ }),
 /* 6 */
