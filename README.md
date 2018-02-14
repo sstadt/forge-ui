@@ -37,6 +37,7 @@ Vue.use(Forge);
 
 ### Current Component List
 
+  - icon
   - alert
   - modal
   - prompt
