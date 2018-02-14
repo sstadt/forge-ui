@@ -324,7 +324,15 @@
 	  },
 	  computed: {
 	    icon: function icon() {
-	      return '#' + name;
+	      return '#' + this.name;
+	    },
+	    iconClasses: function iconClasses() {
+	      var classes = { 'icon-image': true };
+	      classes[this.name] = true;
+	      return classes;
+	    },
+	    sizeInPx: function sizeInPx() {
+	      return this.size + 'px';
 	    }
 	  }
 	};
@@ -335,7 +343,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<svg class=\"icon-image {{ name }}\">\n  <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" :xlink:href=\"icon\"></use>\n</svg>\n";
+	module.exports = "\n<svg :class=\"iconClasses\" :height=\"sizeInPx\" :width=\"sizeInPx\">\n  <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" :xlink:href=\"icon\"></use>\n</svg>\n";
 
 /***/ }),
 /* 6 */

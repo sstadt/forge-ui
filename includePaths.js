@@ -7,12 +7,19 @@ var forgeDir = path.dirname(forgeEntryPoint.replace(/\/js/, '/sass'));
 var normalizeEntryPoint = require.resolve('node-normalize-scss');
 var normalizeDir = path.dirname(normalizeEntryPoint);
 
-function includePaths() {
+function styleIncludePath() {
   return [forgeDir, normalizeDir];
+}
+
+var iconDir = path.dirname(forgeEntryPoint.replace(/\/js/, '/icons'));
+
+function iconIncludePath() {
+  return [iconDir];
 }
 
 module.exports = {
 
-  includePaths: includePaths()
+  styles: styleIncludePath(),
+  icons: iconIncludePath()
 
 };

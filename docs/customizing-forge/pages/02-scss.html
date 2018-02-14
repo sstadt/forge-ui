@@ -13,7 +13,7 @@ var sass = require('gulp-sass');
 
 gulp.task('styles', function () {
   return gulp.src('path/to/styles.scss')
-    .pipe(sass({includePaths: require('forge-ui/includePaths').includePaths})
+    .pipe(sass({includePaths: require('forge-ui/includePaths').styles})
     .pipe(gulp.dest('dist/css'));
 });
 </pre></code>

@@ -976,7 +976,8 @@ dl dd {
       .alert-box ul li:not(:last-child) {
         padding-bottom: 4px; }
 
-h1 svg.icon-image, h1 svg.icon-image, h3 svg.icon-image, h4 svg.icon-image, h5 svg.icon-image, h6 svg.icon-image, p svg.icon-image {
+svg.icon-image {
+  display: inline-block;
   vertical-align: sub; }
 
 .loader,

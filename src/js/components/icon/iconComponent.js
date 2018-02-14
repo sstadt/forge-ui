@@ -15,7 +15,15 @@ var component = {
   },
   computed: {
     icon() {
-      return `#${name}`;
+      return `#${this.name}`;
+    },
+    iconClasses() {
+      let classes = { 'icon-image': true };
+      classes[this.name] = true;
+      return classes;
+    },
+    sizeInPx() {
+      return `${this.size}px`;
     }
   }
 };

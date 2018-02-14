@@ -1,0 +1,112 @@
+---
+title: 'Icon'
+id: 'vue-icon'
+index: 0
+---
+
+<p>The icon component is meant for simple rendering of SVG icons and has built with custom icons in mind.</p>
+<p>The icon component uses the <span class="pill">xlink:href</span> attribute to point at a symbol in an SVG store elsewhere on the page. For instructions on setting up an SVG store, see <a href="http://www.scottstadt.com/2017/12/14/compile-svg-sprites-with-gulp.html">this blog post</a>.</p>
+<p>ForgeUI also comes with a basic set of icons you can use in lieu of a custom set of SVGs. To use the ForgeUI icons, modify the source your task runner looks for SVG files in, passing along the ForgeUI include paths to <span class="pill">gulp.src</span>.</p>
+
+<pre><code class="language-js">
+/* gulpfile.js */
+var gulp = require('gulp');
+var svgstore = require('gulp-svgstore');
+var inject = require('gulp-inject');
+var includes = require('forge-ui/includePaths');
+
+gulp.task('default', function () {
+  // use 'forge-ui/includePaths' to create a glob that includes the ForgeUI icons
+  var svgs = gulp.src(`${includes.icons}/*.svg`).pipe(svgstore({ inlineSvg: true }));
+
+  function fileToString(filePath, file) {
+    return file.contents.toString();
+  }
+
+  return gulp.src('./index.html')
+    .pipe(inject(svgs, { transform: fileToString }))
+    .pipe(gulp.dest('./'));
+});
+</pre></code>
+
+<div id="icon_demo">
+  <tabs>
+    <tab heading="Result" :selected="true">
+      <icon name="home" :size="40"></icon>
+      <icon name="home"></icon>
+      <icon name="home" :size="10"></icon>
+    </tab>
+    <tab heading="HTML">
+<pre><code class="language-html">
+&lt;icon name="home" :size="40"&gt;&lt;/icon&gt;
+&lt;icon name="home"&gt;&lt;/icon&gt;
+&lt;icon name="home" :size="10"&gt;&lt;/icon&gt;
+</pre></code>
+    </tab>
+    <tab heading="JavaScript">
+<pre><code class="language-js">
+new Vue({
+  el: '#icon_demo'
+});
+</pre></code>
+    </tab>
+  </tabs>
+</div>
+
+<table class="table">
+  <thead>
+    <tr><th width="200px">Prop</th><th width="100px">Type</th><th width="100px">Required</th><th width="100px">Default</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+      <td>Set to true to display the close button in the top right corner.</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>Number</td>
+      <td>false</td>
+      <td>20</td>
+      <td>the size of the icon.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>ForgeUI Icons</h4>
+
+<div id="icon_list">
+  <div class="row small-up-3 medium-up-4 large-up-6">
+    <div class="column"><icon name="home"></icon> home</div>
+    <div class="column"><icon name="hamburger"></icon> hamburger</div>
+    <div class="column"><icon name="grid"></icon> grid</div>
+    <div class="column"><icon name="more"></icon> more</div>
+    <div class="column"><icon name="more-vert"></icon> more-vert</div>
+    <div class="column"><icon name="chevron-left"></icon> chevron-left</div>
+    <div class="column"><icon name="chevron-right"></icon> chevron-right</div>
+    <div class="column"><icon name="chevron-up"></icon> chevron-up</div>
+    <div class="column"><icon name="chevron-down"></icon> chevron-down</div>
+    <div class="column"><icon name="caret-left"></icon> caret-left</div>
+    <div class="column"><icon name="caret-right"></icon> caret-right</div>
+    <div class="column"><icon name="caret-up"></icon> caret-up</div>
+    <div class="column"><icon name="caret-down"></icon> caret-down</div>
+    <div class="column"><icon name="arrow-left"></icon> arrow-left</div>
+    <div class="column"><icon name="arrow-right"></icon> arrow-right</div>
+    <div class="column"><icon name="arrow-up"></icon> arrow-up</div>
+    <div class="column"><icon name="arrow-down"></icon> arrow-down</div>
+    <div class="column"><icon name="user"></icon> user</div>
+    <div class="column"><icon name="users"></icon> users</div>
+    <div class="column"><icon name="mail"></icon> mail</div>
+    <div class="column"><icon name="share"></icon> share</div>
+    <div class="column"><icon name="star"></icon> star</div>
+    <div class="column"><icon name="star-half"></icon> star-half</div>
+    <div class="column"><icon name="star-empty"></icon> star-empty</div>
+    <div class="column"><icon name="bookmark"></icon> bookmark</div>
+    <div class="column"><icon name="chat"></icon> chat</div>
+    <div class="column"><icon name="send"></icon> send</div>
+  </div>
+</div>
+
+<p>More icons coming soon !!!</p>

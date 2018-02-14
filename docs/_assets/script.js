@@ -4,6 +4,14 @@ Vue.use(Forge);
 Vue.config.debug = true;
 
 new Vue({
+  el: '#icon_demo'
+});
+
+new Vue({
+  el: '#icon_list'
+});
+
+new Vue({
   el: '#alert_demo',
   data: {
     alertMessage: '',
