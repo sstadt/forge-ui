@@ -17,6 +17,7 @@ Navigation - 16 icons
  - [x] Arrow Right
  - [x] Arrow Up
  - [x] Arrow Down
+ - [ ] Link
 
 Activity - 10 icons
 
