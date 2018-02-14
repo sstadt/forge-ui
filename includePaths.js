@@ -14,7 +14,7 @@ function styleIncludePath() {
 var iconDir = path.dirname(forgeEntryPoint.replace(/\/js/, '/icons'));
 
 function iconIncludePath() {
-  return [iconDir];
+  return `${iconDir}/*.svg`;
 }
 
 module.exports = {
