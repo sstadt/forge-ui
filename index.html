@@ -1246,11 +1246,10 @@ h1 {
 var gulp = require('gulp');
 var svgstore = require('gulp-svgstore');
 var inject = require('gulp-inject');
-var includes = require('forge-ui/includePaths');
 
 gulp.task('default', function () {
   // use 'forge-ui/includePaths' to create a glob that includes the ForgeUI icons
-  var svgs = gulp.src(`${includes.icons}/*.svg`).pipe(svgstore({ inlineSvg: true }));
+  var svgs = gulp.src(require('forge-ui/includePaths').icons).pipe(svgstore({ inlineSvg: true }));
 
   function fileToString(filePath, file) {
     return file.contents.toString();
