@@ -58,6 +58,6 @@ gulp test
 
 ### Road to 1.0
 
- - standard icon set for icon component; enable icon component
+ - finish standard icon set
  - centralize demo js/html and auto inject from single source
  - build out a logo and restyle the docs
